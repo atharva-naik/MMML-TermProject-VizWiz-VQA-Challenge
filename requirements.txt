@@ -1,5 +1,6 @@
 ftfy
 tqdm
 regex
+spacy
 torch
 torchvision
