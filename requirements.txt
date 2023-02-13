@@ -1,0 +1,5 @@
+ftfy
+tqdm
+regex
+torch
+torchvision
