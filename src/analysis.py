@@ -1,11 +1,62 @@
 import os
+import re
 import json
 import spacy
 import numpy as np
 from typing import *
+from colour import Color
 import matplotlib.pyplot as plt
 from collections import defaultdict
 from src.datautils import VizWizVQABestAnsDataset
+
+def check_color(color):
+    """check if a string is/describes a color."""
+    try:
+        # Converting 'deep sky blue' to 'deepskyblue'
+        color = color.replace(" ", "")
+        Color(color)
+        # if everything goes fine then return True
+        return True
+    except ValueError: # The color code was not found
+        return False
+
+def check_number_or_date(ans: str):
+    ans = ans.replace(" ", "").replace("-", "").replace(".", "").replace(":", "").replace("/", "").strip()
+    try:
+        int(ans)
+        return True
+    except Exception as e: return False
+
+def check_tech(ans: str):
+    tech_words = 0 
+    tot_words = 0
+    words = ans.lower().strip().split()
+    if ("computer" in words) or ("laptop" in words) or ("phone" in words) or ("windows 7" in words) or ("windows 8" in words) or ("windows xp" in words):
+        return True
+    if ans == "computer mouse": return True
+    tech_vocab = set([
+        "laptop", "windows", "screen", "boot", 
+        "booting", 'desktop', "computer", "repair"
+        "log", "keyboard", "restart", "restore", 
+        "dell", "hp", "java", "program", "lenovo",
+        "speaker", "phone", "iphone", "blackberry",
+        "window", "browser", "error", "message", "file",
+        "booted", "mac", "os", "keyboard", "system", "blank"
+        "problems", "problem", "reset", "start", "adapter",
+        "power", "hard", "drive", "image", "web", "internet",
+        "cell", "monitor", "headphones", "skype", 'installation',
+        "photo", "photos", "radio", "macbook", "ipad", "battery",
+        "memory", "diagnostics", "diagnostic", "driver", "dialog",
+        "security", "disk", "disc", "program", "programming", "app",
+        "updates", "cords", "cord", "icons", "cd", "recovery", "password",
+    ])
+    for word in words:
+        if word in tech_vocab:
+            tech_words += 1
+        tot_words += 1
+    if tech_words/tot_words >= 0.5:
+        return True
+    return False
 
 def analyze_object_detections(det_file: str, split_name: str="val"):
     object_dets = {}
@@ -47,6 +98,58 @@ def analyze_object_detections(det_file: str, split_name: str="val"):
     plt.savefig(obj_hist_path)
     
     return bin_edges, bin_counts
+
+ALL_FOODS = json.load(open("val_foods.json"))
+def get_rule_based_a_type(ans: str):
+    global ALL_FOODS
+    ans = ans.strip()
+    if ans in ["yes", "no", "unanswerable", "unsuitable"]:
+        return ans
+    if ans.startswith("unanswerable"):
+        return "unanswerable"
+    if ans in ALL_FOODS: return "food"
+    if check_number_or_date(ans): return "number"
+    if check_tech(ans): return "technology"
+    # if ans.lower() in [
+    #     "white", "red", "blue", "grey", 
+    #     "green", "yellow", "light purple"
+    #     "orange", "brown", "black"]: return "color"
+    if check_color(ans.lower()): return "color"
+    # num_regex = "^[0-9]+-[0-9]+$"
+    # if re.match(num_regex, ans.replace(" ","")) is not None:
+        # return 'number' # range of numbers type answer
+    return 'other'
+
+def analyze_answer_types(annot_path: str, images_dir: str):
+    dataset = VizWizVQABestAnsDataset(
+        annot_path=annot_path,
+        images_dir=images_dir,
+    )
+    builtin_a_types = defaultdict(lambda:0)
+    regex_based_a_types = defaultdict(lambda:0)
+    other_ans = set()
+    for rec in dataset:
+        a_type = dataset.ind_to_a_type[rec["answer_type"]]
+        builtin_a_types[a_type] += 1
+        regex_based_a_types[get_rule_based_a_type(rec["answer"])] += 1
+        if get_rule_based_a_type(rec["answer"]) == 'other':
+            other_ans.add(rec["answer"])
+
+    with open("other_ans.set.json", "w") as f:
+        json.dump(list(other_ans), f, indent=4)
+    print(other_ans)
+
+    builtin_a_types = dict(builtin_a_types)
+    regex_based_a_types = dict(regex_based_a_types)
+    for key, value in builtin_a_types.items():
+        builtin_a_types[key] = 100*value/len(dataset)
+        print(f"{key}: {builtin_a_types[key]:.2f}%")
+    print("#"*30)
+    for key, value in regex_based_a_types.items():
+        regex_based_a_types[key] = 100*value/len(dataset)
+        print(f"{key}: {regex_based_a_types[key]:.2f}%")
+
+    return builtin_a_types, regex_based_a_types
 
 def plot_piechart_from_dict(categ_dict: Dict[str, int], path: str, title: str):
     """referenced form this demo: https://matplotlib.org/stable/gallery/pie_and_polar_charts/pie_features.html
@@ -136,15 +239,16 @@ def analyze_split(dataset, nlp, split_name: str):
 
 # main
 if __name__ == "__main__":
-    os.makedirs("./plots", exist_ok=True)
-    nlp = spacy.load("en_core_web_lg")
-    # analysis of various splits of the data.
-    for split in ["train", "val", "test"]:
-        dataset = VizWizVQABestAnsDataset(
-            f"./{split}.json", 
-            f"./{split}/",
-        )
-        analyze_split(
-            dataset, nlp, 
-            split_name=split,
-        )
+    # os.makedirs("./plots", exist_ok=True)
+    # nlp = spacy.load("en_core_web_lg")
+    # # analysis of various splits of the data.
+    # for split in ["train", "val", "test"]:
+    #     dataset = VizWizVQABestAnsDataset(
+    #         f"./{split}.json", 
+    #         f"./{split}/",
+    #     )
+    #     analyze_split(
+    #         dataset, nlp, 
+    #         split_name=split,
+    #     )
+    analyze_answer_types(annot_path="val.json", images_dir="./val")

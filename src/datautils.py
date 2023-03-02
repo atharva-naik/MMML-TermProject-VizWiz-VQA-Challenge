@@ -66,6 +66,12 @@ class VizWizVQABestAnsDataset(Dataset):
             'yes/no': 2, 
             'number': 3,
         }
+        self.ind_to_a_type = {
+            0: 'unanswerable', 
+            1: 'other', 
+            2: 'yes/no', 
+            3: 'number',
+        } 
         for rec in self.annot_db.getAnns():
             a_type = rec['answer_type']
             img_path = os.path.join(images_dir, 
@@ -114,7 +120,7 @@ class VizWizVQAUniqueAnsDataset(Dataset):
             'yes/no': 2, 
             'number': 3,
         }
-        for rec in self.annot_db.getAnns():
+        for rec in tqdm(self.annot_db.getAnns()):
             a_type = rec['answer_type']
             img_path = os.path.join(images_dir, 
                                     rec['image'])
