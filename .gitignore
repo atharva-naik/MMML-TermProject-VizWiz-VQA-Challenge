@@ -137,6 +137,11 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+data/VQA/test
+data/VQA/train
+data/VQA/test
+data/VQA/val_objects_detected
+data/VQA/*.zip
 test/
 val/
 train/

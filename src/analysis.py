@@ -49,6 +49,7 @@ def check_tech(ans: str):
         "memory", "diagnostics", "diagnostic", "driver", "dialog",
         "security", "disk", "disc", "program", "programming", "app",
         "updates", "cords", "cord", "icons", "cd", "recovery", "password",
+        "ipod", "usb", "usb:", "button", "volume"
     ])
     for word in words:
         if word in tech_vocab:
