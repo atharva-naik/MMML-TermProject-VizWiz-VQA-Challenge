@@ -1,6 +1,6 @@
 import cv2
 from typing import *
-from src.object_detection.coco_classes import COCO_CLASSES, COCO_COLORS
+from object_detection.coco_classes import COCO_CLASSES, COCO_COLORS
 
 def visualize_detections(orig, detections: Dict[str, Any], save_path: str, 
                          confidence_thresh: float=0.7, 

@@ -14,12 +14,13 @@ from tqdm import tqdm
 import torchvision.transforms as T
 from collections import defaultdict
 from torchvision.models import detection
-import src.object_detection.utils as utils
+import object_detection.utils as utils
 # import src.object_detection.transforms as T
 from torch.utils.data import Dataset, DataLoader
-from src.PythonHelperTools.vqaTools.vqa import VQA
-from src.object_detection.coco_classes import COCO_CLASSES
-from src.object_detection.visualize import visualize_detections
+from sklearn.utils.class_weight import compute_class_weight
+from PythonHelperTools.vqaTools.vqa import VQA
+from object_detection.coco_classes import COCO_CLASSES
+from object_detection.visualize import visualize_detections
 
 def get_transform(train: bool=False):
     """
@@ -41,6 +42,7 @@ class VizWizVQATestDataset(Dataset):
         self.images_dir = images_dir
         self.annot_db = VQA(annotation_file=annot_path)
         self.data = []
+        self.label2id, self.id2label, self.class_weights = get_class_dicts()
         for rec in self.annot_db.getAnns():
             img_path = os.path.join(images_dir, 
                                     rec['image'])
@@ -72,6 +74,8 @@ class VizWizVQABestAnsDataset(Dataset):
             2: 'yes/no', 
             3: 'number',
         } 
+    
+        self.label2id, self.id2label, self.class_weights = get_class_dicts()
         for rec in self.annot_db.getAnns():
             a_type = rec['answer_type']
             img_path = os.path.join(images_dir, 
@@ -84,6 +88,7 @@ class VizWizVQABestAnsDataset(Dataset):
             self.data.append({
                 "question": q, "is_answerable": is_ansble,
                 "answer_type": self.a_type_to_ind[a_type],
+                "class_label": self.label2id.get(answer, 0),
                 "answer_confidence": answer_confidence,
                 "image": img_path, "answer": answer,
                 "total": total,
@@ -120,6 +125,7 @@ class VizWizVQAUniqueAnsDataset(Dataset):
             'yes/no': 2, 
             'number': 3,
         }
+        self.label2id, self.id2label, self.class_weights = get_class_dicts()
         for rec in tqdm(self.annot_db.getAnns()):
             a_type = rec['answer_type']
             img_path = os.path.join(images_dir, 
@@ -128,10 +134,12 @@ class VizWizVQAUniqueAnsDataset(Dataset):
             is_ansble = rec["answerable"]
             uniq_ans, tot = self._get_unique_answers(rec["answers"])
             for ans, conf in uniq_ans.items():
+
                 self.data.append({
                     "question": q, "is_answerable": is_ansble,
                     "answer_type": self.a_type_to_ind[a_type],
                     "answer_confidence": conf, "total": tot,
+                    "class_label": self.label2id.get(ans, 0),
                     "image": img_path, "answer": ans,
                 
                 })
@@ -192,6 +200,35 @@ class VizWizVQAClipDataset(Dataset):
             "is_answerable": is_ansble,
             "answer_type": a_type,
         }
+    
+def get_class_dicts(num_classes=6540):
+    train_annot_path = "data/VQA/train.json"
+    val_annot_path = "data/VQA/val.json"
+    vqa_train = VQA(train_annot_path)
+    train_objs = vqa_train.getAnns()
+    all_answers = []
+    for item in train_objs:
+        answer_text = [ans_dict['answer'] for ans_dict in item["answers"]]
+        all_answers.extend(answer_text)
+    vqa_val = VQA(val_annot_path)
+    val_objs = vqa_val.getAnns()
+
+    for item in val_objs:
+        answer_text = [ans_dict['answer'] for ans_dict in item["answers"]]
+        all_answers.extend(answer_text)
+
+    answer_freq = Counter(all_answers)
+    common_answers = answer_freq.most_common(num_classes)
+    label_to_id = {}
+    id_to_label = {}
+    all_ids = []
+    for i, item in enumerate(common_answers):
+        label_to_id[item[0]] = i
+        id_to_label[i] = item[0]
+    for label in all_answers:
+        all_ids.append(label_to_id.get(label, 0))
+    class_weights = compute_class_weight('balanced', classes=np.unique(all_ids), y=all_ids)
+    return label_to_id, id_to_label, torch.tensor(class_weights, dtype=torch.float32)
 
 # VizWiz QA dataset for object detection.
 # code borrowed from: https://pytorch.org/tutorials/intermediate/torchvision_tutorial.html.
@@ -299,6 +336,7 @@ def post_proc_detections(detections: Dict[str, torch.Tensor],
     detections["selected"] = [(score > confidence_thresh) for score in detections["scores"]]
 
     return detections
+
 
 # main
 if __name__ == "__main__":
