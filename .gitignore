@@ -149,3 +149,4 @@ test.zip
 val.zip
 train.zip
 val_objects_detected/
+wandb

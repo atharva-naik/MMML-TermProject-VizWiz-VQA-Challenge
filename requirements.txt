@@ -5,3 +5,11 @@ spacy
 torch
 colour
 torchvision
+wandb
+opencv-python
+clip
+matplotlib
+transformers
+sentencepiece
+protobuf==3.20
+sklearn
