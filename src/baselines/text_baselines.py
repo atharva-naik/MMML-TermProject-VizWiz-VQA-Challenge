@@ -170,8 +170,7 @@ def train_text_classifier(args):
             optimizer.step()
             lr_scheduler.step()
             optimizer.zero_grad()
-            if i > 30: 
-                break
+            if i > 30: break
 
         model.eval()
         device = "cpu" if device == "mps" else device
@@ -186,8 +185,8 @@ def train_text_classifier(args):
                 outputs = model(**tokenized_batch)
                 eval_loss.append(outputs.loss.cpu())
                 class_accuracy(val_batch, outputs, val_dataset.id2label)
-                if i > 35: 
-                    break
+                if i > 35: break
+
         return model
         
 def predict_text_only(args, model=None):
