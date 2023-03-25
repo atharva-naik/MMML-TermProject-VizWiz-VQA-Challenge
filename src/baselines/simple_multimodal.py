@@ -3,6 +3,7 @@
 # code to train and predict with simple multimodal baselines.
 
 import os
+import json
 import torch
 import requests
 from typing import *
@@ -12,10 +13,25 @@ from src.PythonHelperTools.vqaTools.vqa import VQA
 from src.datautils import VizWizVQABestAnsDataset
 from transformers import ViltProcessor, ViltForQuestionAnswering
 
+# there's a bug in HF's ViLT code:
+# paste the lines below in `transformers/models/vilt/modeling_vilt.py`
+#         # print(select.device)
+#         # print("patch_index:", patch_index.device)
+#         # print("x:", x.device)
+#         # print("pos_embed:", pos_embed.device)
+#         # print("select:", select.device)
+
+#         # there is an issue with patch_index:
+#         # FIX: makes sure the select indices and the patch index are on the same device.
+#         patch_index = patch_index.to(select.device)
+
 # modify the best answer dataset class for ViLT
+
+# NOTE: ViLT doesn't have more than 40 position embeddings it seems (max seq len for anything can't be more than 40)
+
 class ViLTVizWizVQABestAnsDataset(VizWizVQABestAnsDataset):
-    def __init__(self, *args, a_args: dict={"padding": "max_length", "max_length": 50, "truncation": True}, 
-                 q_args: dict={"padding": "max_length", "max_length": 100, "truncation": True},
+    def __init__(self, *args, a_args: dict={"padding": "max_length", "max_length": 40, "truncation": True}, 
+                 q_args: dict={"padding": "max_length", "max_length": 40, "truncation": True},
                  model_path: str="dandelin/vilt-b32-finetuned-vqa", **kwargs):
         super().__init__(*args, **kwargs)
         self.model_path = model_path
@@ -44,7 +60,11 @@ def test_vilt_predict(image_path: str, query: str,
                       move_to_cuda: bool=False) -> str:
     image = Image.open(image_path)
     # prepare inputs (tokenization basically)
-    encoding = processor(image, query, return_tensors="pt")
+    encoding = processor(
+        image, query, return_tensors="pt",
+        truncation=True, max_length=40,
+        padding="max_length",
+    )
     if move_to_cuda:
         # print("moving encoding to cuda")
         for k,v in encoding.items():
@@ -56,7 +76,7 @@ def test_vilt_predict(image_path: str, query: str,
     return model.config.id2label[idx]
     # print("Predicted answer:", )
 
-def test_vilt(split: str="train", use_cuda: bool=True) -> List[str]:
+def test_vilt(split: str="train", use_cuda: bool=True, break_at: int=5) -> List[str]:
     # initialize ViLT and its processor/tokenizer.
     processor = ViltProcessor.from_pretrained("dandelin/vilt-b32-finetuned-vqa")
     model = ViltForQuestionAnswering.from_pretrained("dandelin/vilt-b32-finetuned-vqa")
@@ -64,7 +84,6 @@ def test_vilt(split: str="train", use_cuda: bool=True) -> List[str]:
     data_path = f"./data/VQA/{split}.json"
     data = VQA(annotation_file=data_path).getAnns()
     preds = []
-    break_at = 5
     move_to_cuda = False
     if use_cuda and torch.cuda.is_available():
         model.cuda()
@@ -82,5 +101,7 @@ def test_vilt(split: str="train", use_cuda: bool=True) -> List[str]:
 # main
 if __name__ == "__main__":
     # sanity checking ViLT (assessing zero-shot performance)
-    preds = test_vilt()
-    print(preds)
+    split = "val"
+    zero_shot_preds = test_vilt(split=split, break_at=100000)
+    with open(f"experiments/{split}_zero_shot_vilt_vqa2_preds.json", "w") as f:
+        json.dump(zero_shot_preds, f, indent=4)

@@ -1,6 +1,9 @@
 # Author: Navaneethan Vaikunthan, Atharva Naik
 # common metrics for the task.
 
+import evaluate # hf metrics library
+from typing import *
+
 # classification based setup metrics:
 def get_class_preds(outputs, id2label):
     preds = outputs.logits.argmax(dim=-1)
@@ -23,3 +26,9 @@ def class_accuracy(inputs, outputs, id2label):
     # print((pred_words == inputs["answer"]).sum() / len(pred_words))
 
 # generative setting metrics:
+# add BLEU and stuff (as a supplement to the standard VQA task metric (accuracy measure))
+
+bleu_scorer = evaluate.load("bleu")
+def compute_bleu(preds: List[str], ans_list: Union[List[str], List[dict]]):
+    
+    global bleu_scorer
