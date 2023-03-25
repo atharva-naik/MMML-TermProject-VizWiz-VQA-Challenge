@@ -1,3 +1,5 @@
+# Author: Navaneethan Vaikunthan
+
 import argparse
 from collections import Counter
 import torch 
@@ -103,8 +105,7 @@ def train_unifiedqa_base(args):
     return model
 
         #wandb.log({"eval_loss": sum(eval_loss) / len(eval_loss)})
-                
-            
+                            
 def proxy_accuracy(inputs, generations, tokenizer):
     decoded_preds = tokenizer.batch_decode(generations, skip_special_tokens=True)
     answers = inputs["answer"]
@@ -215,9 +216,6 @@ def predict_text_only(args, model=None):
             if i > 10:
                 break
     
-            
-
-
 def get_class_dicts(num_classes=6540):
     train_annot_path = "data/VQA/train.json"
     val_annot_path = "data/VQA/val.json"
@@ -242,6 +240,7 @@ def get_class_dicts(num_classes=6540):
     for i, item in enumerate(common_answers):
         label_to_id[item[0]] = i
         id_to_label[i] = item[0]
+
     return label_to_id, id_to_label
 
 if __name__ == "__main__":
