@@ -14,13 +14,13 @@ from tqdm import tqdm
 import torchvision.transforms as T
 from collections import defaultdict
 from torchvision.models import detection
-import object_detection.utils as utils
+import src.object_detection.utils as utils
 # import src.object_detection.transforms as T
 from torch.utils.data import Dataset, DataLoader
 from sklearn.utils.class_weight import compute_class_weight
-from PythonHelperTools.vqaTools.vqa import VQA
-from object_detection.coco_classes import COCO_CLASSES
-from object_detection.visualize import visualize_detections
+from src.PythonHelperTools.vqaTools.vqa import VQA
+from src.object_detection.coco_classes import COCO_CLASSES
+from src.object_detection.visualize import visualize_detections
 
 def get_transform(train: bool=False):
     """

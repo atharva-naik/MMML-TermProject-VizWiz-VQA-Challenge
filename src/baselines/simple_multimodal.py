@@ -9,7 +9,34 @@ from typing import *
 from PIL import Image
 from tqdm import tqdm
 from src.PythonHelperTools.vqaTools.vqa import VQA
+from src.datautils import VizWizVQABestAnsDataset
 from transformers import ViltProcessor, ViltForQuestionAnswering
+
+# modify the best answer dataset class for ViLT
+class ViLTVizWizVQABestAnsDataset(VizWizVQABestAnsDataset):
+    def __init__(self, *args, a_args: dict={"padding": "max_length", "max_length": 50, "truncation": True}, 
+                 q_args: dict={"padding": "max_length", "max_length": 100, "truncation": True},
+                 model_path: str="dandelin/vilt-b32-finetuned-vqa", **kwargs):
+        super().__init__(*args, **kwargs)
+        self.model_path = model_path
+        self.a_args = a_args
+        self.q_args = q_args
+        # intialize processor for ViLT:
+        self.processor = ViltProcessor.from_pretrained(model_path)
+
+    def __getitem__(self, i: int):
+        item = super(ViLTVizWizVQABestAnsDataset, self).__getitem__(i)
+        # encode using ViLT processor:
+        image = Image.open(item["image"])
+        question = item["question"]
+        encoding = self.processor(image, question, return_tensors="pt", **self.q_args)
+        answer = self.processor.tokenizer(item["answer"], return_tensors="pt", **self.a_args)
+        # encode the answer label too.
+        encoding["label_input_ids"] = answer["input_ids"]
+        encoding["label_attn_mask"] = answer["attention_mask"]
+        encoding["label_tok_type_ids"] = answer["token_type_ids"]
+        
+        return encoding
 
 # sanity checking/testing functions:
 def test_vilt_predict(image_path: str, query: str, 
