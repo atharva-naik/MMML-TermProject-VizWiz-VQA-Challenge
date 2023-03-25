@@ -30,13 +30,15 @@ from transformers import ViltProcessor, ViltForQuestionAnswering
 # NOTE: ViLT doesn't have more than 40 position embeddings it seems (max seq len for anything can't be more than 40)
 
 class ViLTVizWizVQABestAnsDataset(VizWizVQABestAnsDataset):
-    def __init__(self, *args, a_args: dict={"padding": "max_length", "max_length": 40, "truncation": True}, 
+    def __init__(self, *args, 
+                 # a_args: dict={"padding": "max_length", "max_length": 40, "truncation": True}, 
                  q_args: dict={"padding": "max_length", "max_length": 40, "truncation": True},
-                 model_path: str="dandelin/vilt-b32-finetuned-vqa", **kwargs):
+                 model_path: str="dandelin/vilt-b32-finetuned-vqa", label2id: dict={}, **kwargs):
         super().__init__(*args, **kwargs)
         self.model_path = model_path
-        self.a_args = a_args
+        # self.a_args = a_args
         self.q_args = q_args
+        self.label2id = label2id
         # intialize processor for ViLT:
         self.processor = ViltProcessor.from_pretrained(model_path)
 
@@ -46,12 +48,12 @@ class ViLTVizWizVQABestAnsDataset(VizWizVQABestAnsDataset):
         image = Image.open(item["image"])
         question = item["question"]
         encoding = self.processor(image, question, return_tensors="pt", **self.q_args)
-        answer = self.processor.tokenizer(item["answer"], return_tensors="pt", **self.a_args)
+        encoding["label"] = torch.as_tensor(self.label2id.get(item["answer"]))
+        # answer = self.processor.tokenizer(item["answer"], return_tensors="pt", **self.a_args)
         # encode the answer label too.
-        encoding["label_input_ids"] = answer["input_ids"]
-        encoding["label_attn_mask"] = answer["attention_mask"]
-        encoding["label_tok_type_ids"] = answer["token_type_ids"]
-        
+        # encoding["label_input_ids"] = answer["input_ids"]
+        # encoding["label_attn_mask"] = answer["attention_mask"]
+        # encoding["label_tok_type_ids"] = answer["token_type_ids"]
         return encoding
 
 # sanity checking/testing functions:

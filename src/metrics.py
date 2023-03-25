@@ -23,7 +23,6 @@ def proxy_accuracy(inputs, generations, tokenizer):
         print(f"Answer: {answer}")
 
 def class_accuracy(inputs, outputs, id2label):
-
     pred_words = get_class_preds(outputs, id2label)
     print(pred_words)
     print(inputs["answer"])
@@ -31,7 +30,6 @@ def class_accuracy(inputs, outputs, id2label):
 
 # generative setting metrics:
 # add BLEU and stuff (as a supplement to the standard VQA task metric (accuracy measure))
-
 bleu_scorer = evaluate.load("bleu")
 # [{'answer': 'unanswerable', 'answer_confidence': 'yes'}, {'answer': 'unanswerable', 'answer_confidence': 'yes'}, {'answer': 'unanswerable', 'answer_confidence': 'yes'}, {'answer': 'unanswerable', 'answer_confidence': 'yes'}, {'answer': 'unanswerable', 'answer_confidence': 'maybe'}, {'answer': 'unanswerable', 'answer_confidence': 'yes'}, {'answer': 'unanswerable', 'answer_confidence': 'yes'}, {'answer': 'unanswerable', 'answer_confidence': 'no'}, {'answer': 'cannot repair this computer automatically', 'answer_confidence': 'maybe'}, {'answer': 'blank screen', 'answer_confidence': 'yes'}]
 def compute_bleu(preds: List[str], ans_list: List[List[str]], strategy: str="best") -> Dict[str, Any]:
@@ -41,8 +39,7 @@ def compute_bleu(preds: List[str], ans_list: List[List[str]], strategy: str="bes
     for anns in ans_list:
         if strategy == "best":
             vote_dict = defaultdict(lambda:0)
-            for ans in anns:
-                vote_dict[ans] += 1
+            for ans in anns: vote_dict[ans] += 1
             keys = list(vote_dict.keys())
             values = list(vote_dict.values())
             max_ind = np.argmax(values)
