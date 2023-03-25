@@ -9,6 +9,8 @@ import requests
 from typing import *
 from PIL import Image
 from tqdm import tqdm
+import torch.nn as nn
+import torch.nn.functional as F
 from src.PythonHelperTools.vqaTools.vqa import VQA
 from src.datautils import VizWizVQABestAnsDataset
 from transformers import ViltProcessor, ViltForQuestionAnswering
@@ -29,6 +31,61 @@ from transformers import ViltProcessor, ViltForQuestionAnswering
 
 # NOTE: ViLT doesn't have more than 40 position embeddings it seems (max seq len for anything can't be more than 40)
 
+class FrozenViLTVizWizVQA(nn.Module):
+    def __init__(self, model_path: str="dandelin/vilt-b32-finetuned-vqa",
+                 device: str="cuda:0", label2id: dict={}, emb_size: int=768):
+        super().__init__()
+        self.model_path = model_path
+        self.model = ViltForQuestionAnswering.from_pretrained(model_path)
+        self.num_classes = len(label2id)
+        self.emb_size = emb_size
+        self.upscale_size = self.num_classes // 2
+        self.model.classifier = nn.Sequential(
+            nn.Linear(
+                in_features=self.emb_size, 
+                out_features=self.upscale_size, 
+                bias=True
+            ),
+            nn.LayerNorm(
+                (self.upscale_size,), eps=1e-05, 
+                elementwise_affine=True
+            ),
+            nn.GELU(approximate="none"),
+            nn.Linear(
+                in_features=self.upscale_size, 
+                out_features=self.num_classes, 
+                bias=True
+            ),
+        )
+        # freeze ViLT params:
+        for param in self.model.vilt.parameters():
+            param.requires_grad = False
+        self.label2id = label2id
+        self.id2label = {v: k for k,v in self.label2id.items()}
+        self.device = device
+        self.loss_fn = nn.CrossEntropyLoss()
+        self.to(device)
+
+    def parameters(self):
+        return self.model.classifier.parameters()
+
+    def train(self):
+        self.model.classifier.train()
+
+    def eval(self):
+        self.model.classifier.eval()
+
+    def forward(self, **encoding):
+        """return outputs and loss"""
+        label = encoding.get("label")
+        encoding = {k: v for k,v in encoding.items() if k != "label"}
+        outputs = self.model(**encoding)
+        loss = None
+        if label is not None: 
+            loss = self.loss_fn(outputs.logits, label)
+            return outputs, loss
+        return outputs
+
 class ViLTVizWizVQABestAnsDataset(VizWizVQABestAnsDataset):
     def __init__(self, *args, 
                  # a_args: dict={"padding": "max_length", "max_length": 40, "truncation": True}, 
@@ -36,7 +93,6 @@ class ViLTVizWizVQABestAnsDataset(VizWizVQABestAnsDataset):
                  model_path: str="dandelin/vilt-b32-finetuned-vqa", label2id: dict={}, **kwargs):
         super().__init__(*args, **kwargs)
         self.model_path = model_path
-        # self.a_args = a_args
         self.q_args = q_args
         self.label2id = label2id
         # intialize processor for ViLT:
@@ -99,6 +155,30 @@ def test_vilt(split: str="train", use_cuda: bool=True, break_at: int=5) -> List[
         if (i+1) == break_at: break
 
     return preds
+
+def finetune_frozen_vilt(args):
+    data_dir = args.data_dir # default: ./data/VQA
+    model_path = args.model_path # model_path: dandelin/vilt-b32-finetuned-vqa
+    train_images = os.path.join(data_dir, "train") 
+    val_images = os.path.join(data_dir, "val")
+    train_annot = os.path.join(data_dir, "train.json") 
+    val_annot = os.path.join(data_dir, "val.json") 
+    data_dir = "./data/VQA/train.json"
+
+    label2id = json.load(open("experiments/vizwiz_class_vocab.json"))
+    model = FrozenViLTVizWizVQA(model_path=model_path, label2id=label2id)
+
+    train_data = ViLTVizWizVQABestAnsDataset(
+        train_annot, train_images,
+        label2id=label2id,
+        model_path=model_path, 
+    )
+    val_data = ViLTVizWizVQABestAnsDataset(
+        val_annot, val_images,
+        label2id=label2id,
+        model_path=model_path, 
+    )
+    pass
 
 # main
 if __name__ == "__main__":
