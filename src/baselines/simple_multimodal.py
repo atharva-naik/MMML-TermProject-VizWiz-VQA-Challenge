@@ -5,15 +5,25 @@
 import os
 import json
 import torch
-import requests
+import random
+import argparse
+# import requests
+import numpy as np
 from typing import *
 from PIL import Image
 from tqdm import tqdm
 import torch.nn as nn
+from torch.optim import AdamW
 import torch.nn.functional as F
+from torch.utils.data import DataLoader
 from src.PythonHelperTools.vqaTools.vqa import VQA
 from src.datautils import VizWizVQABestAnsDataset
 from transformers import ViltProcessor, ViltForQuestionAnswering
+
+# seed everything
+random.seed(2023)
+np.random.seed(2023)
+torch.manual_seed(2023)
 
 # there's a bug in HF's ViLT code:
 # paste the lines below in `transformers/models/vilt/modeling_vilt.py`
@@ -30,6 +40,34 @@ from transformers import ViltProcessor, ViltForQuestionAnswering
 # modify the best answer dataset class for ViLT
 
 # NOTE: ViLT doesn't have more than 40 position embeddings it seems (max seq len for anything can't be more than 40)
+
+class ViLTDataLoader(DataLoader):
+    def __init__(self, dataset, split: str="train", **kwargs):
+        if split == "train": 
+            super().__init__(dataset, shuffle=True, 
+                             collate_fn=self.custom_collate_fn, **kwargs)
+        else: super().__init__(dataset, shuffle=False, 
+                               collate_fn=self.custom_collate_fn, **kwargs)
+        self.processor = dataset.processor
+
+    def custom_collate_fn(self, batch):
+        input_ids = [item['input_ids'] for item in batch]
+        pixel_values = [item['pixel_values'] for item in batch]
+        attention_mask = [item['attention_mask'] for item in batch]
+        token_type_ids = [item['token_type_ids'] for item in batch]
+        labels = [item['labels'] for item in batch]
+        # create padded pixel values and corresponding pixel mask
+        encoding = self.processor.feature_extractor.pad_and_create_pixel_mask(pixel_values, return_tensors="pt")
+        # create new batch
+        batch = {}
+        batch['input_ids'] = torch.stack(input_ids)
+        batch['attention_mask'] = torch.stack(attention_mask)
+        batch['token_type_ids'] = torch.stack(token_type_ids)
+        batch['pixel_values'] = encoding['pixel_values']
+        batch['pixel_mask'] = encoding['pixel_mask']
+        batch['labels'] = torch.stack(labels)
+        
+        return batch
 
 class FrozenViLTVizWizVQA(nn.Module):
     def __init__(self, model_path: str="dandelin/vilt-b32-finetuned-vqa",
@@ -65,6 +103,7 @@ class FrozenViLTVizWizVQA(nn.Module):
         self.device = device
         self.loss_fn = nn.CrossEntropyLoss()
         self.to(device)
+        print(f"moving model to device: {device}")
 
     def parameters(self):
         return self.model.classifier.parameters()
@@ -77,8 +116,9 @@ class FrozenViLTVizWizVQA(nn.Module):
 
     def forward(self, **encoding):
         """return outputs and loss"""
-        label = encoding.get("label")
-        encoding = {k: v for k,v in encoding.items() if k != "label"}
+        label = encoding.get("labels")
+        encoding = {k: v for k,v in encoding.items() if k != "labels"}
+        # print(encoding.keys())
         outputs = self.model(**encoding)
         loss = None
         if label is not None: 
@@ -89,11 +129,11 @@ class FrozenViLTVizWizVQA(nn.Module):
 class ViLTVizWizVQABestAnsDataset(VizWizVQABestAnsDataset):
     def __init__(self, *args, 
                  # a_args: dict={"padding": "max_length", "max_length": 40, "truncation": True}, 
-                 q_args: dict={"padding": "max_length", "max_length": 40, "truncation": True},
+                 #  q_args: dict={"padding": "max_length", "max_length": 40, "truncation": True},
                  model_path: str="dandelin/vilt-b32-finetuned-vqa", label2id: dict={}, **kwargs):
         super().__init__(*args, **kwargs)
         self.model_path = model_path
-        self.q_args = q_args
+        # self.q_args = q_args
         self.label2id = label2id
         # intialize processor for ViLT:
         self.processor = ViltProcessor.from_pretrained(model_path)
@@ -103,8 +143,10 @@ class ViLTVizWizVQABestAnsDataset(VizWizVQABestAnsDataset):
         # encode using ViLT processor:
         image = Image.open(item["image"])
         question = item["question"]
-        encoding = self.processor(image, question, return_tensors="pt", **self.q_args)
-        encoding["label"] = torch.as_tensor(self.label2id.get(item["answer"]))
+        encoding = self.processor(image, question, padding="max_length", 
+                                  truncation=True, return_tensors="pt")
+        for key in encoding: encoding[key] = encoding[key][0]
+        encoding["labels"] = torch.as_tensor(self.label2id.get(item["answer"]))
         # answer = self.processor.tokenizer(item["answer"], return_tensors="pt", **self.a_args)
         # encode the answer label too.
         # encoding["label_input_ids"] = answer["input_ids"]
@@ -156,9 +198,42 @@ def test_vilt(split: str="train", use_cuda: bool=True, break_at: int=5) -> List[
 
     return preds
 
-def finetune_frozen_vilt(args):
+def save_current_model(model, optimizer, epoch: int, step: int, save_path: str):
+    """save the current model and optimizer state"""
+    ckpt_dict = {}
+    ckpt_dict["model_state_dict"] = model.state_dict()
+    ckpt_dict["optim_state_dict"] = optimizer.state_dict()
+    ckpt_dict["epoch"] = epoch
+    ckpt_dict["step"] = step
+    torch.save(ckpt_dict, save_path)
+
+def validate_vilt(model, dataloader: DataLoader, eval_step: int, epoch: int, args: argparse.Namespace) -> Tuple[float, float]:
+    val_bar = tqdm(enumerate(dataloader), total=len(dataloader), desc="validating")
+    tot, matches, val_losses = 0, 0, []
+    model.eval()
+    for step, batch in val_bar:
+        model.zero_grad()
+        with torch.no_grad():
+            for key in batch:
+                batch[key] = batch[key].to(args.device)
+            outputs, loss = model(**batch)
+
+            preds = outputs.logits.argmax(axis=-1).detach().cpu()
+            labels = batch["labels"].detach().cpu()
+            batch_matches = (preds == labels).sum().item() 
+            batch_tot = len(preds)
+            matches += batch_matches
+            tot += batch_tot
+            acc = matches/tot
+            val_losses.append(loss.item())
+            val_bar.set_description(f"V: {epoch+1}/{args.epochs} ({eval_step}): a: {100*acc:.2f} ba: {(100*batch_matches/batch_tot):.2f} bl: {loss.item():.3f} l: {np.mean(val_losses):.3f}")
+
+    return np.mean(val_losses), matches/tot
+
+def finetune_vilt(args):
     data_dir = args.data_dir # default: ./data/VQA
     model_path = args.model_path # model_path: dandelin/vilt-b32-finetuned-vqa
+    device = args.device
     train_images = os.path.join(data_dir, "train") 
     val_images = os.path.join(data_dir, "val")
     train_annot = os.path.join(data_dir, "train.json") 
@@ -166,8 +241,24 @@ def finetune_frozen_vilt(args):
     data_dir = "./data/VQA/train.json"
 
     label2id = json.load(open("experiments/vizwiz_class_vocab.json"))
-    model = FrozenViLTVizWizVQA(model_path=model_path, label2id=label2id)
+    # declare model.
+    model = FrozenViLTVizWizVQA(
+        model_path=model_path, 
+        label2id=label2id, 
+        device=device,
+    )
+    # create the optimizer.
+    optimizer = AdamW(model.parameters(), lr=args.learning_rate, eps=1e-8)
+    # restore from checkpoint.
+    if args.checkpoint_path is not None:
+        ckpt_dict = torch.load(
+            args.checkpoint_path, 
+            map_location=model.device
+        )
+        model.load_state_dict(ckpt_dict["model_state_dict"])
+        optimizer.load_state_dict(ckpt_dict["optim_state_dict"])
 
+    batch_size = args.batch_size
     train_data = ViLTVizWizVQABestAnsDataset(
         train_annot, train_images,
         label2id=label2id,
@@ -178,12 +269,122 @@ def finetune_frozen_vilt(args):
         label2id=label2id,
         model_path=model_path, 
     )
-    pass
+    train_loader = ViLTDataLoader(
+        dataset=train_data, 
+        batch_size=batch_size, 
+        split="train",
+    )
+    val_loader = ViLTDataLoader(
+        dataset=val_data, 
+        batch_size=batch_size, 
+        split="val",
+    )
+    epochs = args.epochs
+    
+    # best val acc, step & epoch
+    best_val_acc = 0
+    best_val_step = 0
+    best_val_epoch = 0
+
+    # all the experimental folder paths and create the experiments dir.
+    exp_dir = os.path.join("experiments", args.exp_name)
+    os.makedirs(exp_dir, exist_ok=True)
+    model_save_path = os.path.join("experiments", args.exp_name, "best_model.pt")
+    train_log_path = os.path.join("experiments", args.exp_name, "train_log_epoch_{}.jsonl")
+    val_log_path = os.path.join("experiments", args.exp_name, "all_val_logs.jsonl")
+    config_path = os.path.join(exp_dir, "finetune_config.json")
+    # reset the val logs.
+    open(val_log_path, "w")
+    # save the finetuning config.
+    with open(config_path, "w") as f:
+        json.dump(vars(args), f, indent=4)
+
+    # train-eval loop
+    for epoch in range(epochs):
+        # reset the train log.
+        open(train_log_path.format(epoch), "w") 
+        train_bar = tqdm(enumerate(train_loader), 
+                         total=len(train_loader), 
+                         desc="commencing training")
+        tot, matches, train_epoch_losses = 0, 0, []
+        for step, batch in train_bar:
+            model.train()
+            model.zero_grad()
+            for key in batch:
+                batch[key] = batch[key].to(device)
+            outputs, loss = model(**batch)
+
+            # backward and optimizer step
+            loss.backward()
+            optimizer.step()
+
+            preds = outputs.logits.argmax(axis=-1).detach().cpu()
+            labels = batch["labels"].detach().cpu()
+            batch_matches = (preds == labels).sum().item() 
+            batch_tot = len(preds)
+            matches += batch_matches
+            tot += batch_tot
+            acc = matches/tot
+            train_epoch_losses.append(loss.item())
+            train_bar.set_description(f"T: {epoch+1}/{epochs}: a: {100*acc:.2f} ba: {(100*batch_matches/batch_tot):.2f} bl: {loss.item():.3f} l: {np.mean(train_epoch_losses):.3f}")
+
+            # log stats.
+            if (step+1) % args.log_steps == 0 or (step+1) == len(train_loader):
+                with open(train_log_path.format(epoch), "a") as f:
+                    f.write(json.dumps({"train_acc": acc, "step": step, "loss": np.mean(train_epoch_losses)})+"\n")
+
+            # check if evalulation should be done:
+            if (step+1) % args.eval_steps == 0 or (step+1) == len(train_loader):
+                val_loss, val_acc = validate_vilt(
+                    model=model, dataloader=val_loader, 
+                    eval_step=step, epoch=epoch, args=args,
+                )
+                # save the best model.
+                if val_acc > best_val_acc:
+                    best_val_step = step
+                    best_val_acc = val_acc
+                    best_val_epoch = epoch
+                    model_save_path
+                    # save the checkpoint for model/optimizer
+                    save_current_model(model=model, optimizer=optimizer, 
+                                       save_path=model_save_path,
+                                       epoch=best_val_epoch, 
+                                       step=best_val_step)
+                with open(val_log_path, "a") as f:
+                    f.write(json.dumps({
+                        "val_acc": val_acc, "val_loss": val_loss,
+                        "epoch": epoch, "step": step,
+                        "best_val_epoch": best_val_epoch,
+                        "best_val_step": best_val_step,
+                        "best_val_acc": best_val_acc,
+                    })+"\n")
+                
+def get_args():
+    """get terminal arguments."""
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-d", "--data_dir", default="./data/VQA", type=str, help="path to the VQA dataset")
+    parser.add_argument("-mp", "--model_path", default="dandelin/vilt-b32-finetuned-vqa", type=str, help="name/path of the HF checkpoint")
+    parser.add_argument("-t", "--train", action="store_true", help="finetune ViLT model")
+    parser.add_argument("-e", "--epochs", type=int, default=20, help="number of training epochs")
+    parser.add_argument("-ls", "--log_steps", default=10, type=int, help="number of steps after which train stats are logged")
+    parser.add_argument("-es", "--eval_steps", default=100, type=int, help="number of steps after which validation is performed")
+    parser.add_argument("-exp", "--exp_name", type=str, required=True, help="name of the experiment")
+    parser.add_argument("-de", "--device", default="cuda:0", type=str, help="device to be used for training, defaults to cuda:0")
+    parser.add_argument("-bs", "--batch_size", type=int, default=128, help="batch size to be used for training")
+    parser.add_argument("-ckpt", "--checkpoint_path", type=Union[str, None], default=None, help="checkpoint to be loaded")
+    parser.add_argument("-lr", "--learning_rate", type=float, default=1e-4, help="learning rate for training")
+    args = parser.parse_args()
+
+    return args
 
 # main
 if __name__ == "__main__":
     # sanity checking ViLT (assessing zero-shot performance)
-    split = "val"
-    zero_shot_preds = test_vilt(split=split, break_at=100000)
-    with open(f"experiments/{split}_zero_shot_vilt_vqa2_preds.json", "w") as f:
-        json.dump(zero_shot_preds, f, indent=4)
+    # split = "val"
+    # zero_shot_preds = test_vilt(split=split, break_at=100000)
+    # with open(f"experiments/{split}_zero_shot_vilt_vqa2_preds.json", "w") as f:
+    #     json.dump(zero_shot_preds, f, indent=4)
+    args = get_args()
+    if args.train: finetune_vilt(args)
+    # python -m src.baselines.simple_multimodal -t -d 'cuda:0'
+    # python -m src.baselines.simple_multimodal -t -de 'cuda:0' -exp frozen_vilt2
