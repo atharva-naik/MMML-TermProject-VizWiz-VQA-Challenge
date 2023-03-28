@@ -12,4 +12,5 @@ matplotlib
 transformers
 sentencepiece
 protobuf==3.20
-sklearn
+scikit-learn
+evaluate
