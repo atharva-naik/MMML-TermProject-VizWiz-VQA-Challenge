@@ -28,9 +28,9 @@ vqa.showQA([randomAnn])
 imgFilename = randomAnn['image']
 if os.path.isfile(imgDir + imgFilename):
 	I = io.imread(imgDir + imgFilename)
-	#plt.imshow(I)
-	#plt.axis('off')
-	#plt.show()
+	# plt.imshow(I)
+	# plt.axis('off')
+	# plt.show()
 
 # load and display QA annotations for given images
 imgs = vqa.getImgs()

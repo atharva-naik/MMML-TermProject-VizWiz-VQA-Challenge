@@ -207,9 +207,12 @@ def save_current_model(model, optimizer, epoch: int, step: int, save_path: str):
     ckpt_dict["step"] = step
     torch.save(ckpt_dict, save_path)
 
-def validate_vilt(model, dataloader: DataLoader, eval_step: int, epoch: int, args: argparse.Namespace) -> Tuple[float, float]:
+def validate_vilt(model, dataloader: DataLoader, eval_step: int, 
+                  epoch: int, args: argparse.Namespace, 
+                  output_preds: bool=False) -> Union[Tuple[float, float], Tuple[List[dict], float, float]]:
     val_bar = tqdm(enumerate(dataloader), total=len(dataloader), desc="validating")
     tot, matches, val_losses = 0, 0, []
+    val_preds = []
     model.eval()
     for step, batch in val_bar:
         model.zero_grad()
@@ -217,7 +220,6 @@ def validate_vilt(model, dataloader: DataLoader, eval_step: int, epoch: int, arg
             for key in batch:
                 batch[key] = batch[key].to(args.device)
             outputs, loss = model(**batch)
-
             preds = outputs.logits.argmax(axis=-1).detach().cpu()
             labels = batch["labels"].detach().cpu()
             batch_matches = (preds == labels).sum().item() 
@@ -225,10 +227,67 @@ def validate_vilt(model, dataloader: DataLoader, eval_step: int, epoch: int, arg
             matches += batch_matches
             tot += batch_tot
             acc = matches/tot
+            if output_preds:
+                for pred, label in zip(preds.tolist(), labels.tolist()):
+                    val_preds.append({
+                        "pred": model.id2label[pred],
+                        "true": model.id2label[label],
+                    })
             val_losses.append(loss.item())
             val_bar.set_description(f"V: {epoch+1}/{args.epochs} ({eval_step}): a: {100*acc:.2f} ba: {(100*batch_matches/batch_tot):.2f} bl: {loss.item():.3f} l: {np.mean(val_losses):.3f}")
+    if output_preds: 
+        return val_preds, np.mean(val_losses), matches/tot
+    else: return np.mean(val_losses), matches/tot
 
-    return np.mean(val_losses), matches/tot
+def predict_vilt(args):
+    data_dir = args.data_dir # default: ./data/VQA
+    model_path = args.model_path # model_path: dandelin/vilt-b32-finetuned-vqa
+    device = args.device
+    val_images = os.path.join(data_dir, "val")
+    val_annot = os.path.join(data_dir, "val.json") 
+    data_dir = "./data/VQA/train.json"
+    label2id = json.load(open("experiments/vizwiz_class_vocab.json"))
+    # declare model.
+    model = FrozenViLTVizWizVQA(
+        model_path=model_path, 
+        label2id=label2id, 
+        device=device,
+    )
+    # all the experimental folder paths and create the experiments dir.
+    exp_dir = os.path.join("experiments", args.exp_name)
+    os.makedirs(exp_dir, exist_ok=True)
+    # restore from checkpoint.
+    if args.checkpoint_path is None:
+        # load the `best_model.pt` checkpoint.
+        checkpoint_path = os.path.join(exp_dir, "best_model.pt")
+    else: checkpoint_path = args.checkpoint_path
+    ckpt_dict = torch.load(
+        checkpoint_path, 
+        map_location=model.device
+    )
+    model.load_state_dict(ckpt_dict["model_state_dict"])
+    # optimizer.load_state_dict(ckpt_dict["optim_state_dict"])
+    batch_size = args.batch_size
+    data = ViLTVizWizVQABestAnsDataset(
+        val_annot, val_images,
+        label2id=label2id,
+        model_path=model_path, 
+    )
+    data_loader = ViLTDataLoader(dataset=data, batch_size=batch_size, split="val")
+    predict_log_path = os.path.join("experiments", args.exp_name, "predict_logs.json")
+    
+    model.eval()
+    val_preds, val_loss, val_acc = validate_vilt(
+        model=model, dataloader=data_loader, 
+        eval_step=0, epoch=0, args=args,
+        output_preds=True,
+    )
+    with open(predict_log_path, "a") as f:
+        json.dump({
+            "predict_acc": val_acc, 
+            "predict_loss": val_loss,
+            "preds": val_preds,
+        }, f)
 
 def finetune_vilt(args):
     data_dir = args.data_dir # default: ./data/VQA
@@ -365,6 +424,7 @@ def get_args():
     parser.add_argument("-d", "--data_dir", default="./data/VQA", type=str, help="path to the VQA dataset")
     parser.add_argument("-mp", "--model_path", default="dandelin/vilt-b32-finetuned-vqa", type=str, help="name/path of the HF checkpoint")
     parser.add_argument("-t", "--train", action="store_true", help="finetune ViLT model")
+    parser.add_argument("-p", "--predict", action="store_true", help="generate predictions for data with labels")
     parser.add_argument("-e", "--epochs", type=int, default=20, help="number of training epochs")
     parser.add_argument("-ls", "--log_steps", default=10, type=int, help="number of steps after which train stats are logged")
     parser.add_argument("-es", "--eval_steps", default=100, type=int, help="number of steps after which validation is performed")
@@ -385,6 +445,10 @@ if __name__ == "__main__":
     # with open(f"experiments/{split}_zero_shot_vilt_vqa2_preds.json", "w") as f:
     #     json.dump(zero_shot_preds, f, indent=4)
     args = get_args()
-    if args.train: finetune_vilt(args)
+    if args.train: 
+        pass
+        # finetune_vilt(args)
+    elif args.predict: predict_vilt(args) 
     # python -m src.baselines.simple_multimodal -t -d 'cuda:0'
     # python -m src.baselines.simple_multimodal -t -de 'cuda:0' -exp frozen_vilt2
+    # python -m src.baselines.simple_multimodal -p -de 'cuda:0' -exp frozen_vilt2

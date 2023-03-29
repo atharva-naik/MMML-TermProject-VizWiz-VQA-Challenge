@@ -8,7 +8,7 @@ import torch.nn as nn
 import matplotlib.pyplot as plt
 from torch.utils.data import DataLoader
 from src.datautils import VizWizVQABestAnsDataset
-from transformers import AutoProcessor, GitVisionModel, AutoModelForCausalLM
+from transformers import AutoProcessor, AutoModelForCausalLM
 
 def clip_score_recall_analysis(cos_scores_path: str, 
                                data_path: str="./data/VQA", 
@@ -21,7 +21,7 @@ def clip_score_recall_analysis(cos_scores_path: str,
     true_indices = [all_classes[ans["answer"]] for ans in dataset] 
     cos_scores = torch.load(cos_scores_path, map_location="cpu")
     recall_at_k = {}
-    ks = [1,5,10,15,20,25,30,35,40,45,50,100,200,300,400,500,1000,2000,3000,4000,5000]
+    ks = [1,5,10,15,20,25,30,35,40,45,50,100,200,300,400,500,1000,2000,3000,4000,5000,6000,7000]
     for k in ks:
         topk_inds = torch.topk(cos_scores, k=k).indices.tolist()
         recall_at_k[k] = 0
@@ -40,6 +40,8 @@ def clip_score_recall_analysis(cos_scores_path: str,
     plt.xticks(x, labels=ks, rotation=45)
     plt.tight_layout()
     plt.savefig("./experiments/clip_cos_scores_vizwiz_recall.png")
+
+    return recall_at_k
 
 def test_CLIP_zero_shot():
     """Test CLIP L-14 in a zero shot way for this task
