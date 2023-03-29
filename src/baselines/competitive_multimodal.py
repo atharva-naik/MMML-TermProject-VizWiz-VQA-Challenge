@@ -8,6 +8,7 @@ import torch.nn as nn
 import matplotlib.pyplot as plt
 from torch.utils.data import DataLoader
 from src.datautils import VizWizVQABestAnsDataset
+from transformers import AutoProcessor, GitVisionModel, AutoModelForCausalLM
 
 def clip_score_recall_analysis(cos_scores_path: str, 
                                data_path: str="./data/VQA", 
@@ -75,3 +76,21 @@ class CLIPEnsemble(nn.Module):
     def __init__(self, num_classes: int, answer_types: int):
         super().__init__()
         self.num_classes = num_classes
+
+def test_git_large():
+    dataset = VizWizVQABestAnsDataset(
+        "./data/VQA/val.json",
+        "./data/VQA/val"
+    )
+    processor = AutoProcessor.from_pretrained("microsoft/git-large-vqav2")
+    model = AutoModelForCausalLM.from_pretrained("microsoft/git-large-vqav2")
+    image = Image.open(dataset[0]["image"])
+    pixel_values = processor(images=image, return_tensors="pt").pixel_values
+    question = dataset[0]["question"]
+    input_ids = processor(text=question, add_special_tokens=False).input_ids
+    input_ids = [processor.tokenizer.cls_token_id] + input_ids
+    input_ids = torch.tensor(input_ids).unsqueeze(0)
+    generated_ids = model.generate(pixel_values=pixel_values, input_ids=input_ids, max_length=50)
+    print(f"image: {image}")
+    print(f"question: {question}")
+    print("answer:", processor.batch_decode(generated_ids, skip_special_tokens=True))
