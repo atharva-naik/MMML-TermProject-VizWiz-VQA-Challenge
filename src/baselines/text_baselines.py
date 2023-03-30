@@ -16,6 +16,7 @@ import json
 from src.datautils import VizWizVQABestAnsDataset
 from src.metrics import proxy_accuracy, class_accuracy,get_class_preds
 from src.PythonHelperTools.vqaTools.vqa import VQA
+from src.PythonEvaluationTools.vqaEvaluation.vqaEval import VQAEval
 
 def preprocessing_func_seq2seq(examples, tokenizer, model):
     model_inputs = tokenizer(examples["question"], padding=True, 
@@ -131,15 +132,16 @@ def train_text_classifier(args):
     model.to(device)   
     
     # Intialize Optimizer
-    optimizer = AdamW(model.parameters(), lr=1e-4)
+    learning_rate = 1e-4
+    optimizer = AdamW(model.parameters(), lr=learning_rate)
     lr_scheduler = get_scheduler(
     name="linear", optimizer=optimizer, num_warmup_steps=200, num_training_steps=train_steps
 )
     # weights = train_dataset.class_weights.to(device)
-    weights = torch.ones(int(args.num_classes)).to(device) 
-    weights[0:6] = torch.tensor([.001, .005, .005, .005, .01, .01]).to(device)
-    ce_loss = torch.nn.CrossEntropyLoss(weight=weights, reduction="sum")
-    # ce_loss = torch.nn.CrossEntropyLoss()
+    # weights = torch.ones(int(args.num_classes)).to(device) 
+    # weights[0:6] = torch.tensor([.001, .005, .005, .005, .01, .01]).to(device)
+    # ce_loss = torch.nn.CrossEntropyLoss(weight=weights, reduction="sum")
+    ce_loss = torch.nn.CrossEntropyLoss()
 
     # Setup WandB Tracking
     
@@ -148,7 +150,7 @@ def train_text_classifier(args):
     )
     wandb.config = {
         "epochs": num_epochs, 
-        "learning_rate": 5e-4, 
+        "learning_rate": learning_rate, 
         "batch_size": batch_size   
     }
     for i in tqdm(range(num_epochs)):
@@ -191,80 +193,127 @@ def train_text_classifier(args):
 def predict_text_only(args, model=None):
     # Get DataLoaders and Extract Relevant Label Information
     test_dataset = VizWizVQABestAnsDataset(annot_path="data/VQA/val.json", images_dir="data/VQA/val")
-    test_dataloader = DataLoader(test_dataset, batch_size=4, shuffle=True)
+    print(f"Dataset Len: {len(test_dataset)}")
+    # test_dataset = VizWizVQABestAnsDataset(annot_path="data/VQA/train.json", images_dir="data/VQA/train")
+    test_dataloader = DataLoader(test_dataset, batch_size=16, shuffle=True)
+    print(f"Dataset Len: {len(test_dataloader)}")
+
     num_classes = int(args.num_classes)
     if model is None:
-        model = AutoModelForSequenceClassification.from_pretrained(args.model, num_labels=num_classes,
-                                                                id2label=test_dataset.id2label, 
-                                                                label2id=test_dataset.label2id)    
-    tokenizer = AutoTokenizer.from_pretrained(args.model)
+        model = AutoModelForSequenceClassification.from_pretrained(args.model)    
+    tokenizer = AutoTokenizer.from_pretrained("microsoft/deberta-base")
     model.eval()
     device = "cpu" if args.device == "mps" else args.device
     model.to(device)
     results = []
+    verbose_results = []
     with torch.no_grad():
         for i, test_batch in tqdm(enumerate(test_dataloader)):
             tokenized_batch = preprocessing_func_class(test_batch, tokenizer)
             tokenized_batch = {k: v.to(device) for k, v in tokenized_batch.items()}
             outputs = model(**tokenized_batch)
-            image = [img for img in test_batch["image"]]
-            answer = get_class_preds(outputs, test_dataset.id2label)
-            result = [{"image": img, "answer": ans} for img, ans in zip(image, answer)]
+            image = [img.split("/")[-1] for img in test_batch["image"]]
+            gold_ans = [ans for ans in test_batch["answer"]]
+            question = [q for q in test_batch["question"]]
+            prediction = get_class_preds(outputs, test_dataset.id2label)
+            result = [{"image": img, "answer": ans} for img, ans in zip(image, prediction)]
             results.extend(result)
-    with open('/projects/tir5/users/nvaikunt/vizwiz_baselines/result.json', 'w') as fp:
+            verbose_res = [{"image": img, "question": q, "answer": ans, "pred": pred}
+                                for img, q, ans, pred in zip(image, question, gold_ans, prediction)]
+            verbose_results.append(verbose_res)
+    with open('/projects/tir5/users/nvaikunt/vizwiz_baselines/result_class.json', 'w') as fp:
         json.dump(results, fp)
-    
+    with open('/projects/tir5/users/nvaikunt/vizwiz_baselines/verbose_result_class.json', 'w') as vb:   
+        json.dump(verbose_results, vb)
 
-    
-def get_class_dicts(num_classes=6540):
-    train_annot_path = "data/VQA/train.json"
-    val_annot_path = "data/VQA/val.json"
-    vqa_train = VQA(train_annot_path)
-    train_objs = vqa_train.getAnns()
-    all_answers = []
-    for item in train_objs:
-        answer_text = [ans_dict['answer'] for ans_dict in item["answers"]]
-        all_answers.extend(answer_text)
-    vqa_val = VQA(val_annot_path)
-    val_objs = vqa_val.getAnns()
+def predict_gen_only(args, model=None):
+    # Get DataLoaders and Extract Relevant Label Information
+    test_dataset = VizWizVQABestAnsDataset(annot_path="data/VQA/val.json", images_dir="data/VQA/val")
+    print(f"Dataset Len: {len(test_dataset)}")
+    test_dataloader = DataLoader(test_dataset, batch_size=16, shuffle=True)
+    print(f"Dataset Len: {len(test_dataloader)}")
+    num_classes = int(args.num_classes)
+    if model is None:
+        model = T5ForConditionalGeneration.from_pretrained(args.model)    
+    tokenizer = AutoTokenizer.from_pretrained("google/flan-t5-large")
+    model.eval()
+    device = "cpu" if args.device == "mps" else args.device
+    model.to(device)
+    results = []
+    verbose_results = []
+    with torch.no_grad():
+        for i, test_batch in tqdm(enumerate(test_dataloader)):
+            tokenized_batch = preprocessing_func_seq2seq(test_batch, tokenizer, model)
+            tokenized_batch = {k: v.to(device) for k, v in tokenized_batch.items()}
+            generations = model.generate(tokenized_batch["input_ids"], 
+                                            attention_mask=tokenized_batch["attention_mask"], 
+                                            num_beams=4, max_new_tokens=5, early_stopping=True)
+            image = [img.split("/")[-1] for img in test_batch["image"]]
+            gold_ans = [ans for ans in test_batch["answer"]]
+            question = [q for q in test_batch["question"]]
+            prediction = tokenizer.batch_decode(generations, skip_special_tokens=True)
+            result = [{"image": img, "answer": ans} for img, ans in zip(image, prediction)]
+            results.extend(result)
+            verbose_res = [{"image": img, "question": q, "answer": ans, "pred": pred}
+                                for img, q, ans, pred in zip(image, question, gold_ans, prediction)]
+            verbose_results.append(verbose_res)
+    with open('/projects/tir5/users/nvaikunt/vizwiz_baselines/result_t5.json', 'w') as fp:
+        json.dump(results, fp)
+    with open('/projects/tir5/users/nvaikunt/vizwiz_baselines/verbose_result_t5.json', 'w') as vb:   
+        json.dump(verbose_results, vb)
 
-    for item in val_objs:
-        answer_text = [ans_dict['answer'] for ans_dict in item["answers"]]
-        all_answers.extend(answer_text)
+def get_eval_scores(annFile, resFile): 
+    vqa = VQA(annFile)
+    vqaRes = VQA(resFile)
+    vqaEval = VQAEval(vqa, vqaRes, n=2)
+    # evaluate VQA results
+    vqaEval.evaluate() 
+    # print accuracies
+    print("\n")
+    print("Overall Accuracy is: %.02f\n" %(vqaEval.accuracy['overall']))
+    print("\n")
+    print("Per Answer Type Accuracy is the following:")
+    for ansType in vqaEval.accuracy['perAnswerType']:
+        print("%s : %.02f" %(ansType, vqaEval.accuracy['perAnswerType'][ansType]))
+    print("\n")
 
-    answer_freq = Counter(all_answers)
-    common_answers = answer_freq.most_common(num_classes)
-    label_to_id = {}
-    id_to_label = {}
+    print("Caption metrics are :")
+    for k, v in list(vqaEval.caption_metric.items()):
+        print("%s: %.2f"%(k,v))
 
-    for i, item in enumerate(common_answers):
-        label_to_id[item[0]] = i
-        id_to_label[i] = item[0]
-
-    return label_to_id, id_to_label
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', type=str, help="Model Checkpoint", 
                         default="google/flan-t5-base", required=False)
     parser.add_argument('--batch_sz', type=str, help="Batch Size", default="16", required=False)
-    parser.add_argument('--num_epochs', type=str, help="Number of Epochs", default="3", required=False)
+    parser.add_argument('--num_epochs', type=str, help="Number of Epochs", default="6", required=False)
     parser.add_argument('--device', type=str, help="Hardware Accelerator", default="cuda", required=False)
     parser.add_argument('--baseline_type', type=str, help="Which Text Baseline", default="QA", required=False)
     parser.add_argument('--num_classes', type=str, help="Number of Classes", default="6540", required=False)
     parser.add_argument('--odir', type=str, help="Output Directory for Model", required=True)
+    parser.add_argument('--eval', help="Only perform evaluation on given model", required=False, 
+                        action='store_true')
 
 
 
     arguments = parser.parse_args()
     # get_class_dicts()
 
-    
-    if arguments.baseline_type == 'QA':
+    model = None
+    if arguments.baseline_type == 'QA' and not arguments.eval:
        model = train_unifiedqa_base(arguments)
-    else: 
+    if arguments.baseline_type != 'QA' and not arguments.eval: 
        model = train_text_classifier(arguments)
-    predict_text_only(arguments, model)
+    if arguments.baseline_type == 'QA':
+        predict_gen_only(arguments, model)
+        get_eval_scores("data/VQA/val.json", 
+                '/projects/tir5/users/nvaikunt/vizwiz_baselines/result_t5.json')
+    else: 
+        predict_text_only(arguments, model)
+        get_eval_scores("data/VQA/val.json", 
+                '/projects/tir5/users/nvaikunt/vizwiz_baselines/result_class.json')
+
     
     
 
