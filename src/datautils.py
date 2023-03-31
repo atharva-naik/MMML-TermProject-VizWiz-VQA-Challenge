@@ -2,7 +2,6 @@
 import os
 from pathlib import Path
 import cv2
-import clip
 import json
 import torch
 import pickle
@@ -196,6 +195,7 @@ class VizWizVQAClipDataset(Dataset):
         c_image_tok = self.image_preprocess_fn(
             Image.open(img_path)
         ).unsqueeze(0)[0]#.to(self.device)
+        import clip
         q_text_tok = clip.tokenize(data['question'])[0]#.to(self.device)
         a_text_tok = clip.tokenize(data['answer'])[0]#.to(self.device)
         a_type = torch.as_tensor(data["answer_type"])
