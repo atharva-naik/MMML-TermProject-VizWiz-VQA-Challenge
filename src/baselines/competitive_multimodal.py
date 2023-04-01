@@ -51,8 +51,10 @@ def test_GIT_zero_shot():
         )
         gen_text = processor.batch_decode(generated_ids, skip_special_tokens=True)[0]
         pred = gen_text[len(question):].strip()
+        pred = "unaswerable" if pred == "" else pred
         preds.append({'true': answer, "pred": pred})
-        print(pred, answer)
+        print(pred , "|", answer)
+    preds = {"preds": preds}
     with open("./experiments/git-large-zero-shot-preds.json", "w") as f:
         json.dump(preds, f, indent=4)
 
