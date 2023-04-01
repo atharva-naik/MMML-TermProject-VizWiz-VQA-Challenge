@@ -22,7 +22,7 @@
         },
         {
             "true": "windows 7",
-            "pred": "windows"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -58,11 +58,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "yellow"
+            "pred": "white"
         },
         {
             "true": "left",
-            "pred": "child's dictionary"
+            "pred": "children's dictionary"
         },
         {
             "true": "finger",
@@ -74,7 +74,7 @@
         },
         {
             "true": "loading",
-            "pred": "unanswerable"
+            "pred": "nothing"
         },
         {
             "true": "unanswerable",
@@ -82,7 +82,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "restaurant"
+            "pred": "food"
         },
         {
             "true": "emblem polo rider initials uspa",
@@ -126,7 +126,7 @@
         },
         {
             "true": "samsung recovery",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "computer screen",
@@ -138,7 +138,7 @@
         },
         {
             "true": "22 inch",
-            "pred": "big"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -186,11 +186,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "new"
+            "pred": "unanswerable"
         },
         {
             "true": "boobs",
-            "pred": "blue"
+            "pred": "shirt"
         },
         {
             "true": "original pancake house",
@@ -250,7 +250,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "iphone"
         },
         {
             "true": "unanswerable",
@@ -262,7 +262,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "es"
+            "pred": "o"
         },
         {
             "true": "unanswerable",
@@ -310,11 +310,11 @@
         },
         {
             "true": "pop up window",
-            "pred": "windows"
+            "pred": "white"
         },
         {
             "true": "yes",
-            "pred": "think"
+            "pred": "unanswerable"
         },
         {
             "true": "american cancer society",
@@ -326,7 +326,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -358,7 +358,7 @@
         },
         {
             "true": "file",
-            "pred": "unanswerable"
+            "pred": "nothing"
         },
         {
             "true": "no",
@@ -370,7 +370,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "i can'm"
+            "pred": "i can see no"
         },
         {
             "true": "no",
@@ -418,23 +418,23 @@
         },
         {
             "true": "unanswerable",
-            "pred": "windows"
+            "pred": "window"
         },
         {
             "true": "unanswerable",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
-            "pred": "windows xp"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "expanding windows files",
-            "pred": "unanswerable"
+            "pred": "nothing"
         },
         {
             "true": "unanswerable",
@@ -442,7 +442,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "medicine"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -450,11 +450,11 @@
         },
         {
             "true": "store ad",
-            "pred": "$ 20"
+            "pred": "25"
         },
         {
             "true": "kej",
-            "pred": "unanswerable"
+            "pred": "swag"
         },
         {
             "true": "no",
@@ -470,7 +470,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "i don't know"
         },
         {
             "true": "unanswerable",
@@ -530,11 +530,11 @@
         },
         {
             "true": "restoration complete",
-            "pred": "no"
+            "pred": "repair complete"
         },
         {
             "true": "next",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "skype",
@@ -542,7 +542,7 @@
         },
         {
             "true": "startup repair",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "printer not responding",
@@ -558,7 +558,7 @@
         },
         {
             "true": "restoration complete",
-            "pred": "repair"
+            "pred": "repair complete"
         },
         {
             "true": "sideways car sales ad",
@@ -578,7 +578,7 @@
         },
         {
             "true": "your computer at risk",
-            "pred": "unanswerable"
+            "pred": "your computer at risk"
         },
         {
             "true": "yes",
@@ -586,7 +586,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "no",
@@ -602,7 +602,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -610,7 +610,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "red"
+            "pred": "computer"
         },
         {
             "true": "night time",
@@ -626,11 +626,11 @@
         },
         {
             "true": "angry birds",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "american megatrends",
-            "pred": "no"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -642,7 +642,7 @@
         },
         {
             "true": "links to sites",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "tv",
@@ -654,11 +654,11 @@
         },
         {
             "true": "entsursa",
-            "pred": "unanswerable"
+            "pred": "escorder"
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "brown"
         },
         {
             "true": "college area breadth requirement",
@@ -674,7 +674,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "soda",
@@ -686,11 +686,11 @@
         },
         {
             "true": "8",
-            "pred": "news"
+            "pred": "hospital"
         },
         {
             "true": "hockey game",
-            "pred": "sports"
+            "pred": "maple leaf"
         },
         {
             "true": "white",
@@ -706,7 +706,7 @@
         },
         {
             "true": "looks broken somewhat",
-            "pred": "unanswerable"
+            "pred": "nothing"
         },
         {
             "true": "unanswerable",
@@ -734,7 +734,7 @@
         },
         {
             "true": "no",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "no",
@@ -742,7 +742,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "technet subscription",
@@ -774,23 +774,23 @@
         },
         {
             "true": "news paper sideways",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "loading",
-            "pred": "windows"
+            "pred": "no"
         },
         {
             "true": "starz",
-            "pred": "star"
+            "pred": "starz"
         },
         {
             "true": "woman",
-            "pred": "living room"
+            "pred": "chair"
         },
         {
             "true": "1 877 328 9677",
-            "pred": "d? unanswerable"
+            "pred": "d? yes"
         },
         {
             "true": "unanswerable",
@@ -850,11 +850,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "indows"
+            "pred": "omputer"
         },
         {
             "true": "unanswerable",
-            "pred": "d to fix windows will be sure to be"
+            "pred": "d to see no"
         },
         {
             "true": "unanswerable",
@@ -874,15 +874,15 @@
         },
         {
             "true": "unanswerable",
-            "pred": "phone"
+            "pred": "book"
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no shirt"
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "yes"
         },
         {
             "true": "file storage sizes",
@@ -894,7 +894,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "0"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -902,7 +902,7 @@
         },
         {
             "true": "disk icon",
-            "pred": "unanswerable"
+            "pred": "keyboard"
         },
         {
             "true": "unanswerable",
@@ -910,7 +910,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "wall"
+            "pred": "white"
         },
         {
             "true": "unanswerable",
@@ -934,7 +934,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "sports"
         },
         {
             "true": "yes",
@@ -958,7 +958,7 @@
         },
         {
             "true": "computer",
-            "pred": "yes"
+            "pred": "keyboard"
         },
         {
             "true": "reboot disk check screen",
@@ -974,7 +974,7 @@
         },
         {
             "true": "checking file system",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -998,7 +998,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "no",
@@ -1078,11 +1078,11 @@
         },
         {
             "true": "unable to start",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "clive cussler dirk cussler",
-            "pred": "curvy curvy"
+            "pred": "cur cur cur cur"
         },
         {
             "true": "unanswerable",
@@ -1114,7 +1114,7 @@
         },
         {
             "true": "startup repair",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -1122,7 +1122,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -1170,7 +1170,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -1226,7 +1226,7 @@
         },
         {
             "true": "clive cussler",
-            "pred": "cursive"
+            "pred": "cu cursive cursive cu"
         },
         {
             "true": "unanswerable",
@@ -1246,7 +1246,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "no"
+            "pred": "unanswerable"
         },
         {
             "true": "rescan button",
@@ -1258,7 +1258,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "windows"
+            "pred": "no"
         },
         {
             "true": "milk thistle",
@@ -1266,7 +1266,7 @@
         },
         {
             "true": "computer screen",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "no items match your search",
@@ -1274,7 +1274,7 @@
         },
         {
             "true": "yes",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "yes",
@@ -1310,7 +1310,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "greenbeans"
+            "pred": "greenbeach"
         },
         {
             "true": "free memo state phantom",
@@ -1322,11 +1322,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "windows"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
-            "pred": "disk"
+            "pred": "keyboard"
         },
         {
             "true": "unanswerable",
@@ -1346,7 +1346,7 @@
         },
         {
             "true": "your computer will restart several times during",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -1354,15 +1354,15 @@
         },
         {
             "true": "no",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "startup repair",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "boston",
@@ -1378,7 +1378,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -1386,7 +1386,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "scribble"
         },
         {
             "true": "youtube",
@@ -1402,7 +1402,7 @@
         },
         {
             "true": "yes",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "installing windows",
@@ -1418,7 +1418,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "painting"
         },
         {
             "true": "04 35 36 42 50 01 02",
@@ -1438,11 +1438,11 @@
         },
         {
             "true": "no",
-            "pred": "yes"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "clive cussler dirk cussler",
@@ -1454,7 +1454,7 @@
         },
         {
             "true": "piggy bank",
-            "pred": "pink"
+            "pred": "baby"
         },
         {
             "true": "unanswerable",
@@ -1466,7 +1466,7 @@
         },
         {
             "true": "iphone ipad programming",
-            "pred": "apple"
+            "pred": "ipad"
         },
         {
             "true": "unanswerable",
@@ -1502,11 +1502,11 @@
         },
         {
             "true": "back facing",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "computer screen",
-            "pred": "cartoon"
+            "pred": "computer"
         },
         {
             "true": "checking disk",
@@ -1542,7 +1542,7 @@
         },
         {
             "true": "no",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -1554,7 +1554,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "va"
+            "pred": "vaio"
         },
         {
             "true": "emergency alert system",
@@ -1590,7 +1590,7 @@
         },
         {
             "true": "pop up window",
-            "pred": "error"
+            "pred": "error message"
         },
         {
             "true": "please visit: wwwhpcom go techcenter",
@@ -1610,7 +1610,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "repair message in spanish",
@@ -1630,11 +1630,11 @@
         },
         {
             "true": "jaws not responding",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "live security",
-            "pred": "unanswerable"
+            "pred": "scan"
         },
         {
             "true": "jaws for windows",
@@ -1642,7 +1642,7 @@
         },
         {
             "true": "press enter again to close this pop up",
-            "pred": "unanswerable"
+            "pred": "repair"
         },
         {
             "true": "no",
@@ -1702,7 +1702,7 @@
         },
         {
             "true": "electronic documents",
-            "pred": "blue"
+            "pred": "computer"
         },
         {
             "true": "unanswerable",
@@ -1758,10 +1758,6 @@
         },
         {
             "true": "unanswerable",
-            "pred": "windows"
-        },
-        {
-            "true": "unanswerable",
             "pred": "unanswerable"
         },
         {
@@ -1775,6 +1771,10 @@
         {
             "true": "unanswerable",
             "pred": "unanswerable"
+        },
+        {
+            "true": "unanswerable",
+            "pred": "no grass"
         },
         {
             "true": "no",
@@ -1822,11 +1822,11 @@
         },
         {
             "true": "computer screen",
-            "pred": "laptop"
+            "pred": "computer repair"
         },
         {
             "true": "unanswerable",
-            "pred": "10"
+            "pred": "unanswerable"
         },
         {
             "true": "emi health",
@@ -1838,11 +1838,11 @@
         },
         {
             "true": "windows boot manager",
-            "pred": "windows"
+            "pred": "start"
         },
         {
             "true": "unanswerable image",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -1850,7 +1850,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "repair"
         },
         {
             "true": "startup repair",
@@ -1862,11 +1862,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "yes"
+            "pred": "unanswerable"
         },
         {
             "true": "next cancel",
-            "pred": "unanswerable"
+            "pred": "router"
         },
         {
             "true": "unanswerable",
@@ -1886,7 +1886,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "windows"
+            "pred": "right"
         },
         {
             "true": "keyboard wine glass",
@@ -1894,15 +1894,15 @@
         },
         {
             "true": "desktop",
-            "pred": "unanswerable"
+            "pred": "nothing"
+        },
+        {
+            "true": "unanswerable",
+            "pred": "no"
         },
         {
             "true": "unanswerable",
             "pred": "unanswerable"
-        },
-        {
-            "true": "unanswerable",
-            "pred": "dell"
         },
         {
             "true": "no",
@@ -1930,11 +1930,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
-            "pred": "una unans"
+            "pred": "unanswerable"
         },
         {
             "true": "google",
@@ -1954,7 +1954,7 @@
         },
         {
             "true": "dell charger",
-            "pred": "unanswerable"
+            "pred": "charger"
         },
         {
             "true": "yes",
@@ -1970,15 +1970,15 @@
         },
         {
             "true": "checking system",
-            "pred": "unanswerable"
+            "pred": "error message"
         },
         {
             "true": "laptop",
-            "pred": "laptop"
+            "pred": "computer"
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -1990,7 +1990,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -2014,7 +2014,7 @@
         },
         {
             "true": "jek",
-            "pred": "e"
+            "pred": "swag"
         },
         {
             "true": "windows cannot repair computer automatically",
@@ -2022,7 +2022,7 @@
         },
         {
             "true": "no",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "box spray",
@@ -2034,7 +2034,7 @@
         },
         {
             "true": "startup repair",
-            "pred": "unanswerable"
+            "pred": "computer repair"
         },
         {
             "true": "unanswerable",
@@ -2046,7 +2046,7 @@
         },
         {
             "true": "do you want to restore your computer using system restore",
-            "pred": "error"
+            "pred": "start up system repair"
         },
         {
             "true": "mac os x",
@@ -2070,7 +2070,7 @@
         },
         {
             "true": "yes startup repair",
-            "pred": "error"
+            "pred": "error message"
         },
         {
             "true": "computer monitor",
@@ -2094,7 +2094,7 @@
         },
         {
             "true": "messages",
-            "pred": "apple"
+            "pred": "iphone"
         },
         {
             "true": "unanswerable",
@@ -2130,11 +2130,11 @@
         },
         {
             "true": "98%",
-            "pred": "50 %"
+            "pred": "5 %"
         },
         {
             "true": "something loading",
-            "pred": "windows"
+            "pred": "no"
         },
         {
             "true": "no",
@@ -2146,7 +2146,7 @@
         },
         {
             "true": "02305135",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -2182,11 +2182,11 @@
         },
         {
             "true": "drive options",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "computer",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "blackberry",
@@ -2206,7 +2206,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "1"
+            "pred": "no"
         },
         {
             "true": "system recovery window to restart on system failure",
@@ -2238,7 +2238,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -2266,11 +2266,11 @@
         },
         {
             "true": "do you want to restore your computer using system restore",
-            "pred": "error"
+            "pred": "system repair"
         },
         {
             "true": "restore",
-            "pred": "unanswerable"
+            "pred": "start up system repair"
         },
         {
             "true": "laptop",
@@ -2290,11 +2290,11 @@
         },
         {
             "true": "no",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "install mac os x",
-            "pred": "unanswerable"
+            "pred": "install mac os x"
         },
         {
             "true": "green colour",
@@ -2302,7 +2302,7 @@
         },
         {
             "true": "white flowers above laptop",
-            "pred": "laptop"
+            "pred": "flowers"
         },
         {
             "true": "unanswerable",
@@ -2314,15 +2314,15 @@
         },
         {
             "true": "unanswerable",
-            "pred": "apple"
+            "pred": "unanswerable"
         },
         {
             "true": "diagnosing system problems",
-            "pred": "error"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
-            "pred": "software"
+            "pred": "repair"
         },
         {
             "true": "unanswerable",
@@ -2354,7 +2354,7 @@
         },
         {
             "true": "overlooking neighborhood park in",
-            "pred": "google maps"
+            "pred": "map"
         },
         {
             "true": "delightful grandchildren",
@@ -2366,7 +2366,7 @@
         },
         {
             "true": "10 apr 13",
-            "pred": "unanswerable"
+            "pred": "ticket"
         },
         {
             "true": "unanswerable",
@@ -2382,7 +2382,7 @@
         },
         {
             "true": "plug",
-            "pred": "remote"
+            "pred": "remote control"
         },
         {
             "true": "yes",
@@ -2406,7 +2406,7 @@
         },
         {
             "true": "bar b que restaurant",
-            "pred": "bar b que restaurant 10"
+            "pred": "bar b que restaurant"
         },
         {
             "true": "more coloratura craziness",
@@ -2422,7 +2422,7 @@
         },
         {
             "true": "computer screen",
-            "pred": "laptop"
+            "pred": "computer"
         },
         {
             "true": "unanswerable",
@@ -2442,7 +2442,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -2458,7 +2458,7 @@
         },
         {
             "true": "book",
-            "pred": "unanswerable"
+            "pred": "book"
         },
         {
             "true": "unanswerable",
@@ -2474,15 +2474,15 @@
         },
         {
             "true": "garden vegetable soup",
-            "pred": "soup"
+            "pred": "vegetable"
         },
         {
             "true": "blurred icons",
-            "pred": "unanswerable"
+            "pred": "answerable"
         },
         {
             "true": "unanswerable",
-            "pred": "error"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -2502,7 +2502,7 @@
         },
         {
             "true": "harveys hometown rewards",
-            "pred": "business card"
+            "pred": "yes"
         },
         {
             "true": "unanswerable",
@@ -2522,7 +2522,7 @@
         },
         {
             "true": "computer screen",
-            "pred": "laptop"
+            "pred": "computer"
         },
         {
             "true": "blurry image desk pringles keyboard",
@@ -2554,7 +2554,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "no"
+            "pred": "white"
         },
         {
             "true": "mouth",
@@ -2658,7 +2658,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -2666,7 +2666,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "bus"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -2702,7 +2702,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "toothpaste"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -2746,7 +2746,7 @@
         },
         {
             "true": "bacon bits",
-            "pred": "juice"
+            "pred": "unanswerable"
         },
         {
             "true": "laptop",
@@ -2774,7 +2774,7 @@
         },
         {
             "true": "coming up",
-            "pred": "windows"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -2822,7 +2822,7 @@
         },
         {
             "true": "crowdworking info",
-            "pred": "unanswerable"
+            "pred": "computer"
         },
         {
             "true": "unanswerable",
@@ -2882,7 +2882,7 @@
         },
         {
             "true": "cars",
-            "pred": "cars"
+            "pred": "car"
         },
         {
             "true": "unanswerable",
@@ -2934,7 +2934,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "tan"
+            "pred": "brown"
         },
         {
             "true": "brown teddy bear",
@@ -2946,7 +2946,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "paper"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -2962,7 +2962,7 @@
         },
         {
             "true": "advanced boot options",
-            "pred": "microsoft windows"
+            "pred": "system"
         },
         {
             "true": "29% complete",
@@ -2970,7 +2970,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "computer"
         },
         {
             "true": "unanswerable",
@@ -2978,7 +2978,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "condom"
+            "pred": "cell phone"
         },
         {
             "true": "unanswerable",
@@ -3014,7 +3014,7 @@
         },
         {
             "true": "boy",
-            "pred": "unanswerable"
+            "pred": "grey"
         },
         {
             "true": "browser screen",
@@ -3042,7 +3042,7 @@
         },
         {
             "true": "799852896",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "no",
@@ -3062,7 +3062,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "white"
+            "pred": "unanswerable"
         },
         {
             "true": "nothing",
@@ -3074,7 +3074,7 @@
         },
         {
             "true": "saint louis bread co",
-            "pred": "coffee"
+            "pred": "french"
         },
         {
             "true": "water",
@@ -3082,7 +3082,7 @@
         },
         {
             "true": "menu",
-            "pred": "unanswerable"
+            "pred": "book"
         },
         {
             "true": "desktop",
@@ -3106,7 +3106,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "apple"
+            "pred": "unanswerable"
         },
         {
             "true": "install windows",
@@ -3122,7 +3122,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "windows"
+            "pred": "no"
         },
         {
             "true": "1.29 1.99",
@@ -3130,7 +3130,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "laptop",
@@ -3138,7 +3138,7 @@
         },
         {
             "true": "building",
-            "pred": "unanswerable"
+            "pred": "no parking"
         },
         {
             "true": "unanswerable",
@@ -3154,7 +3154,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "game"
+            "pred": "nothing"
         },
         {
             "true": "menu",
@@ -3174,11 +3174,11 @@
         },
         {
             "true": "winners for life 2005",
-            "pred": "unanswerable"
+            "pred": "cigarettes"
         },
         {
             "true": "unanswerable",
-            "pred": "pepsi"
+            "pred": "no soda"
         },
         {
             "true": "unanswerable",
@@ -3210,7 +3210,7 @@
         },
         {
             "true": "yes",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "red white",
@@ -3222,19 +3222,19 @@
         },
         {
             "true": "blue",
-            "pred": "blue"
+            "pred": "purple"
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "computer screen",
-            "pred": "laptop"
+            "pred": "computer"
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -3270,7 +3270,7 @@
         },
         {
             "true": "31.45 34.52",
-            "pred": "unanswerable"
+            "pred": "3. 43"
         },
         {
             "true": "unanswerable",
@@ -3286,7 +3286,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "10"
+            "pred": "lot"
         },
         {
             "true": "yes",
@@ -3306,7 +3306,7 @@
         },
         {
             "true": "lincoln",
-            "pred": "ford"
+            "pred": "white"
         },
         {
             "true": "unanswerable",
@@ -3334,11 +3334,11 @@
         },
         {
             "true": "itunes",
-            "pred": "apple"
+            "pred": "ipod"
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "keys",
@@ -3398,7 +3398,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "dell"
+            "pred": "hp"
         },
         {
             "true": "computer screen",
@@ -3410,7 +3410,7 @@
         },
         {
             "true": "$50 preferred guest card",
-            "pred": "unanswerable"
+            "pred": "card"
         },
         {
             "true": "tongue",
@@ -3422,7 +3422,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -3438,11 +3438,11 @@
         },
         {
             "true": "estados unidos mexicanos",
-            "pred": "unanswerable"
+            "pred": "mexico"
         },
         {
             "true": "tassimo",
-            "pred": "masalami"
+            "pred": "chocolate"
         },
         {
             "true": "2rm5",
@@ -3450,7 +3450,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "screen"
         },
         {
             "true": "unanswerable",
@@ -3470,7 +3470,7 @@
         },
         {
             "true": "dell laptop",
-            "pred": "laptop"
+            "pred": "computer"
         },
         {
             "true": "unanswerable",
@@ -3498,7 +3498,7 @@
         },
         {
             "true": "dialog box",
-            "pred": "error"
+            "pred": "no"
         },
         {
             "true": "monitor",
@@ -3506,7 +3506,7 @@
         },
         {
             "true": "fresh living magazine",
-            "pred": "is fresh living magazine"
+            "pred": "unanswerable"
         },
         {
             "true": "38i9rg48",
@@ -3530,7 +3530,7 @@
         },
         {
             "true": "800 643 2112 siriusxmcom",
-            "pred": "blue"
+            "pred": "88 - 4313"
         },
         {
             "true": "blank",
@@ -3546,7 +3546,7 @@
         },
         {
             "true": "vizwiz",
-            "pred": "unanswerable"
+            "pred": "words"
         },
         {
             "true": "unanswerable",
@@ -3562,11 +3562,11 @@
         },
         {
             "true": "windows",
-            "pred": "windows"
+            "pred": "unanswerable"
         },
         {
             "true": "computer screen",
-            "pred": "door"
+            "pred": "window"
         },
         {
             "true": "error message",
@@ -3578,11 +3578,11 @@
         },
         {
             "true": "97zh",
-            "pred": "unanswerable"
+            "pred": "security"
         },
         {
             "true": "unanswerable",
-            "pred": "5"
+            "pred": "no"
         },
         {
             "true": "looking down small road between 2 brick buildings",
@@ -3618,11 +3618,11 @@
         },
         {
             "true": "paypal",
-            "pred": "unanswerable"
+            "pred": "security"
         },
         {
             "true": "cd",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -3654,23 +3654,23 @@
         },
         {
             "true": "pear",
-            "pred": "apple"
+            "pred": "pear"
         },
         {
             "true": "yes",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "blue"
         },
         {
             "true": "windows 7",
-            "pred": "windows"
+            "pred": "flowers"
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "man"
         },
         {
             "true": "unanswerable",
@@ -3734,7 +3734,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "0"
         },
         {
             "true": "computer monitor",
@@ -3750,7 +3750,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no window"
         },
         {
             "true": "no",
@@ -3762,11 +3762,11 @@
         },
         {
             "true": "blue green",
-            "pred": "no"
+            "pred": "screen"
         },
         {
             "true": "google",
-            "pred": "laptop"
+            "pred": "nothing"
         },
         {
             "true": "laptop",
@@ -3798,7 +3798,7 @@
         },
         {
             "true": "yes",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "computer organization design",
@@ -3806,23 +3806,23 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "startup repair",
-            "pred": "unanswerable"
+            "pred": "start start up repair"
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "repair log",
-            "pred": "repair"
+            "pred": "repair log"
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "unans"
         },
         {
             "true": "unanswerable",
@@ -3854,7 +3854,7 @@
         },
         {
             "true": "error message",
-            "pred": "error"
+            "pred": "error message"
         },
         {
             "true": "was uctoft",
@@ -3874,7 +3874,7 @@
         },
         {
             "true": "computer screen",
-            "pred": "laptop"
+            "pred": "computer"
         },
         {
             "true": "unanswerable",
@@ -3886,11 +3886,11 @@
         },
         {
             "true": "yes",
-            "pred": "unanswerable"
+            "pred": "o boot"
         },
         {
             "true": "unanswerable",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "02616272",
@@ -3906,11 +3906,11 @@
         },
         {
             "true": "computer screen",
-            "pred": "acoustic"
+            "pred": "blue"
         },
         {
             "true": "computer screen",
-            "pred": "is computer"
+            "pred": "computer"
         },
         {
             "true": "card",
@@ -3926,7 +3926,7 @@
         },
         {
             "true": "computer screen",
-            "pred": "oogle"
+            "pred": "nanswerable"
         },
         {
             "true": "paper",
@@ -3982,7 +3982,7 @@
         },
         {
             "true": "mailbox",
-            "pred": "united states postal service"
+            "pred": "mailbox"
         },
         {
             "true": "unanswerable",
@@ -4014,11 +4014,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "card",
-            "pred": "is blue"
+            "pred": "blue white"
         },
         {
             "true": "checking file system",
@@ -4086,7 +4086,7 @@
         },
         {
             "true": "computer screen",
-            "pred": "of boy"
+            "pred": "of person on laptop"
         },
         {
             "true": "unanswerable",
@@ -4126,7 +4126,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -4154,7 +4154,7 @@
         },
         {
             "true": "almost done done",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "2 water bottles",
@@ -4174,7 +4174,7 @@
         },
         {
             "true": "do you want following program to make changes to this computer",
-            "pred": "unanswerable"
+            "pred": "do you want to make"
         },
         {
             "true": "unanswerable",
@@ -4190,7 +4190,7 @@
         },
         {
             "true": "yes",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "no",
@@ -4218,7 +4218,7 @@
         },
         {
             "true": "installing windows",
-            "pred": "windows"
+            "pred": "install windows"
         },
         {
             "true": "move cursor",
@@ -4242,7 +4242,7 @@
         },
         {
             "true": "no",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "tablet",
@@ -4266,7 +4266,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "water bottle"
         },
         {
             "true": "unanswerable",
@@ -4278,7 +4278,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "5"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -4314,15 +4314,15 @@
         },
         {
             "true": "pkrsf",
-            "pred": "phone number with area code"
+            "pred": "unanswerable"
         },
         {
             "true": "windows memory diagnostics",
-            "pred": "windows"
+            "pred": "no problems"
         },
         {
             "true": "essauryst",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "laptop",
@@ -4330,7 +4330,7 @@
         },
         {
             "true": "ipad",
-            "pred": "laptop"
+            "pred": "tablet"
         },
         {
             "true": "unanswerable",
@@ -4338,11 +4338,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "move camera up to left",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -4350,7 +4350,7 @@
         },
         {
             "true": "restore",
-            "pred": "unanswerable"
+            "pred": "repair"
         },
         {
             "true": "unanswerable",
@@ -4362,11 +4362,11 @@
         },
         {
             "true": "sad face white words",
-            "pred": "error"
+            "pred": "error message"
         },
         {
             "true": "unanswerable",
-            "pred": "c"
+            "pred": "rock"
         },
         {
             "true": "keyboard",
@@ -4386,7 +4386,7 @@
         },
         {
             "true": "your computer ran into problem",
-            "pred": "error"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -4406,11 +4406,11 @@
         },
         {
             "true": "installing windows 8 consumer preview",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
-            "pred": "windows"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -4438,7 +4438,7 @@
         },
         {
             "true": "nothing",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -4454,7 +4454,7 @@
         },
         {
             "true": "yes",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "power adapter does not supply enough power to run",
@@ -4462,11 +4462,11 @@
         },
         {
             "true": "no",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
-            "pred": "texas"
+            "pred": "no library card"
         },
         {
             "true": "unanswerable",
@@ -4478,7 +4478,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "book"
         },
         {
             "true": "no",
@@ -4506,7 +4506,7 @@
         },
         {
             "true": "windows loading files",
-            "pred": "laptop"
+            "pred": "camera"
         },
         {
             "true": "unanswerable",
@@ -4514,7 +4514,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "green"
+            "pred": "unanswerable"
         },
         {
             "true": "hko",
@@ -4522,7 +4522,7 @@
         },
         {
             "true": "restore computer button",
-            "pred": "error"
+            "pred": "computer"
         },
         {
             "true": "in room looking out window overlooking city buildings skyline",
@@ -4534,7 +4534,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -4542,7 +4542,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "voczt",
@@ -4554,11 +4554,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "map"
         },
         {
             "true": "browser window on computer",
-            "pred": "news"
+            "pred": "ipad"
         },
         {
             "true": "unanswerable",
@@ -4578,7 +4578,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no coffee"
         },
         {
             "true": "on",
@@ -4586,7 +4586,7 @@
         },
         {
             "true": "no",
-            "pred": "right"
+            "pred": "unanswerable"
         },
         {
             "true": "no",
@@ -4646,7 +4646,7 @@
         },
         {
             "true": "announcements",
-            "pred": "poster"
+            "pred": "calendar"
         },
         {
             "true": "announcements",
@@ -4654,7 +4654,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "sweet"
+            "pred": "brown"
         },
         {
             "true": "unanswerable",
@@ -4682,7 +4682,7 @@
         },
         {
             "true": "cookies",
-            "pred": "croissant"
+            "pred": "croissants"
         },
         {
             "true": "plant",
@@ -4714,7 +4714,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "lemonade"
+            "pred": "unanswerable"
         },
         {
             "true": "keyboard",
@@ -4722,7 +4722,7 @@
         },
         {
             "true": "shrek",
-            "pred": "no"
+            "pred": "toy"
         },
         {
             "true": "water",
@@ -4730,7 +4730,7 @@
         },
         {
             "true": "sweet potato chips",
-            "pred": "crackers"
+            "pred": "unanswerable"
         },
         {
             "true": "beer",
@@ -4738,7 +4738,7 @@
         },
         {
             "true": "artichoke capsules",
-            "pred": "herbal"
+            "pred": "herby"
         },
         {
             "true": "use washer dryer swipe card",
@@ -4746,7 +4746,7 @@
         },
         {
             "true": "soup",
-            "pred": "soup"
+            "pred": "cream"
         },
         {
             "true": "yes",
@@ -4770,7 +4770,7 @@
         },
         {
             "true": "wall",
-            "pred": "wall"
+            "pred": "white"
         },
         {
             "true": "unanswerable",
@@ -4798,11 +4798,11 @@
         },
         {
             "true": "72",
-            "pred": "warm"
+            "pred": "75"
         },
         {
             "true": "woolite",
-            "pred": "lotion"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -4818,7 +4818,7 @@
         },
         {
             "true": "socks",
-            "pred": "woman"
+            "pred": "black"
         },
         {
             "true": "unanswerable",
@@ -4842,7 +4842,7 @@
         },
         {
             "true": "yogurt",
-            "pred": "jello"
+            "pred": "unanswerable"
         },
         {
             "true": "white",
@@ -4854,7 +4854,7 @@
         },
         {
             "true": "notebook",
-            "pred": "pink"
+            "pred": "book"
         },
         {
             "true": "scrambled egg patties",
@@ -4910,7 +4910,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "r conditioner"
         },
         {
             "true": "to left",
@@ -4926,7 +4926,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "frozen"
         },
         {
             "true": "medicine bottle",
@@ -4938,7 +4938,7 @@
         },
         {
             "true": "advanced cell therapy",
-            "pred": "natural cell lotion"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -4946,7 +4946,7 @@
         },
         {
             "true": "soap",
-            "pred": "cheese"
+            "pred": "unanswerable"
         },
         {
             "true": "angel fish",
@@ -4962,7 +4962,7 @@
         },
         {
             "true": "no",
-            "pred": "yes"
+            "pred": "hand sanitizer"
         },
         {
             "true": "first time students",
@@ -4970,7 +4970,7 @@
         },
         {
             "true": "lasagne",
-            "pred": "chicken"
+            "pred": "lasagna"
         },
         {
             "true": "computer mouse",
@@ -4986,7 +4986,7 @@
         },
         {
             "true": "grey white",
-            "pred": "black and white"
+            "pred": "black white"
         },
         {
             "true": "dec 28 2013",
@@ -5038,7 +5038,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "red"
+            "pred": "unanswerable"
         },
         {
             "true": "tear",
@@ -5046,11 +5046,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "wii"
+            "pred": "remote"
         },
         {
             "true": "peanut butter toast crunch",
-            "pred": "chocolate"
+            "pred": "peanut butter"
         },
         {
             "true": "dupont faucet mount filter",
@@ -5058,7 +5058,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "circle"
+            "pred": "pink"
         },
         {
             "true": "no",
@@ -5078,7 +5078,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "black"
         },
         {
             "true": "silver",
@@ -5086,7 +5086,7 @@
         },
         {
             "true": "battery",
-            "pred": "black"
+            "pred": "pen"
         },
         {
             "true": "unanswerable",
@@ -5138,7 +5138,7 @@
         },
         {
             "true": "rocky mountain",
-            "pred": "rocky mountain"
+            "pred": "mountain"
         },
         {
             "true": "unanswerable",
@@ -5170,7 +5170,7 @@
         },
         {
             "true": "beef green beans carrots potatoes",
-            "pred": "soup"
+            "pred": "beef"
         },
         {
             "true": "unanswerable",
@@ -5182,7 +5182,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "no"
+            "pred": "unanswerable"
         },
         {
             "true": "i dont know",
@@ -5210,11 +5210,11 @@
         },
         {
             "true": "automatic door stop",
-            "pred": "door stop"
+            "pred": "automatic door stop"
         },
         {
             "true": "unanswerable",
-            "pred": "sweet"
+            "pred": "unanswerable"
         },
         {
             "true": "bottle",
@@ -5234,7 +5234,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "hot"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -5258,7 +5258,7 @@
         },
         {
             "true": "on table",
-            "pred": "on floor"
+            "pred": "on desk"
         },
         {
             "true": "honey lemon",
@@ -5278,7 +5278,7 @@
         },
         {
             "true": "garden retreat",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "small container",
@@ -5382,11 +5382,11 @@
         },
         {
             "true": "granola bars",
-            "pred": "almonds"
+            "pred": "nuts"
         },
         {
             "true": "netgear",
-            "pred": "dvd"
+            "pred": "wifi"
         },
         {
             "true": "star",
@@ -5422,7 +5422,7 @@
         },
         {
             "true": "black",
-            "pred": "unanswerable"
+            "pred": "black"
         },
         {
             "true": "carrots",
@@ -5438,7 +5438,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "moon"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -5462,7 +5462,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "menu"
+            "pred": "unanswerable"
         },
         {
             "true": "90",
@@ -5562,7 +5562,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no writing"
         },
         {
             "true": "printer",
@@ -5574,11 +5574,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "apple"
+            "pred": "acer"
         },
         {
             "true": "unanswerable",
-            "pred": "pizza"
+            "pred": "unanswerable"
         },
         {
             "true": "beer",
@@ -5610,7 +5610,7 @@
         },
         {
             "true": "grey",
-            "pred": "gray"
+            "pred": "black"
         },
         {
             "true": "black",
@@ -5626,7 +5626,7 @@
         },
         {
             "true": "computer mouse",
-            "pred": "mouse"
+            "pred": "computer mouse"
         },
         {
             "true": "macbook pro",
@@ -5634,7 +5634,7 @@
         },
         {
             "true": "100 degrees",
-            "pred": "10 bake"
+            "pred": "no"
         },
         {
             "true": "diet pepsi",
@@ -5690,11 +5690,11 @@
         },
         {
             "true": "pink",
-            "pred": "pink"
+            "pred": "pink yellow blue"
         },
         {
             "true": "lg",
-            "pred": "lg"
+            "pred": "unanswerable"
         },
         {
             "true": "bath body works",
@@ -5706,11 +5706,11 @@
         },
         {
             "true": "spot shot",
-            "pred": "lotion"
+            "pred": "cleaner"
         },
         {
             "true": "unanswerable",
-            "pred": "lotion"
+            "pred": "shampoo"
         },
         {
             "true": "dark chocolate peanut almond",
@@ -5734,7 +5734,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "push button"
+            "pred": "button"
         },
         {
             "true": "cyberpad",
@@ -5766,7 +5766,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "orange"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -5810,23 +5810,23 @@
         },
         {
             "true": "unanswerable",
-            "pred": "4"
+            "pred": "3"
         },
         {
             "true": "yes",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
-            "pred": "depress"
+            "pred": "deodorant"
         },
         {
             "true": "office",
-            "pred": "office"
+            "pred": "desk"
         },
         {
             "true": "no",
-            "pred": "yes"
+            "pred": "green"
         },
         {
             "true": "hook",
@@ -5842,7 +5842,7 @@
         },
         {
             "true": "hazelnut",
-            "pred": "coffee"
+            "pred": "hazelnut"
         },
         {
             "true": "purple",
@@ -5874,11 +5874,11 @@
         },
         {
             "true": "yellow logo on black",
-            "pred": "yellow"
+            "pred": "cafe"
         },
         {
             "true": "mini chips ahoy",
-            "pred": "blueberry"
+            "pred": "unanswerable"
         },
         {
             "true": "smart water",
@@ -5906,15 +5906,15 @@
         },
         {
             "true": "tonic water",
-            "pred": "indian tostitu water"
+            "pred": "indian tostitos"
         },
         {
             "true": "no",
-            "pred": "menu"
+            "pred": "unanswerable"
         },
         {
             "true": "shredder",
-            "pred": "unanswerable"
+            "pred": "remote"
         },
         {
             "true": "no smoking",
@@ -5938,11 +5938,11 @@
         },
         {
             "true": "dove lady speed stick",
-            "pred": "ht? lady speed stick"
+            "pred": "ht? lady"
         },
         {
             "true": "mug",
-            "pred": "cup"
+            "pred": "mug"
         },
         {
             "true": "lg",
@@ -5950,11 +5950,11 @@
         },
         {
             "true": "gt",
-            "pred": "tet"
+            "pred": "gat"
         },
         {
             "true": "unanswerable",
-            "pred": "red"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -5962,7 +5962,7 @@
         },
         {
             "true": "abba",
-            "pred": "unanswerable"
+            "pred": "harry potter"
         },
         {
             "true": "pudding",
@@ -5994,11 +5994,11 @@
         },
         {
             "true": "blackberry cell phone",
-            "pred": "phone"
+            "pred": "cell phone"
         },
         {
             "true": "unanswerable",
-            "pred": "red"
+            "pred": "unanswerable"
         },
         {
             "true": "no",
@@ -6022,7 +6022,7 @@
         },
         {
             "true": "cheez",
-            "pred": "snack? cheese"
+            "pred": "cheese"
         },
         {
             "true": "ginger peach",
@@ -6046,7 +6046,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "lotion"
+            "pred": "hand lotion"
         },
         {
             "true": "cool ranch",
@@ -6062,7 +6062,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "bed"
         },
         {
             "true": "lemon lime",
@@ -6070,23 +6070,23 @@
         },
         {
             "true": "hershey",
-            "pred": "chips"
+            "pred": "unanswerable"
         },
         {
             "true": "no",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "pot roast",
-            "pred": "soup"
+            "pred": "potato"
         },
         {
             "true": "season 2 volume 1",
-            "pred": "..."
+            "pred": "unanswerable"
         },
         {
             "true": "no",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "no",
@@ -6094,7 +6094,7 @@
         },
         {
             "true": "phone",
-            "pred": "iphone"
+            "pred": "cell phone"
         },
         {
             "true": "blue moose",
@@ -6122,7 +6122,7 @@
         },
         {
             "true": "yes",
-            "pred": "no"
+            "pred": "no cat"
         },
         {
             "true": "unanswerable",
@@ -6154,7 +6154,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "mouse pad"
+            "pred": "mouse"
         },
         {
             "true": "vase",
@@ -6178,7 +6178,7 @@
         },
         {
             "true": "no",
-            "pred": "ink"
+            "pred": "andy"
         },
         {
             "true": "rainforest music",
@@ -6202,7 +6202,7 @@
         },
         {
             "true": "ear training",
-            "pred": "no"
+            "pred": "unanswerable"
         },
         {
             "true": "nivea creme",
@@ -6226,7 +6226,7 @@
         },
         {
             "true": "tan",
-            "pred": "tan"
+            "pred": "brown"
         },
         {
             "true": "shelves",
@@ -6234,7 +6234,7 @@
         },
         {
             "true": "brown",
-            "pred": "black"
+            "pred": "white"
         },
         {
             "true": "unanswerable",
@@ -6262,7 +6262,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no boy"
         },
         {
             "true": "unanswerable",
@@ -6282,27 +6282,27 @@
         },
         {
             "true": "bottle",
-            "pred": "vitamins"
-        },
-        {
-            "true": "grey",
-            "pred": "gray"
-        },
-        {
-            "true": "mars",
             "pred": "unanswerable"
         },
         {
+            "true": "grey",
+            "pred": "grey"
+        },
+        {
+            "true": "mars",
+            "pred": "chocolate"
+        },
+        {
             "true": "coffee cup",
-            "pred": "coffee"
+            "pred": "milk"
         },
         {
             "true": "unanswerable",
-            "pred": "red"
+            "pred": "dr"
         },
         {
             "true": "tie dye",
-            "pred": "pink"
+            "pred": "white"
         },
         {
             "true": "pink",
@@ -6314,15 +6314,15 @@
         },
         {
             "true": "unanswerable",
-            "pred": "dinner"
+            "pred": "unanswerable"
         },
         {
             "true": "pictures dolls",
-            "pred": "pink"
+            "pred": "barbie"
         },
         {
             "true": "massage bar",
-            "pred": "tan"
+            "pred": "unanswerable"
         },
         {
             "true": "ubiquinol qh absorb",
@@ -6334,7 +6334,7 @@
         },
         {
             "true": "laundry detergent",
-            "pred": "laundry"
+            "pred": "laundry detergent"
         },
         {
             "true": "unanswerable",
@@ -6342,7 +6342,7 @@
         },
         {
             "true": "free baja shrimp taco",
-            "pred": "free"
+            "pred": "no"
         },
         {
             "true": "red white 1",
@@ -6350,7 +6350,7 @@
         },
         {
             "true": "9 minutes",
-            "pred": "unanswerable"
+            "pred": "no microwave"
         },
         {
             "true": "unanswerable",
@@ -6374,11 +6374,11 @@
         },
         {
             "true": "kyle xy",
-            "pred": "double season"
+            "pred": "triple season"
         },
         {
             "true": "36.38",
-            "pred": "6? 0. 45"
+            "pred": "6? 0. 65"
         },
         {
             "true": "factory direct sales ad",
@@ -6402,7 +6402,7 @@
         },
         {
             "true": "sage sweet grass",
-            "pred": "scent grass"
+            "pred": "scent"
         },
         {
             "true": "unanswerable",
@@ -6426,11 +6426,11 @@
         },
         {
             "true": "sony",
-            "pred": "sony"
+            "pred": "unanswerable"
         },
         {
             "true": "yes",
-            "pred": "no"
+            "pred": "meat"
         },
         {
             "true": "unstable image",
@@ -6438,11 +6438,11 @@
         },
         {
             "true": "juice",
-            "pred": "juice"
+            "pred": "fruit"
         },
         {
             "true": "dove rich nourishment cream",
-            "pred": "white"
+            "pred": "dove"
         },
         {
             "true": "unanswerable",
@@ -6462,7 +6462,7 @@
         },
         {
             "true": "windows logo",
-            "pred": "light"
+            "pred": "nothing"
         },
         {
             "true": "nutribullet life changing recipes",
@@ -6470,7 +6470,7 @@
         },
         {
             "true": "baked beans",
-            "pred": "whole beans"
+            "pred": "baked beans"
         },
         {
             "true": "grey",
@@ -6486,7 +6486,7 @@
         },
         {
             "true": "elle",
-            "pred": "unanswerable"
+            "pred": "latte"
         },
         {
             "true": "unanswerable",
@@ -6502,7 +6502,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "moon"
+            "pred": "unanswerable"
         },
         {
             "true": "diet",
@@ -6526,7 +6526,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "red"
+            "pred": "unanswerable"
         },
         {
             "true": "kellogg",
@@ -6554,11 +6554,11 @@
         },
         {
             "true": "tomatoes",
-            "pred": "tomato"
+            "pred": "tomatoes"
         },
         {
             "true": "unanswerable",
-            "pred": "orange"
+            "pred": "lemon"
         },
         {
             "true": "computer unable to restart asking if you want to restore",
@@ -6586,7 +6586,7 @@
         },
         {
             "true": "coffee",
-            "pred": "unanswerable"
+            "pred": "coffee"
         },
         {
             "true": "couch",
@@ -6598,7 +6598,7 @@
         },
         {
             "true": "7259 7694",
-            "pred": "phone number"
+            "pred": "no"
         },
         {
             "true": "cabernet sauvignon",
@@ -6610,11 +6610,11 @@
         },
         {
             "true": "shampoo",
-            "pred": "black"
+            "pred": "unanswerable"
         },
         {
             "true": "white",
-            "pred": "white"
+            "pred": "brown"
         },
         {
             "true": "candy",
@@ -6634,7 +6634,7 @@
         },
         {
             "true": "instant hand sanitizer kills germs odors without water",
-            "pred": "unanswerable"
+            "pred": "hand sanitizer"
         },
         {
             "true": "white",
@@ -6654,11 +6654,11 @@
         },
         {
             "true": "jazz collection",
-            "pred": "jazz"
+            "pred": "jazz collection"
         },
         {
             "true": "unanswerable",
-            "pred": "food"
+            "pred": "meatballs"
         },
         {
             "true": "unanswerable",
@@ -6678,7 +6678,7 @@
         },
         {
             "true": "high",
-            "pred": "kitchen"
+            "pred": "stove"
         },
         {
             "true": "acid controller",
@@ -6690,7 +6690,7 @@
         },
         {
             "true": "assorted",
-            "pred": "raspberry"
+            "pred": "sweet"
         },
         {
             "true": "cell phone",
@@ -6718,7 +6718,7 @@
         },
         {
             "true": "confectioners sugar",
-            "pred": "cake"
+            "pred": "chocolate"
         },
         {
             "true": "unanswerable",
@@ -6734,7 +6734,7 @@
         },
         {
             "true": "no",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "rug",
@@ -6750,15 +6750,15 @@
         },
         {
             "true": "unanswerable",
-            "pred": "red"
-        },
-        {
-            "true": "unanswerable",
             "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
-            "pred": "pink"
+            "pred": "nothing"
+        },
+        {
+            "true": "unanswerable",
+            "pred": "purple"
         },
         {
             "true": "blistex",
@@ -6790,7 +6790,7 @@
         },
         {
             "true": "label maker",
-            "pred": "phone"
+            "pred": "keyboard"
         },
         {
             "true": "pretzels",
@@ -6826,11 +6826,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "coffee"
         },
         {
             "true": "trash receptacle",
-            "pred": "dishwasher"
+            "pred": "oven"
         },
         {
             "true": "fruit",
@@ -6850,7 +6850,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "apple"
+            "pred": "white"
         },
         {
             "true": "unanswerable",
@@ -6862,7 +6862,7 @@
         },
         {
             "true": "pain reliever",
-            "pred": "ain"
+            "pred": "ain relief"
         },
         {
             "true": "samsung",
@@ -6882,7 +6882,7 @@
         },
         {
             "true": "express perugia",
-            "pred": "coffee"
+            "pred": "macaroni"
         },
         {
             "true": "computer",
@@ -6898,7 +6898,7 @@
         },
         {
             "true": "silver",
-            "pred": "blue"
+            "pred": "grey"
         },
         {
             "true": "brown",
@@ -6918,7 +6918,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "white"
+            "pred": "unanswerable"
         },
         {
             "true": "fishing in air",
@@ -6946,7 +6946,7 @@
         },
         {
             "true": "20",
-            "pred": "suntan lotion"
+            "pred": "no"
         },
         {
             "true": "yogurt",
@@ -6986,7 +6986,7 @@
         },
         {
             "true": "mr goodwrench",
-            "pred": "ford"
+            "pred": "mercedes benz"
         },
         {
             "true": "unanswerable",
@@ -7006,7 +7006,7 @@
         },
         {
             "true": "dart board",
-            "pred": "dart board"
+            "pred": "dartboard"
         },
         {
             "true": "phone",
@@ -7018,7 +7018,7 @@
         },
         {
             "true": "99.9 fm",
-            "pred": "mss systems"
+            "pred": "mss"
         },
         {
             "true": "clear",
@@ -7046,7 +7046,7 @@
         },
         {
             "true": "microwave",
-            "pred": "dishwasher"
+            "pred": "microwave"
         },
         {
             "true": "white",
@@ -7054,7 +7054,7 @@
         },
         {
             "true": "black",
-            "pred": "black"
+            "pred": "red white black"
         },
         {
             "true": "vegetable lasagna",
@@ -7074,7 +7074,7 @@
         },
         {
             "true": "tilted left titled star woman looks up at star",
-            "pred": "unanswerable"
+            "pred": "tarot card"
         },
         {
             "true": "unanswerable",
@@ -7098,7 +7098,7 @@
         },
         {
             "true": "apple strudel",
-            "pred": "crunchy"
+            "pred": "chicken"
         },
         {
             "true": "roast beef",
@@ -7146,15 +7146,15 @@
         },
         {
             "true": "cup",
-            "pred": "hot dog"
+            "pred": "cup"
         },
         {
             "true": "deep fryer",
-            "pred": "soup pot"
+            "pred": "pot"
         },
         {
             "true": "thin crust",
-            "pred": "cheese"
+            "pred": "pepperoni"
         },
         {
             "true": "unanswerable",
@@ -7166,11 +7166,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "black"
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -7186,7 +7186,7 @@
         },
         {
             "true": "expo echo",
-            "pred": "execo"
+            "pred": "ex ex ex ex ex ex ex ex"
         },
         {
             "true": "black",
@@ -7218,7 +7218,7 @@
         },
         {
             "true": "table cups in kitchen",
-            "pred": "cup"
+            "pred": "unanswerable"
         },
         {
             "true": "poultry seasoning",
@@ -7226,7 +7226,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "wine"
+            "pred": "unanswerable"
         },
         {
             "true": "blue",
@@ -7234,11 +7234,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "cream"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
-            "pred": "apple"
+            "pred": "unanswerable"
         },
         {
             "true": "sony playstation controller",
@@ -7250,7 +7250,7 @@
         },
         {
             "true": "bead",
-            "pred": "unanswerable"
+            "pred": "hand"
         },
         {
             "true": "unanswerable",
@@ -7262,7 +7262,7 @@
         },
         {
             "true": "3:42",
-            "pred": "9 : 45"
+            "pred": "9 : 15"
         },
         {
             "true": "coffee creamer",
@@ -7274,11 +7274,11 @@
         },
         {
             "true": "gevalia",
-            "pred": "yes"
+            "pred": "coffee"
         },
         {
             "true": "eye drops",
-            "pred": "lotion"
+            "pred": "shampoo"
         },
         {
             "true": "woody piper terry funk",
@@ -7294,7 +7294,7 @@
         },
         {
             "true": "water bottle",
-            "pred": "pink"
+            "pred": "bottle"
         },
         {
             "true": "bed bath beyond",
@@ -7326,11 +7326,11 @@
         },
         {
             "true": "fresh prince bel air",
-            "pred": "hot dog"
+            "pred": "ben 10"
         },
         {
             "true": "unanswerable",
-            "pred": "medicine"
+            "pred": "unanswerable"
         },
         {
             "true": "nothing",
@@ -7338,11 +7338,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "quiet 1",
-            "pred": "quiet one"
+            "pred": "quilt"
         },
         {
             "true": "wine",
@@ -7358,7 +7358,7 @@
         },
         {
             "true": "green pants black sweater white brown checked shirt",
-            "pred": "yes"
+            "pred": "black"
         },
         {
             "true": "spicy eggnog",
@@ -7398,7 +7398,7 @@
         },
         {
             "true": "vegetables",
-            "pred": "broccoli"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -7414,7 +7414,7 @@
         },
         {
             "true": "ranch dressing",
-            "pred": "milk"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -7422,7 +7422,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "5"
+            "pred": "no"
         },
         {
             "true": "vitamin c",
@@ -7434,7 +7434,7 @@
         },
         {
             "true": "off",
-            "pred": "unanswerable"
+            "pred": "air"
         },
         {
             "true": "brown",
@@ -7442,7 +7442,7 @@
         },
         {
             "true": "split pea soup",
-            "pred": "soup"
+            "pred": "roasted"
         },
         {
             "true": "white",
@@ -7466,19 +7466,19 @@
         },
         {
             "true": "rug",
-            "pred": "rug"
+            "pred": "brown"
         },
         {
             "true": "alfalfa",
-            "pred": "aloe"
+            "pred": "aloeta"
         },
         {
             "true": "beans",
-            "pred": "nuts"
+            "pred": "beans"
         },
         {
             "true": "chicken thigh filets",
-            "pred": "....."
+            "pred": "unanswerable"
         },
         {
             "true": "purple",
@@ -7490,11 +7490,11 @@
         },
         {
             "true": "hamburger helper",
-            "pred": "heeseburger"
+            "pred": "acaroni"
         },
         {
             "true": "grey",
-            "pred": "gray"
+            "pred": "grey"
         },
         {
             "true": "no salt added",
@@ -7502,11 +7502,11 @@
         },
         {
             "true": "1 dollar",
-            "pred": "bill"
+            "pred": "1 dollar"
         },
         {
             "true": "unanswerable",
-            "pred": "toilet"
+            "pred": "unanswerable"
         },
         {
             "true": "snail",
@@ -7518,11 +7518,11 @@
         },
         {
             "true": "mango papaya passion fruit",
-            "pred": "unanswerable"
+            "pred": "ice cream"
         },
         {
             "true": "pepper steak",
-            "pred": "beef"
+            "pred": "chicken"
         },
         {
             "true": "blue white",
@@ -7538,7 +7538,7 @@
         },
         {
             "true": "9 minutes",
-            "pred": "10 minutes"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -7546,11 +7546,11 @@
         },
         {
             "true": "prescription pills",
-            "pred": "unanswerable"
+            "pred": "medicine"
         },
         {
             "true": "unanswerable",
-            "pred": "is unanswerable"
+            "pred": "unanswerable"
         },
         {
             "true": "pasta sauce",
@@ -7562,11 +7562,11 @@
         },
         {
             "true": "dog nose in bowl",
-            "pred": "no"
+            "pred": "dog"
         },
         {
             "true": "leg",
-            "pred": "unanswerable"
+            "pred": "rug"
         },
         {
             "true": "blue",
@@ -7574,11 +7574,11 @@
         },
         {
             "true": "grey",
-            "pred": "gray"
+            "pred": "white"
         },
         {
             "true": "hot dogs",
-            "pred": "hot days"
+            "pred": "hot dogs"
         },
         {
             "true": "white",
@@ -7586,7 +7586,7 @@
         },
         {
             "true": "french vanilla",
-            "pred": "coffee"
+            "pred": "black"
         },
         {
             "true": "unanswerable",
@@ -7606,7 +7606,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "degrafier"
+            "pred": "depressor"
         },
         {
             "true": "jan 27 2013",
@@ -7642,7 +7642,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "20 minutes"
         },
         {
             "true": "green",
@@ -7650,7 +7650,7 @@
         },
         {
             "true": "4 cheese",
-            "pred": "chicken"
+            "pred": "blue cheese"
         },
         {
             "true": "unanswerable",
@@ -7658,7 +7658,7 @@
         },
         {
             "true": "roast beef",
-            "pred": "beef"
+            "pred": "roast beef"
         },
         {
             "true": "alaltoids",
@@ -7686,15 +7686,15 @@
         },
         {
             "true": "ottoman",
-            "pred": "cushion"
+            "pred": "red"
         },
         {
             "true": "unanswerable",
-            "pred": "christmas tree"
+            "pred": "no"
         },
         {
             "true": "blue screen",
-            "pred": "unanswerable"
+            "pred": "nothing"
         },
         {
             "true": "directly under large volume button on left side",
@@ -7714,11 +7714,11 @@
         },
         {
             "true": "nascar 07",
-            "pred": "nascar"
+            "pred": "nascar 07"
         },
         {
             "true": "ocean spray",
-            "pred": "white"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -7726,11 +7726,11 @@
         },
         {
             "true": "tortilla wraps",
-            "pred": "taco"
+            "pred": "tortilla"
         },
         {
             "true": "yes 500mg",
-            "pred": "orange"
+            "pred": "unanswerable"
         },
         {
             "true": "brown",
@@ -7738,11 +7738,11 @@
         },
         {
             "true": "salt",
-            "pred": "pistil salt"
+            "pred": "salt"
         },
         {
             "true": "statue",
-            "pred": "civil war"
+            "pred": "statue"
         },
         {
             "true": "balls sanded",
@@ -7798,11 +7798,11 @@
         },
         {
             "true": "food",
-            "pred": "game"
+            "pred": "unanswerable"
         },
         {
             "true": "grey",
-            "pred": "gray"
+            "pred": "grey"
         },
         {
             "true": "unanswerable",
@@ -7822,11 +7822,11 @@
         },
         {
             "true": "green mountain coffee dark magic",
-            "pred": "green coffee"
+            "pred": "green bean"
         },
         {
             "true": "unanswerable",
-            "pred": "door"
+            "pred": "white"
         },
         {
             "true": "unanswerable",
@@ -7834,7 +7834,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "peach"
+            "pred": "unanswerable"
         },
         {
             "true": "pink",
@@ -7866,7 +7866,7 @@
         },
         {
             "true": "4:23",
-            "pred": "4 : 45"
+            "pred": "4 : 00"
         },
         {
             "true": "wrist wallet",
@@ -7886,7 +7886,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "light"
         },
         {
             "true": "flowers",
@@ -7918,7 +7918,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "water"
+            "pred": "sea lion"
         },
         {
             "true": "blueberry",
@@ -7926,7 +7926,7 @@
         },
         {
             "true": "cream mushroom soup",
-            "pred": "soup"
+            "pred": "cream mushroom soup"
         },
         {
             "true": "black dog",
@@ -7938,7 +7938,7 @@
         },
         {
             "true": "beer",
-            "pred": "24"
+            "pred": "beer"
         },
         {
             "true": "black",
@@ -7954,7 +7954,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "toothpaste"
+            "pred": "unanswerable"
         },
         {
             "true": "ryathhe",
@@ -7970,11 +7970,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "laptop"
+            "pred": "computer"
         },
         {
             "true": "pink",
-            "pred": "pink"
+            "pred": "purple"
         },
         {
             "true": "yes",
@@ -8050,7 +8050,7 @@
         },
         {
             "true": "lamp",
-            "pred": "living room"
+            "pred": "table"
         },
         {
             "true": "unanswerable",
@@ -8118,11 +8118,11 @@
         },
         {
             "true": "pet dental",
-            "pred": "car"
+            "pred": "car wash"
         },
         {
             "true": "red white",
-            "pred": "red"
+            "pred": "red white"
         },
         {
             "true": "unanswerable",
@@ -8130,7 +8130,7 @@
         },
         {
             "true": "watch",
-            "pred": "time"
+            "pred": "watch"
         },
         {
             "true": "clear",
@@ -8138,7 +8138,7 @@
         },
         {
             "true": "all day allergy",
-            "pred": "all - day all - day all -"
+            "pred": "all day all day all day all day"
         },
         {
             "true": "video game",
@@ -8162,7 +8162,7 @@
         },
         {
             "true": "1 dollar bill",
-            "pred": "dollar"
+            "pred": "1 dollar bill"
         },
         {
             "true": "keyboard",
@@ -8250,7 +8250,7 @@
         },
         {
             "true": "no",
-            "pred": "_? yes"
+            "pred": "_? no"
         },
         {
             "true": "sword",
@@ -8258,7 +8258,7 @@
         },
         {
             "true": "cough drops",
-            "pred": "lemon"
+            "pred": "honey"
         },
         {
             "true": "unanswerable",
@@ -8266,7 +8266,7 @@
         },
         {
             "true": "bottle wine",
-            "pred": "wine"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -8274,7 +8274,7 @@
         },
         {
             "true": "lock filter",
-            "pred": "no"
+            "pred": "yes"
         },
         {
             "true": "tv dinner yes",
@@ -8282,7 +8282,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "beer"
+            "pred": "unanswerable"
         },
         {
             "true": "chocolate",
@@ -8294,7 +8294,7 @@
         },
         {
             "true": "left",
-            "pred": "white"
+            "pred": "flour"
         },
         {
             "true": "blank",
@@ -8318,7 +8318,7 @@
         },
         {
             "true": "radio",
-            "pred": "unanswerable"
+            "pred": "radio"
         },
         {
             "true": "lego star wars 2",
@@ -8326,7 +8326,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "yes"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -8350,7 +8350,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "sugar"
+            "pred": "spice"
         },
         {
             "true": "tuna",
@@ -8358,11 +8358,11 @@
         },
         {
             "true": "fully cooked bacon",
-            "pred": "nanswerable"
+            "pred": "o"
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "medicine"
         },
         {
             "true": "unanswerable",
@@ -8382,7 +8382,7 @@
         },
         {
             "true": "garlic",
-            "pred": "mint"
+            "pred": "coconut"
         },
         {
             "true": "coupons",
@@ -8398,7 +8398,7 @@
         },
         {
             "true": "digital clock",
-            "pred": "unanswerable"
+            "pred": "walkman"
         },
         {
             "true": "shirt",
@@ -8426,7 +8426,7 @@
         },
         {
             "true": "no",
-            "pred": "othing"
+            "pred": "o"
         },
         {
             "true": "thumb",
@@ -8458,7 +8458,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "tan"
+            "pred": "unanswerable"
         },
         {
             "true": "ckin2u",
@@ -8470,11 +8470,11 @@
         },
         {
             "true": "arawak",
-            "pred": "unanswerable"
+            "pred": "yes"
         },
         {
             "true": "dr pepper 10",
-            "pred": "10"
+            "pred": "dr pepper"
         },
         {
             "true": "cane",
@@ -8538,7 +8538,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "evening"
+            "pred": "night"
         },
         {
             "true": "nothing",
@@ -8570,11 +8570,11 @@
         },
         {
             "true": "lotion",
-            "pred": "lady"
+            "pred": "hand"
         },
         {
             "true": "unanswerable",
-            "pred": "nanswerable"
+            "pred": "o"
         },
         {
             "true": "unanswerable",
@@ -8590,7 +8590,7 @@
         },
         {
             "true": "veggie",
-            "pred": "beef"
+            "pred": "chicken"
         },
         {
             "true": "pudding",
@@ -8598,7 +8598,7 @@
         },
         {
             "true": "chicken",
-            "pred": "red"
+            "pred": "italian"
         },
         {
             "true": "unanswerable",
@@ -8622,7 +8622,7 @@
         },
         {
             "true": "heart",
-            "pred": "unanswerable"
+            "pred": "no shirt"
         },
         {
             "true": "unanswerable",
@@ -8634,7 +8634,7 @@
         },
         {
             "true": "cartoon character",
-            "pred": "red haired boy"
+            "pred": "red hair"
         },
         {
             "true": "living room",
@@ -8642,19 +8642,19 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "v kat",
-            "pred": "unanswerable"
+            "pred": "bottle"
         },
         {
             "true": "drum original",
-            "pred": "coffee"
+            "pred": "dremel"
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "blue",
@@ -8682,15 +8682,15 @@
         },
         {
             "true": "chives",
-            "pred": "oregano"
+            "pred": "herb"
         },
         {
             "true": "peas",
-            "pred": "green beans"
+            "pred": "peas"
         },
         {
             "true": "black white polka dots",
-            "pred": "black and white"
+            "pred": "black white"
         },
         {
             "true": "book",
@@ -8714,7 +8714,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "yes",
@@ -8722,7 +8722,7 @@
         },
         {
             "true": "beige",
-            "pred": "blue"
+            "pred": "white"
         },
         {
             "true": "outback steakhouse steak rub no salt",
@@ -8746,7 +8746,7 @@
         },
         {
             "true": "soup",
-            "pred": "soup"
+            "pred": "corn"
         },
         {
             "true": "stovetop",
@@ -8798,7 +8798,7 @@
         },
         {
             "true": "hot surface",
-            "pred": "hot low"
+            "pred": "unanswerable"
         },
         {
             "true": "cumin",
@@ -8810,7 +8810,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "soup"
+            "pred": "unanswerable"
         },
         {
             "true": "fudge covered oreos",
@@ -8826,15 +8826,15 @@
         },
         {
             "true": "unanswerable",
-            "pred": "nutrition facts"
-        },
-        {
-            "true": "unanswerable",
             "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
-            "pred": "coffee"
+            "pred": "movie"
+        },
+        {
+            "true": "unanswerable",
+            "pred": "unanswerable"
         },
         {
             "true": "red",
@@ -8858,7 +8858,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "yes"
         },
         {
             "true": "unanswerable",
@@ -8878,7 +8878,7 @@
         },
         {
             "true": "cartoon",
-            "pred": "cartoon"
+            "pred": "flowers"
         },
         {
             "true": "chocolate fudge chocolate chip",
@@ -8886,7 +8886,7 @@
         },
         {
             "true": "fine fine school",
-            "pred": "fine"
+            "pred": "fine fish school"
         },
         {
             "true": "black white",
@@ -8894,15 +8894,15 @@
         },
         {
             "true": "sauerkraut",
-            "pred": "masala"
+            "pred": "kahlua"
         },
         {
             "true": "body lotion",
-            "pred": "aloe vera"
+            "pred": "lotion"
         },
         {
             "true": "grey t shirt",
-            "pred": "unanswerable"
+            "pred": "grey"
         },
         {
             "true": "food",
@@ -8958,7 +8958,7 @@
         },
         {
             "true": "crackers",
-            "pred": "crackers"
+            "pred": "baked"
         },
         {
             "true": "unanswerable",
@@ -8982,7 +8982,7 @@
         },
         {
             "true": "breaded meat gravy",
-            "pred": "cake"
+            "pred": "white"
         },
         {
             "true": "fall preview new york",
@@ -8990,11 +8990,11 @@
         },
         {
             "true": "braillele",
-            "pred": "black"
+            "pred": "black dots"
         },
         {
             "true": "chips",
-            "pred": "crackers"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -9002,7 +9002,7 @@
         },
         {
             "true": "bottom food container",
-            "pred": "unanswerable"
+            "pred": "container"
         },
         {
             "true": "unanswerable",
@@ -9030,7 +9030,7 @@
         },
         {
             "true": "jsp blue",
-            "pred": "blue"
+            "pred": "blue smoke"
         },
         {
             "true": "kidney beans",
@@ -9058,7 +9058,7 @@
         },
         {
             "true": "5",
-            "pred": "$ 2"
+            "pred": "1 dollar"
         },
         {
             "true": "sink",
@@ -9066,11 +9066,11 @@
         },
         {
             "true": "box tissues",
-            "pred": "tissue"
+            "pred": "tissue box"
         },
         {
             "true": "tea",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "kitchen",
@@ -9078,7 +9078,7 @@
         },
         {
             "true": "dog",
-            "pred": "black lab"
+            "pred": "dog"
         },
         {
             "true": "yes",
@@ -9086,15 +9086,15 @@
         },
         {
             "true": "cigarettes",
-            "pred": "white"
+            "pred": "cigarettes"
         },
         {
             "true": "pepto bismol",
-            "pred": "unanswerable"
+            "pred": "candy"
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "white"
         },
         {
             "true": "can beans",
@@ -9126,7 +9126,7 @@
         },
         {
             "true": "white",
-            "pred": "tan"
+            "pred": "yellow"
         },
         {
             "true": "chicken breast",
@@ -9134,11 +9134,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "no"
+            "pred": "unanswerable"
         },
         {
             "true": "chili",
-            "pred": "soup"
+            "pred": "chili"
         },
         {
             "true": "yes",
@@ -9174,7 +9174,7 @@
         },
         {
             "true": "red white blue plaid",
-            "pred": "blue"
+            "pred": "white"
         },
         {
             "true": "yes",
@@ -9186,7 +9186,7 @@
         },
         {
             "true": "earl grey",
-            "pred": "teal"
+            "pred": "teal grey"
         },
         {
             "true": "insufficient image",
@@ -9202,7 +9202,7 @@
         },
         {
             "true": "bug spray",
-            "pred": "water"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -9214,7 +9214,7 @@
         },
         {
             "true": "some beauty plant",
-            "pred": "green"
+            "pred": "houseplant"
         },
         {
             "true": "dr pepper",
@@ -9278,7 +9278,7 @@
         },
         {
             "true": "game controller black",
-            "pred": "playstation"
+            "pred": "black"
         },
         {
             "true": "unanswerable",
@@ -9290,15 +9290,15 @@
         },
         {
             "true": "champagne",
-            "pred": "champagne"
+            "pred": "tea"
         },
         {
             "true": "hat",
-            "pred": "hat"
+            "pred": "cap"
         },
         {
             "true": "unanswerable",
-            "pred": "pasta"
+            "pred": "spaghetti"
         },
         {
             "true": "yellow",
@@ -9334,7 +9334,7 @@
         },
         {
             "true": "chile",
-            "pred": "unanswerable"
+            "pred": "store"
         },
         {
             "true": "unanswerable",
@@ -9346,7 +9346,7 @@
         },
         {
             "true": "liquor",
-            "pred": "white"
+            "pred": "vodka"
         },
         {
             "true": "yellow",
@@ -9358,7 +9358,7 @@
         },
         {
             "true": "nothing",
-            "pred": "toshiba"
+            "pred": "laptop"
         },
         {
             "true": "scott",
@@ -9366,15 +9366,15 @@
         },
         {
             "true": "turkey breast cutlets",
-            "pred": "beef"
-        },
-        {
-            "true": "dry red",
             "pred": "unanswerable"
         },
         {
+            "true": "dry red",
+            "pred": "red"
+        },
+        {
             "true": "french vanilla",
-            "pred": "coffee"
+            "pred": "vanilla"
         },
         {
             "true": "jukebox blues",
@@ -9382,11 +9382,11 @@
         },
         {
             "true": "zaditor",
-            "pred": "tabasco"
+            "pred": "zodder"
         },
         {
             "true": "white",
-            "pred": "beige"
+            "pred": "white"
         },
         {
             "true": "womens 1 daily",
@@ -9406,7 +9406,7 @@
         },
         {
             "true": "mixed vegetables",
-            "pred": "mixed veggie"
+            "pred": "vegetable"
         },
         {
             "true": "chicken noodle",
@@ -9422,7 +9422,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "10"
+            "pred": "5"
         },
         {
             "true": "keyboard",
@@ -9442,7 +9442,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -9466,7 +9466,7 @@
         },
         {
             "true": "12 clicks to left",
-            "pred": "no"
+            "pred": "right"
         },
         {
             "true": "keyboard",
@@ -9486,7 +9486,7 @@
         },
         {
             "true": "sergio mendes brasileiro",
-            "pred": "braemar"
+            "pred": "braille"
         },
         {
             "true": "unanswerable",
@@ -9494,23 +9494,23 @@
         },
         {
             "true": "cleaning product",
-            "pred": "unanswerable"
+            "pred": "cleaner"
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "ww"
         },
         {
             "true": "crystal light",
-            "pred": "lotion"
-        },
-        {
-            "true": "unanswerable",
             "pred": "unanswerable"
         },
         {
+            "true": "unanswerable",
+            "pred": "white"
+        },
+        {
             "true": "blue",
-            "pred": "blue"
+            "pred": "unanswerable"
         },
         {
             "true": "can",
@@ -9534,7 +9534,7 @@
         },
         {
             "true": "flamin hot cheetos",
-            "pred": "hot chili"
+            "pred": "hot dog"
         },
         {
             "true": "nothing",
@@ -9546,7 +9546,7 @@
         },
         {
             "true": "5:26",
-            "pred": "yes"
+            "pred": "5 : 26"
         },
         {
             "true": "unanswerable",
@@ -9574,7 +9574,7 @@
         },
         {
             "true": "off",
-            "pred": "h"
+            "pred": "h h h h h h h h"
         },
         {
             "true": "ring on finger",
@@ -9590,7 +9590,7 @@
         },
         {
             "true": "452940",
-            "pred": "antenna"
+            "pred": "radio"
         },
         {
             "true": "paper towels",
@@ -9614,7 +9614,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "dinner"
+            "pred": "chicken"
         },
         {
             "true": "salad",
@@ -9626,7 +9626,7 @@
         },
         {
             "true": "beef tips",
-            "pred": "beef"
+            "pred": "meat"
         },
         {
             "true": "door",
@@ -9654,7 +9654,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "nothing",
@@ -9666,11 +9666,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "baby"
         },
         {
             "true": "black white men in courtroom",
-            "pred": "black and white"
+            "pred": "black white"
         },
         {
             "true": "unanswerable",
@@ -9682,7 +9682,7 @@
         },
         {
             "true": "chicken pot pie",
-            "pred": "buttermilk"
+            "pred": "butternut"
         },
         {
             "true": "jam",
@@ -9690,7 +9690,7 @@
         },
         {
             "true": "miracle whip",
-            "pred": "yogurt"
+            "pred": "bottle"
         },
         {
             "true": "unanswerable",
@@ -9702,11 +9702,11 @@
         },
         {
             "true": "windex",
-            "pred": "tropicana"
+            "pred": "coconut flakes"
         },
         {
             "true": "unanswerable",
-            "pred": "mattress"
+            "pred": "white"
         },
         {
             "true": "corn",
@@ -9730,7 +9730,7 @@
         },
         {
             "true": "seasoning",
-            "pred": "hot sauce"
+            "pred": "chili sauce"
         },
         {
             "true": "brown",
@@ -9746,7 +9746,7 @@
         },
         {
             "true": "8:43",
-            "pred": "hot"
+            "pred": "unanswerable"
         },
         {
             "true": "spiders",
@@ -9762,7 +9762,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "blue",
@@ -9822,7 +9822,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "no"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -9870,11 +9870,11 @@
         },
         {
             "true": "this bottle rutland",
-            "pred": "lotion"
+            "pred": "unanswerable"
         },
         {
             "true": "yes",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "black",
@@ -9886,7 +9886,7 @@
         },
         {
             "true": "toothpaste",
-            "pred": "toothpaste"
+            "pred": "unanswerable"
         },
         {
             "true": "broil",
@@ -9902,7 +9902,7 @@
         },
         {
             "true": "house blend",
-            "pred": "house"
+            "pred": "house blind"
         },
         {
             "true": "unanswerable",
@@ -9910,7 +9910,7 @@
         },
         {
             "true": "nighttime sleep aid",
-            "pred": "unanswerable"
+            "pred": "book"
         },
         {
             "true": "computer",
@@ -9930,7 +9930,7 @@
         },
         {
             "true": "8",
-            "pred": "7"
+            "pred": "3"
         },
         {
             "true": "coca cola",
@@ -9950,7 +9950,7 @@
         },
         {
             "true": "organics brand lowfat plain yogurt",
-            "pred": "e."
+            "pred": "e. unanswerable"
         },
         {
             "true": "375 for 20 to 25 minutes",
@@ -9966,11 +9966,11 @@
         },
         {
             "true": "30 grams",
-            "pred": "0"
+            "pred": "3"
         },
         {
             "true": "soda",
-            "pred": "pizza"
+            "pred": "microwave"
         },
         {
             "true": "white",
@@ -9998,11 +9998,11 @@
         },
         {
             "true": "leg",
-            "pred": "jeans"
+            "pred": "grey"
         },
         {
             "true": "candy",
-            "pred": "pink"
+            "pred": "hand"
         },
         {
             "true": "smart ones",
@@ -10018,7 +10018,7 @@
         },
         {
             "true": "alpha bits",
-            "pred": "cereal"
+            "pred": "peanut butter"
         },
         {
             "true": "unanswerable",
@@ -10038,7 +10038,7 @@
         },
         {
             "true": "spaghetti bolognaise",
-            "pred": "pasta"
+            "pred": "spaghetti"
         },
         {
             "true": "2",
@@ -10062,7 +10062,7 @@
         },
         {
             "true": "tomato sauce",
-            "pred": "tomatoes"
+            "pred": "tomato sauce"
         },
         {
             "true": "box",
@@ -10098,15 +10098,15 @@
         },
         {
             "true": "hot cocoa mix",
-            "pred": "coffee"
+            "pred": "cocoa mix"
         },
         {
             "true": "computer software",
-            "pred": "home keyboard"
+            "pred": "home student"
         },
         {
             "true": "black white",
-            "pred": "black"
+            "pred": "black white"
         },
         {
             "true": "chips",
@@ -10118,7 +10118,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "windows"
+            "pred": "start"
         },
         {
             "true": "no",
@@ -10126,11 +10126,11 @@
         },
         {
             "true": "chicken",
-            "pred": "donut"
+            "pred": "unanswerable"
         },
         {
             "true": "cranberry sauce",
-            "pred": "coffee"
+            "pred": "chocolate"
         },
         {
             "true": "cornbread mix",
@@ -10174,11 +10174,11 @@
         },
         {
             "true": "yes",
-            "pred": "yes"
+            "pred": "peach peach peach peach peach peaches"
         },
         {
             "true": "lasagne",
-            "pred": "meatballs"
+            "pred": "lasagna"
         },
         {
             "true": "90%",
@@ -10194,7 +10194,7 @@
         },
         {
             "true": "paper",
-            "pred": "paper"
+            "pred": "unanswerable"
         },
         {
             "true": "yes",
@@ -10202,7 +10202,7 @@
         },
         {
             "true": "luggage locator",
-            "pred": "luggage"
+            "pred": "air"
         },
         {
             "true": "unanswerable",
@@ -10214,7 +10214,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "black"
+            "pred": "no shirt"
         },
         {
             "true": "unanswerable",
@@ -10242,7 +10242,7 @@
         },
         {
             "true": "rainbow",
-            "pred": "green"
+            "pred": "green yellow blue purple"
         },
         {
             "true": "dunkin donuts",
@@ -10278,7 +10278,7 @@
         },
         {
             "true": "manwich",
-            "pred": "tomato"
+            "pred": "tomato sauce"
         },
         {
             "true": "white blue",
@@ -10290,7 +10290,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "cup"
+            "pred": "unanswerable"
         },
         {
             "true": "dec 03 2011",
@@ -10314,7 +10314,7 @@
         },
         {
             "true": "cheesy ham potato",
-            "pred": "pie"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -10338,7 +10338,7 @@
         },
         {
             "true": "cereal",
-            "pred": "whole"
+            "pred": "no"
         },
         {
             "true": "spaghetti",
@@ -10362,7 +10362,7 @@
         },
         {
             "true": "meatloaf",
-            "pred": "unanswerable"
+            "pred": "chicken"
         },
         {
             "true": "unanswerable",
@@ -10374,7 +10374,7 @@
         },
         {
             "true": "425",
-            "pred": "warm"
+            "pred": "350"
         },
         {
             "true": "1 notch to right",
@@ -10382,7 +10382,7 @@
         },
         {
             "true": "garlic salt",
-            "pred": "tomato"
+            "pred": "tomato sauce"
         },
         {
             "true": "chinese food",
@@ -10410,7 +10410,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "red"
+            "pred": "unanswerable"
         },
         {
             "true": "ground beef hot water milk sauce mix uncooked pasta",
@@ -10422,11 +10422,11 @@
         },
         {
             "true": "disney world",
-            "pred": "unanswerable"
+            "pred": "white"
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "i cant believe not butter",
@@ -10438,7 +10438,7 @@
         },
         {
             "true": "dvd",
-            "pred": "game"
+            "pred": "dvd"
         },
         {
             "true": "grey",
@@ -10446,7 +10446,7 @@
         },
         {
             "true": "cinnamon spice",
-            "pred": "unanswerable"
+            "pred": "spice"
         },
         {
             "true": "big grey clouds",
@@ -10458,7 +10458,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "....."
+            "pred": "t"
         },
         {
             "true": "20 songs love from 70s",
@@ -10482,7 +10482,7 @@
         },
         {
             "true": "acer",
-            "pred": "laptop"
+            "pred": "acer"
         },
         {
             "true": "sweet potatoes",
@@ -10554,7 +10554,7 @@
         },
         {
             "true": "hot pepper sauce",
-            "pred": "orange"
+            "pred": "sauce"
         },
         {
             "true": "unanswerable",
@@ -10570,7 +10570,7 @@
         },
         {
             "true": "78",
-            "pred": "80"
+            "pred": "78"
         },
         {
             "true": "yellow green blue red",
@@ -10586,11 +10586,11 @@
         },
         {
             "true": "sink",
-            "pred": "soap"
+            "pred": "hand soap"
         },
         {
             "true": "jergens new soft shimmer skin radiance moisturizer",
-            "pred": "soft"
+            "pred": "soft shine"
         },
         {
             "true": "pink",
@@ -10598,7 +10598,7 @@
         },
         {
             "true": "gift card",
-            "pred": "st patrick's"
+            "pred": "gift card"
         },
         {
             "true": "carpet",
@@ -10614,7 +10614,7 @@
         },
         {
             "true": "table",
-            "pred": "unanswerable"
+            "pred": "table"
         },
         {
             "true": "sugar",
@@ -10626,7 +10626,7 @@
         },
         {
             "true": "speaker",
-            "pred": "wall"
+            "pred": "chair"
         },
         {
             "true": "blue",
@@ -10638,7 +10638,7 @@
         },
         {
             "true": "navy blue",
-            "pred": "navy blue"
+            "pred": "blue"
         },
         {
             "true": "unanswerable",
@@ -10658,11 +10658,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "black"
+            "pred": "grey"
         },
         {
             "true": "washingtons golden delicious music series",
-            "pred": "washington"
+            "pred": "cherry"
         },
         {
             "true": "white shoes grey detailing some navy",
@@ -10674,7 +10674,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "toilet paper"
+            "pred": "soap"
         },
         {
             "true": "unanswerable",
@@ -10686,11 +10686,11 @@
         },
         {
             "true": "phone",
-            "pred": "phone charger"
+            "pred": "charger"
         },
         {
             "true": "iphone",
-            "pred": "apple"
+            "pred": "iphone"
         },
         {
             "true": "vodka",
@@ -10702,7 +10702,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "no street"
+            "pred": "no street sign"
         },
         {
             "true": "grilled chicken spanish rice",
@@ -10710,7 +10710,7 @@
         },
         {
             "true": "flowers",
-            "pred": "table"
+            "pred": "desk"
         },
         {
             "true": "orchid",
@@ -10738,7 +10738,7 @@
         },
         {
             "true": "lightbulb",
-            "pred": "lamp"
+            "pred": "light bulb"
         },
         {
             "true": "yes",
@@ -10770,11 +10770,11 @@
         },
         {
             "true": "medication",
-            "pred": "unanswerable"
+            "pred": "microwave"
         },
         {
             "true": "desk",
-            "pred": "computer"
+            "pred": "desk"
         },
         {
             "true": "unanswerable",
@@ -10782,7 +10782,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "white"
+            "pred": "unanswerable"
         },
         {
             "true": "male",
@@ -10794,7 +10794,7 @@
         },
         {
             "true": "cloudy",
-            "pred": "unanswerable"
+            "pred": "cloudy"
         },
         {
             "true": "brown",
@@ -10830,7 +10830,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no microwave"
         },
         {
             "true": "unanswerable",
@@ -10846,11 +10846,11 @@
         },
         {
             "true": "sugar",
-            "pred": "mint"
+            "pred": "unanswerable"
         },
         {
             "true": "piggy bank",
-            "pred": "jar"
+            "pred": "money"
         },
         {
             "true": "unanswerable",
@@ -10870,11 +10870,11 @@
         },
         {
             "true": "yes",
-            "pred": "unanswerable"
+            "pred": "pink"
         },
         {
             "true": "john michael montgomery",
-            "pred": "john tim tim tim tim tim tim tim"
+            "pred": "john jackson"
         },
         {
             "true": "unanswerable",
@@ -10902,11 +10902,11 @@
         },
         {
             "true": "remote",
-            "pred": "tv remote"
+            "pred": "remote"
         },
         {
             "true": "white",
-            "pred": "white"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -10914,11 +10914,11 @@
         },
         {
             "true": "passion fruit",
-            "pred": "unanswerable"
+            "pred": "french"
         },
         {
             "true": "unanswerable",
-            "pred": "is blue flowers"
+            "pred": "unanswerable"
         },
         {
             "true": "white",
@@ -10938,7 +10938,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "microsoft windows"
+            "pred": "computer"
         },
         {
             "true": "orange",
@@ -10958,7 +10958,7 @@
         },
         {
             "true": "75",
-            "pred": "60"
+            "pred": "40"
         },
         {
             "true": "yes",
@@ -10974,11 +10974,11 @@
         },
         {
             "true": "aqua",
-            "pred": "green"
+            "pred": "blue"
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "0"
         },
         {
             "true": "unanswerable",
@@ -11002,7 +11002,7 @@
         },
         {
             "true": "onion sea salt",
-            "pred": "onion"
+            "pred": "sea salt"
         },
         {
             "true": "unanswerable",
@@ -11014,11 +11014,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "food"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
-            "pred": "no football team"
+            "pred": "record"
         },
         {
             "true": "bag",
@@ -11026,7 +11026,7 @@
         },
         {
             "true": "english italian italian english dictionary",
-            "pred": "english dictionary"
+            "pred": "english english english dictionary"
         },
         {
             "true": "orange juice",
@@ -11050,7 +11050,7 @@
         },
         {
             "true": "open corner to vent cook 4 minutes on high stir",
-            "pred": "unanswerable"
+            "pred": "chicken"
         },
         {
             "true": "yes",
@@ -11058,7 +11058,7 @@
         },
         {
             "true": "xm radio",
-            "pred": "tv"
+            "pred": "radio"
         },
         {
             "true": "white",
@@ -11074,7 +11074,7 @@
         },
         {
             "true": "tullys italian roast",
-            "pred": "irish"
+            "pred": "italian"
         },
         {
             "true": "parmesan crusted tilapia",
@@ -11086,7 +11086,7 @@
         },
         {
             "true": "chex mix",
-            "pred": "pretzels"
+            "pred": "candy"
         },
         {
             "true": "unanswerable",
@@ -11110,7 +11110,7 @@
         },
         {
             "true": "sky",
-            "pred": "unanswerable"
+            "pred": "fence"
         },
         {
             "true": "unanswerable",
@@ -11130,11 +11130,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "brown"
+            "pred": "beetle"
         },
         {
             "true": "unanswerable",
-            "pred": "warm"
+            "pred": "unanswerable"
         },
         {
             "true": "blue",
@@ -11154,11 +11154,11 @@
         },
         {
             "true": "frozen vegetables",
-            "pred": "soup"
+            "pred": "unanswerable"
         },
         {
             "true": "can vegetables",
-            "pred": "soup"
+            "pred": "veggie"
         },
         {
             "true": "turquoise",
@@ -11170,7 +11170,7 @@
         },
         {
             "true": "chocolate chips",
-            "pred": "eggs"
+            "pred": "milk chocolate"
         },
         {
             "true": "shiner rye lager",
@@ -11190,7 +11190,7 @@
         },
         {
             "true": "keyboard",
-            "pred": "unanswerable"
+            "pred": "oven"
         },
         {
             "true": "diet dr pepper",
@@ -11198,11 +11198,11 @@
         },
         {
             "true": "pens",
-            "pred": "unanswerable"
+            "pred": "pen"
         },
         {
             "true": "unanswerable",
-            "pred": "black"
+            "pred": "black beans"
         },
         {
             "true": "blue",
@@ -11210,11 +11210,11 @@
         },
         {
             "true": "burgundy",
-            "pred": "maroon"
+            "pred": "brown"
         },
         {
             "true": "chicken florentine alfredo",
-            "pred": "pasta"
+            "pred": "chicken alfredo"
         },
         {
             "true": "crunch cream",
@@ -11238,7 +11238,7 @@
         },
         {
             "true": "stormy",
-            "pred": "blue"
+            "pred": "cloudy"
         },
         {
             "true": "unanswerable",
@@ -11246,7 +11246,7 @@
         },
         {
             "true": "chicken teriyaki",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "blue 2",
@@ -11282,15 +11282,15 @@
         },
         {
             "true": "red red yellow",
-            "pred": "red yellow"
+            "pred": "red yellow black"
         },
         {
             "true": "batter",
-            "pred": "eggs"
+            "pred": "egg"
         },
         {
             "true": "magic eraser",
-            "pred": "clean"
+            "pred": "cleaner"
         },
         {
             "true": "low",
@@ -11354,7 +11354,7 @@
         },
         {
             "true": "rc cola",
-            "pred": "unanswerable"
+            "pred": "beer"
         },
         {
             "true": "unanswerable",
@@ -11362,7 +11362,7 @@
         },
         {
             "true": "can",
-            "pred": "can"
+            "pred": "unanswerable"
         },
         {
             "true": "brown black silver",
@@ -11374,7 +11374,7 @@
         },
         {
             "true": "50",
-            "pred": "hot"
+            "pred": "350"
         },
         {
             "true": "unanswerable",
@@ -11398,7 +11398,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "coke"
+            "pred": "dr pepper"
         },
         {
             "true": "cups",
@@ -11434,7 +11434,7 @@
         },
         {
             "true": "5",
-            "pred": "50"
+            "pred": "5"
         },
         {
             "true": "vegetables",
@@ -11474,7 +11474,7 @@
         },
         {
             "true": "lamp",
-            "pred": "unanswerable"
+            "pred": "bottle"
         },
         {
             "true": "6",
@@ -11502,11 +11502,11 @@
         },
         {
             "true": "light brown sugar",
-            "pred": "pink"
+            "pred": "unanswerable"
         },
         {
             "true": "porcupines in tomato sauce",
-            "pred": "soup"
+            "pred": "soup sauce"
         },
         {
             "true": "baked potato cheddar bacon bits",
@@ -11514,7 +11514,7 @@
         },
         {
             "true": "video game",
-            "pred": "playstation 2"
+            "pred": "star wars"
         },
         {
             "true": "dog",
@@ -11538,7 +11538,7 @@
         },
         {
             "true": "gold",
-            "pred": "tan"
+            "pred": "brown"
         },
         {
             "true": "yellow",
@@ -11578,11 +11578,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "envelope"
         },
         {
             "true": "pink",
@@ -11606,7 +11606,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "soup apple"
+            "pred": "bowl apple"
         },
         {
             "true": "xi strength no",
@@ -11614,7 +11614,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "water"
+            "pred": "unanswerable"
         },
         {
             "true": "yes i can read",
@@ -11622,11 +11622,11 @@
         },
         {
             "true": "phone",
-            "pred": "phone"
+            "pred": "telephone"
         },
         {
             "true": "corn",
-            "pred": "'t tell"
+            "pred": "unanswerable"
         },
         {
             "true": "feed flock",
@@ -11702,7 +11702,7 @@
         },
         {
             "true": "italian breadsticks",
-            "pred": "bread sticks"
+            "pred": "italian bread sticks"
         },
         {
             "true": "this rose",
@@ -11710,7 +11710,7 @@
         },
         {
             "true": "spaghetti seasoning",
-            "pred": "maple"
+            "pred": "spaghetti"
         },
         {
             "true": "dog",
@@ -11718,7 +11718,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "yes"
+            "pred": "unanswerable"
         },
         {
             "true": "nothing",
@@ -11726,7 +11726,7 @@
         },
         {
             "true": "this cable box not authorized for service please call your cable division",
-            "pred": "unanswerable"
+            "pred": "no tv"
         },
         {
             "true": "unanswerable",
@@ -11734,7 +11734,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "toothpaste"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -11746,7 +11746,7 @@
         },
         {
             "true": "1 dollar",
-            "pred": "$ 5"
+            "pred": "1"
         },
         {
             "true": "purple",
@@ -11758,7 +11758,7 @@
         },
         {
             "true": "label on left 1",
-            "pred": "unans"
+            "pred": "unanswerable"
         },
         {
             "true": "no",
@@ -11790,15 +11790,15 @@
         },
         {
             "true": "yes",
-            "pred": "navy blue"
+            "pred": "shirt"
         },
         {
             "true": "painting",
-            "pred": "anime"
+            "pred": "red hair"
         },
         {
             "true": "black",
-            "pred": "unanswerable"
+            "pred": "blue"
         },
         {
             "true": "59",
@@ -11810,11 +11810,11 @@
         },
         {
             "true": "water bottle",
-            "pred": "water"
+            "pred": "water bottle"
         },
         {
             "true": "tv",
-            "pred": "unanswerable"
+            "pred": "computer"
         },
         {
             "true": "moist meaty",
@@ -11826,11 +11826,11 @@
         },
         {
             "true": "water bottle",
-            "pred": "water"
+            "pred": "water bottle"
         },
         {
             "true": "unanswerable",
-            "pred": "red"
+            "pred": "unanswerable"
         },
         {
             "true": "butterfly",
@@ -11850,7 +11850,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "white john deere logo",
@@ -11874,7 +11874,7 @@
         },
         {
             "true": "grey",
-            "pred": "gray"
+            "pred": "grey"
         },
         {
             "true": "paper",
@@ -11898,7 +11898,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "pepsi"
+            "pred": "no bat"
         },
         {
             "true": "unanswerable",
@@ -11934,11 +11934,11 @@
         },
         {
             "true": "yes",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "coffee maker",
-            "pred": "coffee"
+            "pred": "coffee maker"
         },
         {
             "true": "2",
@@ -11950,7 +11950,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "coffee"
+            "pred": "unanswerable"
         },
         {
             "true": "toy car",
@@ -11962,11 +11962,11 @@
         },
         {
             "true": "money",
-            "pred": "unanswerable"
+            "pred": "money"
         },
         {
             "true": "donut",
-            "pred": "donut"
+            "pred": "chocolate"
         },
         {
             "true": "blue",
@@ -11974,7 +11974,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "polo"
+            "pred": "blue"
         },
         {
             "true": "unanswerable",
@@ -12014,7 +12014,7 @@
         },
         {
             "true": "espresso",
-            "pred": "coffee"
+            "pred": "wild"
         },
         {
             "true": "blue",
@@ -12022,7 +12022,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "no"
+            "pred": "blurry"
         },
         {
             "true": "unanswerable",
@@ -12054,7 +12054,7 @@
         },
         {
             "true": "grey",
-            "pred": "gray"
+            "pred": "grey"
         },
         {
             "true": "grey",
@@ -12070,7 +12070,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "computer"
         },
         {
             "true": "mommys big guy",
@@ -12082,7 +12082,7 @@
         },
         {
             "true": "beans",
-            "pred": "soup"
+            "pred": "beans"
         },
         {
             "true": "dec 17 11",
@@ -12090,7 +12090,7 @@
         },
         {
             "true": "fridge",
-            "pred": "no"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -12098,7 +12098,7 @@
         },
         {
             "true": "120",
-            "pred": "45"
+            "pred": "20"
         },
         {
             "true": "unanswerable",
@@ -12118,7 +12118,7 @@
         },
         {
             "true": "turnip greens",
-            "pred": "spinach"
+            "pred": "carrot greens"
         },
         {
             "true": "unanswerable",
@@ -12146,7 +12146,7 @@
         },
         {
             "true": "pink",
-            "pred": "silver"
+            "pred": "pink"
         },
         {
             "true": "cell phone",
@@ -12178,11 +12178,11 @@
         },
         {
             "true": "10",
-            "pred": "una unanswerable"
+            "pred": "red"
         },
         {
             "true": "soap no",
-            "pred": "water"
+            "pred": "soap"
         },
         {
             "true": "unanswerable",
@@ -12206,7 +12206,7 @@
         },
         {
             "true": "shirt",
-            "pred": "grey"
+            "pred": "grey white"
         },
         {
             "true": "beer",
@@ -12226,7 +12226,7 @@
         },
         {
             "true": "tuna noodle casserole",
-            "pred": "unanswerable"
+            "pred": "chicken"
         },
         {
             "true": "popcorn",
@@ -12234,7 +12234,7 @@
         },
         {
             "true": "clam chowder",
-            "pred": "soup"
+            "pred": "cream"
         },
         {
             "true": "pink",
@@ -12262,11 +12262,11 @@
         },
         {
             "true": "fish",
-            "pred": "red sauce"
+            "pred": "sauce"
         },
         {
             "true": "robo sweeper",
-            "pred": "coffee"
+            "pred": "coffee maker"
         },
         {
             "true": "broccoli",
@@ -12278,7 +12278,7 @@
         },
         {
             "true": "fruit delight",
-            "pred": "truffle"
+            "pred": "fruit"
         },
         {
             "true": "unanswerable",
@@ -12286,7 +12286,7 @@
         },
         {
             "true": "shampoo",
-            "pred": "tanning cream"
+            "pred": "body lotion"
         },
         {
             "true": "yellow 2011 vision walk",
@@ -12306,19 +12306,19 @@
         },
         {
             "true": "12:28",
-            "pred": "12 : 00"
+            "pred": "12 : 26"
         },
         {
             "true": "thermostat",
-            "pred": "wall"
+            "pred": "alarm"
         },
         {
             "true": "dr pepper",
-            "pred": "soda"
+            "pred": "dr pepper"
         },
         {
             "true": "window",
-            "pred": "blinds"
+            "pred": "window"
         },
         {
             "true": "shrimp",
@@ -12346,7 +12346,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "june 2013"
+            "pred": "2013"
         },
         {
             "true": "unanswerable",
@@ -12366,7 +12366,7 @@
         },
         {
             "true": "polysporin",
-            "pred": "antipasto"
+            "pred": "spray"
         },
         {
             "true": "samuel adams cherry wheat ale",
@@ -12378,15 +12378,15 @@
         },
         {
             "true": "grey",
-            "pred": "gray"
+            "pred": "brown"
         },
         {
             "true": "unanswerable",
-            "pred": "yellow"
+            "pred": "book"
         },
         {
             "true": "laptop",
-            "pred": "green"
+            "pred": "charger"
         },
         {
             "true": "sour cream onion",
@@ -12402,19 +12402,19 @@
         },
         {
             "true": "ground",
-            "pred": "person"
+            "pred": "sidewalk"
         },
         {
             "true": "yes",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "grocery store",
-            "pred": "heinz"
+            "pred": "heinz ketchup"
         },
         {
             "true": "unanswerable",
-            "pred": "no"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -12430,7 +12430,7 @@
         },
         {
             "true": "vitamins",
-            "pred": "lotion"
+            "pred": "unanswerable"
         },
         {
             "true": "does bother you that im always right",
@@ -12442,7 +12442,7 @@
         },
         {
             "true": "doritos cool ranch",
-            "pred": "unanswerable"
+            "pred": "fanta"
         },
         {
             "true": "light sour cream",
@@ -12450,7 +12450,7 @@
         },
         {
             "true": "coca cola",
-            "pred": "coca cola"
+            "pred": "coke"
         },
         {
             "true": "unanswerable",
@@ -12462,7 +12462,7 @@
         },
         {
             "true": "white",
-            "pred": "white"
+            "pred": "pink"
         },
         {
             "true": "unanswerable",
@@ -12470,7 +12470,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "penny",
@@ -12482,11 +12482,11 @@
         },
         {
             "true": "strawberry shortcake doll",
-            "pred": "strawberry shortcake"
+            "pred": "strawberry cake"
         },
         {
             "true": "blue shirt design buddha playing guitar",
-            "pred": "e."
+            "pred": "e. blue"
         },
         {
             "true": "unanswerable",
@@ -12498,7 +12498,7 @@
         },
         {
             "true": "food",
-            "pred": "fries"
+            "pred": "french fries"
         },
         {
             "true": "yes",
@@ -12506,7 +12506,7 @@
         },
         {
             "true": "red",
-            "pred": "beer"
+            "pred": "unanswerable"
         },
         {
             "true": "fabric",
@@ -12518,15 +12518,15 @@
         },
         {
             "true": "mustard",
-            "pred": "cheese"
+            "pred": "unanswerable"
         },
         {
             "true": "penbino",
-            "pred": "red"
+            "pred": "toy"
         },
         {
             "true": "maroon",
-            "pred": "maroon"
+            "pred": "purple"
         },
         {
             "true": "red",
@@ -12562,11 +12562,11 @@
         },
         {
             "true": "2.574",
-            "pred": "4"
+            "pred": "3"
         },
         {
             "true": "hes not",
-            "pred": "hel"
+            "pred": "he not"
         },
         {
             "true": "unanswerable",
@@ -12574,7 +12574,7 @@
         },
         {
             "true": "masala dosa",
-            "pred": "masala"
+            "pred": "masala dog"
         },
         {
             "true": "computer image",
@@ -12610,7 +12610,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "lotion"
+            "pred": "unanswerable"
         },
         {
             "true": "italian roast",
@@ -12622,7 +12622,7 @@
         },
         {
             "true": "coupon",
-            "pred": "cranberry sauce"
+            "pred": "crawfish"
         },
         {
             "true": "ketchup",
@@ -12658,7 +12658,7 @@
         },
         {
             "true": "cassette tape",
-            "pred": "orange"
+            "pred": "toy"
         },
         {
             "true": "mixed colors blue pink red yellow",
@@ -12678,11 +12678,11 @@
         },
         {
             "true": "organic mulberries",
-            "pred": "organic muesli"
+            "pred": "organic muffins"
         },
         {
             "true": "pink white",
-            "pred": "pink"
+            "pred": "pink white"
         },
         {
             "true": "white",
@@ -12714,15 +12714,15 @@
         },
         {
             "true": "whiskey",
-            "pred": "buffalo"
-        },
-        {
-            "true": "unanswerable",
-            "pred": "toilet"
+            "pred": "buffalo track"
         },
         {
             "true": "unanswerable",
             "pred": "unanswerable"
+        },
+        {
+            "true": "unanswerable",
+            "pred": "lotion"
         },
         {
             "true": "blanket",
@@ -12746,11 +12746,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "food"
+            "pred": "meat"
         },
         {
             "true": "yes",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -12806,7 +12806,7 @@
         },
         {
             "true": "pork",
-            "pred": "soup"
+            "pred": "noodle"
         },
         {
             "true": "upside down",
@@ -12826,7 +12826,7 @@
         },
         {
             "true": "32",
-            "pred": "big"
+            "pred": "tv"
         },
         {
             "true": "beige",
@@ -12838,15 +12838,15 @@
         },
         {
             "true": "pink brown white",
-            "pred": "pink white"
+            "pred": "pink white grey pink white"
         },
         {
             "true": "green beans",
-            "pred": "green beans"
+            "pred": "baked beans"
         },
         {
             "true": "gum container",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "yes",
@@ -12866,7 +12866,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "5"
+            "pred": "unanswerable"
         },
         {
             "true": "pink",
@@ -12890,11 +12890,11 @@
         },
         {
             "true": "crackers",
-            "pred": "sunflower"
+            "pred": "candy"
         },
         {
             "true": "green white",
-            "pred": "green white"
+            "pred": "green white brown"
         },
         {
             "true": "unanswerable",
@@ -12914,7 +12914,7 @@
         },
         {
             "true": "flashlight",
-            "pred": "screwdriver"
+            "pred": "tool"
         },
         {
             "true": "unanswerable",
@@ -12922,7 +12922,7 @@
         },
         {
             "true": "cajun night before christmas",
-            "pred": "can't tell"
+            "pred": "cajun night before christmas"
         },
         {
             "true": "water",
@@ -12942,7 +12942,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "yes"
+            "pred": "house"
         },
         {
             "true": "iced tea mix",
@@ -12950,7 +12950,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "juice"
+            "pred": "water"
         },
         {
             "true": "purple",
@@ -12958,11 +12958,11 @@
         },
         {
             "true": "laundry detergent",
-            "pred": "dishwashing"
+            "pred": "dishwasher"
         },
         {
             "true": "shepards pie",
-            "pred": "bread"
+            "pred": "chicken"
         },
         {
             "true": "cyclone",
@@ -12986,7 +12986,7 @@
         },
         {
             "true": "nothing",
-            "pred": "laptop"
+            "pred": "nothing"
         },
         {
             "true": "$25 starbucks gift card",
@@ -13034,7 +13034,7 @@
         },
         {
             "true": "brugge",
-            "pred": "bruges"
+            "pred": "brugege"
         },
         {
             "true": "cobra",
@@ -13058,7 +13058,7 @@
         },
         {
             "true": "steering wheel",
-            "pred": "volkswagen"
+            "pred": "car"
         },
         {
             "true": "blue",
@@ -13070,7 +13070,7 @@
         },
         {
             "true": "foot",
-            "pred": "unanswerable"
+            "pred": "foot"
         },
         {
             "true": "unanswerable",
@@ -13106,7 +13106,7 @@
         },
         {
             "true": "nivea",
-            "pred": "unanswerable"
+            "pred": "yes"
         },
         {
             "true": "unanswerable",
@@ -13118,7 +13118,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -13134,11 +13134,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "meatballs"
         },
         {
             "true": "unanswerable",
-            "pred": "fall"
+            "pred": "pumpkin soup"
         },
         {
             "true": "office 2000",
@@ -13170,7 +13170,7 @@
         },
         {
             "true": "phone",
-            "pred": "phone"
+            "pred": "cell phone"
         },
         {
             "true": "right",
@@ -13190,11 +13190,11 @@
         },
         {
             "true": "money",
-            "pred": "dollar"
+            "pred": "1 dollar bill"
         },
         {
             "true": "body wash",
-            "pred": "clear"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -13266,7 +13266,7 @@
         },
         {
             "true": "chewing tobacco",
-            "pred": "beef"
+            "pred": "wintergreen longhorn"
         },
         {
             "true": "unanswerable",
@@ -13278,15 +13278,15 @@
         },
         {
             "true": "middle left",
-            "pred": "10"
+            "pred": "64"
         },
         {
             "true": "poster",
-            "pred": "book"
+            "pred": "book you can open again"
         },
         {
             "true": "unanswerable",
-            "pred": "laptop"
+            "pred": "keyboard"
         },
         {
             "true": "no",
@@ -13306,15 +13306,15 @@
         },
         {
             "true": "candles",
-            "pred": "tea"
+            "pred": "eggs"
         },
         {
             "true": "horn",
-            "pred": "long"
+            "pred": "yes"
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "fan"
         },
         {
             "true": "no",
@@ -13334,7 +13334,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "white"
         },
         {
             "true": "sweet potato cutlets",
@@ -13362,7 +13362,7 @@
         },
         {
             "true": "manwich",
-            "pred": "hot sauce"
+            "pred": "beef"
         },
         {
             "true": "drawing",
@@ -13374,7 +13374,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "red"
+            "pred": "medicine"
         },
         {
             "true": "unanswerable",
@@ -13414,11 +13414,11 @@
         },
         {
             "true": "green lettering",
-            "pred": "green"
+            "pred": "green white black"
         },
         {
             "true": "stove yes",
-            "pred": "electric"
+            "pred": "electric box"
         },
         {
             "true": "sky",
@@ -13430,7 +13430,7 @@
         },
         {
             "true": "internet security",
-            "pred": "unanswerable"
+            "pred": "book"
         },
         {
             "true": "grey",
@@ -13438,7 +13438,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "coffee"
+            "pred": "chocolate"
         },
         {
             "true": "unanswerable",
@@ -13466,7 +13466,7 @@
         },
         {
             "true": "fully cooked turkey sausage patty",
-            "pred": "turkey sausage"
+            "pred": "turkey"
         },
         {
             "true": "color treat",
@@ -13486,7 +13486,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "green"
+            "pred": "beer"
         },
         {
             "true": "unanswerable",
@@ -13494,7 +13494,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "yes"
+            "pred": "water"
         },
         {
             "true": "isceon mo99",
@@ -13502,7 +13502,7 @@
         },
         {
             "true": "blue",
-            "pred": "unanswerable"
+            "pred": "blue"
         },
         {
             "true": "glasses",
@@ -13538,15 +13538,15 @@
         },
         {
             "true": "trophy",
-            "pred": "cup"
+            "pred": "speaker"
         },
         {
             "true": "mrs dash",
-            "pred": "offee"
+            "pred": "epper"
         },
         {
             "true": "6 cheese tortellini",
-            "pred": "cheese"
+            "pred": "cheese tortellini"
         },
         {
             "true": "english",
@@ -13562,11 +13562,11 @@
         },
         {
             "true": "backseat car",
-            "pred": "yellow"
+            "pred": "jacket"
         },
         {
             "true": "tv",
-            "pred": "football"
+            "pred": "tv"
         },
         {
             "true": "computer was unable to start performing start up repair",
@@ -13606,7 +13606,7 @@
         },
         {
             "true": "golden retriever",
-            "pred": "golden retriever"
+            "pred": "mutt"
         },
         {
             "true": "zephyrhills",
@@ -13614,7 +13614,7 @@
         },
         {
             "true": "leaf",
-            "pred": "leaves"
+            "pred": "leaf"
         },
         {
             "true": "unanswerable",
@@ -13634,7 +13634,7 @@
         },
         {
             "true": "mit champignons spar",
-            "pred": "soup"
+            "pred": "pasta"
         },
         {
             "true": "bottle",
@@ -13650,7 +13650,7 @@
         },
         {
             "true": "abraham lincoln vampire hunter",
-            "pred": "lincoln lincoln"
+            "pred": "lincoln lincoln lincoln"
         },
         {
             "true": "no",
@@ -13670,11 +13670,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "nothing"
+            "pred": "unanswerable"
         },
         {
             "true": "boneless pork roast",
-            "pred": "unanswerable"
+            "pred": "chicken"
         },
         {
             "true": "black red stripe",
@@ -13682,7 +13682,7 @@
         },
         {
             "true": "pen",
-            "pred": "black"
+            "pred": "pen"
         },
         {
             "true": "pork loin",
@@ -13690,7 +13690,7 @@
         },
         {
             "true": "fire roasted vegetable blend",
-            "pred": "apple"
+            "pred": "frozen"
         },
         {
             "true": "leaves",
@@ -13710,7 +13710,7 @@
         },
         {
             "true": "planes trains automobiles",
-            "pred": "planes and automobile"
+            "pred": "harry potter"
         },
         {
             "true": "unanswerable",
@@ -13726,7 +13726,7 @@
         },
         {
             "true": "toshiba",
-            "pred": "toshiba"
+            "pred": "laptop"
         },
         {
             "true": "pink",
@@ -13734,7 +13734,7 @@
         },
         {
             "true": "money",
-            "pred": "unanswerable"
+            "pred": "money"
         },
         {
             "true": "unanswerable",
@@ -13770,7 +13770,7 @@
         },
         {
             "true": "chunk chicken breast",
-            "pred": "chicken bread"
+            "pred": "chicken breast"
         },
         {
             "true": "yes",
@@ -13786,11 +13786,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "p. coffee"
+            "pred": "p. chocolate"
         },
         {
             "true": "trident",
-            "pred": "tropicana"
+            "pred": "jacks"
         },
         {
             "true": "aynt",
@@ -13802,7 +13802,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "s? white"
+            "pred": "s? unanswerable"
         },
         {
             "true": "white",
@@ -13818,11 +13818,11 @@
         },
         {
             "true": "vertical",
-            "pred": "."
+            "pred": "no"
         },
         {
             "true": "tulip",
-            "pred": "green"
+            "pred": "orchid"
         },
         {
             "true": "baked beans sausages",
@@ -13834,7 +13834,7 @@
         },
         {
             "true": "triangle",
-            "pred": "circle"
+            "pred": "unanswerable"
         },
         {
             "true": "uncle bens rice",
@@ -13846,7 +13846,7 @@
         },
         {
             "true": "microsoft accessibility technology for everyone champion 2011",
-            "pred": "champion"
+            "pred": "2013"
         },
         {
             "true": "black",
@@ -13854,7 +13854,7 @@
         },
         {
             "true": "d",
-            "pred": "unanswerable"
+            "pred": "8"
         },
         {
             "true": "z3xwcvy78914",
@@ -13862,15 +13862,15 @@
         },
         {
             "true": "water bottle",
-            "pred": "water"
+            "pred": "water bottle"
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "pillow"
         },
         {
             "true": "creamy chicken",
-            "pred": "macaroni"
+            "pred": "spaghetti"
         },
         {
             "true": "2 desks in room",
@@ -13918,7 +13918,7 @@
         },
         {
             "true": "dessert",
-            "pred": "cake"
+            "pred": "brownie"
         },
         {
             "true": "black",
@@ -13966,11 +13966,11 @@
         },
         {
             "true": "soup",
-            "pred": "can"
+            "pred": "soup"
         },
         {
             "true": "man gun",
-            "pred": "unanswerable"
+            "pred": "gun"
         },
         {
             "true": "baby food",
@@ -13978,7 +13978,7 @@
         },
         {
             "true": "spray n wash",
-            "pred": "... unanswerable"
+            "pred": ". unanswerable"
         },
         {
             "true": "camouflage olive green brown",
@@ -13986,7 +13986,7 @@
         },
         {
             "true": "cecilia zucca",
-            "pred": "cabernet zin"
+            "pred": "cabot"
         },
         {
             "true": "orange crush",
@@ -14022,7 +14022,7 @@
         },
         {
             "true": "braised chicken almonds",
-            "pred": ".. beef"
+            "pred": ".. chicken"
         },
         {
             "true": "unanswerable",
@@ -14042,7 +14042,7 @@
         },
         {
             "true": "macaroni cheese",
-            "pred": "macaroni and cheese"
+            "pred": "macaroni"
         },
         {
             "true": "unanswerable",
@@ -14050,11 +14050,11 @@
         },
         {
             "true": "jet puffed marshmallow creme",
-            "pred": "unanswerable"
+            "pred": "lotion"
         },
         {
             "true": "after shave",
-            "pred": "white"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -14078,7 +14078,7 @@
         },
         {
             "true": "grey",
-            "pred": "t? gray"
+            "pred": "t? grey"
         },
         {
             "true": "cafe mocha",
@@ -14086,15 +14086,15 @@
         },
         {
             "true": "yes",
-            "pred": "yes"
+            "pred": "red"
         },
         {
             "true": "70",
-            "pred": "4"
+            "pred": "40"
         },
         {
             "true": "condensed milk",
-            "pred": "nothing"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -14154,7 +14154,7 @@
         },
         {
             "true": "oatmeal cookies",
-            "pred": "corn chips"
+            "pred": "corn"
         },
         {
             "true": "dog",
@@ -14170,7 +14170,7 @@
         },
         {
             "true": "wallet",
-            "pred": "tan"
+            "pred": "lighter"
         },
         {
             "true": "black",
@@ -14182,7 +14182,7 @@
         },
         {
             "true": "black",
-            "pred": "gray"
+            "pred": "black"
         },
         {
             "true": "hand sanitizer",
@@ -14230,7 +14230,7 @@
         },
         {
             "true": "sno caps candy",
-            "pred": "pretzel"
+            "pred": "ice cream"
         },
         {
             "true": "mug",
@@ -14250,11 +14250,11 @@
         },
         {
             "true": "swregfserg",
-            "pred": "game"
+            "pred": "baseball"
         },
         {
             "true": "living room",
-            "pred": "unanswerable"
+            "pred": "black"
         },
         {
             "true": "carnation",
@@ -14278,7 +14278,7 @@
         },
         {
             "true": "garden vegetable soup",
-            "pred": "soup"
+            "pred": "vegetable"
         },
         {
             "true": "meatballs sausage marinara",
@@ -14286,7 +14286,7 @@
         },
         {
             "true": "tomatoes",
-            "pred": "tomato"
+            "pred": "tomato sauce"
         },
         {
             "true": "smoked turkey panini",
@@ -14298,7 +14298,7 @@
         },
         {
             "true": "jambalaya mix",
-            "pred": "jamba juice mix"
+            "pred": "jamba mix"
         },
         {
             "true": "unanswerable",
@@ -14310,7 +14310,7 @@
         },
         {
             "true": "no",
-            "pred": "unanswerable"
+            "pred": "green"
         },
         {
             "true": "blue",
@@ -14322,7 +14322,7 @@
         },
         {
             "true": "singapore proof coins",
-            "pred": "singapore"
+            "pred": "singapore third series"
         },
         {
             "true": "unanswerable",
@@ -14338,7 +14338,7 @@
         },
         {
             "true": "no",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "unanswerable",
@@ -14346,7 +14346,7 @@
         },
         {
             "true": "roast lamb",
-            "pred": "roast lamb"
+            "pred": "meat"
         },
         {
             "true": "grey",
@@ -14366,7 +14366,7 @@
         },
         {
             "true": "smart ass game",
-            "pred": "game"
+            "pred": "board game"
         },
         {
             "true": "epson projector",
@@ -14426,7 +14426,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "una"
         },
         {
             "true": "unanswerable",
@@ -14442,11 +14442,11 @@
         },
         {
             "true": "craft",
-            "pred": "game"
+            "pred": "toy"
         },
         {
             "true": "eclipse",
-            "pred": "unanswerable"
+            "pred": "sky"
         },
         {
             "true": "gevalia",
@@ -14458,7 +14458,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "green"
+            "pred": "unanswerable"
         },
         {
             "true": "light blue",
@@ -14478,11 +14478,11 @@
         },
         {
             "true": "grey black",
-            "pred": "black"
+            "pred": "black white"
         },
         {
             "true": "colombian supreme",
-            "pred": "coffee"
+            "pred": "mexican"
         },
         {
             "true": "soup",
@@ -14502,7 +14502,7 @@
         },
         {
             "true": "map",
-            "pred": "new zealand"
+            "pred": "map"
         },
         {
             "true": "honey vanilla",
@@ -14514,11 +14514,11 @@
         },
         {
             "true": "almonds",
-            "pred": "coffee"
+            "pred": "unanswerable"
         },
         {
             "true": "white",
-            "pred": "unanswerable"
+            "pred": "white"
         },
         {
             "true": "tomato",
@@ -14538,7 +14538,7 @@
         },
         {
             "true": "cigarette",
-            "pred": "unanswerable"
+            "pred": "cigarette"
         },
         {
             "true": "unanswerable",
@@ -14546,7 +14546,7 @@
         },
         {
             "true": "chili beans",
-            "pred": "scallion"
+            "pred": "schlafly"
         },
         {
             "true": "phone",
@@ -14554,7 +14554,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "white"
         },
         {
             "true": "unanswerable",
@@ -14578,7 +14578,7 @@
         },
         {
             "true": "soup",
-            "pred": "unanswer"
+            "pred": "unanswerable"
         },
         {
             "true": "5th season",
@@ -14594,11 +14594,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "windows"
+            "pred": "unanswerable"
         },
         {
             "true": "rethink recycling",
-            "pred": "re recycling"
+            "pred": "recycling"
         },
         {
             "true": "granola bar",
@@ -14618,7 +14618,7 @@
         },
         {
             "true": "office",
-            "pred": "unanswerable"
+            "pred": "yes"
         },
         {
             "true": "headphones",
@@ -14682,7 +14682,7 @@
         },
         {
             "true": "starbucks caffe verona",
-            "pred": "white"
+            "pred": "unanswerable"
         },
         {
             "true": "peanut sauce mix",
@@ -14710,11 +14710,11 @@
         },
         {
             "true": "0",
-            "pred": "red"
+            "pred": "unanswerable"
         },
         {
             "true": "custard powder",
-            "pred": "cream"
+            "pred": "custard powder"
         },
         {
             "true": "no",
@@ -14722,7 +14722,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "song"
+            "pred": "sheet music"
         },
         {
             "true": "bowl on paper confetti",
@@ -14754,11 +14754,11 @@
         },
         {
             "true": "brook benton",
-            "pred": "jackson"
+            "pred": "jackson jackson"
         },
         {
             "true": "no",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "bluetooth headset",
@@ -14774,7 +14774,7 @@
         },
         {
             "true": "mans best friend",
-            "pred": "dog"
+            "pred": "terrier"
         },
         {
             "true": "no",
@@ -14802,7 +14802,7 @@
         },
         {
             "true": "yes",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "no",
@@ -14838,7 +14838,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "no"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -14850,15 +14850,15 @@
         },
         {
             "true": "decal",
-            "pred": "flowers"
+            "pred": "purple"
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "watch"
         },
         {
             "true": "unanswerable",
-            "pred": "fiber"
+            "pred": "fiber 1"
         },
         {
             "true": "mexico",
@@ -14898,7 +14898,7 @@
         },
         {
             "true": "jambalaya mix",
-            "pred": "jam mix"
+            "pred": "jambab mix"
         },
         {
             "true": "unanswerable",
@@ -14914,7 +14914,7 @@
         },
         {
             "true": "brown",
-            "pred": "yes"
+            "pred": "clear"
         },
         {
             "true": "reading glasses phone",
@@ -14926,7 +14926,7 @@
         },
         {
             "true": "wipes",
-            "pred": "cagrom wipes"
+            "pred": "cagr wipes"
         },
         {
             "true": "unanswerable",
@@ -14962,7 +14962,7 @@
         },
         {
             "true": "lotion",
-            "pred": "white"
+            "pred": "unanswerable"
         },
         {
             "true": "no",
@@ -14982,7 +14982,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "juice"
+            "pred": "milk"
         },
         {
             "true": "moussaka",
@@ -14990,7 +14990,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "stars"
+            "pred": "star"
         },
         {
             "true": "chicken noodle soup",
@@ -15058,7 +15058,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "black"
+            "pred": "unanswerable"
         },
         {
             "true": "no",
@@ -15086,7 +15086,7 @@
         },
         {
             "true": "italian sea salt",
-            "pred": "salt"
+            "pred": "sea salt"
         },
         {
             "true": "yellow",
@@ -15102,7 +15102,7 @@
         },
         {
             "true": "bottle",
-            "pred": "yogurt"
+            "pred": "unanswerable"
         },
         {
             "true": "tablet",
@@ -15138,7 +15138,7 @@
         },
         {
             "true": "big easy bold",
-            "pred": "unanswerable"
+            "pred": "vanilla"
         },
         {
             "true": "unanswerable",
@@ -15158,7 +15158,7 @@
         },
         {
             "true": "decade",
-            "pred": "are cigarettes"
+            "pred": "unanswerable"
         },
         {
             "true": "donut",
@@ -15166,7 +15166,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "book shelf",
@@ -15178,7 +15178,7 @@
         },
         {
             "true": "grey",
-            "pred": "gray"
+            "pred": "white"
         },
         {
             "true": "blue",
@@ -15206,7 +15206,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "silver"
+            "pred": "speaker"
         },
         {
             "true": "yes",
@@ -15214,7 +15214,7 @@
         },
         {
             "true": "black white",
-            "pred": "black and white"
+            "pred": "black white"
         },
         {
             "true": "25389186",
@@ -15234,7 +15234,7 @@
         },
         {
             "true": "mortal kombat",
-            "pred": "yes"
+            "pred": "batman"
         },
         {
             "true": "yes",
@@ -15242,7 +15242,7 @@
         },
         {
             "true": "blue",
-            "pred": "blue"
+            "pred": "purple"
         },
         {
             "true": "unanswerable",
@@ -15266,7 +15266,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "coffee"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -15290,7 +15290,7 @@
         },
         {
             "true": "brown",
-            "pred": "black"
+            "pred": "purple"
         },
         {
             "true": "unanswerable",
@@ -15318,7 +15318,7 @@
         },
         {
             "true": "on person",
-            "pred": "red"
+            "pred": "red white green"
         },
         {
             "true": "unanswerable",
@@ -15326,15 +15326,15 @@
         },
         {
             "true": "text",
-            "pred": "unanswerable"
+            "pred": "book"
         },
         {
             "true": "bbq sauce",
-            "pred": "water"
+            "pred": "unanswerable"
         },
         {
             "true": "blue white purple lines swirling together",
-            "pred": "blue white"
+            "pred": "blue white purple"
         },
         {
             "true": "sprite",
@@ -15354,11 +15354,15 @@
         },
         {
             "true": "cassette tape",
-            "pred": "cd"
+            "pred": "unanswerable"
         },
         {
             "true": "grey white stripes",
-            "pred": "striped"
+            "pred": "grey white black"
+        },
+        {
+            "true": "unanswerable",
+            "pred": "tomatoes"
         },
         {
             "true": "unanswerable",
@@ -15374,11 +15378,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
-        },
-        {
-            "true": "unanswerable",
-            "pred": "wilsons"
+            "pred": "yes"
         },
         {
             "true": "tikka masala",
@@ -15410,7 +15410,7 @@
         },
         {
             "true": "blue buffalo",
-            "pred": "blue buffalo co"
+            "pred": "blue buffalo"
         },
         {
             "true": "blue shaver",
@@ -15446,7 +15446,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "blue"
         },
         {
             "true": "phone",
@@ -15454,7 +15454,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "d"
+            "pred": "d unanswerable"
         },
         {
             "true": "unanswerable",
@@ -15494,11 +15494,11 @@
         },
         {
             "true": "flowers",
-            "pred": "flowers"
+            "pred": "yellow flowers"
         },
         {
             "true": "purple",
-            "pred": "blue"
+            "pred": "purple"
         },
         {
             "true": "black",
@@ -15522,7 +15522,7 @@
         },
         {
             "true": "shutting down",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "holds item up",
@@ -15578,7 +15578,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "r"
         },
         {
             "true": "soup",
@@ -15610,15 +15610,15 @@
         },
         {
             "true": "unanswerable",
-            "pred": "no"
+            "pred": "air conditioner"
         },
         {
             "true": "zipper",
-            "pred": "zipper"
+            "pred": "grey"
         },
         {
             "true": "crocodile no words",
-            "pred": "gator"
+            "pred": "alligator"
         },
         {
             "true": "goblet fire",
@@ -15630,11 +15630,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "fan"
         },
         {
             "true": "proactive",
-            "pred": "cat"
+            "pred": "cat food"
         },
         {
             "true": "unanswerable",
@@ -15646,7 +15646,7 @@
         },
         {
             "true": "12 2013",
-            "pred": "unanswerable"
+            "pred": "2013"
         },
         {
             "true": "chicken parmesan",
@@ -15670,7 +15670,7 @@
         },
         {
             "true": "bathroom",
-            "pred": "mirror"
+            "pred": "sink"
         },
         {
             "true": "video game",
@@ -15706,19 +15706,19 @@
         },
         {
             "true": "very clean",
-            "pred": "very"
+            "pred": "very clean"
         },
         {
             "true": "8888",
-            "pred": "unanswerable"
+            "pred": "nothing"
         },
         {
             "true": "unanswerable",
-            "pred": "vitamins"
+            "pred": "unanswerable"
         },
         {
             "true": "off low high warm",
-            "pred": "arm? low"
+            "pred": "arm? slow cooker"
         },
         {
             "true": "4 deuces",
@@ -15726,11 +15726,11 @@
         },
         {
             "true": "sweet corn milk drink",
-            "pred": "is sweet corn"
+            "pred": "sweet corn"
         },
         {
             "true": "unanswerable",
-            "pred": "10 : 10"
+            "pred": "1 : 00"
         },
         {
             "true": "food",
@@ -15786,7 +15786,7 @@
         },
         {
             "true": "playhouse",
-            "pred": "house"
+            "pred": "play house"
         },
         {
             "true": "oven",
@@ -15806,7 +15806,7 @@
         },
         {
             "true": "body lotion",
-            "pred": "moon path"
+            "pred": "moon light path"
         },
         {
             "true": "bedroom",
@@ -15814,7 +15814,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "10"
+            "pred": "lot"
         },
         {
             "true": "blue",
@@ -15826,7 +15826,7 @@
         },
         {
             "true": "sweet chili heat",
-            "pred": "hot"
+            "pred": "unanswerable"
         },
         {
             "true": "white",
@@ -15838,11 +15838,11 @@
         },
         {
             "true": "collard greens",
-            "pred": "soda"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
-            "pred": "building"
+            "pred": "camera"
         },
         {
             "true": "jacket",
@@ -15850,7 +15850,7 @@
         },
         {
             "true": "nothing",
-            "pred": "flash"
+            "pred": "light"
         },
         {
             "true": "unanswerable",
@@ -15878,7 +15878,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "american"
+            "pred": "american flag"
         },
         {
             "true": "unanswerable",
@@ -15898,7 +15898,7 @@
         },
         {
             "true": "no",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "high",
@@ -15930,7 +15930,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "black"
         },
         {
             "true": "blank screen",
@@ -16006,7 +16006,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "black"
+            "pred": "unanswerable"
         },
         {
             "true": "granola",
@@ -16046,7 +16046,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "cheese"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -16058,7 +16058,7 @@
         },
         {
             "true": "chicken",
-            "pred": "red"
+            "pred": "unanswerable"
         },
         {
             "true": "coca cola",
@@ -16078,7 +16078,7 @@
         },
         {
             "true": "grilled onions mushrooms",
-            "pred": "onion"
+            "pred": "grilled onion mushroom"
         },
         {
             "true": "espresso",
@@ -16086,15 +16086,15 @@
         },
         {
             "true": "baking soda",
-            "pred": "pizza"
+            "pred": "yellow"
         },
         {
             "true": "white sheet",
-            "pred": "unanswerable"
+            "pred": "white"
         },
         {
             "true": "garden primer",
-            "pred": "relieving"
+            "pred": "garden"
         },
         {
             "true": "unanswerable",
@@ -16114,7 +16114,7 @@
         },
         {
             "true": "diet coke",
-            "pred": "diet ko"
+            "pred": "water bottle"
         },
         {
             "true": "unanswerable",
@@ -16126,11 +16126,11 @@
         },
         {
             "true": "day hour minute",
-            "pred": "yes"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
-            "pred": "low low"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -16142,11 +16142,11 @@
         },
         {
             "true": "hawaiian style pizza",
-            "pred": "cheese"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
-            "pred": "green"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -16162,7 +16162,7 @@
         },
         {
             "true": "where red fern grows",
-            "pred": "red fern grows"
+            "pred": "red fern"
         },
         {
             "true": "unanswerable",
@@ -16186,7 +16186,7 @@
         },
         {
             "true": "chocolate vanilla swirl",
-            "pred": "vanilla"
+            "pred": "chocolate"
         },
         {
             "true": "songs 4 life",
@@ -16206,7 +16206,7 @@
         },
         {
             "true": "3",
-            "pred": "10"
+            "pred": "5"
         },
         {
             "true": "blue",
@@ -16218,11 +16218,11 @@
         },
         {
             "true": "negative",
-            "pred": "unanswerable"
+            "pred": "negative"
         },
         {
             "true": "light blue",
-            "pred": "orange"
+            "pred": "brown"
         },
         {
             "true": "yellow coloring",
@@ -16230,7 +16230,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "hot"
+            "pred": "unanswerable"
         },
         {
             "true": "pork belly ribs",
@@ -16242,7 +16242,7 @@
         },
         {
             "true": "declaration cartier",
-            "pred": "unanswerable"
+            "pred": "cartier"
         },
         {
             "true": "meat pack",
@@ -16254,7 +16254,7 @@
         },
         {
             "true": "5 malaysian ringgit",
-            "pred": "10"
+            "pred": "5"
         },
         {
             "true": "angel",
@@ -16262,7 +16262,7 @@
         },
         {
             "true": "money",
-            "pred": "unanswerable"
+            "pred": "money"
         },
         {
             "true": "unanswerable",
@@ -16290,7 +16290,7 @@
         },
         {
             "true": "body lotion",
-            "pred": "body lotion"
+            "pred": "shampoo"
         },
         {
             "true": "unanswerable",
@@ -16306,7 +16306,7 @@
         },
         {
             "true": "soda bottle",
-            "pred": "soda"
+            "pred": "bottle"
         },
         {
             "true": "clock",
@@ -16334,7 +16334,7 @@
         },
         {
             "true": "off low high",
-            "pred": "pot"
+            "pred": "unanswerable"
         },
         {
             "true": "junk",
@@ -16342,7 +16342,7 @@
         },
         {
             "true": "popcorn auto reheat auto clock",
-            "pred": "unanswerable"
+            "pred": "panasonic"
         },
         {
             "true": "unanswerable",
@@ -16350,7 +16350,7 @@
         },
         {
             "true": "no",
-            "pred": "yes"
+            "pred": "no"
         },
         {
             "true": "onion powder",
@@ -16366,7 +16366,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "yes"
         },
         {
             "true": "black silver",
@@ -16374,7 +16374,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "pepsi"
+            "pred": "unanswerable"
         },
         {
             "true": "kodak",
@@ -16386,7 +16386,7 @@
         },
         {
             "true": "nothing",
-            "pred": "apple"
+            "pred": "no"
         },
         {
             "true": "white",
@@ -16406,7 +16406,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "red"
+            "pred": "brown"
         },
         {
             "true": "unanswerable",
@@ -16422,15 +16422,15 @@
         },
         {
             "true": "videos games about 20 on each shelf",
-            "pred": "dvd"
+            "pred": "lot"
         },
         {
             "true": "faceless autotheism",
-            "pred": "unanswerable"
+            "pred": "skull"
         },
         {
             "true": "really blurry",
-            "pred": "h."
+            "pred": "h. no"
         },
         {
             "true": "fish oil",
@@ -16438,7 +16438,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "white"
         },
         {
             "true": "unanswerable",
@@ -16450,7 +16450,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "computer"
         },
         {
             "true": "jan 19 2013",
@@ -16470,7 +16470,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "orange"
+            "pred": "unanswerable"
         },
         {
             "true": "cigarettes",
@@ -16478,7 +16478,7 @@
         },
         {
             "true": "money",
-            "pred": "dollar"
+            "pred": "money"
         },
         {
             "true": "unanswerable",
@@ -16558,7 +16558,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "nothing"
+            "pred": "blue"
         },
         {
             "true": "yes",
@@ -16566,7 +16566,7 @@
         },
         {
             "true": "instant potatoes",
-            "pred": "mashed garlic"
+            "pred": "mashed potatoes"
         },
         {
             "true": "hard drive",
@@ -16578,7 +16578,7 @@
         },
         {
             "true": "sunset",
-            "pred": "country"
+            "pred": "car"
         },
         {
             "true": "unanswerable",
@@ -16610,7 +16610,7 @@
         },
         {
             "true": "olsen banden",
-            "pred": "unanswerable"
+            "pred": "harry potter"
         },
         {
             "true": "unanswerable",
@@ -16622,11 +16622,11 @@
         },
         {
             "true": "restaurant",
-            "pred": "tables"
+            "pred": "chairs"
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "couch"
         },
         {
             "true": "ohio university",
@@ -16634,7 +16634,7 @@
         },
         {
             "true": "playing cards",
-            "pred": "4"
+            "pred": "spades"
         },
         {
             "true": "green",
@@ -16666,7 +16666,7 @@
         },
         {
             "true": "herb garlic lemon juice",
-            "pred": "lemon juice"
+            "pred": "lemon"
         },
         {
             "true": "pink",
@@ -16678,7 +16678,7 @@
         },
         {
             "true": "carb ultimate blocker",
-            "pred": "unanswerable"
+            "pred": "esopri trim"
         },
         {
             "true": "unanswerable",
@@ -16698,11 +16698,11 @@
         },
         {
             "true": "diamonds rubies",
-            "pred": "rubs"
+            "pred": "rubles"
         },
         {
             "true": "20 dollar bill",
-            "pred": "dollar"
+            "pred": "dollar bill"
         },
         {
             "true": "white",
@@ -16742,15 +16742,15 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "yes"
         },
         {
             "true": "almond",
-            "pred": "almonds"
+            "pred": "peanut butter"
         },
         {
             "true": "leopard print",
-            "pred": "gray"
+            "pred": "grey"
         },
         {
             "true": "3 musketeers",
@@ -16758,7 +16758,7 @@
         },
         {
             "true": "alfredo",
-            "pred": "alfredo"
+            "pred": "pasta"
         },
         {
             "true": "tomato soup",
@@ -16766,7 +16766,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "orange"
+            "pred": "caramel"
         },
         {
             "true": "diagram",
@@ -16806,7 +16806,7 @@
         },
         {
             "true": "manwich",
-            "pred": "hunters"
+            "pred": "hunt"
         },
         {
             "true": "blue",
@@ -16814,7 +16814,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "red"
+            "pred": "unanswerable"
         },
         {
             "true": "unanswerable",
@@ -16842,7 +16842,7 @@
         },
         {
             "true": "green white",
-            "pred": "green"
+            "pred": "white"
         },
         {
             "true": "spray fine mist evenly on damp dry hair work through hari style",
@@ -16866,7 +16866,7 @@
         },
         {
             "true": "my best friend my dog",
-            "pred": "my best friend my dog"
+            "pred": "my dog"
         },
         {
             "true": "black",
@@ -16898,7 +16898,7 @@
         },
         {
             "true": "top",
-            "pred": "apple"
+            "pred": "apple cider"
         },
         {
             "true": "unanswerable",
@@ -16906,11 +16906,11 @@
         },
         {
             "true": "unanswerable",
-            "pred": "coffee maker"
+            "pred": "unanswerable"
         },
         {
             "true": "whole potatoes",
-            "pred": "beer"
+            "pred": "yes"
         },
         {
             "true": "soup",
@@ -16922,7 +16922,7 @@
         },
         {
             "true": "meat",
-            "pred": "unanswerable"
+            "pred": "meat"
         },
         {
             "true": "blue",
@@ -16938,15 +16938,15 @@
         },
         {
             "true": "macaroni cheese",
-            "pred": "cheese"
+            "pred": "pasta"
         },
         {
             "true": "framed living room art",
-            "pred": "wall"
+            "pred": "painting"
         },
         {
             "true": "roach tablets",
-            "pred": "hams"
+            "pred": "honey"
         },
         {
             "true": "unanswerable",
@@ -16962,11 +16962,11 @@
         },
         {
             "true": "1 dollar",
-            "pred": "dollar"
+            "pred": "1 dollar bill"
         },
         {
             "true": "tomato soup",
-            "pred": "tomatoes"
+            "pred": "tomato"
         },
         {
             "true": "5:47 monday may 28",
@@ -16990,7 +16990,7 @@
         },
         {
             "true": "chair",
-            "pred": "office chair"
+            "pred": "chair"
         },
         {
             "true": "peanut butter",
@@ -17014,7 +17014,7 @@
         },
         {
             "true": "floral",
-            "pred": "blue"
+            "pred": "green"
         },
         {
             "true": "honey nut cheerios",
@@ -17042,7 +17042,7 @@
         },
         {
             "true": "patch",
-            "pred": "football"
+            "pred": "coat"
         },
         {
             "true": "unanswerable",
@@ -17058,7 +17058,7 @@
         },
         {
             "true": "samsung",
-            "pred": "at & t"
+            "pred": "phone"
         },
         {
             "true": "mini oreos",
@@ -17086,11 +17086,11 @@
         },
         {
             "true": "45% complete",
-            "pred": "pc"
+            "pred": "this might take while your pc"
         },
         {
             "true": "vanilla",
-            "pred": "unanswerable"
+            "pred": "vanilla"
         },
         {
             "true": "nuts",
@@ -17102,7 +17102,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "coffee"
         },
         {
             "true": "unanswerable",
@@ -17130,7 +17130,7 @@
         },
         {
             "true": "brown",
-            "pred": "brown"
+            "pred": "grey"
         },
         {
             "true": "black",
@@ -17170,7 +17170,7 @@
         },
         {
             "true": "yes",
-            "pred": "yes"
+            "pred": "blue"
         },
         {
             "true": "chocolate bar",
@@ -17210,7 +17210,7 @@
         },
         {
             "true": "oddball",
-            "pred": "unanswerable"
+            "pred": "chuck ball"
         },
         {
             "true": "bbq sauce",
@@ -17246,7 +17246,7 @@
         },
         {
             "true": "malt liquor",
-            "pred": "unanswerable"
+            "pred": "bottle"
         },
         {
             "true": "pepperoni",
@@ -17254,7 +17254,7 @@
         },
         {
             "true": "computer",
-            "pred": "laptop"
+            "pred": "computer screen"
         },
         {
             "true": "salad dressing",
@@ -17266,7 +17266,7 @@
         },
         {
             "true": "unanswerable",
-            "pred": "unanswerable"
+            "pred": "no"
         },
         {
             "true": "cake",
