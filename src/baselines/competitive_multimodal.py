@@ -58,6 +58,48 @@ def test_GIT_zero_shot():
     with open("./experiments/git-large-zero-shot-preds.json", "w") as f:
         json.dump(preds, f, indent=4)
 
+def inefficient_GIT_predict(exp_name: str="frozen_git", device: str="cuda:0"):
+    dataset = VizWizVQABestAnsDataset(
+        "./data/VQA/val.json",
+        "./data/VQA/val",
+    )
+    processor = AutoProcessor.from_pretrained("microsoft/git-large-vqav2")
+    model = FrozenGITVizWizVQA(model_path="microsoft/git-large-vqav2", device=device)
+    model_load_path = os.path.join("./experiments/", exp_name, "best_model.pt")
+    ckpt_dict = torch.load(model_load_path, map_location="cpu")
+    print(f"\x1b[33mloaded checkpoint from:\x1b[0m {model_load_path}")
+    model.load_state_dict(ckpt_dict["model_state_dict"])
+    print(f"\x1b[32mloaded checkpoint from:\x1b[0m {model_load_path}")
+
+    preds = []
+    pbar = tqdm(dataset)
+    for item in pbar:
+        image_path = item["image"]
+        image = Image.open(image_path).convert("RGB")
+        pixel_values = processor(images=image, return_tensors="pt").pixel_values.cuda()
+        question = item["question"] # "what does the front of the bus say at the top?"
+        answer = item["answer"]
+
+        input_ids = processor(text=question, add_special_tokens=False).input_ids
+        input_ids = [processor.tokenizer.cls_token_id] + input_ids
+        input_ids = torch.tensor(input_ids).unsqueeze(0).cuda()
+
+        generated_ids = model.model.generate(
+            pixel_values=pixel_values, 
+            input_ids=input_ids, 
+            max_new_tokens=8,
+        )
+        gen_text = processor.batch_decode(generated_ids, skip_special_tokens=True)[0]
+        pred = gen_text[len(question):].strip().strip(">").strip("?").strip()
+        pred = "unanswerable" if pred == "" else pred
+        preds.append({'true': answer, "pred": pred})
+        pbar.set_description(pred+" | "+answer)
+
+    preds = {"preds": preds}
+    output_path = os.path.join("./experiments/", exp_name, "preds.json")
+    with open(output_path, "w") as f:
+        json.dump(preds, f, indent=4)
+
 def clip_score_recall_analysis(cos_scores_path: str, 
                                data_path: str="./data/VQA", 
                                split: str="val"):
@@ -235,10 +277,9 @@ def save_current_model(model, optimizer, epoch: int, step: int, save_path: str):
     torch.save(ckpt_dict, save_path)
 
 def validate_git(model, dataloader: DataLoader, eval_step: int, 
-                 epoch: int, args: argparse.Namespace) -> Union[Tuple[float, float], Tuple[List[dict], float, float]]:
+                 epoch: int, args: argparse.Namespace) -> float:
     val_bar = tqdm(enumerate(dataloader), total=len(dataloader), desc="validating")
-    tot, matches, val_losses = 0, 0, []
-    val_preds = []
+    val_losses = []
     model.eval()
     for step, batch in val_bar:
         model.zero_grad()

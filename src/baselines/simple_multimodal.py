@@ -3,6 +3,7 @@
 # code to train and predict with simple multimodal baselines.
 
 import os
+import clip
 import json
 import torch
 import random
@@ -245,7 +246,6 @@ def predict_vilt(args):
     device = args.device
     val_images = os.path.join(data_dir, "val")
     val_annot = os.path.join(data_dir, "val.json") 
-    data_dir = "./data/VQA/train.json"
     label2id = json.load(open("experiments/vizwiz_class_vocab.json"))
     # declare model.
     model = FrozenViLTVizWizVQA(
@@ -297,7 +297,6 @@ def finetune_vilt(args):
     val_images = os.path.join(data_dir, "val")
     train_annot = os.path.join(data_dir, "train.json") 
     val_annot = os.path.join(data_dir, "val.json") 
-    data_dir = "./data/VQA/train.json"
 
     label2id = json.load(open("experiments/vizwiz_class_vocab.json"))
     # declare model.
@@ -436,6 +435,80 @@ def get_args():
     args = parser.parse_args()
 
     return args
+
+class CLIPTVizWizVQABestAnsDataset(VizWizVQABestAnsDataset):
+    def __init__(self, *args, model_path: str="ViT-L/14", label2id: dict={}, preprocess, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.model_path = model_path
+        self.label2id = label2id
+        self.preprocess = preprocess
+
+    def __getitem__(self, i: int):
+        item = super(CLIPTVizWizVQABestAnsDataset, self).__getitem__(i)
+        # encode using ViLT processor:
+        image = Image.open(item["image"]).convert("RGB")
+        question = item["question"]
+        encoding = {}
+        encoding["question"] = self.preprocess(question)
+        encoding["image_features"] = self.preprocess(image)
+        encoding["labels"] = torch.as_tensor(self.label2id.get(item["answer"]))
+        
+        return encoding
+    
+class FrozenCLIPVizWizVQAMultimodal(nn.Module):
+    def __init__(self, model_path: str="ViT-L/14",
+                 device: str="cuda:0", label2id: dict={}, 
+                 lang_emb_size: int=768, image_emb_size: int=768):
+        super().__init__()
+        self.model_path = model_path
+        self.model, self.preprocess = clip.load(args.model_path)
+        self.num_classes = len(label2id)
+        self.emb_size = lang_emb_size+image_emb_size
+        self.upscale_size = self.num_classes // 2
+        self.classifier = nn.Sequential(
+            nn.Linear(
+                in_features=self.emb_size, 
+                out_features=2048, 
+                bias=True
+            ),
+            nn.LayerNorm(
+                (2048), eps=1e-05, 
+                elementwise_affine=True
+            ),
+            nn.GELU(approximate="none"),
+            nn.Linear(
+                in_features=2048, 
+                out_features=len(label2id), 
+                bias=True
+            ),
+        )
+        # freeze CLIP params:
+        for param in self.model.parameters():
+            param.requires_grad = False
+        
+        self.device = device
+        self.loss_fn = nn.CrossEntropyLoss()
+        self.to(device)
+        print(f"moving model to device: {device}")
+
+    def parameters(self):
+        return self.classifier.parameters()
+
+    def train(self):
+        self.classifier.train()
+
+    def eval(self):
+        self.classifier.eval()
+
+    def forward(self, **encoding):
+        """return outputs and loss"""
+        outputs = self.model.encode_image(encoding["image_features"]).float()
+        outputs = self.model.encode_text(encoding["question"]).float()
+        logits = self.classifier(outputs)
+        labels = encoding["labels"]
+
+        loss = self.loss_fn(logits, labels)
+        return logits, loss
 
 # main
 if __name__ == "__main__":
