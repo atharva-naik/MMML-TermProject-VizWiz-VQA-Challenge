@@ -416,7 +416,7 @@ def finetune_vilt(args):
                         "best_val_step": best_val_step,
                         "best_val_acc": best_val_acc,
                     })+"\n")
-                
+          
 def get_args():
     """get terminal arguments."""
     parser = argparse.ArgumentParser()
