@@ -17,16 +17,23 @@ def get_class_preds(outputs, id2label):
 def proxy_accuracy(inputs, generations, tokenizer):
     decoded_preds = tokenizer.batch_decode(generations, skip_special_tokens=True)
     answers = inputs["answer"]
+    accs = [decoded_preds[i] == answers[i] for i in range(len(answers))]
+    return np.mean(accs)
+    """
     for i, answer in enumerate(answers):
         print(f"Question: {inputs['question'][i]}")
         print(f"Prediction: {decoded_preds[i]}")
         print(f"Answer: {answer}")
+        
+        """
+
 
 def class_accuracy(inputs, outputs, id2label):
     pred_words = get_class_preds(outputs, id2label)
-    print(pred_words)
-    print(inputs["answer"])
-    # print((pred_words == inputs["answer"]).sum() / len(pred_words))
+    answers = inputs["answer"]
+    accs = [pred_words[i] == answers[i] for i in range(len(answers))]
+    return np.mean(accs)
+
 
 # generative setting metrics:
 # add BLEU and stuff (as a supplement to the standard VQA task metric (accuracy measure))

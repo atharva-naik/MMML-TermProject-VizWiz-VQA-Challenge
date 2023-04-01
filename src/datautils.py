@@ -1,7 +1,7 @@
 # code to load and analyze the data.
 import os
+from pathlib import Path
 import cv2
-import clip
 import json
 import torch
 import pickle
@@ -75,7 +75,8 @@ class VizWizVQABestAnsDataset(Dataset):
             3: 'number',
         } 
     
-        self.label2id, self.id2label, self.class_weights = get_class_dicts()
+        self.label2id, self.id2label = self.get_class_dicts()
+        self.all_ids = []
         for rec in self.annot_db.getAnns():
             a_type = rec['answer_type']
             img_path = os.path.join(images_dir, 
@@ -85,14 +86,17 @@ class VizWizVQABestAnsDataset(Dataset):
             answer, answer_confidence, total = self._vote_answer(
                 rec['answers'], is_ansble=is_ansble,
             )
+            class_lab = self.label2id.get(answer)
+            self.all_ids.append(class_lab)
             self.data.append({
                 "question": q, "is_answerable": is_ansble,
                 "answer_type": self.a_type_to_ind[a_type],
-                "class_label": self.label2id.get(answer, 0),
+                "class_label": class_lab,
                 "answer_confidence": answer_confidence,
                 "image": img_path, "answer": answer,
                 "total": total,
             })
+
     def __len__(self): return len(self.data) 
     def __getitem__(self, i: int): return self.data[i]         
     def _vote_answer(self, answers: List[str], 
@@ -110,6 +114,11 @@ class VizWizVQABestAnsDataset(Dataset):
         picked_ans_conf = list(answer_votes.values())[i]/tot
         
         return picked_ans, picked_ans_conf, tot
+    def get_class_dicts(self, class_vocab_path="../../experiments/vizwiz_class_vocab.json"):
+        file_path = Path(__file__).parent.parent / "experiments" / "vizwiz_class_vocab.json"
+        label2id = json.load(open(str(file_path)))
+        id2label =  {v: k for k,v in label2id.items()}
+        return label2id, id2label
 
 # all unique answers considered.
 class VizWizVQAUniqueAnsDataset(Dataset):
@@ -186,6 +195,7 @@ class VizWizVQAClipDataset(Dataset):
         c_image_tok = self.image_preprocess_fn(
             Image.open(img_path)
         ).unsqueeze(0)[0]#.to(self.device)
+        import clip
         q_text_tok = clip.tokenize(data['question'])[0]#.to(self.device)
         a_text_tok = clip.tokenize(data['answer'])[0]#.to(self.device)
         a_type = torch.as_tensor(data["answer_type"])
@@ -201,34 +211,6 @@ class VizWizVQAClipDataset(Dataset):
             "answer_type": a_type,
         }
     
-def get_class_dicts(num_classes=6540):
-    train_annot_path = "data/VQA/train.json"
-    val_annot_path = "data/VQA/val.json"
-    vqa_train = VQA(train_annot_path)
-    train_objs = vqa_train.getAnns()
-    all_answers = []
-    for item in train_objs:
-        answer_text = [ans_dict['answer'] for ans_dict in item["answers"]]
-        all_answers.extend(answer_text)
-    vqa_val = VQA(val_annot_path)
-    val_objs = vqa_val.getAnns()
-
-    for item in val_objs:
-        answer_text = [ans_dict['answer'] for ans_dict in item["answers"]]
-        all_answers.extend(answer_text)
-
-    answer_freq = Counter(all_answers)
-    common_answers = answer_freq.most_common(num_classes)
-    label_to_id = {}
-    id_to_label = {}
-    all_ids = []
-    for i, item in enumerate(common_answers):
-        label_to_id[item[0]] = i
-        id_to_label[i] = item[0]
-    for label in all_answers:
-        all_ids.append(label_to_id.get(label, 0))
-    class_weights = compute_class_weight('balanced', classes=np.unique(all_ids), y=all_ids)
-    return label_to_id, id_to_label, torch.tensor(class_weights, dtype=torch.float32)
 
 # VizWiz QA dataset for object detection.
 # code borrowed from: https://pytorch.org/tutorials/intermediate/torchvision_tutorial.html.
