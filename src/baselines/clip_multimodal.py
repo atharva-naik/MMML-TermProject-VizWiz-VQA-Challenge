@@ -31,33 +31,33 @@ class CLIPTVizWizVQABestAnsDataset(VizWizVQABestAnsDataset):
         image = Image.open(item["image"]).convert("RGB")
         question = item["question"]
         encoding = {}
-        encoding["question"] = question
-        encoding["image_features"] = self.preprocess(image).to("cuda:0")
-        encoding["labels"] = torch.as_tensor(self.label2id.get(item["answer"])).to("cuda:0")
+        encoding["question"] = clip.tokenize(question).squeeze()
+        encoding["image_features"] = self.preprocess(image)
+        encoding["labels"] = torch.as_tensor(self.label2id.get(item["answer"]))
         return encoding
     
 class FrozenCLIPVizWizVQA(nn.Module):
     def __init__(self, model_path: str="ViT-L/14",
-                 device: str="cuda:0", label2id: dict={}, emb_size: int=768):
+                 device: str="cuda:0", label2id: dict={}, image_emb_size: int=768, lang_emb_size: int = 768 ):
         super().__init__()
         self.model_path = model_path
         self.model, self.preprocess = clip.load(args.model_path)
         self.num_classes = len(label2id)
-        self.emb_size = emb_size
+        self.emb_size = lang_emb_size+image_emb_size
         self.upscale_size = self.num_classes // 2
         self.classifier = nn.Sequential(
             nn.Linear(
-                in_features=768, 
-                out_features=2048, 
+                in_features=self.emb_size, 
+                out_features=self.upscale_size, 
                 bias=True
             ),
             nn.LayerNorm(
-                (2048), eps=1e-05, 
+                (self.upscale_size), eps=1e-05, 
                 elementwise_affine=True
             ),
             nn.GELU(approximate="none"),
             nn.Linear(
-                in_features=2048, 
+                in_features=self.upscale_size, 
                 out_features=len(label2id), 
                 bias=True
             ),
@@ -82,69 +82,11 @@ class FrozenCLIPVizWizVQA(nn.Module):
 
     def forward(self, **encoding):
         """return outputs and loss"""
-        outputs = self.model.encode_image(encoding["image_features"]).float()
-        logits = self.classifier(outputs)
-        labels = encoding["labels"]
-
-        loss = self.loss_fn(logits, labels)
-        return logits, loss
-    
-
-class FrozenResNetVizWizVQA(nn.Module):
-    def __init__(self, model_path: str="resnet152",
-                 device: str="cuda:0", label2id: dict={}, emb_size: int=768):
-        super().__init__()
-        self.model_path = model_path
-        self.model =  torch.hub.load('pytorch/vision:v0.10.0', model_path, pretrained=True)
-        self.preprocess = transforms.Compose([
-            transforms.Resize(256),
-            transforms.CenterCrop(224),
-            transforms.ToTensor(),
-            transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
-        ])
-        self.num_classes = len(label2id)
-        self.emb_size = emb_size
-        self.upscale_size = self.num_classes // 2
-        self.classifier = nn.Sequential(
-            nn.Linear(
-                in_features=1000, 
-                out_features=2000, 
-                bias=True
-            ),
-            nn.LayerNorm(
-                (2000), eps=1e-05, 
-                elementwise_affine=True
-            ),
-            nn.GELU(approximate="none"),
-            nn.Linear(
-                in_features=2000, 
-                out_features=len(label2id), 
-                bias=True
-            ),
-        )
-        # freeze CLIP params:
-        for param in self.model.parameters():
-            param.requires_grad = False
-        
-        self.device = device
-        self.loss_fn = nn.CrossEntropyLoss()
-        self.to(device)
-        print(f"moving model to device: {device}")
-
-    def parameters(self):
-        return self.classifier.parameters()
-
-    def train(self):
-        self.classifier.train()
-
-    def eval(self):
-        self.classifier.eval()
-
-    def forward(self, **encoding):
-        """return outputs and loss"""
-        outputs = self.model(encoding["image_features"]).float()
-        logits = self.classifier(outputs)
-        labels = encoding["labels"]
+        image_outputs = self.model.encode_image(encoding["image_features"].to(self.device)).float()
+        text_outputs = self.model.encode_text(encoding["question"].to(self.device)).float()
+        # pdb.set_trace()
+        logits = self.classifier(torch.cat([image_outputs,text_outputs], -1))
+        labels = encoding["labels"].to(self.device)
 
         loss = self.loss_fn(logits, labels)
         return logits, loss
@@ -165,12 +107,7 @@ def train_clip(args):
             label2id=label2id, 
             device=args.device,
         )
-    else:
-        model = FrozenResNetVizWizVQA(
-            model_path=args.model_path, 
-            label2id=label2id, 
-            device=args.device,
-        )
+
     optimizer = torch.optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
        
     train_dataset = CLIPTVizWizVQABestAnsDataset(annot_path="data/VQA/train.json", images_dir="../data/train", label2id=label2id, preprocess=model.preprocess)
@@ -187,6 +124,7 @@ def train_clip(args):
                         desc="Training in progress...")
         tot, matches, train_epoch_losses = 0, 0, []
         for i, data in train_bar:
+
             model.train()
             model.zero_grad()
             outputs, loss = model(**data)
@@ -262,20 +200,12 @@ def predict_clip(args, move_to_cuda: bool=False) -> str:
     label2id = json.load(open("experiments/vizwiz_class_vocab.json"))
     id2label = {v: k for k,v in label2id.items()}
 
-    model = None
-    if args.base_model == "clip":
-        model =  FrozenCLIPVizWizVQA(
-            model_path=args.model_path, 
-            label2id=label2id, 
-            device=args.device,
-        )
-    else:
-        model = FrozenResNetVizWizVQA(
-            model_path="resnet152", 
-            label2id=label2id, 
-            device=args.device,
-        )
-    
+    model = FrozenCLIPVizWizVQA(
+        model_path=args.model_path, 
+        label2id=label2id, 
+        device=args.device,
+    )
+
     ckpt_dict = torch.load(
         model_path, 
         map_location=args.device
@@ -376,14 +306,11 @@ def get_args():
     
 if __name__ == "__main__":
     args = get_args()
-    # # train_clip(args)
-    # predict_clip(args, move_to_cuda=True)
+    train_clip(args)
+    predict_clip(args, move_to_cuda=True)
     
     get_eval_scores("data/VQA/val.json", 
                 f'experiments/{args.exp_name}/pred.json')
 
             
-
-
-
 
