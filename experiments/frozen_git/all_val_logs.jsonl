@@ -1,2 +1,7 @@
 {"val_loss": 2.0412063005000904, "epoch": 0, "step": 1999, "best_val_epoch": 0, "best_val_step": 1999, "best_val_acc": 2.0412063005000904}
 {"val_loss": 1.9115064847283065, "epoch": 0, "step": 3999, "best_val_epoch": 0, "best_val_step": 3999, "best_val_acc": 1.9115064847283065}
+{"val_loss": 1.8568388413689616, "epoch": 0, "step": 5999, "best_val_epoch": 0, "best_val_step": 5999, "best_val_acc": 1.8568388413689616}
+{"val_loss": 1.8305406489771687, "epoch": 0, "step": 7999, "best_val_epoch": 0, "best_val_step": 7999, "best_val_acc": 1.8305406489771687}
+{"val_loss": 1.8124600372423798, "epoch": 0, "step": 9999, "best_val_epoch": 0, "best_val_step": 9999, "best_val_acc": 1.8124600372423798}
+{"val_loss": 1.8079891427178625, "epoch": 0, "step": 10261, "best_val_epoch": 0, "best_val_step": 10261, "best_val_acc": 1.8079891427178625}
+{"val_loss": 1.8067905132141377, "epoch": 1, "step": 1999, "best_val_epoch": 1, "best_val_step": 1999, "best_val_acc": 1.8067905132141377}
