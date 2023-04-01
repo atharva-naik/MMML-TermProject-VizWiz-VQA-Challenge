@@ -31,5 +31,5 @@ def get_eval_scores(annFile, resFile, exp_name: str):
     
 if __name__ == "__main__":
     # path = "experiments/clip/pred.json"
-    path = "experiments/zero_shot_git_large/preds.json"
-    get_eval_scores("data/VQA/val.json", path, "zero_shot_git_large")
+    path = "experiments/frozen_git/preds.json"
+    get_eval_scores("data/VQA/val.json", path, "frozen_git")
