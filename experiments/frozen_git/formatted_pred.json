@@ -1,7 +1,7 @@
 [
     {
         "image": "VizWiz_val_00000000.jpg",
-        "answer": "no"
+        "answer": "computer"
     },
     {
         "image": "VizWiz_val_00000001.jpg",
@@ -21,7 +21,7 @@
     },
     {
         "image": "VizWiz_val_00000005.jpg",
-        "answer": "unanswerable"
+        "answer": "windows"
     },
     {
         "image": "VizWiz_val_00000006.jpg",
@@ -57,11 +57,11 @@
     },
     {
         "image": "VizWiz_val_00000014.jpg",
-        "answer": "white"
+        "answer": "yellow"
     },
     {
         "image": "VizWiz_val_00000015.jpg",
-        "answer": "children's dictionary"
+        "answer": "childrens dictionary"
     },
     {
         "image": "VizWiz_val_00000016.jpg",
@@ -85,7 +85,7 @@
     },
     {
         "image": "VizWiz_val_00000021.jpg",
-        "answer": "brown"
+        "answer": "grey"
     },
     {
         "image": "VizWiz_val_00000022.jpg",
@@ -97,7 +97,7 @@
     },
     {
         "image": "VizWiz_val_00000024.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000025.jpg",
@@ -125,7 +125,7 @@
     },
     {
         "image": "VizWiz_val_00000031.jpg",
-        "answer": "no"
+        "answer": "phone"
     },
     {
         "image": "VizWiz_val_00000032.jpg",
@@ -221,15 +221,15 @@
     },
     {
         "image": "VizWiz_val_00000055.jpg",
-        "answer": "yes"
+        "answer": "model b1"
     },
     {
         "image": "VizWiz_val_00000056.jpg",
-        "answer": "steak"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000057.jpg",
-        "answer": "longhorn"
+        "answer": "texas"
     },
     {
         "image": "VizWiz_val_00000058.jpg",
@@ -245,11 +245,11 @@
     },
     {
         "image": "VizWiz_val_00000061.jpg",
-        "answer": "unanswerable"
+        "answer": "window"
     },
     {
         "image": "VizWiz_val_00000062.jpg",
-        "answer": "iphone"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000063.jpg",
@@ -309,11 +309,11 @@
     },
     {
         "image": "VizWiz_val_00000077.jpg",
-        "answer": "white"
+        "answer": "nothing"
     },
     {
         "image": "VizWiz_val_00000078.jpg",
-        "answer": "unanswerable"
+        "answer": "login"
     },
     {
         "image": "VizWiz_val_00000079.jpg",
@@ -325,7 +325,7 @@
     },
     {
         "image": "VizWiz_val_00000081.jpg",
-        "answer": "no"
+        "answer": "cu cu cu cu cu cu cu cu"
     },
     {
         "image": "VizWiz_val_00000082.jpg",
@@ -389,7 +389,7 @@
     },
     {
         "image": "VizWiz_val_00000097.jpg",
-        "answer": "wine"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000098.jpg",
@@ -429,7 +429,7 @@
     },
     {
         "image": "VizWiz_val_00000107.jpg",
-        "answer": "no"
+        "answer": "cu cussssus"
     },
     {
         "image": "VizWiz_val_00000108.jpg",
@@ -441,7 +441,7 @@
     },
     {
         "image": "VizWiz_val_00000110.jpg",
-        "answer": "unanswerable"
+        "answer": "medicine"
     },
     {
         "image": "VizWiz_val_00000111.jpg",
@@ -449,11 +449,11 @@
     },
     {
         "image": "VizWiz_val_00000112.jpg",
-        "answer": "25"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000113.jpg",
-        "answer": "swag"
+        "answer": "kj"
     },
     {
         "image": "VizWiz_val_00000114.jpg",
@@ -469,7 +469,7 @@
     },
     {
         "image": "VizWiz_val_00000117.jpg",
-        "answer": "i don't know"
+        "answer": "cur cur cur cur"
     },
     {
         "image": "VizWiz_val_00000118.jpg",
@@ -509,7 +509,7 @@
     },
     {
         "image": "VizWiz_val_00000127.jpg",
-        "answer": "windows"
+        "answer": "windows 7"
     },
     {
         "image": "VizWiz_val_00000128.jpg",
@@ -533,7 +533,7 @@
     },
     {
         "image": "VizWiz_val_00000133.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000134.jpg",
@@ -541,7 +541,7 @@
     },
     {
         "image": "VizWiz_val_00000135.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000136.jpg",
@@ -553,7 +553,7 @@
     },
     {
         "image": "VizWiz_val_00000138.jpg",
-        "answer": "business"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000139.jpg",
@@ -585,11 +585,11 @@
     },
     {
         "image": "VizWiz_val_00000146.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000147.jpg",
-        "answer": "yellow"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000148.jpg",
@@ -601,7 +601,7 @@
     },
     {
         "image": "VizWiz_val_00000150.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000151.jpg",
@@ -613,7 +613,7 @@
     },
     {
         "image": "VizWiz_val_00000153.jpg",
-        "answer": "yes"
+        "answer": "night time"
     },
     {
         "image": "VizWiz_val_00000154.jpg",
@@ -625,7 +625,7 @@
     },
     {
         "image": "VizWiz_val_00000156.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000157.jpg",
@@ -641,7 +641,7 @@
     },
     {
         "image": "VizWiz_val_00000160.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000161.jpg",
@@ -653,7 +653,7 @@
     },
     {
         "image": "VizWiz_val_00000163.jpg",
-        "answer": "escorder"
+        "answer": "emporium"
     },
     {
         "image": "VizWiz_val_00000164.jpg",
@@ -673,11 +673,11 @@
     },
     {
         "image": "VizWiz_val_00000168.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000169.jpg",
-        "answer": "diet"
+        "answer": "nutrition facts"
     },
     {
         "image": "VizWiz_val_00000170.jpg",
@@ -685,7 +685,7 @@
     },
     {
         "image": "VizWiz_val_00000171.jpg",
-        "answer": "hospital"
+        "answer": "emergency"
     },
     {
         "image": "VizWiz_val_00000172.jpg",
@@ -705,7 +705,7 @@
     },
     {
         "image": "VizWiz_val_00000176.jpg",
-        "answer": "nothing"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000177.jpg",
@@ -733,7 +733,7 @@
     },
     {
         "image": "VizWiz_val_00000183.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000184.jpg",
@@ -741,7 +741,7 @@
     },
     {
         "image": "VizWiz_val_00000185.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000186.jpg",
@@ -773,23 +773,23 @@
     },
     {
         "image": "VizWiz_val_00000193.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000194.jpg",
-        "answer": "no"
+        "answer": "operating files"
     },
     {
         "image": "VizWiz_val_00000195.jpg",
-        "answer": "starz"
+        "answer": "stardust"
     },
     {
         "image": "VizWiz_val_00000196.jpg",
-        "answer": "chair"
+        "answer": "living room"
     },
     {
         "image": "VizWiz_val_00000197.jpg",
-        "answer": "d? yes"
+        "answer": "d? unanswerable"
     },
     {
         "image": "VizWiz_val_00000198.jpg",
@@ -837,7 +837,7 @@
     },
     {
         "image": "VizWiz_val_00000209.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000210.jpg",
@@ -849,7 +849,7 @@
     },
     {
         "image": "VizWiz_val_00000212.jpg",
-        "answer": "omputer"
+        "answer": "indows"
     },
     {
         "image": "VizWiz_val_00000213.jpg",
@@ -877,11 +877,11 @@
     },
     {
         "image": "VizWiz_val_00000219.jpg",
-        "answer": "no shirt"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000220.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000221.jpg",
@@ -901,11 +901,11 @@
     },
     {
         "image": "VizWiz_val_00000225.jpg",
-        "answer": "keyboard"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000226.jpg",
-        "answer": "yes"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00000227.jpg",
@@ -917,11 +917,11 @@
     },
     {
         "image": "VizWiz_val_00000229.jpg",
-        "answer": "yes"
+        "answer": "october"
     },
     {
         "image": "VizWiz_val_00000230.jpg",
-        "answer": "tv"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000231.jpg",
@@ -933,7 +933,7 @@
     },
     {
         "image": "VizWiz_val_00000233.jpg",
-        "answer": "sports"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000234.jpg",
@@ -961,11 +961,11 @@
     },
     {
         "image": "VizWiz_val_00000240.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000241.jpg",
-        "answer": "unanswerable"
+        "answer": "cu cu cu cu cu cu cu cu"
     },
     {
         "image": "VizWiz_val_00000242.jpg",
@@ -989,7 +989,7 @@
     },
     {
         "image": "VizWiz_val_00000247.jpg",
-        "answer": "no"
+        "answer": "mission tortilla strips"
     },
     {
         "image": "VizWiz_val_00000248.jpg",
@@ -997,7 +997,7 @@
     },
     {
         "image": "VizWiz_val_00000249.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000250.jpg",
@@ -1045,7 +1045,7 @@
     },
     {
         "image": "VizWiz_val_00000261.jpg",
-        "answer": "error"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000262.jpg",
@@ -1061,7 +1061,7 @@
     },
     {
         "image": "VizWiz_val_00000265.jpg",
-        "answer": "red"
+        "answer": "white"
     },
     {
         "image": "VizWiz_val_00000266.jpg",
@@ -1077,7 +1077,7 @@
     },
     {
         "image": "VizWiz_val_00000269.jpg",
-        "answer": "no"
+        "answer": "nothing"
     },
     {
         "image": "VizWiz_val_00000270.jpg",
@@ -1097,7 +1097,7 @@
     },
     {
         "image": "VizWiz_val_00000274.jpg",
-        "answer": "music"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000275.jpg",
@@ -1113,7 +1113,7 @@
     },
     {
         "image": "VizWiz_val_00000278.jpg",
-        "answer": "no"
+        "answer": "start repair"
     },
     {
         "image": "VizWiz_val_00000279.jpg",
@@ -1121,7 +1121,7 @@
     },
     {
         "image": "VizWiz_val_00000280.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000281.jpg",
@@ -1189,7 +1189,7 @@
     },
     {
         "image": "VizWiz_val_00000297.jpg",
-        "answer": "on table"
+        "answer": "on left"
     },
     {
         "image": "VizWiz_val_00000298.jpg",
@@ -1197,7 +1197,7 @@
     },
     {
         "image": "VizWiz_val_00000299.jpg",
-        "answer": "h. no"
+        "answer": "h. yes"
     },
     {
         "image": "VizWiz_val_00000300.jpg",
@@ -1225,7 +1225,7 @@
     },
     {
         "image": "VizWiz_val_00000306.jpg",
-        "answer": "cu cursive cursive cu"
+        "answer": "cu cu cu cu cu cu cu cu"
     },
     {
         "image": "VizWiz_val_00000307.jpg",
@@ -1233,7 +1233,7 @@
     },
     {
         "image": "VizWiz_val_00000308.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000309.jpg",
@@ -1257,15 +1257,15 @@
     },
     {
         "image": "VizWiz_val_00000314.jpg",
-        "answer": "no"
+        "answer": "windows"
     },
     {
         "image": "VizWiz_val_00000315.jpg",
-        "answer": "milk"
+        "answer": "milk mist"
     },
     {
         "image": "VizWiz_val_00000316.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000317.jpg",
@@ -1273,7 +1273,7 @@
     },
     {
         "image": "VizWiz_val_00000318.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00000319.jpg",
@@ -1285,7 +1285,7 @@
     },
     {
         "image": "VizWiz_val_00000321.jpg",
-        "answer": "yes"
+        "answer": "power bass"
     },
     {
         "image": "VizWiz_val_00000322.jpg",
@@ -1309,7 +1309,7 @@
     },
     {
         "image": "VizWiz_val_00000327.jpg",
-        "answer": "greenbeach"
+        "answer": "green backstreet"
     },
     {
         "image": "VizWiz_val_00000328.jpg",
@@ -1321,11 +1321,11 @@
     },
     {
         "image": "VizWiz_val_00000330.jpg",
-        "answer": "no"
+        "answer": "computer repair"
     },
     {
         "image": "VizWiz_val_00000331.jpg",
-        "answer": "keyboard"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000332.jpg",
@@ -1341,7 +1341,7 @@
     },
     {
         "image": "VizWiz_val_00000335.jpg",
-        "answer": "nothing"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000336.jpg",
@@ -1361,7 +1361,7 @@
     },
     {
         "image": "VizWiz_val_00000340.jpg",
-        "answer": "no"
+        "answer": "start repair"
     },
     {
         "image": "VizWiz_val_00000341.jpg",
@@ -1377,7 +1377,7 @@
     },
     {
         "image": "VizWiz_val_00000344.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000345.jpg",
@@ -1425,7 +1425,7 @@
     },
     {
         "image": "VizWiz_val_00000356.jpg",
-        "answer": "yes"
+        "answer": "night time"
     },
     {
         "image": "VizWiz_val_00000357.jpg",
@@ -1441,11 +1441,11 @@
     },
     {
         "image": "VizWiz_val_00000360.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000361.jpg",
-        "answer": "unanswerable"
+        "answer": "cur"
     },
     {
         "image": "VizWiz_val_00000362.jpg",
@@ -1453,7 +1453,7 @@
     },
     {
         "image": "VizWiz_val_00000363.jpg",
-        "answer": "baby"
+        "answer": "toy"
     },
     {
         "image": "VizWiz_val_00000364.jpg",
@@ -1489,7 +1489,7 @@
     },
     {
         "image": "VizWiz_val_00000372.jpg",
-        "answer": "error"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000373.jpg",
@@ -1497,7 +1497,7 @@
     },
     {
         "image": "VizWiz_val_00000374.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000375.jpg",
@@ -1541,7 +1541,7 @@
     },
     {
         "image": "VizWiz_val_00000385.jpg",
-        "answer": "no"
+        "answer": "personal pickup"
     },
     {
         "image": "VizWiz_val_00000386.jpg",
@@ -1577,7 +1577,7 @@
     },
     {
         "image": "VizWiz_val_00000394.jpg",
-        "answer": "water valve"
+        "answer": "water valve below"
     },
     {
         "image": "VizWiz_val_00000395.jpg",
@@ -1589,7 +1589,7 @@
     },
     {
         "image": "VizWiz_val_00000397.jpg",
-        "answer": "error message"
+        "answer": "repair"
     },
     {
         "image": "VizWiz_val_00000398.jpg",
@@ -1597,7 +1597,7 @@
     },
     {
         "image": "VizWiz_val_00000399.jpg",
-        "answer": "unanswerable"
+        "answer": "close"
     },
     {
         "image": "VizWiz_val_00000400.jpg",
@@ -1609,11 +1609,11 @@
     },
     {
         "image": "VizWiz_val_00000402.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000403.jpg",
-        "answer": "unanswerable"
+        "answer": "nanswerable"
     },
     {
         "image": "VizWiz_val_00000404.jpg",
@@ -1633,11 +1633,11 @@
     },
     {
         "image": "VizWiz_val_00000408.jpg",
-        "answer": "scan"
+        "answer": "live security"
     },
     {
         "image": "VizWiz_val_00000409.jpg",
-        "answer": "unanswerable"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00000410.jpg",
@@ -1645,7 +1645,7 @@
     },
     {
         "image": "VizWiz_val_00000411.jpg",
-        "answer": "no"
+        "answer": "repair"
     },
     {
         "image": "VizWiz_val_00000412.jpg",
@@ -1665,7 +1665,7 @@
     },
     {
         "image": "VizWiz_val_00000416.jpg",
-        "answer": "unanswerable"
+        "answer": "login"
     },
     {
         "image": "VizWiz_val_00000417.jpg",
@@ -1681,7 +1681,7 @@
     },
     {
         "image": "VizWiz_val_00000420.jpg",
-        "answer": "unanswerable"
+        "answer": "your computer"
     },
     {
         "image": "VizWiz_val_00000421.jpg",
@@ -1701,7 +1701,7 @@
     },
     {
         "image": "VizWiz_val_00000425.jpg",
-        "answer": "computer"
+        "answer": "paper"
     },
     {
         "image": "VizWiz_val_00000426.jpg",
@@ -1713,11 +1713,11 @@
     },
     {
         "image": "VizWiz_val_00000428.jpg",
-        "answer": "repair"
+        "answer": "welcome to repair"
     },
     {
         "image": "VizWiz_val_00000429.jpg",
-        "answer": "computer repair"
+        "answer": "start repair"
     },
     {
         "image": "VizWiz_val_00000430.jpg",
@@ -1741,7 +1741,7 @@
     },
     {
         "image": "VizWiz_val_00000435.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000436.jpg",
@@ -1773,7 +1773,7 @@
     },
     {
         "image": "VizWiz_val_00000443.jpg",
-        "answer": "no grass"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000444.jpg",
@@ -1805,7 +1805,7 @@
     },
     {
         "image": "VizWiz_val_00000451.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000452.jpg",
@@ -1817,11 +1817,11 @@
     },
     {
         "image": "VizWiz_val_00000454.jpg",
-        "answer": "windows"
+        "answer": "microsoft corporation"
     },
     {
         "image": "VizWiz_val_00000455.jpg",
-        "answer": "computer repair"
+        "answer": "laptop"
     },
     {
         "image": "VizWiz_val_00000456.jpg",
@@ -1829,7 +1829,7 @@
     },
     {
         "image": "VizWiz_val_00000457.jpg",
-        "answer": "unanswerable"
+        "answer": "health"
     },
     {
         "image": "VizWiz_val_00000458.jpg",
@@ -1841,7 +1841,7 @@
     },
     {
         "image": "VizWiz_val_00000460.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000461.jpg",
@@ -1849,11 +1849,11 @@
     },
     {
         "image": "VizWiz_val_00000462.jpg",
-        "answer": "repair"
+        "answer": "recovery center"
     },
     {
         "image": "VizWiz_val_00000463.jpg",
-        "answer": "no"
+        "answer": "start up repair repair repair"
     },
     {
         "image": "VizWiz_val_00000464.jpg",
@@ -1873,7 +1873,7 @@
     },
     {
         "image": "VizWiz_val_00000468.jpg",
-        "answer": "keys"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000469.jpg",
@@ -1897,7 +1897,7 @@
     },
     {
         "image": "VizWiz_val_00000474.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000475.jpg",
@@ -1929,7 +1929,7 @@
     },
     {
         "image": "VizWiz_val_00000482.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000483.jpg",
@@ -1977,11 +1977,11 @@
     },
     {
         "image": "VizWiz_val_00000494.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000495.jpg",
-        "answer": "- yes"
+        "answer": "- unanswerable"
     },
     {
         "image": "VizWiz_val_00000496.jpg",
@@ -1989,7 +1989,7 @@
     },
     {
         "image": "VizWiz_val_00000497.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000498.jpg",
@@ -2013,7 +2013,7 @@
     },
     {
         "image": "VizWiz_val_00000503.jpg",
-        "answer": "swag"
+        "answer": "0"
     },
     {
         "image": "VizWiz_val_00000504.jpg",
@@ -2033,7 +2033,7 @@
     },
     {
         "image": "VizWiz_val_00000508.jpg",
-        "answer": "computer repair"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000509.jpg",
@@ -2085,7 +2085,7 @@
     },
     {
         "image": "VizWiz_val_00000521.jpg",
-        "answer": "error"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000522.jpg",
@@ -2105,7 +2105,7 @@
     },
     {
         "image": "VizWiz_val_00000526.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000527.jpg",
@@ -2125,7 +2125,7 @@
     },
     {
         "image": "VizWiz_val_00000531.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000532.jpg",
@@ -2145,7 +2145,7 @@
     },
     {
         "image": "VizWiz_val_00000536.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000537.jpg",
@@ -2185,7 +2185,7 @@
     },
     {
         "image": "VizWiz_val_00000546.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000547.jpg",
@@ -2205,15 +2205,15 @@
     },
     {
         "image": "VizWiz_val_00000551.jpg",
-        "answer": "no"
-    },
-    {
-        "image": "VizWiz_val_00000552.jpg",
         "answer": "yes"
     },
     {
+        "image": "VizWiz_val_00000552.jpg",
+        "answer": "unanswerable"
+    },
+    {
         "image": "VizWiz_val_00000553.jpg",
-        "answer": "error"
+        "answer": "error message"
     },
     {
         "image": "VizWiz_val_00000554.jpg",
@@ -2237,7 +2237,7 @@
     },
     {
         "image": "VizWiz_val_00000559.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00000560.jpg",
@@ -2245,7 +2245,7 @@
     },
     {
         "image": "VizWiz_val_00000561.jpg",
-        "answer": "microsoft"
+        "answer": "microsoft corporation"
     },
     {
         "image": "VizWiz_val_00000562.jpg",
@@ -2273,11 +2273,11 @@
     },
     {
         "image": "VizWiz_val_00000568.jpg",
-        "answer": "laptop"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000569.jpg",
-        "answer": "no animal"
+        "answer": "mouse"
     },
     {
         "image": "VizWiz_val_00000570.jpg",
@@ -2293,11 +2293,11 @@
     },
     {
         "image": "VizWiz_val_00000573.jpg",
-        "answer": "install mac os x"
+        "answer": "install mac"
     },
     {
         "image": "VizWiz_val_00000574.jpg",
-        "answer": "unanswerable"
+        "answer": "una"
     },
     {
         "image": "VizWiz_val_00000575.jpg",
@@ -2317,7 +2317,7 @@
     },
     {
         "image": "VizWiz_val_00000579.jpg",
-        "answer": "no"
+        "answer": "error message"
     },
     {
         "image": "VizWiz_val_00000580.jpg",
@@ -2345,7 +2345,7 @@
     },
     {
         "image": "VizWiz_val_00000586.jpg",
-        "answer": "unanswerable"
+        "answer": "choice"
     },
     {
         "image": "VizWiz_val_00000587.jpg",
@@ -2353,7 +2353,7 @@
     },
     {
         "image": "VizWiz_val_00000588.jpg",
-        "answer": "map"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000589.jpg",
@@ -2369,7 +2369,7 @@
     },
     {
         "image": "VizWiz_val_00000592.jpg",
-        "answer": "unanswerable"
+        "answer": "a"
     },
     {
         "image": "VizWiz_val_00000593.jpg",
@@ -2381,7 +2381,7 @@
     },
     {
         "image": "VizWiz_val_00000595.jpg",
-        "answer": "remote control"
+        "answer": "phone"
     },
     {
         "image": "VizWiz_val_00000596.jpg",
@@ -2409,7 +2409,7 @@
     },
     {
         "image": "VizWiz_val_00000602.jpg",
-        "answer": "reddit"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000603.jpg",
@@ -2441,7 +2441,7 @@
     },
     {
         "image": "VizWiz_val_00000610.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000611.jpg",
@@ -2501,7 +2501,7 @@
     },
     {
         "image": "VizWiz_val_00000625.jpg",
-        "answer": "yes"
+        "answer": "welcome"
     },
     {
         "image": "VizWiz_val_00000626.jpg",
@@ -2585,7 +2585,7 @@
     },
     {
         "image": "VizWiz_val_00000646.jpg",
-        "answer": "silver lining"
+        "answer": "nothing"
     },
     {
         "image": "VizWiz_val_00000647.jpg",
@@ -2593,7 +2593,7 @@
     },
     {
         "image": "VizWiz_val_00000648.jpg",
-        "answer": "read"
+        "answer": "nothing"
     },
     {
         "image": "VizWiz_val_00000649.jpg",
@@ -2601,7 +2601,7 @@
     },
     {
         "image": "VizWiz_val_00000650.jpg",
-        "answer": "windows"
+        "answer": "windows logo"
     },
     {
         "image": "VizWiz_val_00000651.jpg",
@@ -2617,7 +2617,7 @@
     },
     {
         "image": "VizWiz_val_00000654.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000655.jpg",
@@ -2657,11 +2657,11 @@
     },
     {
         "image": "VizWiz_val_00000664.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00000665.jpg",
-        "answer": "o"
+        "answer": "nanswerable"
     },
     {
         "image": "VizWiz_val_00000666.jpg",
@@ -2677,7 +2677,7 @@
     },
     {
         "image": "VizWiz_val_00000669.jpg",
-        "answer": "no"
+        "answer": "unans"
     },
     {
         "image": "VizWiz_val_00000670.jpg",
@@ -2701,7 +2701,7 @@
     },
     {
         "image": "VizWiz_val_00000675.jpg",
-        "answer": "unanswerable"
+        "answer": "toothpaste"
     },
     {
         "image": "VizWiz_val_00000676.jpg",
@@ -2777,7 +2777,7 @@
     },
     {
         "image": "VizWiz_val_00000694.jpg",
-        "answer": "wii"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000695.jpg",
@@ -2789,7 +2789,7 @@
     },
     {
         "image": "VizWiz_val_00000697.jpg",
-        "answer": "skype"
+        "answer": "skyspeed"
     },
     {
         "image": "VizWiz_val_00000698.jpg",
@@ -2805,7 +2805,7 @@
     },
     {
         "image": "VizWiz_val_00000701.jpg",
-        "answer": "macbook air"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000702.jpg",
@@ -2821,7 +2821,7 @@
     },
     {
         "image": "VizWiz_val_00000705.jpg",
-        "answer": "computer"
+        "answer": "step 2 get crowd to work fast"
     },
     {
         "image": "VizWiz_val_00000706.jpg",
@@ -2833,7 +2833,7 @@
     },
     {
         "image": "VizWiz_val_00000708.jpg",
-        "answer": "unanswerable"
+        "answer": "pen"
     },
     {
         "image": "VizWiz_val_00000709.jpg",
@@ -2881,7 +2881,7 @@
     },
     {
         "image": "VizWiz_val_00000720.jpg",
-        "answer": "car"
+        "answer": "house"
     },
     {
         "image": "VizWiz_val_00000721.jpg",
@@ -2889,7 +2889,7 @@
     },
     {
         "image": "VizWiz_val_00000722.jpg",
-        "answer": "unanswerable"
+        "answer": "foot"
     },
     {
         "image": "VizWiz_val_00000723.jpg",
@@ -2901,7 +2901,7 @@
     },
     {
         "image": "VizWiz_val_00000725.jpg",
-        "answer": "stomach"
+        "answer": "back"
     },
     {
         "image": "VizWiz_val_00000726.jpg",
@@ -2933,7 +2933,7 @@
     },
     {
         "image": "VizWiz_val_00000733.jpg",
-        "answer": "brown"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000734.jpg",
@@ -2961,7 +2961,7 @@
     },
     {
         "image": "VizWiz_val_00000740.jpg",
-        "answer": "system"
+        "answer": "video"
     },
     {
         "image": "VizWiz_val_00000741.jpg",
@@ -2973,11 +2973,11 @@
     },
     {
         "image": "VizWiz_val_00000743.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000744.jpg",
-        "answer": "cell phone"
+        "answer": "cigarettes"
     },
     {
         "image": "VizWiz_val_00000745.jpg",
@@ -2985,7 +2985,7 @@
     },
     {
         "image": "VizWiz_val_00000746.jpg",
-        "answer": "blue"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000747.jpg",
@@ -2993,7 +2993,7 @@
     },
     {
         "image": "VizWiz_val_00000748.jpg",
-        "answer": "green"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000749.jpg",
@@ -3005,7 +3005,7 @@
     },
     {
         "image": "VizWiz_val_00000751.jpg",
-        "answer": "unanswerable"
+        "answer": "0"
     },
     {
         "image": "VizWiz_val_00000752.jpg",
@@ -3041,7 +3041,7 @@
     },
     {
         "image": "VizWiz_val_00000760.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000761.jpg",
@@ -3049,7 +3049,7 @@
     },
     {
         "image": "VizWiz_val_00000762.jpg",
-        "answer": "minecraft"
+        "answer": "cross"
     },
     {
         "image": "VizWiz_val_00000763.jpg",
@@ -3137,7 +3137,7 @@
     },
     {
         "image": "VizWiz_val_00000784.jpg",
-        "answer": "no parking"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00000785.jpg",
@@ -3149,7 +3149,7 @@
     },
     {
         "image": "VizWiz_val_00000787.jpg",
-        "answer": "music"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000788.jpg",
@@ -3161,7 +3161,7 @@
     },
     {
         "image": "VizWiz_val_00000790.jpg",
-        "answer": "remote"
+        "answer": "phone"
     },
     {
         "image": "VizWiz_val_00000791.jpg",
@@ -3169,7 +3169,7 @@
     },
     {
         "image": "VizWiz_val_00000792.jpg",
-        "answer": "ocelot test guitar"
+        "answer": "oita aquarium test guitar"
     },
     {
         "image": "VizWiz_val_00000793.jpg",
@@ -3205,11 +3205,11 @@
     },
     {
         "image": "VizWiz_val_00000801.jpg",
-        "answer": "laptop"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000802.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000803.jpg",
@@ -3217,7 +3217,7 @@
     },
     {
         "image": "VizWiz_val_00000804.jpg",
-        "answer": "black"
+        "answer": "desk"
     },
     {
         "image": "VizWiz_val_00000805.jpg",
@@ -3225,11 +3225,11 @@
     },
     {
         "image": "VizWiz_val_00000806.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000807.jpg",
-        "answer": "computer"
+        "answer": "computer screen"
     },
     {
         "image": "VizWiz_val_00000808.jpg",
@@ -3265,11 +3265,11 @@
     },
     {
         "image": "VizWiz_val_00000816.jpg",
-        "answer": "ity"
+        "answer": "nanswerable"
     },
     {
         "image": "VizWiz_val_00000817.jpg",
-        "answer": "3. 43"
+        "answer": "3. 53"
     },
     {
         "image": "VizWiz_val_00000818.jpg",
@@ -3285,7 +3285,7 @@
     },
     {
         "image": "VizWiz_val_00000821.jpg",
-        "answer": "lot"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000822.jpg",
@@ -3301,7 +3301,7 @@
     },
     {
         "image": "VizWiz_val_00000825.jpg",
-        "answer": "no books"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000826.jpg",
@@ -3317,7 +3317,7 @@
     },
     {
         "image": "VizWiz_val_00000829.jpg",
-        "answer": "yes"
+        "answer": "una"
     },
     {
         "image": "VizWiz_val_00000830.jpg",
@@ -3337,7 +3337,7 @@
     },
     {
         "image": "VizWiz_val_00000834.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000835.jpg",
@@ -3389,7 +3389,7 @@
     },
     {
         "image": "VizWiz_val_00000847.jpg",
-        "answer": "unanswerable"
+        "answer": "weather"
     },
     {
         "image": "VizWiz_val_00000848.jpg",
@@ -3409,7 +3409,7 @@
     },
     {
         "image": "VizWiz_val_00000852.jpg",
-        "answer": "card"
+        "answer": "$ 350"
     },
     {
         "image": "VizWiz_val_00000853.jpg",
@@ -3421,7 +3421,7 @@
     },
     {
         "image": "VizWiz_val_00000855.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000856.jpg",
@@ -3449,7 +3449,7 @@
     },
     {
         "image": "VizWiz_val_00000862.jpg",
-        "answer": "screen"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000863.jpg",
@@ -3497,7 +3497,7 @@
     },
     {
         "image": "VizWiz_val_00000874.jpg",
-        "answer": "no"
+        "answer": "nothing"
     },
     {
         "image": "VizWiz_val_00000875.jpg",
@@ -3529,7 +3529,7 @@
     },
     {
         "image": "VizWiz_val_00000882.jpg",
-        "answer": "88 - 4313"
+        "answer": "884"
     },
     {
         "image": "VizWiz_val_00000883.jpg",
@@ -3545,7 +3545,7 @@
     },
     {
         "image": "VizWiz_val_00000886.jpg",
-        "answer": "words"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000887.jpg",
@@ -3577,7 +3577,7 @@
     },
     {
         "image": "VizWiz_val_00000894.jpg",
-        "answer": "security"
+        "answer": "security check"
     },
     {
         "image": "VizWiz_val_00000895.jpg",
@@ -3605,7 +3605,7 @@
     },
     {
         "image": "VizWiz_val_00000901.jpg",
-        "answer": "$ 4. 00"
+        "answer": "$ 1. 00"
     },
     {
         "image": "VizWiz_val_00000902.jpg",
@@ -3637,7 +3637,7 @@
     },
     {
         "image": "VizWiz_val_00000909.jpg",
-        "answer": "white"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000910.jpg",
@@ -3657,19 +3657,19 @@
     },
     {
         "image": "VizWiz_val_00000914.jpg",
-        "answer": "no"
+        "answer": "wifi"
     },
     {
         "image": "VizWiz_val_00000915.jpg",
-        "answer": "blue"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000916.jpg",
-        "answer": "flowers"
+        "answer": "windows"
     },
     {
         "image": "VizWiz_val_00000917.jpg",
-        "answer": "man"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000918.jpg",
@@ -3725,7 +3725,7 @@
     },
     {
         "image": "VizWiz_val_00000931.jpg",
-        "answer": "windows"
+        "answer": "start to end"
     },
     {
         "image": "VizWiz_val_00000932.jpg",
@@ -3733,7 +3733,7 @@
     },
     {
         "image": "VizWiz_val_00000933.jpg",
-        "answer": "0"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000934.jpg",
@@ -3749,7 +3749,7 @@
     },
     {
         "image": "VizWiz_val_00000937.jpg",
-        "answer": "no window"
+        "answer": "error"
     },
     {
         "image": "VizWiz_val_00000938.jpg",
@@ -3765,7 +3765,7 @@
     },
     {
         "image": "VizWiz_val_00000941.jpg",
-        "answer": "nothing"
+        "answer": "account"
     },
     {
         "image": "VizWiz_val_00000942.jpg",
@@ -3797,7 +3797,7 @@
     },
     {
         "image": "VizWiz_val_00000949.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00000950.jpg",
@@ -3809,11 +3809,11 @@
     },
     {
         "image": "VizWiz_val_00000952.jpg",
-        "answer": "start start up repair"
+        "answer": "start start start start start start up repair"
     },
     {
         "image": "VizWiz_val_00000953.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000954.jpg",
@@ -3885,15 +3885,15 @@
     },
     {
         "image": "VizWiz_val_00000971.jpg",
-        "answer": "o boot"
+        "answer": "nanswerable"
     },
     {
         "image": "VizWiz_val_00000972.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000973.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000974.jpg",
@@ -3905,7 +3905,7 @@
     },
     {
         "image": "VizWiz_val_00000976.jpg",
-        "answer": "blue"
+        "answer": "acoustic"
     },
     {
         "image": "VizWiz_val_00000977.jpg",
@@ -3913,7 +3913,7 @@
     },
     {
         "image": "VizWiz_val_00000978.jpg",
-        "answer": "unanswerable"
+        "answer": "carpet"
     },
     {
         "image": "VizWiz_val_00000979.jpg",
@@ -3925,7 +3925,7 @@
     },
     {
         "image": "VizWiz_val_00000981.jpg",
-        "answer": "nanswerable"
+        "answer": "oogle"
     },
     {
         "image": "VizWiz_val_00000982.jpg",
@@ -3969,7 +3969,7 @@
     },
     {
         "image": "VizWiz_val_00000992.jpg",
-        "answer": "unanswerable"
+        "answer": "install mac os x"
     },
     {
         "image": "VizWiz_val_00000993.jpg",
@@ -3977,7 +3977,7 @@
     },
     {
         "image": "VizWiz_val_00000994.jpg",
-        "answer": "you."
+        "answer": "you. unanswerable"
     },
     {
         "image": "VizWiz_val_00000995.jpg",
@@ -4013,11 +4013,11 @@
     },
     {
         "image": "VizWiz_val_00001003.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001004.jpg",
-        "answer": "blue white"
+        "answer": "white"
     },
     {
         "image": "VizWiz_val_00001005.jpg",
@@ -4029,7 +4029,7 @@
     },
     {
         "image": "VizWiz_val_00001007.jpg",
-        "answer": "windows"
+        "answer": "computer"
     },
     {
         "image": "VizWiz_val_00001008.jpg",
@@ -4041,11 +4041,11 @@
     },
     {
         "image": "VizWiz_val_00001010.jpg",
-        "answer": "swag"
+        "answer": "b"
     },
     {
         "image": "VizWiz_val_00001011.jpg",
-        "answer": "unanswerable"
+        "answer": "total"
     },
     {
         "image": "VizWiz_val_00001012.jpg",
@@ -4085,7 +4085,7 @@
     },
     {
         "image": "VizWiz_val_00001021.jpg",
-        "answer": "of person on laptop"
+        "answer": "on laptop"
     },
     {
         "image": "VizWiz_val_00001022.jpg",
@@ -4097,7 +4097,7 @@
     },
     {
         "image": "VizWiz_val_00001024.jpg",
-        "answer": "no"
+        "answer": "no team"
     },
     {
         "image": "VizWiz_val_00001025.jpg",
@@ -4113,7 +4113,7 @@
     },
     {
         "image": "VizWiz_val_00001028.jpg",
-        "answer": "error"
+        "answer": "error message"
     },
     {
         "image": "VizWiz_val_00001029.jpg",
@@ -4153,7 +4153,7 @@
     },
     {
         "image": "VizWiz_val_00001038.jpg",
-        "answer": "no"
+        "answer": "install 4"
     },
     {
         "image": "VizWiz_val_00001039.jpg",
@@ -4189,7 +4189,7 @@
     },
     {
         "image": "VizWiz_val_00001047.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001048.jpg",
@@ -4225,7 +4225,7 @@
     },
     {
         "image": "VizWiz_val_00001056.jpg",
-        "answer": "unanswerable"
+        "answer": "camera"
     },
     {
         "image": "VizWiz_val_00001057.jpg",
@@ -4241,11 +4241,11 @@
     },
     {
         "image": "VizWiz_val_00001060.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00001061.jpg",
-        "answer": "iphone"
+        "answer": "phone"
     },
     {
         "image": "VizWiz_val_00001062.jpg",
@@ -4257,11 +4257,11 @@
     },
     {
         "image": "VizWiz_val_00001064.jpg",
-        "answer": "windows"
+        "answer": "microsoft windows"
     },
     {
         "image": "VizWiz_val_00001065.jpg",
-        "answer": "kings"
+        "answer": "kingswood"
     },
     {
         "image": "VizWiz_val_00001066.jpg",
@@ -4277,7 +4277,7 @@
     },
     {
         "image": "VizWiz_val_00001069.jpg",
-        "answer": "no"
+        "answer": "5"
     },
     {
         "image": "VizWiz_val_00001070.jpg",
@@ -4285,7 +4285,7 @@
     },
     {
         "image": "VizWiz_val_00001071.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001072.jpg",
@@ -4313,11 +4313,11 @@
     },
     {
         "image": "VizWiz_val_00001078.jpg",
-        "answer": "unanswerable"
+        "answer": "phone number"
     },
     {
         "image": "VizWiz_val_00001079.jpg",
-        "answer": "no problems"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001080.jpg",
@@ -4337,11 +4337,11 @@
     },
     {
         "image": "VizWiz_val_00001084.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001085.jpg",
-        "answer": "no"
+        "answer": "unanswer"
     },
     {
         "image": "VizWiz_val_00001086.jpg",
@@ -4349,7 +4349,7 @@
     },
     {
         "image": "VizWiz_val_00001087.jpg",
-        "answer": "repair"
+        "answer": "start up repair"
     },
     {
         "image": "VizWiz_val_00001088.jpg",
@@ -4357,7 +4357,7 @@
     },
     {
         "image": "VizWiz_val_00001089.jpg",
-        "answer": "australia post"
+        "answer": "mail"
     },
     {
         "image": "VizWiz_val_00001090.jpg",
@@ -4365,7 +4365,7 @@
     },
     {
         "image": "VizWiz_val_00001091.jpg",
-        "answer": "rock"
+        "answer": "left"
     },
     {
         "image": "VizWiz_val_00001092.jpg",
@@ -4385,7 +4385,7 @@
     },
     {
         "image": "VizWiz_val_00001096.jpg",
-        "answer": "no"
+        "answer": "your computer ran problem"
     },
     {
         "image": "VizWiz_val_00001097.jpg",
@@ -4393,11 +4393,11 @@
     },
     {
         "image": "VizWiz_val_00001098.jpg",
-        "answer": "windows"
+        "answer": "microsoft"
     },
     {
         "image": "VizWiz_val_00001099.jpg",
-        "answer": "yes"
+        "answer": "window"
     },
     {
         "image": "VizWiz_val_00001100.jpg",
@@ -4409,7 +4409,7 @@
     },
     {
         "image": "VizWiz_val_00001102.jpg",
-        "answer": "no"
+        "answer": "windows"
     },
     {
         "image": "VizWiz_val_00001103.jpg",
@@ -4437,7 +4437,7 @@
     },
     {
         "image": "VizWiz_val_00001109.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001110.jpg",
@@ -4453,7 +4453,7 @@
     },
     {
         "image": "VizWiz_val_00001113.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001114.jpg",
@@ -4461,11 +4461,11 @@
     },
     {
         "image": "VizWiz_val_00001115.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00001116.jpg",
-        "answer": "no library card"
+        "answer": "texas"
     },
     {
         "image": "VizWiz_val_00001117.jpg",
@@ -4477,7 +4477,7 @@
     },
     {
         "image": "VizWiz_val_00001119.jpg",
-        "answer": "book"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001120.jpg",
@@ -4521,11 +4521,11 @@
     },
     {
         "image": "VizWiz_val_00001130.jpg",
-        "answer": "computer"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001131.jpg",
-        "answer": "no"
+        "answer": "building"
     },
     {
         "image": "VizWiz_val_00001132.jpg",
@@ -4533,7 +4533,7 @@
     },
     {
         "image": "VizWiz_val_00001133.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001134.jpg",
@@ -4541,7 +4541,7 @@
     },
     {
         "image": "VizWiz_val_00001135.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001136.jpg",
@@ -4553,11 +4553,11 @@
     },
     {
         "image": "VizWiz_val_00001138.jpg",
-        "answer": "map"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001139.jpg",
-        "answer": "ipad"
+        "answer": "cell phone"
     },
     {
         "image": "VizWiz_val_00001140.jpg",
@@ -4565,11 +4565,11 @@
     },
     {
         "image": "VizWiz_val_00001141.jpg",
-        "answer": "unanswerable"
+        "answer": "answerable"
     },
     {
         "image": "VizWiz_val_00001142.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00001143.jpg",
@@ -4577,7 +4577,7 @@
     },
     {
         "image": "VizWiz_val_00001144.jpg",
-        "answer": "no coffee"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001145.jpg",
@@ -4653,7 +4653,7 @@
     },
     {
         "image": "VizWiz_val_00001163.jpg",
-        "answer": "brown"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001164.jpg",
@@ -4665,7 +4665,7 @@
     },
     {
         "image": "VizWiz_val_00001166.jpg",
-        "answer": "gold"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001167.jpg",
@@ -4697,7 +4697,7 @@
     },
     {
         "image": "VizWiz_val_00001174.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00001175.jpg",
@@ -4709,7 +4709,7 @@
     },
     {
         "image": "VizWiz_val_00001177.jpg",
-        "answer": "pink"
+        "answer": "red"
     },
     {
         "image": "VizWiz_val_00001178.jpg",
@@ -4721,7 +4721,7 @@
     },
     {
         "image": "VizWiz_val_00001180.jpg",
-        "answer": "toy"
+        "answer": "toy story"
     },
     {
         "image": "VizWiz_val_00001181.jpg",
@@ -4729,7 +4729,7 @@
     },
     {
         "image": "VizWiz_val_00001182.jpg",
-        "answer": "unanswerable"
+        "answer": "cookies"
     },
     {
         "image": "VizWiz_val_00001183.jpg",
@@ -4741,11 +4741,11 @@
     },
     {
         "image": "VizWiz_val_00001185.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001186.jpg",
-        "answer": "cream"
+        "answer": "cream celery"
     },
     {
         "image": "VizWiz_val_00001187.jpg",
@@ -4769,7 +4769,7 @@
     },
     {
         "image": "VizWiz_val_00001192.jpg",
-        "answer": "white"
+        "answer": "wall"
     },
     {
         "image": "VizWiz_val_00001193.jpg",
@@ -4777,7 +4777,7 @@
     },
     {
         "image": "VizWiz_val_00001194.jpg",
-        "answer": "salad"
+        "answer": "food"
     },
     {
         "image": "VizWiz_val_00001195.jpg",
@@ -4785,11 +4785,11 @@
     },
     {
         "image": "VizWiz_val_00001196.jpg",
-        "answer": "tv"
+        "answer": "dresser"
     },
     {
         "image": "VizWiz_val_00001197.jpg",
-        "answer": "unanswerable"
+        "answer": "vitamins"
     },
     {
         "image": "VizWiz_val_00001198.jpg",
@@ -4797,19 +4797,19 @@
     },
     {
         "image": "VizWiz_val_00001199.jpg",
-        "answer": "75"
+        "answer": "78"
     },
     {
         "image": "VizWiz_val_00001200.jpg",
-        "answer": "unanswerable"
+        "answer": "lotion"
     },
     {
         "image": "VizWiz_val_00001201.jpg",
-        "answer": "unanswerable"
+        "answer": "phone"
     },
     {
         "image": "VizWiz_val_00001202.jpg",
-        "answer": "playing"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001203.jpg",
@@ -4865,7 +4865,7 @@
     },
     {
         "image": "VizWiz_val_00001216.jpg",
-        "answer": "unanswerable"
+        "answer": "help"
     },
     {
         "image": "VizWiz_val_00001217.jpg",
@@ -4881,15 +4881,15 @@
     },
     {
         "image": "VizWiz_val_00001220.jpg",
-        "answer": "unanswerable"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00001221.jpg",
-        "answer": "nothing"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001222.jpg",
-        "answer": "car seat"
+        "answer": "car"
     },
     {
         "image": "VizWiz_val_00001223.jpg",
@@ -4921,11 +4921,11 @@
     },
     {
         "image": "VizWiz_val_00001230.jpg",
-        "answer": "1"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001231.jpg",
-        "answer": "frozen"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001232.jpg",
@@ -4937,7 +4937,7 @@
     },
     {
         "image": "VizWiz_val_00001234.jpg",
-        "answer": "unanswerable"
+        "answer": "advanced cell massage"
     },
     {
         "image": "VizWiz_val_00001235.jpg",
@@ -4993,7 +4993,7 @@
     },
     {
         "image": "VizWiz_val_00001248.jpg",
-        "answer": "coffee"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001249.jpg",
@@ -5049,7 +5049,7 @@
     },
     {
         "image": "VizWiz_val_00001262.jpg",
-        "answer": "peanut butter"
+        "answer": "chocolate peanut butter"
     },
     {
         "image": "VizWiz_val_00001263.jpg",
@@ -5097,11 +5097,11 @@
     },
     {
         "image": "VizWiz_val_00001274.jpg",
-        "answer": "brown"
+        "answer": "terrier"
     },
     {
         "image": "VizWiz_val_00001275.jpg",
-        "answer": "unanswerable"
+        "answer": "baked beans"
     },
     {
         "image": "VizWiz_val_00001276.jpg",
@@ -5137,7 +5137,7 @@
     },
     {
         "image": "VizWiz_val_00001284.jpg",
-        "answer": "mountain"
+        "answer": "rocky mountain"
     },
     {
         "image": "VizWiz_val_00001285.jpg",
@@ -5149,7 +5149,7 @@
     },
     {
         "image": "VizWiz_val_00001287.jpg",
-        "answer": "turkey"
+        "answer": "baked turkey"
     },
     {
         "image": "VizWiz_val_00001288.jpg",
@@ -5185,15 +5185,15 @@
     },
     {
         "image": "VizWiz_val_00001296.jpg",
-        "answer": "unanswerable"
+        "answer": "store"
     },
     {
         "image": "VizWiz_val_00001297.jpg",
-        "answer": "0"
+        "answer": "13"
     },
     {
         "image": "VizWiz_val_00001298.jpg",
-        "answer": "cream"
+        "answer": "cream cheese spread"
     },
     {
         "image": "VizWiz_val_00001299.jpg",
@@ -5229,7 +5229,7 @@
     },
     {
         "image": "VizWiz_val_00001307.jpg",
-        "answer": "unanswerable"
+        "answer": "soda"
     },
     {
         "image": "VizWiz_val_00001308.jpg",
@@ -5257,7 +5257,7 @@
     },
     {
         "image": "VizWiz_val_00001314.jpg",
-        "answer": "on desk"
+        "answer": "on left"
     },
     {
         "image": "VizWiz_val_00001315.jpg",
@@ -5277,7 +5277,7 @@
     },
     {
         "image": "VizWiz_val_00001319.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00001320.jpg",
@@ -5341,7 +5341,7 @@
     },
     {
         "image": "VizWiz_val_00001335.jpg",
-        "answer": "unanswerable"
+        "answer": "condom"
     },
     {
         "image": "VizWiz_val_00001336.jpg",
@@ -5361,7 +5361,7 @@
     },
     {
         "image": "VizWiz_val_00001340.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001341.jpg",
@@ -5381,7 +5381,7 @@
     },
     {
         "image": "VizWiz_val_00001345.jpg",
-        "answer": "nuts"
+        "answer": "granola"
     },
     {
         "image": "VizWiz_val_00001346.jpg",
@@ -5421,7 +5421,7 @@
     },
     {
         "image": "VizWiz_val_00001355.jpg",
-        "answer": "black"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001356.jpg",
@@ -5429,7 +5429,7 @@
     },
     {
         "image": "VizWiz_val_00001357.jpg",
-        "answer": "bible"
+        "answer": "world"
     },
     {
         "image": "VizWiz_val_00001358.jpg",
@@ -5477,11 +5477,11 @@
     },
     {
         "image": "VizWiz_val_00001369.jpg",
-        "answer": "blue"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001370.jpg",
-        "answer": "iphone"
+        "answer": "phone"
     },
     {
         "image": "VizWiz_val_00001371.jpg",
@@ -5529,7 +5529,7 @@
     },
     {
         "image": "VizWiz_val_00001382.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00001383.jpg",
@@ -5537,7 +5537,7 @@
     },
     {
         "image": "VizWiz_val_00001384.jpg",
-        "answer": "blue"
+        "answer": "white"
     },
     {
         "image": "VizWiz_val_00001385.jpg",
@@ -5561,7 +5561,7 @@
     },
     {
         "image": "VizWiz_val_00001390.jpg",
-        "answer": "no writing"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001391.jpg",
@@ -5573,7 +5573,7 @@
     },
     {
         "image": "VizWiz_val_00001393.jpg",
-        "answer": "acer"
+        "answer": "dell"
     },
     {
         "image": "VizWiz_val_00001394.jpg",
@@ -5585,7 +5585,7 @@
     },
     {
         "image": "VizWiz_val_00001396.jpg",
-        "answer": "pepsi"
+        "answer": "pepsi max"
     },
     {
         "image": "VizWiz_val_00001397.jpg",
@@ -5605,7 +5605,7 @@
     },
     {
         "image": "VizWiz_val_00001401.jpg",
-        "answer": "cell phone"
+        "answer": "phone"
     },
     {
         "image": "VizWiz_val_00001402.jpg",
@@ -5621,7 +5621,7 @@
     },
     {
         "image": "VizWiz_val_00001405.jpg",
-        "answer": "dinner"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001406.jpg",
@@ -5633,7 +5633,7 @@
     },
     {
         "image": "VizWiz_val_00001408.jpg",
-        "answer": "no"
+        "answer": "10 bake"
     },
     {
         "image": "VizWiz_val_00001409.jpg",
@@ -5713,11 +5713,11 @@
     },
     {
         "image": "VizWiz_val_00001428.jpg",
-        "answer": "sweet & salty"
+        "answer": "sweet"
     },
     {
         "image": "VizWiz_val_00001429.jpg",
-        "answer": "vanilla"
+        "answer": "whipped cream"
     },
     {
         "image": "VizWiz_val_00001430.jpg",
@@ -5733,7 +5733,7 @@
     },
     {
         "image": "VizWiz_val_00001433.jpg",
-        "answer": "button"
+        "answer": "turn"
     },
     {
         "image": "VizWiz_val_00001434.jpg",
@@ -5745,7 +5745,7 @@
     },
     {
         "image": "VizWiz_val_00001436.jpg",
-        "answer": "unanswerable"
+        "answer": "green"
     },
     {
         "image": "VizWiz_val_00001437.jpg",
@@ -5757,7 +5757,7 @@
     },
     {
         "image": "VizWiz_val_00001439.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001440.jpg",
@@ -5789,7 +5789,7 @@
     },
     {
         "image": "VizWiz_val_00001447.jpg",
-        "answer": "silver"
+        "answer": "book"
     },
     {
         "image": "VizWiz_val_00001448.jpg",
@@ -5845,7 +5845,7 @@
     },
     {
         "image": "VizWiz_val_00001461.jpg",
-        "answer": "white"
+        "answer": "pink"
     },
     {
         "image": "VizWiz_val_00001462.jpg",
@@ -5893,7 +5893,7 @@
     },
     {
         "image": "VizWiz_val_00001473.jpg",
-        "answer": "refrigerator"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001474.jpg",
@@ -5925,11 +5925,11 @@
     },
     {
         "image": "VizWiz_val_00001481.jpg",
-        "answer": "unanswerable"
+        "answer": "tank"
     },
     {
         "image": "VizWiz_val_00001482.jpg",
-        "answer": "iphone"
+        "answer": "cell phone"
     },
     {
         "image": "VizWiz_val_00001483.jpg",
@@ -5937,11 +5937,11 @@
     },
     {
         "image": "VizWiz_val_00001484.jpg",
-        "answer": "ht? lady"
+        "answer": "ht? lady speed stick"
     },
     {
         "image": "VizWiz_val_00001485.jpg",
-        "answer": "mug"
+        "answer": "cup"
     },
     {
         "image": "VizWiz_val_00001486.jpg",
@@ -5993,7 +5993,7 @@
     },
     {
         "image": "VizWiz_val_00001498.jpg",
-        "answer": "cell phone"
+        "answer": "phone"
     },
     {
         "image": "VizWiz_val_00001499.jpg",
@@ -6005,7 +6005,7 @@
     },
     {
         "image": "VizWiz_val_00001501.jpg",
-        "answer": "no"
+        "answer": "information"
     },
     {
         "image": "VizWiz_val_00001502.jpg",
@@ -6037,7 +6037,7 @@
     },
     {
         "image": "VizWiz_val_00001509.jpg",
-        "answer": "laptop"
+        "answer": "microsoft windows"
     },
     {
         "image": "VizWiz_val_00001510.jpg",
@@ -6045,15 +6045,15 @@
     },
     {
         "image": "VizWiz_val_00001511.jpg",
-        "answer": "hand lotion"
+        "answer": "lotion"
     },
     {
         "image": "VizWiz_val_00001512.jpg",
-        "answer": "chips"
+        "answer": "cinco de mayo"
     },
     {
         "image": "VizWiz_val_00001513.jpg",
-        "answer": "soup"
+        "answer": "tomato"
     },
     {
         "image": "VizWiz_val_00001514.jpg",
@@ -6061,7 +6061,7 @@
     },
     {
         "image": "VizWiz_val_00001515.jpg",
-        "answer": "bed"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001516.jpg",
@@ -6081,11 +6081,11 @@
     },
     {
         "image": "VizWiz_val_00001520.jpg",
-        "answer": "unanswerable"
+        "answer": "season"
     },
     {
         "image": "VizWiz_val_00001521.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00001522.jpg",
@@ -6093,7 +6093,7 @@
     },
     {
         "image": "VizWiz_val_00001523.jpg",
-        "answer": "cell phone"
+        "answer": "phone"
     },
     {
         "image": "VizWiz_val_00001524.jpg",
@@ -6105,7 +6105,7 @@
     },
     {
         "image": "VizWiz_val_00001526.jpg",
-        "answer": "unanswerable"
+        "answer": "nutrition"
     },
     {
         "image": "VizWiz_val_00001527.jpg",
@@ -6113,7 +6113,7 @@
     },
     {
         "image": "VizWiz_val_00001528.jpg",
-        "answer": "yes"
+        "answer": "3"
     },
     {
         "image": "VizWiz_val_00001529.jpg",
@@ -6129,11 +6129,11 @@
     },
     {
         "image": "VizWiz_val_00001532.jpg",
-        "answer": "bill"
+        "answer": "lincoln"
     },
     {
         "image": "VizWiz_val_00001533.jpg",
-        "answer": "french"
+        "answer": "taylor ellis"
     },
     {
         "image": "VizWiz_val_00001534.jpg",
@@ -6141,11 +6141,11 @@
     },
     {
         "image": "VizWiz_val_00001535.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001536.jpg",
-        "answer": "unanswerable"
+        "answer": "fruit juice"
     },
     {
         "image": "VizWiz_val_00001537.jpg",
@@ -6189,7 +6189,7 @@
     },
     {
         "image": "VizWiz_val_00001547.jpg",
-        "answer": "love"
+        "answer": "cartoon"
     },
     {
         "image": "VizWiz_val_00001548.jpg",
@@ -6225,7 +6225,7 @@
     },
     {
         "image": "VizWiz_val_00001556.jpg",
-        "answer": "brown"
+        "answer": "tan"
     },
     {
         "image": "VizWiz_val_00001557.jpg",
@@ -6237,7 +6237,7 @@
     },
     {
         "image": "VizWiz_val_00001559.jpg",
-        "answer": "tomato"
+        "answer": "diced tomatoes"
     },
     {
         "image": "VizWiz_val_00001560.jpg",
@@ -6261,7 +6261,7 @@
     },
     {
         "image": "VizWiz_val_00001565.jpg",
-        "answer": "no boy"
+        "answer": "phone"
     },
     {
         "image": "VizWiz_val_00001566.jpg",
@@ -6273,7 +6273,7 @@
     },
     {
         "image": "VizWiz_val_00001568.jpg",
-        "answer": "unanswerable"
+        "answer": "peaches"
     },
     {
         "image": "VizWiz_val_00001569.jpg",
@@ -6281,7 +6281,7 @@
     },
     {
         "image": "VizWiz_val_00001570.jpg",
-        "answer": "unanswerable"
+        "answer": "vitamins"
     },
     {
         "image": "VizWiz_val_00001571.jpg",
@@ -6289,7 +6289,7 @@
     },
     {
         "image": "VizWiz_val_00001572.jpg",
-        "answer": "chocolate"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001573.jpg",
@@ -6309,7 +6309,7 @@
     },
     {
         "image": "VizWiz_val_00001577.jpg",
-        "answer": "unanswerable"
+        "answer": "spaghetti"
     },
     {
         "image": "VizWiz_val_00001578.jpg",
@@ -6349,7 +6349,7 @@
     },
     {
         "image": "VizWiz_val_00001587.jpg",
-        "answer": "no microwave"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001588.jpg",
@@ -6377,7 +6377,7 @@
     },
     {
         "image": "VizWiz_val_00001594.jpg",
-        "answer": "6? 0. 65"
+        "answer": "6? 0. 53"
     },
     {
         "image": "VizWiz_val_00001595.jpg",
@@ -6401,7 +6401,7 @@
     },
     {
         "image": "VizWiz_val_00001600.jpg",
-        "answer": "scent"
+        "answer": "shampoo"
     },
     {
         "image": "VizWiz_val_00001601.jpg",
@@ -6433,7 +6433,7 @@
     },
     {
         "image": "VizWiz_val_00001608.jpg",
-        "answer": "silver"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001609.jpg",
@@ -6449,7 +6449,7 @@
     },
     {
         "image": "VizWiz_val_00001612.jpg",
-        "answer": "white"
+        "answer": "grey"
     },
     {
         "image": "VizWiz_val_00001613.jpg",
@@ -6473,7 +6473,7 @@
     },
     {
         "image": "VizWiz_val_00001618.jpg",
-        "answer": "white"
+        "answer": "grey"
     },
     {
         "image": "VizWiz_val_00001619.jpg",
@@ -6485,7 +6485,7 @@
     },
     {
         "image": "VizWiz_val_00001621.jpg",
-        "answer": "latte"
+        "answer": "evaporated"
     },
     {
         "image": "VizWiz_val_00001622.jpg",
@@ -6501,7 +6501,7 @@
     },
     {
         "image": "VizWiz_val_00001625.jpg",
-        "answer": "unanswerable"
+        "answer": "moon"
     },
     {
         "image": "VizWiz_val_00001626.jpg",
@@ -6517,7 +6517,7 @@
     },
     {
         "image": "VizWiz_val_00001629.jpg",
-        "answer": "."
+        "answer": ". right"
     },
     {
         "image": "VizWiz_val_00001630.jpg",
@@ -6557,7 +6557,7 @@
     },
     {
         "image": "VizWiz_val_00001639.jpg",
-        "answer": "lemon"
+        "answer": "macaroni"
     },
     {
         "image": "VizWiz_val_00001640.jpg",
@@ -6597,7 +6597,7 @@
     },
     {
         "image": "VizWiz_val_00001649.jpg",
-        "answer": "no"
+        "answer": "phone number"
     },
     {
         "image": "VizWiz_val_00001650.jpg",
@@ -6609,7 +6609,7 @@
     },
     {
         "image": "VizWiz_val_00001652.jpg",
-        "answer": "unanswerable"
+        "answer": "black"
     },
     {
         "image": "VizWiz_val_00001653.jpg",
@@ -6649,7 +6649,7 @@
     },
     {
         "image": "VizWiz_val_00001662.jpg",
-        "answer": "unanswerable"
+        "answer": "phone"
     },
     {
         "image": "VizWiz_val_00001663.jpg",
@@ -6665,7 +6665,7 @@
     },
     {
         "image": "VizWiz_val_00001666.jpg",
-        "answer": "almond"
+        "answer": "almond breeze"
     },
     {
         "image": "VizWiz_val_00001667.jpg",
@@ -6677,7 +6677,7 @@
     },
     {
         "image": "VizWiz_val_00001669.jpg",
-        "answer": "stove"
+        "answer": "countertop"
     },
     {
         "image": "VizWiz_val_00001670.jpg",
@@ -6689,7 +6689,7 @@
     },
     {
         "image": "VizWiz_val_00001672.jpg",
-        "answer": "sweet"
+        "answer": "gumballs"
     },
     {
         "image": "VizWiz_val_00001673.jpg",
@@ -6705,7 +6705,7 @@
     },
     {
         "image": "VizWiz_val_00001676.jpg",
-        "answer": "nest"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001677.jpg",
@@ -6729,11 +6729,11 @@
     },
     {
         "image": "VizWiz_val_00001682.jpg",
-        "answer": "cereal"
+        "answer": "cheerios"
     },
     {
         "image": "VizWiz_val_00001683.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00001684.jpg",
@@ -6745,7 +6745,7 @@
     },
     {
         "image": "VizWiz_val_00001686.jpg",
-        "answer": "radio shack"
+        "answer": "radio station"
     },
     {
         "image": "VizWiz_val_00001687.jpg",
@@ -6765,7 +6765,7 @@
     },
     {
         "image": "VizWiz_val_00001691.jpg",
-        "answer": "hot sauce"
+        "answer": "chili pepper"
     },
     {
         "image": "VizWiz_val_00001692.jpg",
@@ -6789,7 +6789,7 @@
     },
     {
         "image": "VizWiz_val_00001697.jpg",
-        "answer": "keyboard"
+        "answer": "calculator"
     },
     {
         "image": "VizWiz_val_00001698.jpg",
@@ -6805,7 +6805,7 @@
     },
     {
         "image": "VizWiz_val_00001701.jpg",
-        "answer": "oregano"
+        "answer": "ground"
     },
     {
         "image": "VizWiz_val_00001702.jpg",
@@ -6829,7 +6829,7 @@
     },
     {
         "image": "VizWiz_val_00001707.jpg",
-        "answer": "oven"
+        "answer": "stainless steel"
     },
     {
         "image": "VizWiz_val_00001708.jpg",
@@ -6857,7 +6857,7 @@
     },
     {
         "image": "VizWiz_val_00001714.jpg",
-        "answer": "unanswerable"
+        "answer": "greystonewell"
     },
     {
         "image": "VizWiz_val_00001715.jpg",
@@ -6865,7 +6865,7 @@
     },
     {
         "image": "VizWiz_val_00001716.jpg",
-        "answer": "samsung"
+        "answer": "phone"
     },
     {
         "image": "VizWiz_val_00001717.jpg",
@@ -6925,7 +6925,7 @@
     },
     {
         "image": "VizWiz_val_00001731.jpg",
-        "answer": "baby"
+        "answer": "toy"
     },
     {
         "image": "VizWiz_val_00001732.jpg",
@@ -6945,7 +6945,7 @@
     },
     {
         "image": "VizWiz_val_00001736.jpg",
-        "answer": "no"
+        "answer": "suntan spray"
     },
     {
         "image": "VizWiz_val_00001737.jpg",
@@ -6961,15 +6961,15 @@
     },
     {
         "image": "VizWiz_val_00001740.jpg",
-        "answer": "lotion"
+        "answer": "physic"
     },
     {
         "image": "VizWiz_val_00001741.jpg",
-        "answer": "laptop"
+        "answer": "phone"
     },
     {
         "image": "VizWiz_val_00001742.jpg",
-        "answer": "red"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001743.jpg",
@@ -7005,7 +7005,7 @@
     },
     {
         "image": "VizWiz_val_00001751.jpg",
-        "answer": "dartboard"
+        "answer": "dart board"
     },
     {
         "image": "VizWiz_val_00001752.jpg",
@@ -7017,7 +7017,7 @@
     },
     {
         "image": "VizWiz_val_00001754.jpg",
-        "answer": "mss"
+        "answer": "mss system"
     },
     {
         "image": "VizWiz_val_00001755.jpg",
@@ -7033,7 +7033,7 @@
     },
     {
         "image": "VizWiz_val_00001758.jpg",
-        "answer": "coffee"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001759.jpg",
@@ -7053,7 +7053,7 @@
     },
     {
         "image": "VizWiz_val_00001763.jpg",
-        "answer": "red white black"
+        "answer": "black"
     },
     {
         "image": "VizWiz_val_00001764.jpg",
@@ -7073,7 +7073,7 @@
     },
     {
         "image": "VizWiz_val_00001768.jpg",
-        "answer": "tarot card"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001769.jpg",
@@ -7101,7 +7101,7 @@
     },
     {
         "image": "VizWiz_val_00001775.jpg",
-        "answer": "dinner"
+        "answer": "traditional roasted vegetables"
     },
     {
         "image": "VizWiz_val_00001776.jpg",
@@ -7141,7 +7141,7 @@
     },
     {
         "image": "VizWiz_val_00001785.jpg",
-        "answer": "red"
+        "answer": "pink"
     },
     {
         "image": "VizWiz_val_00001786.jpg",
@@ -7197,7 +7197,7 @@
     },
     {
         "image": "VizWiz_val_00001799.jpg",
-        "answer": "drive"
+        "answer": "computer"
     },
     {
         "image": "VizWiz_val_00001800.jpg",
@@ -7221,7 +7221,7 @@
     },
     {
         "image": "VizWiz_val_00001805.jpg",
-        "answer": "chicken"
+        "answer": "seagull seasoning"
     },
     {
         "image": "VizWiz_val_00001806.jpg",
@@ -7233,7 +7233,7 @@
     },
     {
         "image": "VizWiz_val_00001808.jpg",
-        "answer": "unanswerable"
+        "answer": "peaches"
     },
     {
         "image": "VizWiz_val_00001809.jpg",
@@ -7241,7 +7241,7 @@
     },
     {
         "image": "VizWiz_val_00001810.jpg",
-        "answer": "game controller"
+        "answer": "video game controller"
     },
     {
         "image": "VizWiz_val_00001811.jpg",
@@ -7329,7 +7329,7 @@
     },
     {
         "image": "VizWiz_val_00001832.jpg",
-        "answer": "unanswerable"
+        "answer": "medicine"
     },
     {
         "image": "VizWiz_val_00001833.jpg",
@@ -7357,11 +7357,11 @@
     },
     {
         "image": "VizWiz_val_00001839.jpg",
-        "answer": "black"
+        "answer": "green"
     },
     {
         "image": "VizWiz_val_00001840.jpg",
-        "answer": "red"
+        "answer": "spicy eggplant"
     },
     {
         "image": "VizWiz_val_00001841.jpg",
@@ -7381,7 +7381,7 @@
     },
     {
         "image": "VizWiz_val_00001845.jpg",
-        "answer": "green coffee"
+        "answer": "green tea"
     },
     {
         "image": "VizWiz_val_00001846.jpg",
@@ -7397,7 +7397,7 @@
     },
     {
         "image": "VizWiz_val_00001849.jpg",
-        "answer": "unanswerable"
+        "answer": "cauliflower"
     },
     {
         "image": "VizWiz_val_00001850.jpg",
@@ -7413,7 +7413,7 @@
     },
     {
         "image": "VizWiz_val_00001853.jpg",
-        "answer": "unanswerable"
+        "answer": "nutrition facts"
     },
     {
         "image": "VizWiz_val_00001854.jpg",
@@ -7425,7 +7425,7 @@
     },
     {
         "image": "VizWiz_val_00001856.jpg",
-        "answer": "unanswerable"
+        "answer": "vitamins"
     },
     {
         "image": "VizWiz_val_00001857.jpg",
@@ -7433,7 +7433,7 @@
     },
     {
         "image": "VizWiz_val_00001858.jpg",
-        "answer": "air"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001859.jpg",
@@ -7441,7 +7441,7 @@
     },
     {
         "image": "VizWiz_val_00001860.jpg",
-        "answer": "roasted"
+        "answer": "roasted beans"
     },
     {
         "image": "VizWiz_val_00001861.jpg",
@@ -7465,11 +7465,11 @@
     },
     {
         "image": "VizWiz_val_00001866.jpg",
-        "answer": "brown"
+        "answer": "rug"
     },
     {
         "image": "VizWiz_val_00001867.jpg",
-        "answer": "aloeta"
+        "answer": "mayonnaise"
     },
     {
         "image": "VizWiz_val_00001868.jpg",
@@ -7497,11 +7497,11 @@
     },
     {
         "image": "VizWiz_val_00001874.jpg",
-        "answer": "yes"
+        "answer": "diced"
     },
     {
         "image": "VizWiz_val_00001875.jpg",
-        "answer": "1 dollar"
+        "answer": "20"
     },
     {
         "image": "VizWiz_val_00001876.jpg",
@@ -7517,11 +7517,11 @@
     },
     {
         "image": "VizWiz_val_00001879.jpg",
-        "answer": "ice cream"
+        "answer": "cherry"
     },
     {
         "image": "VizWiz_val_00001880.jpg",
-        "answer": "chicken"
+        "answer": "beef"
     },
     {
         "image": "VizWiz_val_00001881.jpg",
@@ -7549,7 +7549,7 @@
     },
     {
         "image": "VizWiz_val_00001887.jpg",
-        "answer": "unanswerable"
+        "answer": "phone"
     },
     {
         "image": "VizWiz_val_00001888.jpg",
@@ -7565,7 +7565,7 @@
     },
     {
         "image": "VizWiz_val_00001891.jpg",
-        "answer": "rug"
+        "answer": "leg"
     },
     {
         "image": "VizWiz_val_00001892.jpg",
@@ -7573,7 +7573,7 @@
     },
     {
         "image": "VizWiz_val_00001893.jpg",
-        "answer": "white"
+        "answer": "grey"
     },
     {
         "image": "VizWiz_val_00001894.jpg",
@@ -7613,7 +7613,7 @@
     },
     {
         "image": "VizWiz_val_00001903.jpg",
-        "answer": "unanswerable"
+        "answer": "cinnamon roll"
     },
     {
         "image": "VizWiz_val_00001904.jpg",
@@ -7641,7 +7641,7 @@
     },
     {
         "image": "VizWiz_val_00001910.jpg",
-        "answer": "20 minutes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001911.jpg",
@@ -7649,7 +7649,7 @@
     },
     {
         "image": "VizWiz_val_00001912.jpg",
-        "answer": "blue cheese"
+        "answer": "chicken"
     },
     {
         "image": "VizWiz_val_00001913.jpg",
@@ -7657,7 +7657,7 @@
     },
     {
         "image": "VizWiz_val_00001914.jpg",
-        "answer": "roast beef"
+        "answer": "traditional roast beef"
     },
     {
         "image": "VizWiz_val_00001915.jpg",
@@ -7697,7 +7697,7 @@
     },
     {
         "image": "VizWiz_val_00001924.jpg",
-        "answer": "on remote"
+        "answer": "bottom right"
     },
     {
         "image": "VizWiz_val_00001925.jpg",
@@ -7709,7 +7709,7 @@
     },
     {
         "image": "VizWiz_val_00001927.jpg",
-        "answer": "bowl"
+        "answer": "bowl appetizer"
     },
     {
         "image": "VizWiz_val_00001928.jpg",
@@ -7745,7 +7745,7 @@
     },
     {
         "image": "VizWiz_val_00001936.jpg",
-        "answer": "balls"
+        "answer": "mini"
     },
     {
         "image": "VizWiz_val_00001937.jpg",
@@ -7753,11 +7753,11 @@
     },
     {
         "image": "VizWiz_val_00001938.jpg",
-        "answer": "12"
+        "answer": "20"
     },
     {
         "image": "VizWiz_val_00001939.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001940.jpg",
@@ -7769,7 +7769,7 @@
     },
     {
         "image": "VizWiz_val_00001942.jpg",
-        "answer": "nothing"
+        "answer": "0"
     },
     {
         "image": "VizWiz_val_00001943.jpg",
@@ -7785,7 +7785,7 @@
     },
     {
         "image": "VizWiz_val_00001946.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00001947.jpg",
@@ -7821,11 +7821,11 @@
     },
     {
         "image": "VizWiz_val_00001955.jpg",
-        "answer": "green bean"
+        "answer": "green beans"
     },
     {
         "image": "VizWiz_val_00001956.jpg",
-        "answer": "white"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001957.jpg",
@@ -7841,7 +7841,7 @@
     },
     {
         "image": "VizWiz_val_00001960.jpg",
-        "answer": "brown"
+        "answer": "salt"
     },
     {
         "image": "VizWiz_val_00001961.jpg",
@@ -7849,7 +7849,7 @@
     },
     {
         "image": "VizWiz_val_00001962.jpg",
-        "answer": "cola"
+        "answer": "soda"
     },
     {
         "image": "VizWiz_val_00001963.jpg",
@@ -7865,7 +7865,7 @@
     },
     {
         "image": "VizWiz_val_00001966.jpg",
-        "answer": "4 : 00"
+        "answer": "4 : 03"
     },
     {
         "image": "VizWiz_val_00001967.jpg",
@@ -7885,7 +7885,7 @@
     },
     {
         "image": "VizWiz_val_00001971.jpg",
-        "answer": "light"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001972.jpg",
@@ -7893,7 +7893,7 @@
     },
     {
         "image": "VizWiz_val_00001973.jpg",
-        "answer": "unanswerable"
+        "answer": "cleaning wipes"
     },
     {
         "image": "VizWiz_val_00001974.jpg",
@@ -7925,7 +7925,7 @@
     },
     {
         "image": "VizWiz_val_00001981.jpg",
-        "answer": "cream mushroom soup"
+        "answer": "cream mushroom mushroom soup"
     },
     {
         "image": "VizWiz_val_00001982.jpg",
@@ -7949,7 +7949,7 @@
     },
     {
         "image": "VizWiz_val_00001987.jpg",
-        "answer": "ginger"
+        "answer": "ginger root"
     },
     {
         "image": "VizWiz_val_00001988.jpg",
@@ -7969,7 +7969,7 @@
     },
     {
         "image": "VizWiz_val_00001992.jpg",
-        "answer": "computer"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001993.jpg",
@@ -8069,7 +8069,7 @@
     },
     {
         "image": "VizWiz_val_00002017.jpg",
-        "answer": "toys"
+        "answer": "playpen"
     },
     {
         "image": "VizWiz_val_00002018.jpg",
@@ -8089,7 +8089,7 @@
     },
     {
         "image": "VizWiz_val_00002022.jpg",
-        "answer": "red"
+        "answer": "fireplace"
     },
     {
         "image": "VizWiz_val_00002023.jpg",
@@ -8145,7 +8145,7 @@
     },
     {
         "image": "VizWiz_val_00002036.jpg",
-        "answer": "marble"
+        "answer": "black white"
     },
     {
         "image": "VizWiz_val_00002037.jpg",
@@ -8177,7 +8177,7 @@
     },
     {
         "image": "VizWiz_val_00002044.jpg",
-        "answer": "fall"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002045.jpg",
@@ -8185,7 +8185,7 @@
     },
     {
         "image": "VizWiz_val_00002046.jpg",
-        "answer": "american"
+        "answer": "american spirit"
     },
     {
         "image": "VizWiz_val_00002047.jpg",
@@ -8221,11 +8221,11 @@
     },
     {
         "image": "VizWiz_val_00002055.jpg",
-        "answer": "red"
+        "answer": "green"
     },
     {
         "image": "VizWiz_val_00002056.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002057.jpg",
@@ -8257,11 +8257,11 @@
     },
     {
         "image": "VizWiz_val_00002064.jpg",
-        "answer": "honey"
+        "answer": "honey lemon"
     },
     {
         "image": "VizWiz_val_00002065.jpg",
-        "answer": "unanswerable"
+        "answer": "gum"
     },
     {
         "image": "VizWiz_val_00002066.jpg",
@@ -8277,7 +8277,7 @@
     },
     {
         "image": "VizWiz_val_00002069.jpg",
-        "answer": "no tv dinner"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002070.jpg",
@@ -8293,7 +8293,7 @@
     },
     {
         "image": "VizWiz_val_00002073.jpg",
-        "answer": "flour"
+        "answer": "left"
     },
     {
         "image": "VizWiz_val_00002074.jpg",
@@ -8321,7 +8321,7 @@
     },
     {
         "image": "VizWiz_val_00002080.jpg",
-        "answer": "lego"
+        "answer": "lego star wars"
     },
     {
         "image": "VizWiz_val_00002081.jpg",
@@ -8357,7 +8357,7 @@
     },
     {
         "image": "VizWiz_val_00002089.jpg",
-        "answer": "o"
+        "answer": "nanswerable"
     },
     {
         "image": "VizWiz_val_00002090.jpg",
@@ -8397,7 +8397,7 @@
     },
     {
         "image": "VizWiz_val_00002099.jpg",
-        "answer": "walkman"
+        "answer": "2 : 31"
     },
     {
         "image": "VizWiz_val_00002100.jpg",
@@ -8421,7 +8421,7 @@
     },
     {
         "image": "VizWiz_val_00002105.jpg",
-        "answer": "3. 5"
+        "answer": "3"
     },
     {
         "image": "VizWiz_val_00002106.jpg",
@@ -8449,15 +8449,15 @@
     },
     {
         "image": "VizWiz_val_00002112.jpg",
-        "answer": "pasta"
+        "answer": "lasagna"
     },
     {
         "image": "VizWiz_val_00002113.jpg",
-        "answer": "unanswerable"
+        "answer": "cheerios"
     },
     {
         "image": "VizWiz_val_00002114.jpg",
-        "answer": "unanswerable"
+        "answer": "shampoo"
     },
     {
         "image": "VizWiz_val_00002115.jpg",
@@ -8521,7 +8521,7 @@
     },
     {
         "image": "VizWiz_val_00002130.jpg",
-        "answer": "no"
+        "answer": "shampoo"
     },
     {
         "image": "VizWiz_val_00002131.jpg",
@@ -8573,11 +8573,11 @@
     },
     {
         "image": "VizWiz_val_00002143.jpg",
-        "answer": "o"
+        "answer": "nanswerable"
     },
     {
         "image": "VizWiz_val_00002144.jpg",
-        "answer": "soup"
+        "answer": "microwave"
     },
     {
         "image": "VizWiz_val_00002145.jpg",
@@ -8585,7 +8585,7 @@
     },
     {
         "image": "VizWiz_val_00002146.jpg",
-        "answer": "coke"
+        "answer": "coca cola"
     },
     {
         "image": "VizWiz_val_00002147.jpg",
@@ -8597,11 +8597,11 @@
     },
     {
         "image": "VizWiz_val_00002149.jpg",
-        "answer": "italian"
+        "answer": "canola"
     },
     {
         "image": "VizWiz_val_00002150.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002151.jpg",
@@ -8617,11 +8617,11 @@
     },
     {
         "image": "VizWiz_val_00002154.jpg",
-        "answer": "apple"
+        "answer": "keyboard"
     },
     {
         "image": "VizWiz_val_00002155.jpg",
-        "answer": "no shirt"
+        "answer": "white"
     },
     {
         "image": "VizWiz_val_00002156.jpg",
@@ -8653,7 +8653,7 @@
     },
     {
         "image": "VizWiz_val_00002163.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002164.jpg",
@@ -8693,7 +8693,7 @@
     },
     {
         "image": "VizWiz_val_00002173.jpg",
-        "answer": "unanswerable"
+        "answer": "rum or easy money"
     },
     {
         "image": "VizWiz_val_00002174.jpg",
@@ -8713,7 +8713,7 @@
     },
     {
         "image": "VizWiz_val_00002178.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002179.jpg",
@@ -8749,7 +8749,7 @@
     },
     {
         "image": "VizWiz_val_00002187.jpg",
-        "answer": "oven"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002188.jpg",
@@ -8785,7 +8785,7 @@
     },
     {
         "image": "VizWiz_val_00002196.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002197.jpg",
@@ -8829,7 +8829,7 @@
     },
     {
         "image": "VizWiz_val_00002207.jpg",
-        "answer": "movie"
+        "answer": "bmx"
     },
     {
         "image": "VizWiz_val_00002208.jpg",
@@ -8845,7 +8845,7 @@
     },
     {
         "image": "VizWiz_val_00002211.jpg",
-        "answer": "tv"
+        "answer": "nothing"
     },
     {
         "image": "VizWiz_val_00002212.jpg",
@@ -8897,11 +8897,11 @@
     },
     {
         "image": "VizWiz_val_00002224.jpg",
-        "answer": "lotion"
+        "answer": "aloe vera"
     },
     {
         "image": "VizWiz_val_00002225.jpg",
-        "answer": "grey"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002226.jpg",
@@ -8909,7 +8909,7 @@
     },
     {
         "image": "VizWiz_val_00002227.jpg",
-        "answer": "nuts"
+        "answer": "mixed nuts"
     },
     {
         "image": "VizWiz_val_00002228.jpg",
@@ -8941,15 +8941,15 @@
     },
     {
         "image": "VizWiz_val_00002235.jpg",
-        "answer": "black"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002236.jpg",
-        "answer": "yes"
+        "answer": "red"
     },
     {
         "image": "VizWiz_val_00002237.jpg",
-        "answer": "blue"
+        "answer": "black"
     },
     {
         "image": "VizWiz_val_00002238.jpg",
@@ -8957,7 +8957,7 @@
     },
     {
         "image": "VizWiz_val_00002239.jpg",
-        "answer": "baked"
+        "answer": "crackers"
     },
     {
         "image": "VizWiz_val_00002240.jpg",
@@ -8981,11 +8981,11 @@
     },
     {
         "image": "VizWiz_val_00002245.jpg",
-        "answer": "white"
+        "answer": "pie"
     },
     {
         "image": "VizWiz_val_00002246.jpg",
-        "answer": "mena"
+        "answer": "menu"
     },
     {
         "image": "VizWiz_val_00002247.jpg",
@@ -9001,7 +9001,7 @@
     },
     {
         "image": "VizWiz_val_00002250.jpg",
-        "answer": "container"
+        "answer": "tray"
     },
     {
         "image": "VizWiz_val_00002251.jpg",
@@ -9013,7 +9013,7 @@
     },
     {
         "image": "VizWiz_val_00002253.jpg",
-        "answer": "strawberry"
+        "answer": "strawberry juice"
     },
     {
         "image": "VizWiz_val_00002254.jpg",
@@ -9025,7 +9025,7 @@
     },
     {
         "image": "VizWiz_val_00002256.jpg",
-        "answer": "dishwasher"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002257.jpg",
@@ -9033,7 +9033,7 @@
     },
     {
         "image": "VizWiz_val_00002258.jpg",
-        "answer": "red beans"
+        "answer": "kidney beans"
     },
     {
         "image": "VizWiz_val_00002259.jpg",
@@ -9053,15 +9053,15 @@
     },
     {
         "image": "VizWiz_val_00002263.jpg",
-        "answer": "baked"
+        "answer": "butter"
     },
     {
         "image": "VizWiz_val_00002264.jpg",
-        "answer": "1 dollar"
+        "answer": "20"
     },
     {
         "image": "VizWiz_val_00002265.jpg",
-        "answer": "dishwasher"
+        "answer": "dish soap"
     },
     {
         "image": "VizWiz_val_00002266.jpg",
@@ -9069,7 +9069,7 @@
     },
     {
         "image": "VizWiz_val_00002267.jpg",
-        "answer": "no"
+        "answer": "organic"
     },
     {
         "image": "VizWiz_val_00002268.jpg",
@@ -9093,7 +9093,7 @@
     },
     {
         "image": "VizWiz_val_00002273.jpg",
-        "answer": "white"
+        "answer": "grey"
     },
     {
         "image": "VizWiz_val_00002274.jpg",
@@ -9177,7 +9177,7 @@
     },
     {
         "image": "VizWiz_val_00002294.jpg",
-        "answer": "es"
+        "answer": "nanswerable"
     },
     {
         "image": "VizWiz_val_00002295.jpg",
@@ -9193,7 +9193,7 @@
     },
     {
         "image": "VizWiz_val_00002298.jpg",
-        "answer": "camper"
+        "answer": "cool camper"
     },
     {
         "image": "VizWiz_val_00002299.jpg",
@@ -9213,7 +9213,7 @@
     },
     {
         "image": "VizWiz_val_00002303.jpg",
-        "answer": "houseplant"
+        "answer": "plant"
     },
     {
         "image": "VizWiz_val_00002304.jpg",
@@ -9233,7 +9233,7 @@
     },
     {
         "image": "VizWiz_val_00002308.jpg",
-        "answer": "green"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002309.jpg",
@@ -9241,7 +9241,7 @@
     },
     {
         "image": "VizWiz_val_00002310.jpg",
-        "answer": "blues"
+        "answer": "blues brothers"
     },
     {
         "image": "VizWiz_val_00002311.jpg",
@@ -9293,7 +9293,7 @@
     },
     {
         "image": "VizWiz_val_00002323.jpg",
-        "answer": "cap"
+        "answer": "hat"
     },
     {
         "image": "VizWiz_val_00002324.jpg",
@@ -9309,7 +9309,7 @@
     },
     {
         "image": "VizWiz_val_00002327.jpg",
-        "answer": "black"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002328.jpg",
@@ -9333,7 +9333,7 @@
     },
     {
         "image": "VizWiz_val_00002333.jpg",
-        "answer": "store"
+        "answer": "chile"
     },
     {
         "image": "VizWiz_val_00002334.jpg",
@@ -9353,11 +9353,11 @@
     },
     {
         "image": "VizWiz_val_00002338.jpg",
-        "answer": "lemon"
+        "answer": "chili lemon"
     },
     {
         "image": "VizWiz_val_00002339.jpg",
-        "answer": "laptop"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002340.jpg",
@@ -9369,7 +9369,7 @@
     },
     {
         "image": "VizWiz_val_00002342.jpg",
-        "answer": "red"
+        "answer": "cheep"
     },
     {
         "image": "VizWiz_val_00002343.jpg",
@@ -9381,11 +9381,11 @@
     },
     {
         "image": "VizWiz_val_00002345.jpg",
-        "answer": "zodder"
+        "answer": "zojium"
     },
     {
         "image": "VizWiz_val_00002346.jpg",
-        "answer": "white"
+        "answer": "beige"
     },
     {
         "image": "VizWiz_val_00002347.jpg",
@@ -9393,7 +9393,7 @@
     },
     {
         "image": "VizWiz_val_00002348.jpg",
-        "answer": "tee ball stand"
+        "answer": "tee"
     },
     {
         "image": "VizWiz_val_00002349.jpg",
@@ -9405,7 +9405,7 @@
     },
     {
         "image": "VizWiz_val_00002351.jpg",
-        "answer": "vegetable"
+        "answer": "mixed veggies"
     },
     {
         "image": "VizWiz_val_00002352.jpg",
@@ -9421,7 +9421,7 @@
     },
     {
         "image": "VizWiz_val_00002355.jpg",
-        "answer": "5"
+        "answer": "10"
     },
     {
         "image": "VizWiz_val_00002356.jpg",
@@ -9441,7 +9441,7 @@
     },
     {
         "image": "VizWiz_val_00002360.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002361.jpg",
@@ -9449,7 +9449,7 @@
     },
     {
         "image": "VizWiz_val_00002362.jpg",
-        "answer": "chicken"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002363.jpg",
@@ -9477,7 +9477,7 @@
     },
     {
         "image": "VizWiz_val_00002369.jpg",
-        "answer": "vitamin"
+        "answer": "vitamin d"
     },
     {
         "image": "VizWiz_val_00002370.jpg",
@@ -9485,7 +9485,7 @@
     },
     {
         "image": "VizWiz_val_00002371.jpg",
-        "answer": "braille"
+        "answer": "braillero"
     },
     {
         "image": "VizWiz_val_00002372.jpg",
@@ -9501,7 +9501,7 @@
     },
     {
         "image": "VizWiz_val_00002375.jpg",
-        "answer": "unanswerable"
+        "answer": "toothpaste"
     },
     {
         "image": "VizWiz_val_00002376.jpg",
@@ -9521,7 +9521,7 @@
     },
     {
         "image": "VizWiz_val_00002380.jpg",
-        "answer": "blueberry muffin"
+        "answer": "blueberry muffins"
     },
     {
         "image": "VizWiz_val_00002381.jpg",
@@ -9533,7 +9533,7 @@
     },
     {
         "image": "VizWiz_val_00002383.jpg",
-        "answer": "hot dog"
+        "answer": "hot chili"
     },
     {
         "image": "VizWiz_val_00002384.jpg",
@@ -9553,7 +9553,7 @@
     },
     {
         "image": "VizWiz_val_00002388.jpg",
-        "answer": "iphone"
+        "answer": "phone"
     },
     {
         "image": "VizWiz_val_00002389.jpg",
@@ -9573,7 +9573,7 @@
     },
     {
         "image": "VizWiz_val_00002393.jpg",
-        "answer": "h h h h h h h h"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002394.jpg",
@@ -9625,7 +9625,7 @@
     },
     {
         "image": "VizWiz_val_00002406.jpg",
-        "answer": "meat"
+        "answer": "beef"
     },
     {
         "image": "VizWiz_val_00002407.jpg",
@@ -9633,7 +9633,7 @@
     },
     {
         "image": "VizWiz_val_00002408.jpg",
-        "answer": "blue"
+        "answer": "green white brown"
     },
     {
         "image": "VizWiz_val_00002409.jpg",
@@ -9665,7 +9665,7 @@
     },
     {
         "image": "VizWiz_val_00002416.jpg",
-        "answer": "baby"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002417.jpg",
@@ -9693,7 +9693,7 @@
     },
     {
         "image": "VizWiz_val_00002423.jpg",
-        "answer": "unanswerable"
+        "answer": "pants"
     },
     {
         "image": "VizWiz_val_00002424.jpg",
@@ -9713,7 +9713,7 @@
     },
     {
         "image": "VizWiz_val_00002428.jpg",
-        "answer": "black"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002429.jpg",
@@ -9725,7 +9725,7 @@
     },
     {
         "image": "VizWiz_val_00002431.jpg",
-        "answer": "unanswerable"
+        "answer": "cough"
     },
     {
         "image": "VizWiz_val_00002432.jpg",
@@ -9733,7 +9733,7 @@
     },
     {
         "image": "VizWiz_val_00002433.jpg",
-        "answer": "black"
+        "answer": "gold"
     },
     {
         "image": "VizWiz_val_00002434.jpg",
@@ -9761,7 +9761,7 @@
     },
     {
         "image": "VizWiz_val_00002440.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002441.jpg",
@@ -9797,11 +9797,11 @@
     },
     {
         "image": "VizWiz_val_00002449.jpg",
-        "answer": "samsung"
+        "answer": "router"
     },
     {
         "image": "VizWiz_val_00002450.jpg",
-        "answer": "unanswerable"
+        "answer": "coconut"
     },
     {
         "image": "VizWiz_val_00002451.jpg",
@@ -9833,11 +9833,11 @@
     },
     {
         "image": "VizWiz_val_00002458.jpg",
-        "answer": "black"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002459.jpg",
-        "answer": "chicago blues tuesdays"
+        "answer": "chicago blues"
     },
     {
         "image": "VizWiz_val_00002460.jpg",
@@ -9869,7 +9869,7 @@
     },
     {
         "image": "VizWiz_val_00002467.jpg",
-        "answer": "unanswerable"
+        "answer": "lotion"
     },
     {
         "image": "VizWiz_val_00002468.jpg",
@@ -9885,7 +9885,7 @@
     },
     {
         "image": "VizWiz_val_00002471.jpg",
-        "answer": "unanswerable"
+        "answer": "toothpaste"
     },
     {
         "image": "VizWiz_val_00002472.jpg",
@@ -9897,11 +9897,11 @@
     },
     {
         "image": "VizWiz_val_00002474.jpg",
-        "answer": "unanswerable"
+        "answer": "sleeping beauty"
     },
     {
         "image": "VizWiz_val_00002475.jpg",
-        "answer": "house blind"
+        "answer": "house blend"
     },
     {
         "image": "VizWiz_val_00002476.jpg",
@@ -9909,7 +9909,7 @@
     },
     {
         "image": "VizWiz_val_00002477.jpg",
-        "answer": "book"
+        "answer": "fishing"
     },
     {
         "image": "VizWiz_val_00002478.jpg",
@@ -10029,7 +10029,7 @@
     },
     {
         "image": "VizWiz_val_00002507.jpg",
-        "answer": "yellow"
+        "answer": "white"
     },
     {
         "image": "VizWiz_val_00002508.jpg",
@@ -10049,7 +10049,7 @@
     },
     {
         "image": "VizWiz_val_00002512.jpg",
-        "answer": "unanswerable"
+        "answer": "upside down"
     },
     {
         "image": "VizWiz_val_00002513.jpg",
@@ -10061,7 +10061,7 @@
     },
     {
         "image": "VizWiz_val_00002515.jpg",
-        "answer": "tomato sauce"
+        "answer": "tomatoes"
     },
     {
         "image": "VizWiz_val_00002516.jpg",
@@ -10093,7 +10093,7 @@
     },
     {
         "image": "VizWiz_val_00002523.jpg",
-        "answer": "unanswerable"
+        "answer": "538"
     },
     {
         "image": "VizWiz_val_00002524.jpg",
@@ -10125,7 +10125,7 @@
     },
     {
         "image": "VizWiz_val_00002531.jpg",
-        "answer": "unanswerable"
+        "answer": "tray"
     },
     {
         "image": "VizWiz_val_00002532.jpg",
@@ -10133,7 +10133,7 @@
     },
     {
         "image": "VizWiz_val_00002533.jpg",
-        "answer": "corn mix"
+        "answer": "corn muffin mix"
     },
     {
         "image": "VizWiz_val_00002534.jpg",
@@ -10173,7 +10173,7 @@
     },
     {
         "image": "VizWiz_val_00002543.jpg",
-        "answer": "peach peach peach peach peach peaches"
+        "answer": "peach peach peach peach peach peach peach peach"
     },
     {
         "image": "VizWiz_val_00002544.jpg",
@@ -10189,11 +10189,11 @@
     },
     {
         "image": "VizWiz_val_00002547.jpg",
-        "answer": "beer"
+        "answer": "soup"
     },
     {
         "image": "VizWiz_val_00002548.jpg",
-        "answer": "unanswerable"
+        "answer": "paper"
     },
     {
         "image": "VizWiz_val_00002549.jpg",
@@ -10225,7 +10225,7 @@
     },
     {
         "image": "VizWiz_val_00002556.jpg",
-        "answer": "yes"
+        "answer": "3. 99"
     },
     {
         "image": "VizWiz_val_00002557.jpg",
@@ -10237,7 +10237,7 @@
     },
     {
         "image": "VizWiz_val_00002559.jpg",
-        "answer": "heinz ketchup"
+        "answer": "tomato ketchup"
     },
     {
         "image": "VizWiz_val_00002560.jpg",
@@ -10269,7 +10269,7 @@
     },
     {
         "image": "VizWiz_val_00002567.jpg",
-        "answer": "lot"
+        "answer": "400"
     },
     {
         "image": "VizWiz_val_00002568.jpg",
@@ -10309,11 +10309,11 @@
     },
     {
         "image": "VizWiz_val_00002577.jpg",
-        "answer": "unanswerable"
+        "answer": "cookies"
     },
     {
         "image": "VizWiz_val_00002578.jpg",
-        "answer": "no"
+        "answer": "lasagna"
     },
     {
         "image": "VizWiz_val_00002579.jpg",
@@ -10321,7 +10321,7 @@
     },
     {
         "image": "VizWiz_val_00002580.jpg",
-        "answer": "coffee cup"
+        "answer": "cup"
     },
     {
         "image": "VizWiz_val_00002581.jpg",
@@ -10337,11 +10337,11 @@
     },
     {
         "image": "VizWiz_val_00002584.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002585.jpg",
-        "answer": "dinner"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002586.jpg",
@@ -10413,7 +10413,7 @@
     },
     {
         "image": "VizWiz_val_00002603.jpg",
-        "answer": "beef"
+        "answer": "ground beef"
     },
     {
         "image": "VizWiz_val_00002604.jpg",
@@ -10425,7 +10425,7 @@
     },
     {
         "image": "VizWiz_val_00002606.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002607.jpg",
@@ -10437,7 +10437,7 @@
     },
     {
         "image": "VizWiz_val_00002609.jpg",
-        "answer": "dvd"
+        "answer": "video game"
     },
     {
         "image": "VizWiz_val_00002610.jpg",
@@ -10457,7 +10457,7 @@
     },
     {
         "image": "VizWiz_val_00002614.jpg",
-        "answer": "t"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00002615.jpg",
@@ -10469,7 +10469,7 @@
     },
     {
         "image": "VizWiz_val_00002617.jpg",
-        "answer": "green"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002618.jpg",
@@ -10477,7 +10477,7 @@
     },
     {
         "image": "VizWiz_val_00002619.jpg",
-        "answer": "chips"
+        "answer": "pringles"
     },
     {
         "image": "VizWiz_val_00002620.jpg",
@@ -10497,7 +10497,7 @@
     },
     {
         "image": "VizWiz_val_00002624.jpg",
-        "answer": "45"
+        "answer": "1"
     },
     {
         "image": "VizWiz_val_00002625.jpg",
@@ -10541,7 +10541,7 @@
     },
     {
         "image": "VizWiz_val_00002635.jpg",
-        "answer": "man"
+        "answer": "statue"
     },
     {
         "image": "VizWiz_val_00002636.jpg",
@@ -10549,7 +10549,7 @@
     },
     {
         "image": "VizWiz_val_00002637.jpg",
-        "answer": "unanswerable"
+        "answer": "steak"
     },
     {
         "image": "VizWiz_val_00002638.jpg",
@@ -10577,7 +10577,7 @@
     },
     {
         "image": "VizWiz_val_00002644.jpg",
-        "answer": "mcdonald's"
+        "answer": "mcdonalds"
     },
     {
         "image": "VizWiz_val_00002645.jpg",
@@ -10585,7 +10585,7 @@
     },
     {
         "image": "VizWiz_val_00002646.jpg",
-        "answer": "hand soap"
+        "answer": "sink"
     },
     {
         "image": "VizWiz_val_00002647.jpg",
@@ -10625,7 +10625,7 @@
     },
     {
         "image": "VizWiz_val_00002656.jpg",
-        "answer": "chair"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002657.jpg",
@@ -10661,7 +10661,7 @@
     },
     {
         "image": "VizWiz_val_00002665.jpg",
-        "answer": "cherry"
+        "answer": "cherry blossoms"
     },
     {
         "image": "VizWiz_val_00002666.jpg",
@@ -10673,7 +10673,7 @@
     },
     {
         "image": "VizWiz_val_00002668.jpg",
-        "answer": "soap"
+        "answer": "water"
     },
     {
         "image": "VizWiz_val_00002669.jpg",
@@ -10685,15 +10685,15 @@
     },
     {
         "image": "VizWiz_val_00002671.jpg",
-        "answer": "charger"
+        "answer": "phone charger"
     },
     {
         "image": "VizWiz_val_00002672.jpg",
-        "answer": "iphone"
+        "answer": "apple"
     },
     {
         "image": "VizWiz_val_00002673.jpg",
-        "answer": "vodka"
+        "answer": "ice"
     },
     {
         "image": "VizWiz_val_00002674.jpg",
@@ -10705,11 +10705,11 @@
     },
     {
         "image": "VizWiz_val_00002676.jpg",
-        "answer": "chicken"
+        "answer": "grilled chicken"
     },
     {
         "image": "VizWiz_val_00002677.jpg",
-        "answer": "desk"
+        "answer": "table"
     },
     {
         "image": "VizWiz_val_00002678.jpg",
@@ -10725,7 +10725,7 @@
     },
     {
         "image": "VizWiz_val_00002681.jpg",
-        "answer": "black"
+        "answer": "left"
     },
     {
         "image": "VizWiz_val_00002682.jpg",
@@ -10745,7 +10745,7 @@
     },
     {
         "image": "VizWiz_val_00002686.jpg",
-        "answer": "green"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002687.jpg",
@@ -10753,7 +10753,7 @@
     },
     {
         "image": "VizWiz_val_00002688.jpg",
-        "answer": "yogurt"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002689.jpg",
@@ -10765,7 +10765,7 @@
     },
     {
         "image": "VizWiz_val_00002691.jpg",
-        "answer": "coffee"
+        "answer": "keurig"
     },
     {
         "image": "VizWiz_val_00002692.jpg",
@@ -10817,7 +10817,7 @@
     },
     {
         "image": "VizWiz_val_00002704.jpg",
-        "answer": "white"
+        "answer": "grey"
     },
     {
         "image": "VizWiz_val_00002705.jpg",
@@ -10829,7 +10829,7 @@
     },
     {
         "image": "VizWiz_val_00002707.jpg",
-        "answer": "no microwave"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002708.jpg",
@@ -10853,7 +10853,7 @@
     },
     {
         "image": "VizWiz_val_00002713.jpg",
-        "answer": "pancake"
+        "answer": "pancake mix"
     },
     {
         "image": "VizWiz_val_00002714.jpg",
@@ -10873,7 +10873,7 @@
     },
     {
         "image": "VizWiz_val_00002718.jpg",
-        "answer": "john jackson"
+        "answer": "john jones"
     },
     {
         "image": "VizWiz_val_00002719.jpg",
@@ -10889,7 +10889,7 @@
     },
     {
         "image": "VizWiz_val_00002722.jpg",
-        "answer": "plastic"
+        "answer": "plastic strips"
     },
     {
         "image": "VizWiz_val_00002723.jpg",
@@ -10897,7 +10897,7 @@
     },
     {
         "image": "VizWiz_val_00002724.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002725.jpg",
@@ -10909,11 +10909,11 @@
     },
     {
         "image": "VizWiz_val_00002727.jpg",
-        "answer": "unanswerable"
+        "answer": "shampoo"
     },
     {
         "image": "VizWiz_val_00002728.jpg",
-        "answer": "french"
+        "answer": "french vanilla"
     },
     {
         "image": "VizWiz_val_00002729.jpg",
@@ -10925,7 +10925,7 @@
     },
     {
         "image": "VizWiz_val_00002731.jpg",
-        "answer": "pepper"
+        "answer": "ground"
     },
     {
         "image": "VizWiz_val_00002732.jpg",
@@ -10933,11 +10933,11 @@
     },
     {
         "image": "VizWiz_val_00002733.jpg",
-        "answer": "peaches"
+        "answer": "peach"
     },
     {
         "image": "VizWiz_val_00002734.jpg",
-        "answer": "computer"
+        "answer": "microsoft windows"
     },
     {
         "image": "VizWiz_val_00002735.jpg",
@@ -10969,11 +10969,11 @@
     },
     {
         "image": "VizWiz_val_00002742.jpg",
-        "answer": "water case"
+        "answer": "water case for ipod"
     },
     {
         "image": "VizWiz_val_00002743.jpg",
-        "answer": "blue"
+        "answer": "green"
     },
     {
         "image": "VizWiz_val_00002744.jpg",
@@ -10997,7 +10997,7 @@
     },
     {
         "image": "VizWiz_val_00002749.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002750.jpg",
@@ -11005,7 +11005,7 @@
     },
     {
         "image": "VizWiz_val_00002751.jpg",
-        "answer": "chips"
+        "answer": "cheezy chips"
     },
     {
         "image": "VizWiz_val_00002752.jpg",
@@ -11013,7 +11013,7 @@
     },
     {
         "image": "VizWiz_val_00002753.jpg",
-        "answer": "unanswerable"
+        "answer": "cookies"
     },
     {
         "image": "VizWiz_val_00002754.jpg",
@@ -11033,11 +11033,11 @@
     },
     {
         "image": "VizWiz_val_00002758.jpg",
-        "answer": "unanswerable"
+        "answer": "roasted garlic sauce"
     },
     {
         "image": "VizWiz_val_00002759.jpg",
-        "answer": "dollar"
+        "answer": "1 dollar bill"
     },
     {
         "image": "VizWiz_val_00002760.jpg",
@@ -11069,7 +11069,7 @@
     },
     {
         "image": "VizWiz_val_00002767.jpg",
-        "answer": "normal"
+        "answer": "normal wash"
     },
     {
         "image": "VizWiz_val_00002768.jpg",
@@ -11081,11 +11081,11 @@
     },
     {
         "image": "VizWiz_val_00002770.jpg",
-        "answer": "laptop"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002771.jpg",
-        "answer": "candy"
+        "answer": "chex mix"
     },
     {
         "image": "VizWiz_val_00002772.jpg",
@@ -11117,7 +11117,7 @@
     },
     {
         "image": "VizWiz_val_00002779.jpg",
-        "answer": "unanswerable"
+        "answer": "trees"
     },
     {
         "image": "VizWiz_val_00002780.jpg",
@@ -11125,7 +11125,7 @@
     },
     {
         "image": "VizWiz_val_00002781.jpg",
-        "answer": "sausages & onion gravy"
+        "answer": "sausages onion gravy"
     },
     {
         "image": "VizWiz_val_00002782.jpg",
@@ -11137,7 +11137,7 @@
     },
     {
         "image": "VizWiz_val_00002784.jpg",
-        "answer": "blue"
+        "answer": "green"
     },
     {
         "image": "VizWiz_val_00002785.jpg",
@@ -11173,7 +11173,7 @@
     },
     {
         "image": "VizWiz_val_00002793.jpg",
-        "answer": "beer"
+        "answer": "wheat ale"
     },
     {
         "image": "VizWiz_val_00002794.jpg",
@@ -11189,11 +11189,11 @@
     },
     {
         "image": "VizWiz_val_00002797.jpg",
-        "answer": "oven"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002798.jpg",
-        "answer": "dr pepper diet"
+        "answer": "dr pepper diet diet"
     },
     {
         "image": "VizWiz_val_00002799.jpg",
@@ -11209,15 +11209,15 @@
     },
     {
         "image": "VizWiz_val_00002802.jpg",
-        "answer": "brown"
+        "answer": "maroon"
     },
     {
         "image": "VizWiz_val_00002803.jpg",
-        "answer": "chicken alfredo"
+        "answer": "chicken alfredo alfredo"
     },
     {
         "image": "VizWiz_val_00002804.jpg",
-        "answer": "orange"
+        "answer": "creme"
     },
     {
         "image": "VizWiz_val_00002805.jpg",
@@ -11245,7 +11245,7 @@
     },
     {
         "image": "VizWiz_val_00002811.jpg",
-        "answer": "no"
+        "answer": "calculator"
     },
     {
         "image": "VizWiz_val_00002812.jpg",
@@ -11261,7 +11261,7 @@
     },
     {
         "image": "VizWiz_val_00002815.jpg",
-        "answer": "yogurt"
+        "answer": "toothpaste"
     },
     {
         "image": "VizWiz_val_00002816.jpg",
@@ -11281,11 +11281,11 @@
     },
     {
         "image": "VizWiz_val_00002820.jpg",
-        "answer": "red yellow black"
+        "answer": "red yellow black white"
     },
     {
         "image": "VizWiz_val_00002821.jpg",
-        "answer": "egg"
+        "answer": "cream"
     },
     {
         "image": "VizWiz_val_00002822.jpg",
@@ -11317,7 +11317,7 @@
     },
     {
         "image": "VizWiz_val_00002829.jpg",
-        "answer": "green"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002830.jpg",
@@ -11349,11 +11349,11 @@
     },
     {
         "image": "VizWiz_val_00002837.jpg",
-        "answer": "3"
+        "answer": "8"
     },
     {
         "image": "VizWiz_val_00002838.jpg",
-        "answer": "beer"
+        "answer": "dr pepper"
     },
     {
         "image": "VizWiz_val_00002839.jpg",
@@ -11373,7 +11373,7 @@
     },
     {
         "image": "VizWiz_val_00002843.jpg",
-        "answer": "350"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002844.jpg",
@@ -11385,7 +11385,7 @@
     },
     {
         "image": "VizWiz_val_00002846.jpg",
-        "answer": "white"
+        "answer": "grey"
     },
     {
         "image": "VizWiz_val_00002847.jpg",
@@ -11413,7 +11413,7 @@
     },
     {
         "image": "VizWiz_val_00002853.jpg",
-        "answer": "painting"
+        "answer": "ocean"
     },
     {
         "image": "VizWiz_val_00002854.jpg",
@@ -11429,19 +11429,19 @@
     },
     {
         "image": "VizWiz_val_00002857.jpg",
-        "answer": "green"
+        "answer": "dinosaur"
     },
     {
         "image": "VizWiz_val_00002858.jpg",
-        "answer": "5"
+        "answer": "20"
     },
     {
         "image": "VizWiz_val_00002859.jpg",
-        "answer": "orange"
+        "answer": "broccoli"
     },
     {
         "image": "VizWiz_val_00002860.jpg",
-        "answer": "white"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002861.jpg",
@@ -11449,7 +11449,7 @@
     },
     {
         "image": "VizWiz_val_00002862.jpg",
-        "answer": "silver"
+        "answer": "1"
     },
     {
         "image": "VizWiz_val_00002863.jpg",
@@ -11465,11 +11465,11 @@
     },
     {
         "image": "VizWiz_val_00002866.jpg",
-        "answer": "open"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002867.jpg",
-        "answer": "coffee"
+        "answer": "italian"
     },
     {
         "image": "VizWiz_val_00002868.jpg",
@@ -11477,7 +11477,7 @@
     },
     {
         "image": "VizWiz_val_00002869.jpg",
-        "answer": "diamonds"
+        "answer": "9"
     },
     {
         "image": "VizWiz_val_00002870.jpg",
@@ -11493,7 +11493,7 @@
     },
     {
         "image": "VizWiz_val_00002873.jpg",
-        "answer": "soup"
+        "answer": "beans"
     },
     {
         "image": "VizWiz_val_00002874.jpg",
@@ -11505,7 +11505,7 @@
     },
     {
         "image": "VizWiz_val_00002876.jpg",
-        "answer": "soup sauce"
+        "answer": "tomato sauce"
     },
     {
         "image": "VizWiz_val_00002877.jpg",
@@ -11537,7 +11537,7 @@
     },
     {
         "image": "VizWiz_val_00002884.jpg",
-        "answer": "brown"
+        "answer": "tan"
     },
     {
         "image": "VizWiz_val_00002885.jpg",
@@ -11557,11 +11557,11 @@
     },
     {
         "image": "VizWiz_val_00002889.jpg",
-        "answer": "wood"
+        "answer": "wood heavier"
     },
     {
         "image": "VizWiz_val_00002890.jpg",
-        "answer": "yes"
+        "answer": "5"
     },
     {
         "image": "VizWiz_val_00002891.jpg",
@@ -11573,7 +11573,7 @@
     },
     {
         "image": "VizWiz_val_00002893.jpg",
-        "answer": "green"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002894.jpg",
@@ -11585,15 +11585,15 @@
     },
     {
         "image": "VizWiz_val_00002896.jpg",
-        "answer": "blue"
+        "answer": "dr seuss"
     },
     {
         "image": "VizWiz_val_00002897.jpg",
-        "answer": "brown"
+        "answer": "white"
     },
     {
         "image": "VizWiz_val_00002898.jpg",
-        "answer": "red"
+        "answer": "cherry"
     },
     {
         "image": "VizWiz_val_00002899.jpg",
@@ -11609,7 +11609,7 @@
     },
     {
         "image": "VizWiz_val_00002902.jpg",
-        "answer": "yes"
+        "answer": "lion"
     },
     {
         "image": "VizWiz_val_00002903.jpg",
@@ -11621,7 +11621,7 @@
     },
     {
         "image": "VizWiz_val_00002905.jpg",
-        "answer": "telephone"
+        "answer": "phone"
     },
     {
         "image": "VizWiz_val_00002906.jpg",
@@ -11637,11 +11637,11 @@
     },
     {
         "image": "VizWiz_val_00002909.jpg",
-        "answer": "unanswerable"
+        "answer": "chicken"
     },
     {
         "image": "VizWiz_val_00002910.jpg",
-        "answer": "on bed"
+        "answer": "on desk"
     },
     {
         "image": "VizWiz_val_00002911.jpg",
@@ -11649,7 +11649,7 @@
     },
     {
         "image": "VizWiz_val_00002912.jpg",
-        "answer": "hot dog"
+        "answer": "toy car"
     },
     {
         "image": "VizWiz_val_00002913.jpg",
@@ -11677,7 +11677,7 @@
     },
     {
         "image": "VizWiz_val_00002919.jpg",
-        "answer": "white"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002920.jpg",
@@ -11701,7 +11701,7 @@
     },
     {
         "image": "VizWiz_val_00002925.jpg",
-        "answer": "italian bread sticks"
+        "answer": "bread sticks"
     },
     {
         "image": "VizWiz_val_00002926.jpg",
@@ -11709,7 +11709,7 @@
     },
     {
         "image": "VizWiz_val_00002927.jpg",
-        "answer": "spaghetti"
+        "answer": "spaghetti seasoning"
     },
     {
         "image": "VizWiz_val_00002928.jpg",
@@ -11721,7 +11721,7 @@
     },
     {
         "image": "VizWiz_val_00002930.jpg",
-        "answer": "nothing"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002931.jpg",
@@ -11817,7 +11817,7 @@
     },
     {
         "image": "VizWiz_val_00002954.jpg",
-        "answer": "beef"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002955.jpg",
@@ -11825,7 +11825,7 @@
     },
     {
         "image": "VizWiz_val_00002956.jpg",
-        "answer": "water bottle"
+        "answer": "water"
     },
     {
         "image": "VizWiz_val_00002957.jpg",
@@ -11869,7 +11869,7 @@
     },
     {
         "image": "VizWiz_val_00002967.jpg",
-        "answer": "coffee"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002968.jpg",
@@ -11897,7 +11897,7 @@
     },
     {
         "image": "VizWiz_val_00002974.jpg",
-        "answer": "no bat"
+        "answer": "pepsi"
     },
     {
         "image": "VizWiz_val_00002975.jpg",
@@ -11933,7 +11933,7 @@
     },
     {
         "image": "VizWiz_val_00002983.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002984.jpg",
@@ -11957,7 +11957,7 @@
     },
     {
         "image": "VizWiz_val_00002989.jpg",
-        "answer": "chocolate"
+        "answer": "vanilla"
     },
     {
         "image": "VizWiz_val_00002990.jpg",
@@ -11973,11 +11973,11 @@
     },
     {
         "image": "VizWiz_val_00002993.jpg",
-        "answer": "blue"
+        "answer": "polo"
     },
     {
         "image": "VizWiz_val_00002994.jpg",
-        "answer": "yes"
+        "answer": "3"
     },
     {
         "image": "VizWiz_val_00002995.jpg",
@@ -12001,7 +12001,7 @@
     },
     {
         "image": "VizWiz_val_00003000.jpg",
-        "answer": "billabong"
+        "answer": "john wills"
     },
     {
         "image": "VizWiz_val_00003001.jpg",
@@ -12013,7 +12013,7 @@
     },
     {
         "image": "VizWiz_val_00003003.jpg",
-        "answer": "wild"
+        "answer": "tropical"
     },
     {
         "image": "VizWiz_val_00003004.jpg",
@@ -12021,15 +12021,15 @@
     },
     {
         "image": "VizWiz_val_00003005.jpg",
-        "answer": "blurry"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00003006.jpg",
-        "answer": "beer"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003007.jpg",
-        "answer": "lime"
+        "answer": "pickles"
     },
     {
         "image": "VizWiz_val_00003008.jpg",
@@ -12049,7 +12049,7 @@
     },
     {
         "image": "VizWiz_val_00003012.jpg",
-        "answer": "unanswerable"
+        "answer": "medicine"
     },
     {
         "image": "VizWiz_val_00003013.jpg",
@@ -12069,7 +12069,7 @@
     },
     {
         "image": "VizWiz_val_00003017.jpg",
-        "answer": "computer"
+        "answer": "logo"
     },
     {
         "image": "VizWiz_val_00003018.jpg",
@@ -12097,7 +12097,7 @@
     },
     {
         "image": "VizWiz_val_00003024.jpg",
-        "answer": "20"
+        "answer": "79"
     },
     {
         "image": "VizWiz_val_00003025.jpg",
@@ -12117,7 +12117,7 @@
     },
     {
         "image": "VizWiz_val_00003029.jpg",
-        "answer": "carrot greens"
+        "answer": "spinach"
     },
     {
         "image": "VizWiz_val_00003030.jpg",
@@ -12125,7 +12125,7 @@
     },
     {
         "image": "VizWiz_val_00003031.jpg",
-        "answer": "unanswerable"
+        "answer": "cigarettes"
     },
     {
         "image": "VizWiz_val_00003032.jpg",
@@ -12153,7 +12153,7 @@
     },
     {
         "image": "VizWiz_val_00003038.jpg",
-        "answer": "yes"
+        "answer": "sprite"
     },
     {
         "image": "VizWiz_val_00003039.jpg",
@@ -12197,15 +12197,15 @@
     },
     {
         "image": "VizWiz_val_00003049.jpg",
-        "answer": "soup"
+        "answer": "vegetables"
     },
     {
         "image": "VizWiz_val_00003050.jpg",
-        "answer": "battery"
+        "answer": "power"
     },
     {
         "image": "VizWiz_val_00003051.jpg",
-        "answer": "grey white"
+        "answer": "grey"
     },
     {
         "image": "VizWiz_val_00003052.jpg",
@@ -12233,7 +12233,7 @@
     },
     {
         "image": "VizWiz_val_00003058.jpg",
-        "answer": "cream"
+        "answer": "sour cream"
     },
     {
         "image": "VizWiz_val_00003059.jpg",
@@ -12249,11 +12249,11 @@
     },
     {
         "image": "VizWiz_val_00003062.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003063.jpg",
-        "answer": "strawberry"
+        "answer": "strawberry white cream"
     },
     {
         "image": "VizWiz_val_00003064.jpg",
@@ -12285,7 +12285,7 @@
     },
     {
         "image": "VizWiz_val_00003071.jpg",
-        "answer": "body lotion"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003072.jpg",
@@ -12365,7 +12365,7 @@
     },
     {
         "image": "VizWiz_val_00003091.jpg",
-        "answer": "spray"
+        "answer": "antibacterial spray"
     },
     {
         "image": "VizWiz_val_00003092.jpg",
@@ -12373,7 +12373,7 @@
     },
     {
         "image": "VizWiz_val_00003093.jpg",
-        "answer": "soup"
+        "answer": "green sauce"
     },
     {
         "image": "VizWiz_val_00003094.jpg",
@@ -12381,11 +12381,11 @@
     },
     {
         "image": "VizWiz_val_00003095.jpg",
-        "answer": "book"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003096.jpg",
-        "answer": "charger"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003097.jpg",
@@ -12393,11 +12393,11 @@
     },
     {
         "image": "VizWiz_val_00003098.jpg",
-        "answer": "sight connection"
+        "answer": "sight connection living well connected"
     },
     {
         "image": "VizWiz_val_00003099.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003100.jpg",
@@ -12405,11 +12405,11 @@
     },
     {
         "image": "VizWiz_val_00003101.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00003102.jpg",
-        "answer": "heinz ketchup"
+        "answer": "tomato ketchup"
     },
     {
         "image": "VizWiz_val_00003103.jpg",
@@ -12433,7 +12433,7 @@
     },
     {
         "image": "VizWiz_val_00003108.jpg",
-        "answer": "unanswerable"
+        "answer": "right"
     },
     {
         "image": "VizWiz_val_00003109.jpg",
@@ -12445,11 +12445,11 @@
     },
     {
         "image": "VizWiz_val_00003111.jpg",
-        "answer": "yogurt"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003112.jpg",
-        "answer": "coke"
+        "answer": "coca cola"
     },
     {
         "image": "VizWiz_val_00003113.jpg",
@@ -12469,11 +12469,11 @@
     },
     {
         "image": "VizWiz_val_00003117.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003118.jpg",
-        "answer": "brown"
+        "answer": "chocolate"
     },
     {
         "image": "VizWiz_val_00003119.jpg",
@@ -12497,7 +12497,7 @@
     },
     {
         "image": "VizWiz_val_00003124.jpg",
-        "answer": "french fries"
+        "answer": "food"
     },
     {
         "image": "VizWiz_val_00003125.jpg",
@@ -12509,7 +12509,7 @@
     },
     {
         "image": "VizWiz_val_00003127.jpg",
-        "answer": "brown"
+        "answer": "leg"
     },
     {
         "image": "VizWiz_val_00003128.jpg",
@@ -12521,11 +12521,11 @@
     },
     {
         "image": "VizWiz_val_00003130.jpg",
-        "answer": "toy"
+        "answer": "owl"
     },
     {
         "image": "VizWiz_val_00003131.jpg",
-        "answer": "purple"
+        "answer": "maroon"
     },
     {
         "image": "VizWiz_val_00003132.jpg",
@@ -12553,7 +12553,7 @@
     },
     {
         "image": "VizWiz_val_00003138.jpg",
-        "answer": "no bottle"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003139.jpg",
@@ -12589,7 +12589,7 @@
     },
     {
         "image": "VizWiz_val_00003147.jpg",
-        "answer": "white chocolate"
+        "answer": "white"
     },
     {
         "image": "VizWiz_val_00003148.jpg",
@@ -12605,7 +12605,7 @@
     },
     {
         "image": "VizWiz_val_00003151.jpg",
-        "answer": "blue"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003152.jpg",
@@ -12641,23 +12641,23 @@
     },
     {
         "image": "VizWiz_val_00003160.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00003161.jpg",
-        "answer": "soup"
+        "answer": "chicken rice"
     },
     {
         "image": "VizWiz_val_00003162.jpg",
-        "answer": "unanswerable"
+        "answer": "red"
     },
     {
         "image": "VizWiz_val_00003163.jpg",
-        "answer": "mutt"
+        "answer": "brown"
     },
     {
         "image": "VizWiz_val_00003164.jpg",
-        "answer": "toy"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003165.jpg",
@@ -12705,7 +12705,7 @@
     },
     {
         "image": "VizWiz_val_00003176.jpg",
-        "answer": "unanswerable"
+        "answer": "back"
     },
     {
         "image": "VizWiz_val_00003177.jpg",
@@ -12721,7 +12721,7 @@
     },
     {
         "image": "VizWiz_val_00003180.jpg",
-        "answer": "lotion"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003181.jpg",
@@ -12741,15 +12741,15 @@
     },
     {
         "image": "VizWiz_val_00003185.jpg",
-        "answer": "dollar"
+        "answer": "1 dollar bill"
     },
     {
         "image": "VizWiz_val_00003186.jpg",
-        "answer": "meat"
+        "answer": "food"
     },
     {
         "image": "VizWiz_val_00003187.jpg",
-        "answer": "no"
+        "answer": "soy sauce"
     },
     {
         "image": "VizWiz_val_00003188.jpg",
@@ -12761,7 +12761,7 @@
     },
     {
         "image": "VizWiz_val_00003190.jpg",
-        "answer": "soup"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003191.jpg",
@@ -12797,7 +12797,7 @@
     },
     {
         "image": "VizWiz_val_00003199.jpg",
-        "answer": "raspberry"
+        "answer": "sauce"
     },
     {
         "image": "VizWiz_val_00003200.jpg",
@@ -12805,7 +12805,7 @@
     },
     {
         "image": "VizWiz_val_00003201.jpg",
-        "answer": "noodle"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003202.jpg",
@@ -12817,7 +12817,7 @@
     },
     {
         "image": "VizWiz_val_00003204.jpg",
-        "answer": "eyeball"
+        "answer": "eye"
     },
     {
         "image": "VizWiz_val_00003205.jpg",
@@ -12837,11 +12837,11 @@
     },
     {
         "image": "VizWiz_val_00003209.jpg",
-        "answer": "pink white grey pink white"
+        "answer": "pink white grey grey pink white"
     },
     {
         "image": "VizWiz_val_00003210.jpg",
-        "answer": "baked beans"
+        "answer": "beans"
     },
     {
         "image": "VizWiz_val_00003211.jpg",
@@ -12857,7 +12857,7 @@
     },
     {
         "image": "VizWiz_val_00003214.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003215.jpg",
@@ -12873,7 +12873,7 @@
     },
     {
         "image": "VizWiz_val_00003218.jpg",
-        "answer": "brown"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003219.jpg",
@@ -12889,15 +12889,15 @@
     },
     {
         "image": "VizWiz_val_00003222.jpg",
-        "answer": "candy"
+        "answer": "chocolate"
     },
     {
         "image": "VizWiz_val_00003223.jpg",
-        "answer": "green white brown"
+        "answer": "green white"
     },
     {
         "image": "VizWiz_val_00003224.jpg",
-        "answer": "unanswerable"
+        "answer": "nanswerable"
     },
     {
         "image": "VizWiz_val_00003225.jpg",
@@ -12949,19 +12949,19 @@
     },
     {
         "image": "VizWiz_val_00003237.jpg",
-        "answer": "water"
+        "answer": "juice"
     },
     {
         "image": "VizWiz_val_00003238.jpg",
-        "answer": "."
+        "answer": ". purple"
     },
     {
         "image": "VizWiz_val_00003239.jpg",
-        "answer": "dishwasher"
+        "answer": "dish soap"
     },
     {
         "image": "VizWiz_val_00003240.jpg",
-        "answer": "chicken"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003241.jpg",
@@ -12969,7 +12969,7 @@
     },
     {
         "image": "VizWiz_val_00003242.jpg",
-        "answer": "red"
+        "answer": "strawberry"
     },
     {
         "image": "VizWiz_val_00003243.jpg",
@@ -12985,11 +12985,11 @@
     },
     {
         "image": "VizWiz_val_00003246.jpg",
-        "answer": "nothing"
+        "answer": "acer"
     },
     {
         "image": "VizWiz_val_00003247.jpg",
-        "answer": "starbucks"
+        "answer": "gift card"
     },
     {
         "image": "VizWiz_val_00003248.jpg",
@@ -13009,7 +13009,7 @@
     },
     {
         "image": "VizWiz_val_00003252.jpg",
-        "answer": "jar"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003253.jpg",
@@ -13021,7 +13021,7 @@
     },
     {
         "image": "VizWiz_val_00003255.jpg",
-        "answer": "green"
+        "answer": "green yellow"
     },
     {
         "image": "VizWiz_val_00003256.jpg",
@@ -13037,7 +13037,7 @@
     },
     {
         "image": "VizWiz_val_00003259.jpg",
-        "answer": "snake"
+        "answer": "brown"
     },
     {
         "image": "VizWiz_val_00003260.jpg",
@@ -13057,7 +13057,7 @@
     },
     {
         "image": "VizWiz_val_00003264.jpg",
-        "answer": "car"
+        "answer": "steering wheel"
     },
     {
         "image": "VizWiz_val_00003265.jpg",
@@ -13101,7 +13101,7 @@
     },
     {
         "image": "VizWiz_val_00003275.jpg",
-        "answer": "tea"
+        "answer": "garbala"
     },
     {
         "image": "VizWiz_val_00003276.jpg",
@@ -13133,11 +13133,11 @@
     },
     {
         "image": "VizWiz_val_00003283.jpg",
-        "answer": "meatballs"
+        "answer": "food"
     },
     {
         "image": "VizWiz_val_00003284.jpg",
-        "answer": "pumpkin soup"
+        "answer": "pumpkin"
     },
     {
         "image": "VizWiz_val_00003285.jpg",
@@ -13161,7 +13161,7 @@
     },
     {
         "image": "VizWiz_val_00003290.jpg",
-        "answer": "potato chips"
+        "answer": "potatoes"
     },
     {
         "image": "VizWiz_val_00003291.jpg",
@@ -13169,7 +13169,7 @@
     },
     {
         "image": "VizWiz_val_00003292.jpg",
-        "answer": "cell phone"
+        "answer": "phone"
     },
     {
         "image": "VizWiz_val_00003293.jpg",
@@ -13193,7 +13193,7 @@
     },
     {
         "image": "VizWiz_val_00003298.jpg",
-        "answer": "unanswerable"
+        "answer": "bottle"
     },
     {
         "image": "VizWiz_val_00003299.jpg",
@@ -13209,7 +13209,7 @@
     },
     {
         "image": "VizWiz_val_00003302.jpg",
-        "answer": "masala"
+        "answer": "satay"
     },
     {
         "image": "VizWiz_val_00003303.jpg",
@@ -13217,7 +13217,7 @@
     },
     {
         "image": "VizWiz_val_00003304.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003305.jpg",
@@ -13233,7 +13233,7 @@
     },
     {
         "image": "VizWiz_val_00003308.jpg",
-        "answer": "crayons"
+        "answer": "washable sidewalk"
     },
     {
         "image": "VizWiz_val_00003309.jpg",
@@ -13269,7 +13269,7 @@
     },
     {
         "image": "VizWiz_val_00003317.jpg",
-        "answer": "hot dog"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003318.jpg",
@@ -13277,7 +13277,7 @@
     },
     {
         "image": "VizWiz_val_00003319.jpg",
-        "answer": "64"
+        "answer": "10"
     },
     {
         "image": "VizWiz_val_00003320.jpg",
@@ -13297,7 +13297,7 @@
     },
     {
         "image": "VizWiz_val_00003324.jpg",
-        "answer": "onion"
+        "answer": "spinach"
     },
     {
         "image": "VizWiz_val_00003325.jpg",
@@ -13325,7 +13325,7 @@
     },
     {
         "image": "VizWiz_val_00003331.jpg",
-        "answer": "iphone"
+        "answer": "phone"
     },
     {
         "image": "VizWiz_val_00003332.jpg",
@@ -13349,7 +13349,7 @@
     },
     {
         "image": "VizWiz_val_00003337.jpg",
-        "answer": "unanswerable"
+        "answer": "open door lock"
     },
     {
         "image": "VizWiz_val_00003338.jpg",
@@ -13357,11 +13357,11 @@
     },
     {
         "image": "VizWiz_val_00003339.jpg",
-        "answer": "building"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003340.jpg",
-        "answer": "beef"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003341.jpg",
@@ -13369,7 +13369,7 @@
     },
     {
         "image": "VizWiz_val_00003342.jpg",
-        "answer": "lemonade"
+        "answer": "soda"
     },
     {
         "image": "VizWiz_val_00003343.jpg",
@@ -13417,7 +13417,7 @@
     },
     {
         "image": "VizWiz_val_00003354.jpg",
-        "answer": "electric box"
+        "answer": "heater"
     },
     {
         "image": "VizWiz_val_00003355.jpg",
@@ -13453,7 +13453,7 @@
     },
     {
         "image": "VizWiz_val_00003363.jpg",
-        "answer": "bird"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003364.jpg",
@@ -13465,11 +13465,11 @@
     },
     {
         "image": "VizWiz_val_00003366.jpg",
-        "answer": "turkey"
+        "answer": "turkey sausage"
     },
     {
         "image": "VizWiz_val_00003367.jpg",
-        "answer": "unanswerable"
+        "answer": "color treat"
     },
     {
         "image": "VizWiz_val_00003368.jpg",
@@ -13485,7 +13485,7 @@
     },
     {
         "image": "VizWiz_val_00003371.jpg",
-        "answer": "beer"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003372.jpg",
@@ -13525,7 +13525,7 @@
     },
     {
         "image": "VizWiz_val_00003381.jpg",
-        "answer": "white"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003382.jpg",
@@ -13561,7 +13561,7 @@
     },
     {
         "image": "VizWiz_val_00003390.jpg",
-        "answer": "jacket"
+        "answer": "yellow"
     },
     {
         "image": "VizWiz_val_00003391.jpg",
@@ -13593,7 +13593,7 @@
     },
     {
         "image": "VizWiz_val_00003398.jpg",
-        "answer": "french"
+        "answer": "french vanilla"
     },
     {
         "image": "VizWiz_val_00003399.jpg",
@@ -13605,7 +13605,7 @@
     },
     {
         "image": "VizWiz_val_00003401.jpg",
-        "answer": "mutt"
+        "answer": "labrador"
     },
     {
         "image": "VizWiz_val_00003402.jpg",
@@ -13633,7 +13633,7 @@
     },
     {
         "image": "VizWiz_val_00003408.jpg",
-        "answer": "pasta"
+        "answer": "chicken"
     },
     {
         "image": "VizWiz_val_00003409.jpg",
@@ -13689,7 +13689,7 @@
     },
     {
         "image": "VizWiz_val_00003422.jpg",
-        "answer": "frozen"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003423.jpg",
@@ -13709,7 +13709,7 @@
     },
     {
         "image": "VizWiz_val_00003427.jpg",
-        "answer": "harry potter"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003428.jpg",
@@ -13717,7 +13717,7 @@
     },
     {
         "image": "VizWiz_val_00003429.jpg",
-        "answer": "er. mcdonald's"
+        "answer": "er. mcdonalds"
     },
     {
         "image": "VizWiz_val_00003430.jpg",
@@ -13785,11 +13785,11 @@
     },
     {
         "image": "VizWiz_val_00003446.jpg",
-        "answer": "p. chocolate"
+        "answer": "p. unanswerable"
     },
     {
         "image": "VizWiz_val_00003447.jpg",
-        "answer": "jacks"
+        "answer": "cigarettes"
     },
     {
         "image": "VizWiz_val_00003448.jpg",
@@ -13809,7 +13809,7 @@
     },
     {
         "image": "VizWiz_val_00003452.jpg",
-        "answer": "cleanliness"
+        "answer": "clean"
     },
     {
         "image": "VizWiz_val_00003453.jpg",
@@ -13841,11 +13841,11 @@
     },
     {
         "image": "VizWiz_val_00003460.jpg",
-        "answer": "unanswerable"
+        "answer": "keyboard"
     },
     {
         "image": "VizWiz_val_00003461.jpg",
-        "answer": "2013"
+        "answer": "champion"
     },
     {
         "image": "VizWiz_val_00003462.jpg",
@@ -13857,7 +13857,7 @@
     },
     {
         "image": "VizWiz_val_00003464.jpg",
-        "answer": "23"
+        "answer": "22 nxn"
     },
     {
         "image": "VizWiz_val_00003465.jpg",
@@ -13873,7 +13873,7 @@
     },
     {
         "image": "VizWiz_val_00003468.jpg",
-        "answer": "desk"
+        "answer": "table"
     },
     {
         "image": "VizWiz_val_00003469.jpg",
@@ -13893,7 +13893,7 @@
     },
     {
         "image": "VizWiz_val_00003473.jpg",
-        "answer": "black beans"
+        "answer": "beans"
     },
     {
         "image": "VizWiz_val_00003474.jpg",
@@ -13917,7 +13917,7 @@
     },
     {
         "image": "VizWiz_val_00003479.jpg",
-        "answer": "brownie"
+        "answer": "cake"
     },
     {
         "image": "VizWiz_val_00003480.jpg",
@@ -13925,15 +13925,15 @@
     },
     {
         "image": "VizWiz_val_00003481.jpg",
-        "answer": "blue"
+        "answer": "person"
     },
     {
         "image": "VizWiz_val_00003482.jpg",
-        "answer": "smooth silk"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003483.jpg",
-        "answer": "tablecloth"
+        "answer": "table"
     },
     {
         "image": "VizWiz_val_00003484.jpg",
@@ -13949,7 +13949,7 @@
     },
     {
         "image": "VizWiz_val_00003487.jpg",
-        "answer": "unanswerable"
+        "answer": "medicine"
     },
     {
         "image": "VizWiz_val_00003488.jpg",
@@ -13985,7 +13985,7 @@
     },
     {
         "image": "VizWiz_val_00003496.jpg",
-        "answer": "cabot"
+        "answer": "cing z"
     },
     {
         "image": "VizWiz_val_00003497.jpg",
@@ -13993,7 +13993,7 @@
     },
     {
         "image": "VizWiz_val_00003498.jpg",
-        "answer": "marlboro"
+        "answer": "cigarettes"
     },
     {
         "image": "VizWiz_val_00003499.jpg",
@@ -14021,7 +14021,7 @@
     },
     {
         "image": "VizWiz_val_00003505.jpg",
-        "answer": ".. chicken"
+        "answer": "braille chicken"
     },
     {
         "image": "VizWiz_val_00003506.jpg",
@@ -14041,15 +14041,15 @@
     },
     {
         "image": "VizWiz_val_00003510.jpg",
-        "answer": "macaroni"
+        "answer": "macaroni cheese"
     },
     {
         "image": "VizWiz_val_00003511.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003512.jpg",
-        "answer": "lotion"
+        "answer": "ketchup"
     },
     {
         "image": "VizWiz_val_00003513.jpg",
@@ -14081,7 +14081,7 @@
     },
     {
         "image": "VizWiz_val_00003520.jpg",
-        "answer": "coffee creamer"
+        "answer": "coffee mate"
     },
     {
         "image": "VizWiz_val_00003521.jpg",
@@ -14089,7 +14089,7 @@
     },
     {
         "image": "VizWiz_val_00003522.jpg",
-        "answer": "40"
+        "answer": "4"
     },
     {
         "image": "VizWiz_val_00003523.jpg",
@@ -14189,7 +14189,7 @@
     },
     {
         "image": "VizWiz_val_00003547.jpg",
-        "answer": "coca cola"
+        "answer": "coca cola zero"
     },
     {
         "image": "VizWiz_val_00003548.jpg",
@@ -14197,7 +14197,7 @@
     },
     {
         "image": "VizWiz_val_00003549.jpg",
-        "answer": "wine"
+        "answer": "wine glass"
     },
     {
         "image": "VizWiz_val_00003550.jpg",
@@ -14209,7 +14209,7 @@
     },
     {
         "image": "VizWiz_val_00003552.jpg",
-        "answer": "kettle"
+        "answer": "tea pot"
     },
     {
         "image": "VizWiz_val_00003553.jpg",
@@ -14229,11 +14229,11 @@
     },
     {
         "image": "VizWiz_val_00003557.jpg",
-        "answer": "ice cream"
+        "answer": "salt"
     },
     {
         "image": "VizWiz_val_00003558.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003559.jpg",
@@ -14245,7 +14245,7 @@
     },
     {
         "image": "VizWiz_val_00003561.jpg",
-        "answer": "beer"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003562.jpg",
@@ -14253,7 +14253,7 @@
     },
     {
         "image": "VizWiz_val_00003563.jpg",
-        "answer": "black"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003564.jpg",
@@ -14277,15 +14277,15 @@
     },
     {
         "image": "VizWiz_val_00003569.jpg",
-        "answer": "vegetable"
+        "answer": "vegetable veggie"
     },
     {
         "image": "VizWiz_val_00003570.jpg",
-        "answer": "hot sauce"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003571.jpg",
-        "answer": "tomato sauce"
+        "answer": "tomatoes"
     },
     {
         "image": "VizWiz_val_00003572.jpg",
@@ -14297,7 +14297,7 @@
     },
     {
         "image": "VizWiz_val_00003574.jpg",
-        "answer": "jamba mix"
+        "answer": "jambalaya mix"
     },
     {
         "image": "VizWiz_val_00003575.jpg",
@@ -14305,7 +14305,7 @@
     },
     {
         "image": "VizWiz_val_00003576.jpg",
-        "answer": "italian"
+        "answer": "italian bread"
     },
     {
         "image": "VizWiz_val_00003577.jpg",
@@ -14333,11 +14333,11 @@
     },
     {
         "image": "VizWiz_val_00003583.jpg",
-        "answer": "10"
+        "answer": "20"
     },
     {
         "image": "VizWiz_val_00003584.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003585.jpg",
@@ -14385,7 +14385,7 @@
     },
     {
         "image": "VizWiz_val_00003596.jpg",
-        "answer": "t? gray"
+        "answer": "t? grey"
     },
     {
         "image": "VizWiz_val_00003597.jpg",
@@ -14401,11 +14401,11 @@
     },
     {
         "image": "VizWiz_val_00003600.jpg",
-        "answer": "vanilla"
+        "answer": "cinnamon sugar"
     },
     {
         "image": "VizWiz_val_00003601.jpg",
-        "answer": "chicken pie"
+        "answer": "chicken"
     },
     {
         "image": "VizWiz_val_00003602.jpg",
@@ -14441,11 +14441,11 @@
     },
     {
         "image": "VizWiz_val_00003610.jpg",
-        "answer": "toy"
+        "answer": "puzzle"
     },
     {
         "image": "VizWiz_val_00003611.jpg",
-        "answer": "sky"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003612.jpg",
@@ -14457,7 +14457,7 @@
     },
     {
         "image": "VizWiz_val_00003614.jpg",
-        "answer": "unanswerable"
+        "answer": "beans"
     },
     {
         "image": "VizWiz_val_00003615.jpg",
@@ -14501,11 +14501,11 @@
     },
     {
         "image": "VizWiz_val_00003625.jpg",
-        "answer": "map"
+        "answer": "new zealand"
     },
     {
         "image": "VizWiz_val_00003626.jpg",
-        "answer": "unanswerable"
+        "answer": "sweet potato"
     },
     {
         "image": "VizWiz_val_00003627.jpg",
@@ -14521,7 +14521,7 @@
     },
     {
         "image": "VizWiz_val_00003630.jpg",
-        "answer": "soup"
+        "answer": "tomato"
     },
     {
         "image": "VizWiz_val_00003631.jpg",
@@ -14529,7 +14529,7 @@
     },
     {
         "image": "VizWiz_val_00003632.jpg",
-        "answer": "unanswerable"
+        "answer": "foot"
     },
     {
         "image": "VizWiz_val_00003633.jpg",
@@ -14537,7 +14537,7 @@
     },
     {
         "image": "VizWiz_val_00003634.jpg",
-        "answer": "cigarette"
+        "answer": "cigarettes"
     },
     {
         "image": "VizWiz_val_00003635.jpg",
@@ -14545,7 +14545,7 @@
     },
     {
         "image": "VizWiz_val_00003636.jpg",
-        "answer": "schlafly"
+        "answer": "schweppes"
     },
     {
         "image": "VizWiz_val_00003637.jpg",
@@ -14569,7 +14569,7 @@
     },
     {
         "image": "VizWiz_val_00003642.jpg",
-        "answer": "toothbrushes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003643.jpg",
@@ -14597,7 +14597,7 @@
     },
     {
         "image": "VizWiz_val_00003649.jpg",
-        "answer": "recycling"
+        "answer": "re recycling"
     },
     {
         "image": "VizWiz_val_00003650.jpg",
@@ -14605,11 +14605,11 @@
     },
     {
         "image": "VizWiz_val_00003651.jpg",
-        "answer": "yes"
+        "answer": "beans"
     },
     {
         "image": "VizWiz_val_00003652.jpg",
-        "answer": "unanswerable"
+        "answer": "vitamins"
     },
     {
         "image": "VizWiz_val_00003653.jpg",
@@ -14617,7 +14617,7 @@
     },
     {
         "image": "VizWiz_val_00003654.jpg",
-        "answer": "yes"
+        "answer": "office"
     },
     {
         "image": "VizWiz_val_00003655.jpg",
@@ -14649,7 +14649,7 @@
     },
     {
         "image": "VizWiz_val_00003662.jpg",
-        "answer": "vegetable"
+        "answer": "carrots"
     },
     {
         "image": "VizWiz_val_00003663.jpg",
@@ -14685,11 +14685,11 @@
     },
     {
         "image": "VizWiz_val_00003671.jpg",
-        "answer": "peanut"
+        "answer": "peanut sauce"
     },
     {
         "image": "VizWiz_val_00003672.jpg",
-        "answer": "crackers"
+        "answer": "cookies"
     },
     {
         "image": "VizWiz_val_00003673.jpg",
@@ -14721,7 +14721,7 @@
     },
     {
         "image": "VizWiz_val_00003680.jpg",
-        "answer": "sheet music"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003681.jpg",
@@ -14733,7 +14733,7 @@
     },
     {
         "image": "VizWiz_val_00003683.jpg",
-        "answer": "soup"
+        "answer": "beef"
     },
     {
         "image": "VizWiz_val_00003684.jpg",
@@ -14741,7 +14741,7 @@
     },
     {
         "image": "VizWiz_val_00003685.jpg",
-        "answer": "lotion"
+        "answer": "advanced"
     },
     {
         "image": "VizWiz_val_00003686.jpg",
@@ -14757,7 +14757,7 @@
     },
     {
         "image": "VizWiz_val_00003689.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003690.jpg",
@@ -14769,7 +14769,7 @@
     },
     {
         "image": "VizWiz_val_00003692.jpg",
-        "answer": "buttermilk"
+        "answer": "ranch"
     },
     {
         "image": "VizWiz_val_00003693.jpg",
@@ -14777,7 +14777,7 @@
     },
     {
         "image": "VizWiz_val_00003694.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003695.jpg",
@@ -14789,11 +14789,11 @@
     },
     {
         "image": "VizWiz_val_00003697.jpg",
-        "answer": "w."
+        "answer": "w. unanswerable"
     },
     {
         "image": "VizWiz_val_00003698.jpg",
-        "answer": "dollar"
+        "answer": "money"
     },
     {
         "image": "VizWiz_val_00003699.jpg",
@@ -14801,7 +14801,7 @@
     },
     {
         "image": "VizWiz_val_00003700.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003701.jpg",
@@ -14817,7 +14817,7 @@
     },
     {
         "image": "VizWiz_val_00003704.jpg",
-        "answer": "unanswerable"
+        "answer": "verizon"
     },
     {
         "image": "VizWiz_val_00003705.jpg",
@@ -14849,7 +14849,7 @@
     },
     {
         "image": "VizWiz_val_00003712.jpg",
-        "answer": "purple"
+        "answer": "flowers"
     },
     {
         "image": "VizWiz_val_00003713.jpg",
@@ -14861,7 +14861,7 @@
     },
     {
         "image": "VizWiz_val_00003715.jpg",
-        "answer": "unanswerable"
+        "answer": "whiskey"
     },
     {
         "image": "VizWiz_val_00003716.jpg",
@@ -14885,7 +14885,7 @@
     },
     {
         "image": "VizWiz_val_00003721.jpg",
-        "answer": "lavender"
+        "answer": "french lavender"
     },
     {
         "image": "VizWiz_val_00003722.jpg",
@@ -14897,7 +14897,7 @@
     },
     {
         "image": "VizWiz_val_00003724.jpg",
-        "answer": "jambab mix"
+        "answer": "jambalaya mix"
     },
     {
         "image": "VizWiz_val_00003725.jpg",
@@ -14909,7 +14909,7 @@
     },
     {
         "image": "VizWiz_val_00003727.jpg",
-        "answer": "apple"
+        "answer": "apple chips"
     },
     {
         "image": "VizWiz_val_00003728.jpg",
@@ -14925,11 +14925,11 @@
     },
     {
         "image": "VizWiz_val_00003731.jpg",
-        "answer": "cagr wipes"
+        "answer": "cavix"
     },
     {
         "image": "VizWiz_val_00003732.jpg",
-        "answer": "water"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003733.jpg",
@@ -14937,7 +14937,7 @@
     },
     {
         "image": "VizWiz_val_00003734.jpg",
-        "answer": "forest"
+        "answer": "trees"
     },
     {
         "image": "VizWiz_val_00003735.jpg",
@@ -14945,7 +14945,7 @@
     },
     {
         "image": "VizWiz_val_00003736.jpg",
-        "answer": "unanswerable"
+        "answer": "wine"
     },
     {
         "image": "VizWiz_val_00003737.jpg",
@@ -14953,7 +14953,7 @@
     },
     {
         "image": "VizWiz_val_00003738.jpg",
-        "answer": "phone"
+        "answer": "keyboard"
     },
     {
         "image": "VizWiz_val_00003739.jpg",
@@ -14973,7 +14973,7 @@
     },
     {
         "image": "VizWiz_val_00003743.jpg",
-        "answer": "water"
+        "answer": "lake"
     },
     {
         "image": "VizWiz_val_00003744.jpg",
@@ -14981,7 +14981,7 @@
     },
     {
         "image": "VizWiz_val_00003745.jpg",
-        "answer": "milk"
+        "answer": "juice"
     },
     {
         "image": "VizWiz_val_00003746.jpg",
@@ -15013,7 +15013,7 @@
     },
     {
         "image": "VizWiz_val_00003753.jpg",
-        "answer": "door"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003754.jpg",
@@ -15053,7 +15053,7 @@
     },
     {
         "image": "VizWiz_val_00003763.jpg",
-        "answer": "unanswerable"
+        "answer": "beans"
     },
     {
         "image": "VizWiz_val_00003764.jpg",
@@ -15065,7 +15065,7 @@
     },
     {
         "image": "VizWiz_val_00003766.jpg",
-        "answer": "coffee"
+        "answer": "espresso"
     },
     {
         "image": "VizWiz_val_00003767.jpg",
@@ -15153,7 +15153,7 @@
     },
     {
         "image": "VizWiz_val_00003788.jpg",
-        "answer": "salad"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003789.jpg",
@@ -15177,7 +15177,7 @@
     },
     {
         "image": "VizWiz_val_00003794.jpg",
-        "answer": "white"
+        "answer": "grey"
     },
     {
         "image": "VizWiz_val_00003795.jpg",
@@ -15185,7 +15185,7 @@
     },
     {
         "image": "VizWiz_val_00003796.jpg",
-        "answer": "la"
+        "answer": "lacoste"
     },
     {
         "image": "VizWiz_val_00003797.jpg",
@@ -15201,7 +15201,7 @@
     },
     {
         "image": "VizWiz_val_00003800.jpg",
-        "answer": "nothing"
+        "answer": "ovaries"
     },
     {
         "image": "VizWiz_val_00003801.jpg",
@@ -15217,7 +15217,7 @@
     },
     {
         "image": "VizWiz_val_00003804.jpg",
-        "answer": "unanswerable"
+        "answer": "phone"
     },
     {
         "image": "VizWiz_val_00003805.jpg",
@@ -15249,7 +15249,7 @@
     },
     {
         "image": "VizWiz_val_00003812.jpg",
-        "answer": "8"
+        "answer": "79"
     },
     {
         "image": "VizWiz_val_00003813.jpg",
@@ -15265,11 +15265,11 @@
     },
     {
         "image": "VizWiz_val_00003816.jpg",
-        "answer": "unanswerable"
+        "answer": "bottle"
     },
     {
         "image": "VizWiz_val_00003817.jpg",
-        "answer": "apple"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003818.jpg",
@@ -15313,7 +15313,7 @@
     },
     {
         "image": "VizWiz_val_00003828.jpg",
-        "answer": "dollar"
+        "answer": "20"
     },
     {
         "image": "VizWiz_val_00003829.jpg",
@@ -15333,7 +15333,7 @@
     },
     {
         "image": "VizWiz_val_00003833.jpg",
-        "answer": "blue white purple"
+        "answer": "blue white black"
     },
     {
         "image": "VizWiz_val_00003834.jpg",
@@ -15341,7 +15341,7 @@
     },
     {
         "image": "VizWiz_val_00003835.jpg",
-        "answer": "skateboarder"
+        "answer": "sky"
     },
     {
         "image": "VizWiz_val_00003836.jpg",
@@ -15377,7 +15377,7 @@
     },
     {
         "image": "VizWiz_val_00003844.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003845.jpg",
@@ -15397,11 +15397,11 @@
     },
     {
         "image": "VizWiz_val_00003849.jpg",
-        "answer": "cook"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003850.jpg",
-        "answer": "white"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003851.jpg",
@@ -15425,7 +15425,7 @@
     },
     {
         "image": "VizWiz_val_00003856.jpg",
-        "answer": "diary of wimpy kid"
+        "answer": "diary kid"
     },
     {
         "image": "VizWiz_val_00003857.jpg",
@@ -15445,7 +15445,7 @@
     },
     {
         "image": "VizWiz_val_00003861.jpg",
-        "answer": "blue"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003862.jpg",
@@ -15481,7 +15481,7 @@
     },
     {
         "image": "VizWiz_val_00003870.jpg",
-        "answer": "no soup"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003871.jpg",
@@ -15493,7 +15493,7 @@
     },
     {
         "image": "VizWiz_val_00003873.jpg",
-        "answer": "yellow flowers"
+        "answer": "flowers"
     },
     {
         "image": "VizWiz_val_00003874.jpg",
@@ -15517,11 +15517,11 @@
     },
     {
         "image": "VizWiz_val_00003879.jpg",
-        "answer": "blue"
+        "answer": "green"
     },
     {
         "image": "VizWiz_val_00003880.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003881.jpg",
@@ -15553,7 +15553,7 @@
     },
     {
         "image": "VizWiz_val_00003888.jpg",
-        "answer": "nuts"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003889.jpg",
@@ -15577,7 +15577,7 @@
     },
     {
         "image": "VizWiz_val_00003894.jpg",
-        "answer": "r"
+        "answer": "yellow"
     },
     {
         "image": "VizWiz_val_00003895.jpg",
@@ -15585,7 +15585,7 @@
     },
     {
         "image": "VizWiz_val_00003896.jpg",
-        "answer": "school glue"
+        "answer": "cleaner"
     },
     {
         "image": "VizWiz_val_00003897.jpg",
@@ -15613,11 +15613,11 @@
     },
     {
         "image": "VizWiz_val_00003903.jpg",
-        "answer": "grey"
+        "answer": "zipper"
     },
     {
         "image": "VizWiz_val_00003904.jpg",
-        "answer": "alligator"
+        "answer": "gator"
     },
     {
         "image": "VizWiz_val_00003905.jpg",
@@ -15653,7 +15653,7 @@
     },
     {
         "image": "VizWiz_val_00003913.jpg",
-        "answer": "red"
+        "answer": "orange"
     },
     {
         "image": "VizWiz_val_00003914.jpg",
@@ -15697,7 +15697,7 @@
     },
     {
         "image": "VizWiz_val_00003924.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003925.jpg",
@@ -15705,7 +15705,7 @@
     },
     {
         "image": "VizWiz_val_00003926.jpg",
-        "answer": "very clean"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003927.jpg",
@@ -15721,7 +15721,7 @@
     },
     {
         "image": "VizWiz_val_00003930.jpg",
-        "answer": "4 4 4 4 4 4 4 4"
+        "answer": "4 for 4 minutes"
     },
     {
         "image": "VizWiz_val_00003931.jpg",
@@ -15729,7 +15729,7 @@
     },
     {
         "image": "VizWiz_val_00003932.jpg",
-        "answer": "1 : 00"
+        "answer": "1 : 05"
     },
     {
         "image": "VizWiz_val_00003933.jpg",
@@ -15773,11 +15773,11 @@
     },
     {
         "image": "VizWiz_val_00003943.jpg",
-        "answer": "english"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003944.jpg",
-        "answer": "unanswerable"
+        "answer": "le petits tartes"
     },
     {
         "image": "VizWiz_val_00003945.jpg",
@@ -15785,11 +15785,11 @@
     },
     {
         "image": "VizWiz_val_00003946.jpg",
-        "answer": "play house"
+        "answer": "backyard"
     },
     {
         "image": "VizWiz_val_00003947.jpg",
-        "answer": "microwave"
+        "answer": "stove"
     },
     {
         "image": "VizWiz_val_00003948.jpg",
@@ -15805,7 +15805,7 @@
     },
     {
         "image": "VizWiz_val_00003951.jpg",
-        "answer": "moon light path"
+        "answer": "moonlit path"
     },
     {
         "image": "VizWiz_val_00003952.jpg",
@@ -15837,19 +15837,19 @@
     },
     {
         "image": "VizWiz_val_00003959.jpg",
-        "answer": "unanswerable"
+        "answer": "soda"
     },
     {
         "image": "VizWiz_val_00003960.jpg",
-        "answer": "camera"
+        "answer": "building"
     },
     {
         "image": "VizWiz_val_00003961.jpg",
-        "answer": "jacket"
+        "answer": "black"
     },
     {
         "image": "VizWiz_val_00003962.jpg",
-        "answer": "light"
+        "answer": "flash"
     },
     {
         "image": "VizWiz_val_00003963.jpg",
@@ -15857,7 +15857,7 @@
     },
     {
         "image": "VizWiz_val_00003964.jpg",
-        "answer": "nothing"
+        "answer": "food"
     },
     {
         "image": "VizWiz_val_00003965.jpg",
@@ -15869,7 +15869,7 @@
     },
     {
         "image": "VizWiz_val_00003967.jpg",
-        "answer": "classic classic"
+        "answer": "classic classic classic"
     },
     {
         "image": "VizWiz_val_00003968.jpg",
@@ -15877,7 +15877,7 @@
     },
     {
         "image": "VizWiz_val_00003969.jpg",
-        "answer": "american flag"
+        "answer": "flag"
     },
     {
         "image": "VizWiz_val_00003970.jpg",
@@ -15897,11 +15897,11 @@
     },
     {
         "image": "VizWiz_val_00003974.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00003975.jpg",
-        "answer": "white"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003976.jpg",
@@ -15921,15 +15921,15 @@
     },
     {
         "image": "VizWiz_val_00003980.jpg",
-        "answer": "butter"
-    },
-    {
-        "image": "VizWiz_val_00003981.jpg",
         "answer": "unanswerable"
     },
     {
+        "image": "VizWiz_val_00003981.jpg",
+        "answer": "water"
+    },
+    {
         "image": "VizWiz_val_00003982.jpg",
-        "answer": "black"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003983.jpg",
@@ -15961,7 +15961,7 @@
     },
     {
         "image": "VizWiz_val_00003990.jpg",
-        "answer": "fruit"
+        "answer": "fruit bites"
     },
     {
         "image": "VizWiz_val_00003991.jpg",
@@ -15973,7 +15973,7 @@
     },
     {
         "image": "VizWiz_val_00003993.jpg",
-        "answer": "cabernet"
+        "answer": "cayenne"
     },
     {
         "image": "VizWiz_val_00003994.jpg",
@@ -15981,11 +15981,11 @@
     },
     {
         "image": "VizWiz_val_00003995.jpg",
-        "answer": "cooking"
+        "answer": "cooking instructions"
     },
     {
         "image": "VizWiz_val_00003996.jpg",
-        "answer": "pizza"
+        "answer": "thin"
     },
     {
         "image": "VizWiz_val_00003997.jpg",
@@ -15997,11 +15997,11 @@
     },
     {
         "image": "VizWiz_val_00003999.jpg",
-        "answer": "water"
+        "answer": "water bottle"
     },
     {
         "image": "VizWiz_val_00004000.jpg",
-        "answer": "strawberry"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00004001.jpg",
@@ -16021,7 +16021,7 @@
     },
     {
         "image": "VizWiz_val_00004005.jpg",
-        "answer": "black"
+        "answer": "grey"
     },
     {
         "image": "VizWiz_val_00004006.jpg",
@@ -16073,7 +16073,7 @@
     },
     {
         "image": "VizWiz_val_00004018.jpg",
-        "answer": "tomato"
+        "answer": "tomato sauce"
     },
     {
         "image": "VizWiz_val_00004019.jpg",
@@ -16085,7 +16085,7 @@
     },
     {
         "image": "VizWiz_val_00004021.jpg",
-        "answer": "yellow"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00004022.jpg",
@@ -16093,7 +16093,7 @@
     },
     {
         "image": "VizWiz_val_00004023.jpg",
-        "answer": "garden"
+        "answer": "composting"
     },
     {
         "image": "VizWiz_val_00004024.jpg",
@@ -16105,7 +16105,7 @@
     },
     {
         "image": "VizWiz_val_00004026.jpg",
-        "answer": "lotion"
+        "answer": "shampoo"
     },
     {
         "image": "VizWiz_val_00004027.jpg",
@@ -16113,7 +16113,7 @@
     },
     {
         "image": "VizWiz_val_00004028.jpg",
-        "answer": "water bottle"
+        "answer": "diet ko"
     },
     {
         "image": "VizWiz_val_00004029.jpg",
@@ -16161,7 +16161,7 @@
     },
     {
         "image": "VizWiz_val_00004040.jpg",
-        "answer": "red fern"
+        "answer": "red fern grows"
     },
     {
         "image": "VizWiz_val_00004041.jpg",
@@ -16181,7 +16181,7 @@
     },
     {
         "image": "VizWiz_val_00004045.jpg",
-        "answer": "chicken"
+        "answer": "pork"
     },
     {
         "image": "VizWiz_val_00004046.jpg",
@@ -16197,7 +16197,7 @@
     },
     {
         "image": "VizWiz_val_00004049.jpg",
-        "answer": "0"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00004050.jpg",
@@ -16205,7 +16205,7 @@
     },
     {
         "image": "VizWiz_val_00004051.jpg",
-        "answer": "5"
+        "answer": "10"
     },
     {
         "image": "VizWiz_val_00004052.jpg",
@@ -16221,7 +16221,7 @@
     },
     {
         "image": "VizWiz_val_00004055.jpg",
-        "answer": "brown"
+        "answer": "yellow"
     },
     {
         "image": "VizWiz_val_00004056.jpg",
@@ -16233,7 +16233,7 @@
     },
     {
         "image": "VizWiz_val_00004058.jpg",
-        "answer": "pork"
+        "answer": "pork belly ribs"
     },
     {
         "image": "VizWiz_val_00004059.jpg",
@@ -16253,7 +16253,7 @@
     },
     {
         "image": "VizWiz_val_00004063.jpg",
-        "answer": "5"
+        "answer": "20"
     },
     {
         "image": "VizWiz_val_00004064.jpg",
@@ -16285,7 +16285,7 @@
     },
     {
         "image": "VizWiz_val_00004071.jpg",
-        "answer": "dollar bill"
+        "answer": "1 dollar bill"
     },
     {
         "image": "VizWiz_val_00004072.jpg",
@@ -16305,7 +16305,7 @@
     },
     {
         "image": "VizWiz_val_00004076.jpg",
-        "answer": "bottle"
+        "answer": "soda"
     },
     {
         "image": "VizWiz_val_00004077.jpg",
@@ -16349,7 +16349,7 @@
     },
     {
         "image": "VizWiz_val_00004087.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00004088.jpg",
@@ -16385,7 +16385,7 @@
     },
     {
         "image": "VizWiz_val_00004096.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00004097.jpg",
@@ -16397,7 +16397,7 @@
     },
     {
         "image": "VizWiz_val_00004099.jpg",
-        "answer": "coffee"
+        "answer": "cup"
     },
     {
         "image": "VizWiz_val_00004100.jpg",
@@ -16421,15 +16421,15 @@
     },
     {
         "image": "VizWiz_val_00004105.jpg",
-        "answer": "lot"
+        "answer": "video game"
     },
     {
         "image": "VizWiz_val_00004106.jpg",
-        "answer": "skull"
+        "answer": "devil"
     },
     {
         "image": "VizWiz_val_00004107.jpg",
-        "answer": "h. no"
+        "answer": "h. unanswerable"
     },
     {
         "image": "VizWiz_val_00004108.jpg",
@@ -16449,7 +16449,7 @@
     },
     {
         "image": "VizWiz_val_00004112.jpg",
-        "answer": "computer"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00004113.jpg",
@@ -16461,15 +16461,15 @@
     },
     {
         "image": "VizWiz_val_00004115.jpg",
-        "answer": "yes"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00004116.jpg",
-        "answer": "white"
+        "answer": "green"
     },
     {
         "image": "VizWiz_val_00004117.jpg",
-        "answer": "unanswerable"
+        "answer": "orange"
     },
     {
         "image": "VizWiz_val_00004118.jpg",
@@ -16477,7 +16477,7 @@
     },
     {
         "image": "VizWiz_val_00004119.jpg",
-        "answer": "money"
+        "answer": "20"
     },
     {
         "image": "VizWiz_val_00004120.jpg",
@@ -16501,7 +16501,7 @@
     },
     {
         "image": "VizWiz_val_00004125.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00004126.jpg",
@@ -16529,7 +16529,7 @@
     },
     {
         "image": "VizWiz_val_00004132.jpg",
-        "answer": "unanswerable"
+        "answer": "keyboard"
     },
     {
         "image": "VizWiz_val_00004133.jpg",
@@ -16585,11 +16585,11 @@
     },
     {
         "image": "VizWiz_val_00004146.jpg",
-        "answer": "unanswerable"
+        "answer": "blue"
     },
     {
         "image": "VizWiz_val_00004147.jpg",
-        "answer": "spring branch presidio"
+        "answer": "spring branch presideside"
     },
     {
         "image": "VizWiz_val_00004148.jpg",
@@ -16621,7 +16621,7 @@
     },
     {
         "image": "VizWiz_val_00004155.jpg",
-        "answer": "chairs"
+        "answer": "tables"
     },
     {
         "image": "VizWiz_val_00004156.jpg",
@@ -16629,7 +16629,7 @@
     },
     {
         "image": "VizWiz_val_00004157.jpg",
-        "answer": "university"
+        "answer": "college"
     },
     {
         "image": "VizWiz_val_00004158.jpg",
@@ -16665,7 +16665,7 @@
     },
     {
         "image": "VizWiz_val_00004166.jpg",
-        "answer": "lemon"
+        "answer": "herb garlic"
     },
     {
         "image": "VizWiz_val_00004167.jpg",
@@ -16677,7 +16677,7 @@
     },
     {
         "image": "VizWiz_val_00004169.jpg",
-        "answer": "esopri trim"
+        "answer": "esop trim"
     },
     {
         "image": "VizWiz_val_00004170.jpg",
@@ -16697,11 +16697,11 @@
     },
     {
         "image": "VizWiz_val_00004174.jpg",
-        "answer": "rubles"
+        "answer": "dyslexis"
     },
     {
         "image": "VizWiz_val_00004175.jpg",
-        "answer": "dollar bill"
+        "answer": "dollar"
     },
     {
         "image": "VizWiz_val_00004176.jpg",
@@ -16709,7 +16709,7 @@
     },
     {
         "image": "VizWiz_val_00004177.jpg",
-        "answer": "crackers"
+        "answer": "cheddar"
     },
     {
         "image": "VizWiz_val_00004178.jpg",
@@ -16717,7 +16717,7 @@
     },
     {
         "image": "VizWiz_val_00004179.jpg",
-        "answer": "red"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00004180.jpg",
@@ -16741,7 +16741,7 @@
     },
     {
         "image": "VizWiz_val_00004185.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00004186.jpg",
@@ -16757,11 +16757,11 @@
     },
     {
         "image": "VizWiz_val_00004189.jpg",
-        "answer": "pasta"
+        "answer": "alfredo"
     },
     {
         "image": "VizWiz_val_00004190.jpg",
-        "answer": "soup"
+        "answer": "tomato soup"
     },
     {
         "image": "VizWiz_val_00004191.jpg",
@@ -16801,11 +16801,11 @@
     },
     {
         "image": "VizWiz_val_00004200.jpg",
-        "answer": "pretzel"
+        "answer": "pretzels"
     },
     {
         "image": "VizWiz_val_00004201.jpg",
-        "answer": "hunt"
+        "answer": "deer"
     },
     {
         "image": "VizWiz_val_00004202.jpg",
@@ -16817,7 +16817,7 @@
     },
     {
         "image": "VizWiz_val_00004204.jpg",
-        "answer": "bed"
+        "answer": "orange"
     },
     {
         "image": "VizWiz_val_00004205.jpg",
@@ -16857,7 +16857,7 @@
     },
     {
         "image": "VizWiz_val_00004214.jpg",
-        "answer": "black"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00004215.jpg",
@@ -16865,7 +16865,7 @@
     },
     {
         "image": "VizWiz_val_00004216.jpg",
-        "answer": "my dog"
+        "answer": "my best friend my dog"
     },
     {
         "image": "VizWiz_val_00004217.jpg",
@@ -16881,7 +16881,7 @@
     },
     {
         "image": "VizWiz_val_00004220.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00004221.jpg",
@@ -16909,7 +16909,7 @@
     },
     {
         "image": "VizWiz_val_00004227.jpg",
-        "answer": "yes"
+        "answer": "corn"
     },
     {
         "image": "VizWiz_val_00004228.jpg",
@@ -16921,7 +16921,7 @@
     },
     {
         "image": "VizWiz_val_00004230.jpg",
-        "answer": "meat"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00004231.jpg",
@@ -16937,7 +16937,7 @@
     },
     {
         "image": "VizWiz_val_00004234.jpg",
-        "answer": "pasta"
+        "answer": "cheese"
     },
     {
         "image": "VizWiz_val_00004235.jpg",
@@ -16945,7 +16945,7 @@
     },
     {
         "image": "VizWiz_val_00004236.jpg",
-        "answer": "honey"
+        "answer": "honey bees"
     },
     {
         "image": "VizWiz_val_00004237.jpg",
@@ -16965,7 +16965,7 @@
     },
     {
         "image": "VizWiz_val_00004241.jpg",
-        "answer": "tomato"
+        "answer": "tomato sauce"
     },
     {
         "image": "VizWiz_val_00004242.jpg",
@@ -16981,7 +16981,7 @@
     },
     {
         "image": "VizWiz_val_00004245.jpg",
-        "answer": "s? blue"
+        "answer": "s? unanswerable"
     },
     {
         "image": "VizWiz_val_00004246.jpg",
@@ -17005,7 +17005,7 @@
     },
     {
         "image": "VizWiz_val_00004251.jpg",
-        "answer": "man"
+        "answer": "verizon"
     },
     {
         "image": "VizWiz_val_00004252.jpg",
@@ -17017,11 +17017,11 @@
     },
     {
         "image": "VizWiz_val_00004254.jpg",
-        "answer": "peanut butter"
+        "answer": "honey"
     },
     {
         "image": "VizWiz_val_00004255.jpg",
-        "answer": "ha shine"
+        "answer": "hi shi shi shi shi shi shi shi"
     },
     {
         "image": "VizWiz_val_00004256.jpg",
@@ -17041,7 +17041,7 @@
     },
     {
         "image": "VizWiz_val_00004260.jpg",
-        "answer": "coat"
+        "answer": "shield"
     },
     {
         "image": "VizWiz_val_00004261.jpg",
@@ -17053,7 +17053,7 @@
     },
     {
         "image": "VizWiz_val_00004263.jpg",
-        "answer": "unanswerable"
+        "answer": "medicine"
     },
     {
         "image": "VizWiz_val_00004264.jpg",
@@ -17129,7 +17129,7 @@
     },
     {
         "image": "VizWiz_val_00004282.jpg",
-        "answer": "grey"
+        "answer": "brown"
     },
     {
         "image": "VizWiz_val_00004283.jpg",
@@ -17177,7 +17177,7 @@
     },
     {
         "image": "VizWiz_val_00004294.jpg",
-        "answer": "orange"
+        "answer": "whole orange peaches"
     },
     {
         "image": "VizWiz_val_00004295.jpg",
@@ -17221,7 +17221,7 @@
     },
     {
         "image": "VizWiz_val_00004305.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00004306.jpg",
@@ -17233,7 +17233,7 @@
     },
     {
         "image": "VizWiz_val_00004308.jpg",
-        "answer": "small"
+        "answer": "20 inches"
     },
     {
         "image": "VizWiz_val_00004309.jpg",
@@ -17249,11 +17249,11 @@
     },
     {
         "image": "VizWiz_val_00004312.jpg",
-        "answer": "unanswerable"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00004313.jpg",
-        "answer": "computer screen"
+        "answer": "laptop"
     },
     {
         "image": "VizWiz_val_00004314.jpg",
@@ -17265,14 +17265,14 @@
     },
     {
         "image": "VizWiz_val_00004316.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00004317.jpg",
-        "answer": "baked"
+        "answer": "bake fun"
     },
     {
         "image": "VizWiz_val_00004318.jpg",
-        "answer": "red"
+        "answer": "pepper"
     }
 ]
