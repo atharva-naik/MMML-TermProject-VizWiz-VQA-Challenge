@@ -4,6 +4,7 @@
 import os
 import json
 import torch
+import random
 import argparse
 import numpy as np
 from typing import *
@@ -17,6 +18,11 @@ from torch.utils.data import DataLoader
 from src.datautils import VizWizVQABestAnsDataset
 from transformers import AutoProcessor, AutoModelForCausalLM, GitForCausalLM
 
+# seed everything
+random.seed(2023)
+np.random.seed(2023)
+torch.manual_seed(2023)
+
 def test_GIT_zero_shot():
     dataset = VizWizVQABestAnsDataset(
         "./data/VQA/val.json",
@@ -24,23 +30,31 @@ def test_GIT_zero_shot():
     )
     processor = AutoProcessor.from_pretrained("microsoft/git-large-vqav2")
     model = AutoModelForCausalLM.from_pretrained("microsoft/git-large-vqav2")
+    model.cuda()
 
-    image_path = dataset[0]["image"]
-    image = Image.open(image_path).convert("RGB")
-    pixel_values = processor(images=image, return_tensors="pt").pixel_values
-    question = dataset[0]["question"] # "what does the front of the bus say at the top?"
+    preds = []
+    for item in tqdm(dataset):
+        image_path = item["image"]
+        image = Image.open(image_path).convert("RGB")
+        pixel_values = processor(images=image, return_tensors="pt").pixel_values.cuda()
+        question = item["question"] # "what does the front of the bus say at the top?"
+        answer = item["answer"]
 
-    input_ids = processor(text=question, add_special_tokens=False).input_ids
-    input_ids = [processor.tokenizer.cls_token_id] + input_ids
-    input_ids = torch.tensor(input_ids).unsqueeze(0)
+        input_ids = processor(text=question, add_special_tokens=False).input_ids
+        input_ids = [processor.tokenizer.cls_token_id] + input_ids
+        input_ids = torch.tensor(input_ids).unsqueeze(0).cuda()
 
-    generated_ids = model.generate(
-        pixel_values=pixel_values, 
-        input_ids=input_ids, 
-        max_length=50
-    )
-    print(dataset[0]["answer"])
-    print(processor.batch_decode(generated_ids, skip_special_tokens=True))
+        generated_ids = model.generate(
+            pixel_values=pixel_values, 
+            input_ids=input_ids, 
+            max_length=50
+        )
+        gen_text = processor.batch_decode(generated_ids, skip_special_tokens=True)[0]
+        pred = gen_text[len(question):].strip()
+        preds.append({'true': answer, "pred": pred})
+        print(pred, answer)
+    with open("./experiments/git-large-zero-shot-preds.json", "w") as f:
+        json.dump(preds, f, indent=4)
 
 def clip_score_recall_analysis(cos_scores_path: str, 
                                data_path: str="./data/VQA", 
@@ -110,33 +124,6 @@ class CLIPEnsemble(nn.Module):
     def __init__(self, num_classes: int, answer_types: int):
         super().__init__()
         self.num_classes = num_classes
-# class GITVizWizVQABestAnsDataset(VizWizVQABestAnsDataset):
-#     def __init__(self, *args, model_path: str="microsoft/git-large-vqav2", **kwargs):
-#         super(GITVizWizVQABestAnsDataset).__init__(*args, **kwargs)
-#         self.model_path = model_path
-#         # intialize processor for ViLT:
-#         self.processor = AutoProcessor.from_pretrained(model_path)
-
-#     def __getitem__(self, i: int):
-#         item = super(GITVizWizVQABestAnsDataset, self).__getitem__(i)
-#         # encode using ViLT processor:
-#         image = Image.open(item["image"])
-#         question = item["question"]
-#         # image encoding:
-#         self.processor(images=image, return_tensors="pt")
-#         # text encoding:
-#         self.processor(text=question, add_special_tokens=False)
-
-#         encoding = self.processor(image, text=question, padding="max_length", 
-#                                   truncation=True, return_tensors="pt")
-#         for key in encoding: encoding[key] = encoding[key][0]
-#         encoding["labels"] = torch.as_tensor(self.label2id.get(item["answer"]))
-#         # answer = self.processor.tokenizer(item["answer"], return_tensors="pt", **self.a_args)
-#         # encode the answer label too.
-#         # encoding["label_input_ids"] = answer["input_ids"]
-#         # encoding["label_attn_mask"] = answer["attention_mask"]
-#         # encoding["label_tok_type_ids"] = answer["token_type_ids"]
-#         return encoding
 
 class GITDataLoader(DataLoader):
     def __init__(self, dataset, split: str="train", 
@@ -159,18 +146,17 @@ class GITDataLoader(DataLoader):
             q_iids = self.processor(text=item["question"], add_special_tokens=False).input_ids
             a_iids = self.processor(text=item["answer"], add_special_tokens=False).input_ids
             iid = [101]+(q_iids+a_iids)[:510]+[102]
-            label = [-100]+([-100 for _ in q_iids]+a_iids)[:510]+[-100]
+            label = [101]+([-100 for _ in q_iids]+a_iids)[:510]+[102]
             input_ids.append(iid)
             labels.append(label)
             pad_len = max(pad_len, len(iid))
-
         padded_input_ids = []
         padded_labels = []
         attention_mask = []
         for iid, label in zip(input_ids, labels):
-            attention_mask.append([1]*len(iid)+[0]*(pad_len-len(iid)))
-            padded_input_ids.append(iid+[0]*(pad_len-len(iid)))
-            padded_labels.append(label+[-100]*(pad_len-len(iid)))
+            attention_mask.append([0]*len(iid)+[1]*(pad_len-len(iid))) # padding on the left
+            padded_input_ids.append([0]*(pad_len-len(iid))+iid) # padding on the left
+            padded_labels.append([-100]*(pad_len-len(iid))+label) # padding on the left
         pixel_values = self.processor(
             images=images, return_tensors="pt", 
             padding="longest", truncation=True,
@@ -191,7 +177,6 @@ class FrozenGITVizWizVQA(nn.Module):
         super().__init__()
         self.model_path = model_path
         self.model = AutoModelForCausalLM.from_pretrained(model_path)
-        self.upscale_size = self.num_classes // 2
         # GIT layers to be frozen:
         for layer in freeze_layers:
             for p in getattr(self.model.git, layer).parameters():
@@ -217,15 +202,6 @@ class FrozenGITVizWizVQA(nn.Module):
     def forward(self, **encoding):
         """return outputs and loss"""
         return self.model(**encoding)
-        # label = encoding.get("labels")
-        # encoding = {k: v for k,v in encoding.items() if k != "labels"}
-        # # print(encoding.keys())
-        # outputs = self.model(**encoding)
-        # loss = None
-        # if label is not None: 
-        #     loss = self.loss_fn(outputs.logits, label)
-        #     return outputs, loss
-        # return outputs
 
 def test_git_large():
     dataset = VizWizVQABestAnsDataset(
@@ -237,12 +213,14 @@ def test_git_large():
     image = Image.open(dataset[0]["image"])
     pixel_values = processor(images=image, return_tensors="pt").pixel_values
     question = dataset[0]["question"]
+    answer = dataset[0]["answer"]
     input_ids = processor(text=question, add_special_tokens=False).input_ids
     input_ids = [processor.tokenizer.cls_token_id] + input_ids
     input_ids = torch.tensor(input_ids).unsqueeze(0)
     generated_ids = model.generate(pixel_values=pixel_values, input_ids=input_ids, max_length=50)
     print(f"image: {image}")
     print(f"question: {question}")
+    print(f"GT answer: {answer}")
     print("answer:", processor.batch_decode(generated_ids, skip_special_tokens=True))
 
 def save_current_model(model, optimizer, epoch: int, step: int, save_path: str):
@@ -255,8 +233,7 @@ def save_current_model(model, optimizer, epoch: int, step: int, save_path: str):
     torch.save(ckpt_dict, save_path)
 
 def validate_git(model, dataloader: DataLoader, eval_step: int, 
-                 epoch: int, args: argparse.Namespace, 
-                 output_preds: bool=False) -> Union[Tuple[float, float], Tuple[List[dict], float, float]]:
+                 epoch: int, args: argparse.Namespace) -> Union[Tuple[float, float], Tuple[List[dict], float, float]]:
     val_bar = tqdm(enumerate(dataloader), total=len(dataloader), desc="validating")
     tot, matches, val_losses = 0, 0, []
     val_preds = []
@@ -266,29 +243,24 @@ def validate_git(model, dataloader: DataLoader, eval_step: int,
         with torch.no_grad():
             for key in batch:
                 batch[key] = batch[key].to(args.device)
-            outputs, loss = model(**batch)
-            preds = outputs.logits.argmax(axis=-1).detach().cpu()
-            labels = batch["labels"].detach().cpu()
-            batch_matches = (preds == labels).sum().item() 
-            batch_tot = len(preds)
-            matches += batch_matches
-            tot += batch_tot
-            acc = matches/tot
-            if output_preds:
-                for pred, label in zip(preds.tolist(), labels.tolist()):
-                    val_preds.append({
-                        "pred": model.id2label[pred],
-                        "true": model.id2label[label],
-                    })
+            outputs = model(**batch)
+            loss = outputs.loss
+            logits = outputs.logits
+            # if output_preds:
+            #     for pred, label in zip(preds.tolist(), labels.tolist()):
+            #         val_preds.append({
+            #             "pred": model.id2label[pred],
+            #             "true": model.id2label[label],
+            #         })
             val_losses.append(loss.item())
-            val_bar.set_description(f"V: {epoch+1}/{args.epochs} ({eval_step}): a: {100*acc:.2f} ba: {(100*batch_matches/batch_tot):.2f} bl: {loss.item():.3f} l: {np.mean(val_losses):.3f}")
-    if output_preds: 
-        return val_preds, np.mean(val_losses), matches/tot
-    else: return np.mean(val_losses), matches/tot
+            val_bar.set_description(f"V: {epoch+1}/{args.epochs} ({eval_step}) bl: {loss.item():.3f} l: {np.mean(val_losses):.3f}")
+    # if output_preds: 
+    #     return val_preds, np.mean(val_losses), matches/tot
+    else: return np.mean(val_losses)
 
 def predict_git(args):
-    data_dir = args.data_dir # default: ./data/VQA
-    model_path = args.model_path # model_path: dandelin/vilt-b32-finetuned-vqa
+    data_dir = args.data_dir
+    model_path = args.model_path
     device = args.device
     val_images = os.path.join(data_dir, "val")
     val_annot = os.path.join(data_dir, "val.json") 
@@ -310,39 +282,36 @@ def predict_git(args):
         map_location=model.device
     )
     model.load_state_dict(ckpt_dict["model_state_dict"])
-    # optimizer.load_state_dict(ckpt_dict["optim_state_dict"])
-    batch_size = args.batch_size
-    data = VizWizVQABestAnsDataset(val_annot, val_images)
-    data_loader = GITDataLoader(dataset=data, batch_size=batch_size, split="val")
-    predict_log_path = os.path.join("experiments", args.exp_name, "predict_logs.json")
+    # batch_size = args.batch_size
+    # data = VizWizVQABestAnsDataset(val_annot, val_images)
+    # data_loader = GITDataLoader(dataset=data, batch_size=batch_size, split="val")
+    # predict_log_path = os.path.join("experiments", args.exp_name, "predict_logs.json")
     
-    model.eval()
-    val_preds, val_loss, val_acc = validate_git(
-        model=model, dataloader=data_loader, 
-        eval_step=0, epoch=0, args=args,
-        output_preds=True,
-    )
-    with open(predict_log_path, "a") as f:
-        json.dump({
-            "predict_acc": val_acc, 
-            "predict_loss": val_loss,
-            "preds": val_preds,
-        }, f)
+    # model.eval()
+    # val_preds, val_loss, val_acc = validate_git(
+    #     model=model, dataloader=data_loader, 
+    #     eval_step=0, epoch=0, args=args,
+    #     output_preds=True,
+    # )
+    # with open(predict_log_path, "a") as f:
+    #     json.dump({
+    #         "predict_acc": val_acc, 
+    #         "predict_loss": val_loss,
+    #         "preds": val_preds,
+    #     }, f)
 
 def finetune_git(args):
-    data_dir = args.data_dir # default: ./data/VQA
-    model_path = args.model_path # model_path: dandelin/vilt-b32-finetuned-vqa
+    data_dir = args.data_dir
+    model_path = args.model_path
     device = args.device
     train_images = os.path.join(data_dir, "train") 
     val_images = os.path.join(data_dir, "val")
     train_annot = os.path.join(data_dir, "train.json") 
     val_annot = os.path.join(data_dir, "val.json") 
 
-    label2id = json.load(open("experiments/vizwiz_class_vocab.json"))
     # declare model.
-    model = FrozenViLTVizWizVQA(
+    model = FrozenGITVizWizVQA(
         model_path=model_path, 
-        label2id=label2id, 
         device=device,
     )
     # create the optimizer.
@@ -357,22 +326,14 @@ def finetune_git(args):
         optimizer.load_state_dict(ckpt_dict["optim_state_dict"])
 
     batch_size = args.batch_size
-    train_data = ViLTVizWizVQABestAnsDataset(
-        train_annot, train_images,
-        label2id=label2id,
-        model_path=model_path, 
-    )
-    val_data = ViLTVizWizVQABestAnsDataset(
-        val_annot, val_images,
-        label2id=label2id,
-        model_path=model_path, 
-    )
-    train_loader = ViLTDataLoader(
+    train_data = VizWizVQABestAnsDataset(train_annot, train_images)
+    val_data = VizWizVQABestAnsDataset(val_annot, val_images)
+    train_loader = GITDataLoader(
         dataset=train_data, 
         batch_size=batch_size, 
         split="train",
     )
-    val_loader = ViLTDataLoader(
+    val_loader = GITDataLoader(
         dataset=val_data, 
         batch_size=batch_size, 
         split="val",
@@ -380,7 +341,7 @@ def finetune_git(args):
     epochs = args.epochs
     
     # best val acc, step & epoch
-    best_val_acc = 0
+    best_val_loss = 1000
     best_val_step = 0
     best_val_epoch = 0
 
@@ -404,44 +365,55 @@ def finetune_git(args):
         train_bar = tqdm(enumerate(train_loader), 
                          total=len(train_loader), 
                          desc="commencing training")
-        tot, matches, train_epoch_losses = 0, 0, []
+        train_epoch_losses = []
         for step, batch in train_bar:
             model.train()
             model.zero_grad()
             for key in batch:
                 batch[key] = batch[key].to(device)
-            outputs, loss = model(**batch)
+            outputs = model(**batch)
+            loss = outputs.loss
 
             # backward and optimizer step
             loss.backward()
             optimizer.step()
 
-            preds = outputs.logits.argmax(axis=-1).detach().cpu()
-            labels = batch["labels"].detach().cpu()
-            batch_matches = (preds == labels).sum().item() 
-            batch_tot = len(preds)
-            matches += batch_matches
-            tot += batch_tot
-            acc = matches/tot
+            logits = outputs.logits.detach().cpu()
             train_epoch_losses.append(loss.item())
-            train_bar.set_description(f"T: {epoch+1}/{epochs}: a: {100*acc:.2f} ba: {(100*batch_matches/batch_tot):.2f} bl: {loss.item():.3f} l: {np.mean(train_epoch_losses):.3f}")
+            train_bar.set_description(f"T: {epoch+1}/{epochs}: L:{logits.shape} bl: {loss.item():.3f} l: {np.mean(train_epoch_losses):.3f}")
+
+            if step%100 == 0:
+                question = val_data[0]["question"]
+                image = Image.open(val_data[0]["image"])
+                pixel_values = train_loader.processor(images=image, return_tensors="pt").pixel_values.to(device)
+                input_ids = train_loader.processor(text=question, return_tensors="pt").input_ids.to(device)
+                gen_ids = model.model.generate(
+                    pixel_values=pixel_values, 
+                    input_ids=input_ids, 
+                    max_length=100,
+                )
+                input_text = train_loader.processor.batch_decode(input_ids, skip_special_tokens=True)[0]
+                generated_text = train_loader.processor.batch_decode(gen_ids, skip_special_tokens=True)[0]
+                ans_text = generated_text[len(input_text):].strip()
+                print("\x1b[34;1mgeneration sanity check (in):\x1b[0m", input_text)
+                print("\x1b[34;1mgeneration sanity check (out):\x1b[0m", ans_text)
 
             # log stats.
             if (step+1) % args.log_steps == 0 or (step+1) == len(train_loader):
                 with open(train_log_path.format(epoch), "a") as f:
-                    f.write(json.dumps({"train_acc": acc, "step": step, "loss": np.mean(train_epoch_losses)})+"\n")
+                    f.write(json.dumps({"step": step, "loss": np.mean(train_epoch_losses)})+"\n")
 
             # check if evalulation should be done:
             if (step+1) % args.eval_steps == 0 or (step+1) == len(train_loader):
-                val_loss, val_acc = validate_vilt(
+                val_loss = validate_git(
                     model=model, dataloader=val_loader, 
                     eval_step=step, epoch=epoch, args=args,
                 )
                 # save the best model.
-                if val_acc > best_val_acc:
+                if val_loss < best_val_loss:
                     best_val_step = step
-                    best_val_acc = val_acc
                     best_val_epoch = epoch
+                    best_val_loss = val_loss
                     model_save_path
                     # save the checkpoint for model/optimizer
                     save_current_model(model=model, optimizer=optimizer, 
@@ -450,28 +422,35 @@ def finetune_git(args):
                                        step=best_val_step)
                 with open(val_log_path, "a") as f:
                     f.write(json.dumps({
-                        "val_acc": val_acc, "val_loss": val_loss,
+                        "val_loss": val_loss,
                         "epoch": epoch, "step": step,
                         "best_val_epoch": best_val_epoch,
                         "best_val_step": best_val_step,
-                        "best_val_acc": best_val_acc,
+                        "best_val_acc": best_val_loss,
                     })+"\n")
 
 def get_args():
     """get terminal arguments."""
     parser = argparse.ArgumentParser()
     parser.add_argument("-d", "--data_dir", default="./data/VQA", type=str, help="path to the VQA dataset")
-    parser.add_argument("-mp", "--model_path", default="dandelin/vilt-b32-finetuned-vqa", type=str, help="name/path of the HF checkpoint")
+    parser.add_argument("-mp", "--model_path", default="microsoft/git-large-vqav2", type=str, help="name/path of the HF checkpoint")
     parser.add_argument("-t", "--train", action="store_true", help="finetune ViLT model")
     parser.add_argument("-p", "--predict", action="store_true", help="generate predictions for data with labels")
     parser.add_argument("-e", "--epochs", type=int, default=20, help="number of training epochs")
     parser.add_argument("-ls", "--log_steps", default=10, type=int, help="number of steps after which train stats are logged")
-    parser.add_argument("-es", "--eval_steps", default=100, type=int, help="number of steps after which validation is performed")
+    parser.add_argument("-es", "--eval_steps", default=2000, type=int, help="number of steps after which validation is performed")
     parser.add_argument("-exp", "--exp_name", type=str, required=True, help="name of the experiment")
     parser.add_argument("-de", "--device", default="cuda:0", type=str, help="device to be used for training, defaults to cuda:0")
-    parser.add_argument("-bs", "--batch_size", type=int, default=128, help="batch size to be used for training")
+    parser.add_argument("-bs", "--batch_size", type=int, default=2, help="batch size to be used for training")
     parser.add_argument("-ckpt", "--checkpoint_path", type=Union[str, None], default=None, help="checkpoint to be loaded")
-    parser.add_argument("-lr", "--learning_rate", type=float, default=1e-4, help="learning rate for training")
+    parser.add_argument("-lr", "--learning_rate", type=float, default=1e-5, help="learning rate for training")
     args = parser.parse_args()
 
     return args
+
+# main
+if __name__ == "__main__":
+    args = get_args()
+    if args.train: finetune_git(args)
+    elif args.predict: predict_git(args) 
+    # python -m src.baselines.competitive_multimodal -t -de 'cuda:0' -exp frozen_git
