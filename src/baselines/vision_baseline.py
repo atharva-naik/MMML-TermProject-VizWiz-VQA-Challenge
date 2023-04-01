@@ -85,7 +85,7 @@ class FrozenCLIPVizWizVQA(nn.Module):
     
 
 class FrozenResNetVizWizVQA(nn.Module):
-    def __init__(self, model_path: str="resnet18",
+    def __init__(self, model_path: str="resnet152",
                  device: str="cuda:0", label2id: dict={}, emb_size: int=768):
         super().__init__()
         self.model_path = model_path
@@ -249,14 +249,13 @@ def validate_clip(model, dataloader, eval_step, epoch, args):
     return np.mean(val_losses), matches/tot
 
 
-def predict_clip(args, model_path: str, move_to_cuda: bool=False) -> str:
-    
-    if model_path==None:
-        model_path = os.path.join("experiments", args.exp_name, "best_model.pt")
+def predict_clip(args, move_to_cuda: bool=False) -> str:
+
+    model_path = os.path.join("experiments", args.exp_name, "best_model.pt")
         
     label2id = json.load(open("experiments/vizwiz_class_vocab.json"))
     id2label = {v: k for k,v in label2id.items()}
-    
+
     model = None
     if args.base_model == "clip":
         model =  FrozenCLIPVizWizVQA(
@@ -266,7 +265,7 @@ def predict_clip(args, model_path: str, move_to_cuda: bool=False) -> str:
         )
     else:
         model = FrozenResNetVizWizVQA(
-            model_path=args.model_path, 
+            model_path="resnet152", 
             label2id=label2id, 
             device=args.device,
         )
@@ -304,6 +303,8 @@ def predict_clip(args, model_path: str, move_to_cuda: bool=False) -> str:
             results["preds"].append({"pred": id2label[pred.item()], "true": id2label[label.item()]})
 
     results["accuracy"] = matches/tot
+    if args.pred_file == None:
+        args.pred_file = os.path.join("experiments", args.exp_name, "pred.json")
     with open(args.pred_file, "w") as fn:
         fn.write(json.dumps(results, indent=4))
 
@@ -325,7 +326,7 @@ def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("-d", "--data_dir", default="../data/", type=str, help="path to the VQA dataset")
     parser.add_argument("-bm", "--base_model", default="clip", type=str, help="name/path of the CLIP checkpoint")
-    parser.add_argument("-mp", "--model_path", default="ViT-L/14", type=str, help="name/path of the CLIP checkpoint")
+    parser.add_argument("-mp", "--model_path", default="ViT-L/14", type=str, help="name/path of the CLIP model")
     parser.add_argument("-t", "--train", action="store_true", help="finetune CLIP model")
     parser.add_argument("-e", "--epochs", type=int, default=20, help="number of training epochs")
     parser.add_argument("-ls", "--log_steps", default=10, type=int, help="number of steps after which train stats are logged")
@@ -334,7 +335,7 @@ def get_args():
     parser.add_argument("-de", "--device", default="cuda:0", type=str, help="device to be used for training, defaults to cuda:0")
     parser.add_argument("-bs", "--batch_size", type=int, default=32, help="batch size to be used for training")
     parser.add_argument("-lr", "--learning_rate", type=float, default=1e-4, help="learning rate for training")
-    parser.add_argument("-pfn", "--pred_file", type=str, default="experiments/clip/pred.json", help="file to store predictions")
+    parser.add_argument("-pfn", "--pred_file", type=str, help="file to store predictions")
     args = parser.parse_args()
     return args
 
@@ -342,7 +343,7 @@ def get_args():
 if __name__ == "__main__":
     args = get_args()
     # train_clip(args)
-    predict_clip(args, None, move_to_cuda=True)
+    predict_clip(args, move_to_cuda=True)
     
 
             
