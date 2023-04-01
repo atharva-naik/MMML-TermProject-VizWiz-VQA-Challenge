@@ -306,7 +306,7 @@ def get_args():
     
 if __name__ == "__main__":
     args = get_args()
-    train_clip(args)
+#    train_clip(args)
     predict_clip(args, move_to_cuda=True)
     
     get_eval_scores("data/VQA/val.json", 
