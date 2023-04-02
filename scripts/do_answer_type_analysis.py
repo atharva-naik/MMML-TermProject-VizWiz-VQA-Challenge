@@ -68,6 +68,7 @@ def compute_ans_type_acc(pred_ans_list: List[str]):
 if __name__ == "__main__":
     for path in [
             "./experiments/clip/pred.json",
+            "./experiments/clip_multimodal/pred.json",
             # "./experiments/frozen_git/formatted_pred.json",
             # "./experiments/frozen_git/preds.json",
             "./experiments/frozen_vilt2/predict_logs.json",
