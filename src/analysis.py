@@ -60,14 +60,16 @@ def check_tech(ans: str):
     return False
 
 def analyze_object_detections(det_file: str, split_name: str="val"):
-    object_dets = {}
+    object_dets = []
+    os.makedirs(f"./plots/{split_name}", exist_ok=True)
     obj_hist_path = os.path.join(
         "./plots", split_name, 
         "object_detection_histogram.png",
     )
     ctr_dict = defaultdict(lambda:0)
     with open(det_file, "r") as f:
-        object_dets = json.load(f)
+        for line in f: 
+            object_dets.append(json.loads(line))
     for rec in object_dets:
         ctr_dict[sum(rec['selected'])] += 1
     # maxm = np.max(list(ctr_dict.keys())) # 0 
@@ -100,7 +102,7 @@ def analyze_object_detections(det_file: str, split_name: str="val"):
     
     return bin_edges, bin_counts
 
-ALL_FOODS = json.load(open("val_foods.json"))
+# ALL_FOODS = json.load(open("val_foods.json"))
 def get_rule_based_a_type(ans: str):
     global ALL_FOODS
     ans = ans.strip()
