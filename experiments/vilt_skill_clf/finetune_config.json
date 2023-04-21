@@ -1,0 +1,14 @@
+{
+    "data_dir": "./data/VQA",
+    "model_path": "dandelin/vilt-b32-finetuned-vqa",
+    "train": true,
+    "predict": false,
+    "epochs": 20,
+    "log_steps": 10,
+    "eval_steps": 100,
+    "exp_name": "vilt_skill_clf",
+    "device": "cuda:0",
+    "batch_size": 128,
+    "checkpoint_path": null,
+    "learning_rate": 0.0001
+}
