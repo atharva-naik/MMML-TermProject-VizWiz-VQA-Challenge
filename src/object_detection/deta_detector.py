@@ -87,6 +87,6 @@ if __name__ == "__main__":
     deta_inference(args.model_ckpt, args.image_dir, args.save_dir, device=args.device, 
         results_dir=args.results_dir, confidence_thresh=args.confidence_thresh, batch_sz=args.batch_sz, 
         split=args.split)
-    analyze_object_detections(os.path.join(args.results_dir,f"object_detections_{split}.json"), args.split)
+    analyze_object_detections(os.path.join(args.results_dir,f"object_detections.json"), args.split)
 
 
