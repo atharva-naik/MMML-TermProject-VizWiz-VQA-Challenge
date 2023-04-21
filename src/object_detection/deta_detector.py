@@ -81,7 +81,7 @@ if __name__ == "__main__":
     parser.add_argument("--split", type=str, default="val")
     parser.add_argument("--device", type=str, default="cuda")
     parser.add_argument("--confidence_thresh", type=float, default=.5)
-    parser.add_argument("--batch_sz", type=float, default=3)
+    parser.add_argument("--batch_sz", type=int, default=3)
 
     args = parser.parse_args()
     deta_inference(args.model_ckpt, args.image_dir, args.save_dir, device=args.device, 
