@@ -4,6 +4,7 @@
 import json
 from typing import *
 from collections import defaultdict
+from sklearn.metrics import f1_score
 from src.datautils import VizWizVQABestAnsDataset
 
 train_data = VizWizVQABestAnsDataset(
@@ -65,6 +66,44 @@ def compute_ans_type_acc(pred_ans_list: List[str]):
 
     return round(100*matches/tot, 2), a_type_wise_matches
 
+def print_result(model_name: str, tot: float, a_type_wise: Dict[str, float]):
+    print(f"model: {model_name}")
+    print(f"tot: {100*tot:.2f}")
+    for k, v in a_type_wise.items():
+        print(f"{k} {100*v:.2f}")
+    print("-"*30)
+
+def compute_ans_type_f_scores(pred_ans_list: List[str]):
+    global val_data
+    global class_to_ans_type
+    trues, preds = [], []
+    a_type_wise_trues = {a_type: [] for a_type in val_data.a_type_to_ind}
+    a_type_wise_preds = {a_type: [] for a_type in val_data.a_type_to_ind}
+    for i, ans in enumerate(pred_ans_list):
+        pred_a_type = class_to_ans_type[ans]
+        best_a_type = class_to_ans_type[val_data[i]["answer"]]
+        trues.append(best_a_type)
+        preds.append(pred_a_type)
+        a_type = val_data.ind_to_a_type[best_a_type]
+        for ind, name in val_data.ind_to_a_type.items():
+            a_type_wise_trues[name].append(int(best_a_type == ind))
+            a_type_wise_preds[name].append(int(pred_a_type == ind))
+
+    f_score = f1_score(trues, preds, average="weighted")
+    a_type_wise_f_scores = {}
+    a_type_wise_trues = dict(a_type_wise_trues)
+    a_type_wise_preds = dict(a_type_wise_preds)
+    # print(a_type_wise_trues["unanswerable"])
+    # print(len(a_type_wise_trues["unanswerable"]))
+    for a_type in list(val_data.a_type_to_ind):
+        a_type_wise_f_scores[a_type] = f1_score(
+            a_type_wise_trues[a_type],
+            a_type_wise_preds[a_type],
+            average="binary",
+        )
+
+    return f_score, a_type_wise_f_scores
+
 if __name__ == "__main__":
     for path in [
             "./experiments/clip/pred.json",
@@ -79,9 +118,11 @@ if __name__ == "__main__":
             data = [i['answer'] for i in data]
         elif isinstance(data, dict):
             data = [i['pred'] for i in data["preds"]]
-        tot, a_type_wise = compute_ans_type_acc(data) 
-        print(path, f"{tot}%", a_type_wise)
+        tot, a_type_wise = compute_ans_type_f_scores(data) 
+        print_result(path, tot, a_type_wise)
+        # print(path, f"{tot}%", a_type_wise)
         # deberta predicts all unanswerable
     data = ["unanswerable" for _ in data]
-    tot, a_type_wise = compute_ans_type_acc(data) 
-    print("deberta", f"{tot}%", a_type_wise)
+    tot, a_type_wise = compute_ans_type_f_scores(data)
+    print_result("deberta", tot, a_type_wise)
+    # print("deberta", f"{tot}%", a_type_wise)

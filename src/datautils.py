@@ -8,6 +8,7 @@ import pickle
 import pathlib
 import argparse
 import numpy as np
+import pandas as pd
 from typing import *
 from PIL import Image
 from tqdm import tqdm
@@ -56,11 +57,41 @@ class VizWizVQATestDataset(Dataset):
 
 # only best answer considered.
 class VizWizVQABestAnsDataset(Dataset):
-    def __init__(self, annot_path: str, images_dir: str):
+    def __init__(self, annot_path: str, images_dir: str,
+                 skill_annot_path: Union[str, None]=None,
+                 filter_out_no_skill_instances: bool=False):
         super(VizWizVQABestAnsDataset, self).__init__()
         self.annot_path = annot_path
         self.images_dir = images_dir
         self.annot_db = VQA(annotation_file=annot_path)
+        self.skills_db = {}
+        self.skill_to_ind = {
+            "TXT": 0,
+            "OBJ": 1,
+            "COL": 2,
+            "CNT": 3,
+            "OTH": 4,
+        }
+        self.ind_to_skill = {v: k for k,v in self.skill_to_ind.items()}
+        if skill_annot_path is not None:
+            skill_df = pd.read_csv(skill_annot_path).to_dict("records")
+            for item in skill_df:
+                self.skills_db[item["IMG"]+item["QSN"]] = {
+                "bin_label": [
+                    int(item["TXT"]>0),
+                    int(item["OBJ"]>0),
+                    int(item["COL"]>0),
+                    int(item["CNT"]>0),
+                    int(item["OTH"]>0),
+                ],
+                "annot_label": [
+                    item["TXT"],
+                    item["OBJ"],
+                    item["COL"],
+                    item["CNT"],
+                    item["OTH"],
+                ]
+            }
         self.data = []
         self.a_type_to_ind = {
             'unanswerable': 0, 
@@ -88,14 +119,17 @@ class VizWizVQABestAnsDataset(Dataset):
             )
             class_lab = self.label2id.get(answer)
             self.all_ids.append(class_lab)
+            skill_labels = self.skills_db.get(rec["image"]+q)
+            if filter_out_no_skill_instances:
+                if skill_labels is None: continue
             self.data.append({
                 "question": q, "is_answerable": is_ansble,
                 "answer_type": self.a_type_to_ind[a_type],
-                "class_label": class_lab,
-                "answer_confidence": answer_confidence,
-                "image": img_path, "answer": answer,
-                "total": total,
+                "class_label": class_lab, "answer_confidence": answer_confidence,
+                "image": img_path, "answer": answer, "total": total, 
+                "skills": skill_labels["bin_label"],
             })
+        print(len(self.data))
 
     def __len__(self): return len(self.data) 
     def __getitem__(self, i: int): return self.data[i]         
@@ -114,6 +148,7 @@ class VizWizVQABestAnsDataset(Dataset):
         picked_ans_conf = list(answer_votes.values())[i]/tot
         
         return picked_ans, picked_ans_conf, tot
+
     def get_class_dicts(self, class_vocab_path="../../experiments/vizwiz_class_vocab.json"):
         file_path = Path(__file__).parent.parent / "experiments" / "vizwiz_class_vocab.json"
         label2id = json.load(open(str(file_path)))
@@ -134,7 +169,7 @@ class VizWizVQAUniqueAnsDataset(Dataset):
             'yes/no': 2, 
             'number': 3,
         }
-        self.label2id, self.id2label, self.class_weights = get_class_dicts()
+        self.label2id, self.id2label, self.class_weights = self.get_class_dicts()
         for rec in tqdm(self.annot_db.getAnns()):
             a_type = rec['answer_type']
             img_path = os.path.join(images_dir, 
@@ -152,6 +187,11 @@ class VizWizVQAUniqueAnsDataset(Dataset):
                     "image": img_path, "answer": ans,
                 
                 })
+    def get_class_dicts(self, class_vocab_path="../../experiments/vizwiz_class_vocab.json"):
+        file_path = Path(__file__).parent.parent / "experiments" / "vizwiz_class_vocab.json"
+        label2id = json.load(open(str(file_path)))
+        id2label =  {v: k for k,v in label2id.items()}
+        return label2id, id2label
     def __len__(self): return len(self.data) 
     def __getitem__(self, i: int): return self.data[i]         
     def _get_unique_answers(self, answers: List[str]) -> Tuple[Dict[str, float], int]:
