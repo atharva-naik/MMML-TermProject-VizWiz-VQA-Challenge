@@ -17,4 +17,4 @@ cd /projects/tir5/users/nvaikunt/MMML-TermProject-VizWiz-VQA-Challenge
 # For val data
 # python -m src.object_detection.deta_detector 
 # For train data
-python -m src.object_detection.deta_detector --split "train" --image_dir "data/VQA/train" --save_dir ""data/VQA/train_obj_detect/coco" --results_dir "data/VQA/" --batch_sz 4
+python -m src.object_detection.deta_detector --split "train" --image_dir "data/VQA/train" --save_dir "data/VQA/train_obj_detect/coco" --results_dir "data/VQA/" --batch_sz 4
