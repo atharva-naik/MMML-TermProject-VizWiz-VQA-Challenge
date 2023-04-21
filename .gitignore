@@ -150,4 +150,11 @@ val.zip
 train.zip
 *.pt
 val_objects_detected/
+data/VQA/val_obj_detect
+object_detections.json
+object_detections_val.json
+object_detections_train.json
 wandb
+.DS_Store
+slurm_logs
+slurm_logs/
