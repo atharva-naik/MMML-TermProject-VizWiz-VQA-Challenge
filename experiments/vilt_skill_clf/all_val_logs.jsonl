@@ -1,1 +1,2 @@
 {"val_acc": 0.9343429844097996, "val_loss": 0.18217319302575688, "epoch": 0, "step": 99, "best_val_epoch": 0, "best_val_step": 99, "best_val_acc": 0.9343429844097996}
+{"val_acc": 0.9393318485523385, "val_loss": 0.16901985272555284, "epoch": 0, "step": 199, "best_val_epoch": 0, "best_val_step": 199, "best_val_acc": 0.9393318485523385}
