@@ -157,3 +157,4 @@ wandb
 .DS_Store
 slurm_logs
 slurm_logs/
+.vscode

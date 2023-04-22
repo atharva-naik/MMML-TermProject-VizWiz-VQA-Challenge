@@ -1,7 +1,7 @@
 import json
 from sklearn.metrics import f1_score
 
-PREDS_PATH: str = "./experiments/vilt_skill_clf2/predict_logs.json"
+PREDS_PATH: str = "./experiments/vilt_skill_clf/predict_logs.json"
 
 # main
 if __name__ == "__main__":

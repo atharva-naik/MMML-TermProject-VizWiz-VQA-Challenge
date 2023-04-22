@@ -318,7 +318,7 @@ def predict_vilt(args):
     data_dir = args.data_dir # default: ./data/VQA
     model_path = args.model_path # model_path: dandelin/vilt-b32-finetuned-vqa
     device = args.device
-    split: str = "train"
+    split: str = "val"
     split_images = os.path.join(data_dir, split)
     split_annot = os.path.join(data_dir, f"{split}.json")
     split_skill_path = os.path.join("./data/skill", 
@@ -349,7 +349,7 @@ def predict_vilt(args):
         model_path=model_path,
     )
     data_loader = ViLTDataLoader(dataset=data, batch_size=batch_size, split="val")
-    predict_log_path = os.path.join("experiments", args.exp_name, f"{split}_predict_logs.json")
+    predict_log_path = os.path.join("experiments", args.exp_name, f"predict_logs.json")
     
     model.eval()
     val_preds, val_loss, val_acc = validate_vilt(
@@ -588,8 +588,9 @@ if __name__ == "__main__":
     # with open(f"experiments/{split}_zero_shot_vilt_vqa2_preds.json", "w") as f:
     #     json.dump(zero_shot_preds, f, indent=4)
     args = get_args()
-    if args.train: finetune_vilt(args)
+    if args.train: pass#finetune_vilt(args)
     elif args.predict: predict_vilt(args) 
     elif args.predict_unseen: predict_unseen_vilt(args)
     # python -m src.skill_classification.vilt -t -de 'cuda:0' -exp vilt_skill_clf
+    # python -m src.skill_classification.vilt -p -de 'cuda:0' -exp vilt_skill_clf
     # python -m src.skill_classification.vilt -t -de 'cuda:0' -exp vilt_skill_clf2
