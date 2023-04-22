@@ -15,10 +15,10 @@ import torch.nn as nn
 from torch.optim import AdamW
 import torch.nn.functional as F
 from torch.utils.data import DataLoader
-from src.PythonHelperTools.vqaTools.vqa import VQA
 from src.datautils import VizWizVQABestAnsDataset
+from src.PythonHelperTools.vqaTools.vqa import VQA
 from transformers import ViltProcessor, ViltForQuestionAnswering
-
+# from src.baselines.simple_multimodal import ViLTVizWizVQABestAnsDataset
 # seed everything
 random.seed(2023)
 np.random.seed(2023)
@@ -48,13 +48,18 @@ class ViLTDataLoader(DataLoader):
         else: super().__init__(dataset, shuffle=False, 
                                collate_fn=self.custom_collate_fn, **kwargs)
         self.processor = dataset.processor
+        self.skill_to_ind = dataset.skill_to_ind
+        self.ind_to_skill = dataset.ind_to_skill
 
     def custom_collate_fn(self, batch):
         input_ids = [item['input_ids'] for item in batch]
         pixel_values = [item['pixel_values'] for item in batch]
         attention_mask = [item['attention_mask'] for item in batch]
         token_type_ids = [item['token_type_ids'] for item in batch]
-        labels = [item['labels'] for item in batch]
+        has_labels = False
+        if "labels" in batch[0]: 
+            has_labels = True
+            labels = [item['labels'] for item in batch]
         # create padded pixel values and corresponding pixel mask
         encoding = self.processor.feature_extractor.pad_and_create_pixel_mask(pixel_values, return_tensors="pt")
         # create new batch
@@ -64,7 +69,7 @@ class ViLTDataLoader(DataLoader):
         batch['token_type_ids'] = torch.stack(token_type_ids)
         batch['pixel_values'] = encoding['pixel_values']
         batch['pixel_mask'] = encoding['pixel_mask']
-        batch['labels'] = torch.stack(labels)
+        if has_labels: batch['labels'] = torch.stack(labels)
         
         return batch
 
@@ -77,7 +82,7 @@ class ViLTVizWizSkillClassifier(nn.Module):
         
         self.emb_size = emb_size
         self.num_classes = num_classes
-        self.upscale_size = self.num_classes // 2
+        self.upscale_size = 1000 # self.num_classes // 2
         self.model.classifier = nn.Sequential(
             nn.Linear(
                 in_features=self.emb_size, 
@@ -97,18 +102,22 @@ class ViLTVizWizSkillClassifier(nn.Module):
             nn.Sigmoid(),
         )
         # freeze ViLT params:
-        for param in self.model.vilt.parameters():
-            param.requires_grad = False
+        # for param in self.model.vilt.parameters():
+            # param.requires_grad = False
         self.device = device
         self.loss_fn = nn.BCELoss()
         self.to(device)
         print(f"moving model to device: {device}")
+
     # def parameters(self):
     #     return self.model.classifier.parameters()
+    
     # def train(self):
-        # self.model.classifier.train()
+    #     self.model.classifier.train()
+
     # def eval(self):
-        # self.model.classifier.eval()
+    #     self.model.classifier.eval()
+
     def forward(self, **encoding):
         """return outputs and loss"""
         label = encoding.get("labels")
@@ -122,10 +131,7 @@ class ViLTVizWizSkillClassifier(nn.Module):
         return outputs
 
 class ViLTVizWizSkillDataset(VizWizVQABestAnsDataset):
-    def __init__(self, *args, 
-                 # a_args: dict={"padding": "max_length", "max_length": 40, "truncation": True}, 
-                 #  q_args: dict={"padding": "max_length", "max_length": 40, "truncation": True},
-                 model_path: str="dandelin/vilt-b32-finetuned-vqa", **kwargs):
+    def __init__(self, *args, model_path: str="dandelin/vilt-b32-finetuned-vqa", **kwargs):
         super().__init__(*args, filter_out_no_skill_instances=True, **kwargs)
         self.model_path = model_path
         # intialize processor for ViLT:
@@ -139,12 +145,26 @@ class ViLTVizWizSkillDataset(VizWizVQABestAnsDataset):
         encoding = self.processor(image, question, padding="max_length", 
                                   truncation=True, return_tensors="pt")
         for key in encoding: encoding[key] = encoding[key][0]
-        encoding["labels"] = torch.as_tensor(item["skills"]["bin_label"]).float()
-        # answer = self.processor.tokenizer(item["answer"], return_tensors="pt", **self.a_args)
-        # encode the answer label too.
-        # encoding["label_input_ids"] = answer["input_ids"]
-        # encoding["label_attn_mask"] = answer["attention_mask"]
-        # encoding["label_tok_type_ids"] = answer["token_type_ids"]
+        encoding["labels"] = torch.as_tensor(item["skills"]).float()
+
+        return encoding
+
+class ViLTVizWizSkillUnseenData(VizWizVQABestAnsDataset):
+    def __init__(self, *args, model_path: str="dandelin/vilt-b32-finetuned-vqa", **kwargs):
+        super().__init__(*args, filter_out_no_skill_instances=False, **kwargs)
+        self.model_path = model_path
+        # intialize processor for ViLT:
+        self.processor = ViltProcessor.from_pretrained(model_path)
+
+    def __getitem__(self, i: int):
+        item = super(ViLTVizWizSkillUnseenData, self).__getitem__(i)
+        # encode using ViLT processor:
+        image = Image.open(item["image"])
+        question = item["question"]
+        encoding = self.processor(image, question, padding="max_length", 
+                                  truncation=True, return_tensors="pt")
+        for key in encoding: encoding[key] = encoding[key][0]
+
         return encoding
 
 # sanity checking/testing functions:
@@ -164,10 +184,9 @@ def test_vilt_predict(image_path: str, query: str,
             encoding[k] = v.cuda()
     outputs = model(**encoding)
     logits = outputs.logits.detach().cpu()
-    idx = logits.argmax(-1).item() # predict answer ids
+    binidx = (logits>0.5).item().float() # predict binary inputs.
 
-    return model.config.id2label[idx]
-    # print("Predicted answer:", )
+    return binidx
 
 def test_vilt(split: str="train", use_cuda: bool=True, break_at: int=5) -> List[str]:
     # initialize ViLT and its processor/tokenizer.
@@ -186,6 +205,7 @@ def test_vilt(split: str="train", use_cuda: bool=True, break_at: int=5) -> List[
         query = rec["question"]
         pred = test_vilt_predict(image_path, query, processor, 
                                  model, move_to_cuda=move_to_cuda)
+        # for pidx, tidx in enumerate(pred, rec["answers"]):
         preds.append({"question": query, "trues": rec["answers"], "pred": pred})
         if (i+1) == break_at: break
 
@@ -213,18 +233,18 @@ def validate_vilt(model, dataloader: DataLoader, eval_step: int,
             for key in batch:
                 batch[key] = batch[key].to(args.device)
             outputs, loss = model(**batch)
-            preds = outputs.logits.argmax(axis=-1).detach().cpu()
+            preds = (outputs.logits.detach().cpu()>0.5).float()
             labels = batch["labels"].detach().cpu()
             batch_matches = (preds == labels).sum().item() 
-            batch_tot = len(preds)
+            batch_tot = 5*len(preds)
             matches += batch_matches
             tot += batch_tot
             acc = matches/tot
             if output_preds:
                 for pred, label in zip(preds.tolist(), labels.tolist()):
                     val_preds.append({
-                        "pred": model.id2label[pred],
-                        "true": model.id2label[label],
+                        "pred": [dataloader.ind_to_skill[i] for i,lbl in enumerate(pred) if lbl==1],
+                        "true": [dataloader.ind_to_skill[i] for i,lbl in enumerate(label) if lbl==1],
                     })
             val_losses.append(loss.item())
             val_bar.set_description(f"V: {epoch+1}/{args.epochs} ({eval_step}): a: {100*acc:.2f} ba: {(100*batch_matches/batch_tot):.2f} bl: {loss.item():.3f} l: {np.mean(val_losses):.3f}")
@@ -232,12 +252,77 @@ def validate_vilt(model, dataloader: DataLoader, eval_step: int,
         return val_preds, np.mean(val_losses), matches/tot
     else: return np.mean(val_losses), matches/tot
 
+def validate_vilt_without_labels(model, dataloader: DataLoader) -> Union[Tuple[float, float], Tuple[List[dict], float, float]]:
+    bar = tqdm(enumerate(dataloader), total=len(dataloader), desc="validating")
+    split_preds = []
+    model.eval()
+    id = 0
+    for step, batch in bar:
+        model.zero_grad()
+        with torch.no_grad():
+            for key in batch: batch[key] = batch[key].to(args.device)
+            outputs = model(**batch)
+            preds = (outputs.logits.detach().cpu()>0.5).float()
+            for pred in preds.tolist():
+                split_preds.append({
+                    "id": id,
+                    "pred": [dataloader.ind_to_skill[i] for i,lbl in enumerate(pred) if lbl==1]
+                })
+                id += 1
+            bar.set_description(f"predicting on unseen data")
+    
+    return split_preds
+
+def predict_unseen_vilt(args):
+    data_dir = args.data_dir # default: ./data/VQA
+    model_path = args.model_path # model_path: dandelin/vilt-b32-finetuned-vqa
+    device = args.device
+    split: str = "val"
+    split_images = os.path.join(data_dir, split)
+    split_annot = os.path.join(data_dir, f"{split}.json")
+    # declare model.
+    model = ViLTVizWizSkillClassifier(
+        model_path=model_path, 
+        device=device,
+    )
+    # all the experimental folder paths and create the experiments dir.
+    exp_dir = os.path.join("experiments", args.exp_name)
+    os.makedirs(exp_dir, exist_ok=True)
+    # restore from checkpoint.
+    if args.checkpoint_path is None:
+        # load the `best_model.pt` checkpoint.
+        checkpoint_path = os.path.join(exp_dir, "best_model.pt")
+    else: checkpoint_path = args.checkpoint_path
+    ckpt_dict = torch.load(
+        checkpoint_path, 
+        map_location=model.device
+    )
+    model.load_state_dict(ckpt_dict["model_state_dict"])
+    batch_size = args.batch_size
+    data = ViLTVizWizSkillUnseenData(
+        split_annot, split_images, 
+        model_path=model_path,
+    )
+    data_loader = ViLTDataLoader(dataset=data, batch_size=batch_size, split="val")
+    predict_log_path = os.path.join("experiments", args.exp_name, f"{split}_unseen_preds.json")
+    
+    model.eval()
+    preds = validate_vilt_without_labels(
+        model=model, 
+        dataloader=data_loader, 
+    )
+    with open(predict_log_path, "a") as f:
+        json.dump(preds, f)
+
 def predict_vilt(args):
     data_dir = args.data_dir # default: ./data/VQA
     model_path = args.model_path # model_path: dandelin/vilt-b32-finetuned-vqa
     device = args.device
-    val_images = os.path.join(data_dir, "val")
-    val_annot = os.path.join(data_dir, "val.json")
+    split: str = "train"
+    split_images = os.path.join(data_dir, split)
+    split_annot = os.path.join(data_dir, f"{split}.json")
+    split_skill_path = os.path.join("./data/skill", 
+                       f"vizwiz_skill_typ_{split}.csv")
     # declare model.
     model = ViLTVizWizSkillClassifier(
         model_path=model_path, 
@@ -259,11 +344,12 @@ def predict_vilt(args):
     # optimizer.load_state_dict(ckpt_dict["optim_state_dict"])
     batch_size = args.batch_size
     data = ViLTVizWizSkillDataset(
-        val_annot, val_images,
-        model_path=model_path, 
+        split_annot, split_images, 
+        skill_annot_path=split_skill_path,
+        model_path=model_path,
     )
     data_loader = ViLTDataLoader(dataset=data, batch_size=batch_size, split="val")
-    predict_log_path = os.path.join("experiments", args.exp_name, "predict_logs.json")
+    predict_log_path = os.path.join("experiments", args.exp_name, f"{split}_predict_logs.json")
     
     model.eval()
     val_preds, val_loss, val_acc = validate_vilt(
@@ -304,14 +390,12 @@ def finetune_vilt(args):
 
     batch_size = args.batch_size
     train_data = ViLTVizWizSkillDataset(
-        train_annot, train_images,
+        train_annot, train_images, model_path=model_path,
         skill_annot_path="./data/skill/vizwiz_skill_typ_train.csv",
-        model_path=model_path, 
     )
     val_data = ViLTVizWizSkillDataset(
-        val_annot, val_images,
+        val_annot, val_images, model_path=model_path, 
         skill_annot_path="./data/skill/vizwiz_skill_typ_val.csv",
-        model_path=model_path, 
     )
     train_loader = ViLTDataLoader(
         dataset=train_data, 
@@ -361,11 +445,10 @@ def finetune_vilt(args):
             # backward and optimizer step
             loss.backward()
             optimizer.step()
-
-            preds = outputs.logits.argmax(axis=-1).detach().cpu()
+            preds = (outputs.logits.detach().cpu()>0.5).float()
             labels = batch["labels"].detach().cpu()
             batch_matches = (preds == labels).sum().item() 
-            batch_tot = len(preds)
+            batch_tot = 5*len(preds)
             matches += batch_matches
             tot += batch_tot
             acc = matches/tot
@@ -390,6 +473,7 @@ def finetune_vilt(args):
                     best_val_epoch = epoch
                     model_save_path
                     # save the checkpoint for model/optimizer
+                    print(f"\x1b[32;1msaving best model\x1b[0m")
                     save_current_model(model=model, optimizer=optimizer, 
                                        save_path=model_save_path,
                                        epoch=best_val_epoch, 
@@ -410,12 +494,13 @@ def get_args():
     parser.add_argument("-mp", "--model_path", default="dandelin/vilt-b32-finetuned-vqa", type=str, help="name/path of the HF checkpoint")
     parser.add_argument("-t", "--train", action="store_true", help="finetune ViLT model")
     parser.add_argument("-p", "--predict", action="store_true", help="generate predictions for data with labels")
+    parser.add_argument("-pu", "--predict_unseen", action="store_true", help="predict over unseeen data without labels")
     parser.add_argument("-e", "--epochs", type=int, default=20, help="number of training epochs")
     parser.add_argument("-ls", "--log_steps", default=10, type=int, help="number of steps after which train stats are logged")
     parser.add_argument("-es", "--eval_steps", default=100, type=int, help="number of steps after which validation is performed")
     parser.add_argument("-exp", "--exp_name", type=str, required=True, help="name of the experiment")
     parser.add_argument("-de", "--device", default="cuda:0", type=str, help="device to be used for training, defaults to cuda:0")
-    parser.add_argument("-bs", "--batch_size", type=int, default=128, help="batch size to be used for training")
+    parser.add_argument("-bs", "--batch_size", type=int, default=32, help="batch size to be used for training")
     parser.add_argument("-ckpt", "--checkpoint_path", type=Union[str, None], default=None, help="checkpoint to be loaded")
     parser.add_argument("-lr", "--learning_rate", type=float, default=1e-4, help="learning rate for training")
     args = parser.parse_args()
@@ -505,4 +590,6 @@ if __name__ == "__main__":
     args = get_args()
     if args.train: finetune_vilt(args)
     elif args.predict: predict_vilt(args) 
+    elif args.predict_unseen: predict_unseen_vilt(args)
     # python -m src.skill_classification.vilt -t -de 'cuda:0' -exp vilt_skill_clf
+    # python -m src.skill_classification.vilt -t -de 'cuda:0' -exp vilt_skill_clf2

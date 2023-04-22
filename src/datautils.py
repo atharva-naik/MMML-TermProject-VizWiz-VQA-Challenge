@@ -78,11 +78,11 @@ class VizWizVQABestAnsDataset(Dataset):
             for item in skill_df:
                 self.skills_db[item["IMG"]+item["QSN"]] = {
                 "bin_label": [
-                    int(item["TXT"]>0),
-                    int(item["OBJ"]>0),
-                    int(item["COL"]>0),
-                    int(item["CNT"]>0),
-                    int(item["OTH"]>0),
+                    int(item["TXT"]>2),
+                    int(item["OBJ"]>2),
+                    int(item["COL"]>2),
+                    int(item["CNT"]>2),
+                    int(item["OTH"]>2),
                 ],
                 "annot_label": [
                     item["TXT"],
@@ -125,9 +125,9 @@ class VizWizVQABestAnsDataset(Dataset):
             self.data.append({
                 "question": q, "is_answerable": is_ansble,
                 "answer_type": self.a_type_to_ind[a_type],
-                "class_label": class_lab, "answer_confidence": answer_confidence,
                 "image": img_path, "answer": answer, "total": total, 
-                "skills": skill_labels["bin_label"],
+                "class_label": class_lab, "answer_confidence": answer_confidence,
+                "skills": skill_labels["bin_label"] if skill_annot_path is not None else [],
             })
         print(len(self.data))
 
