@@ -112,6 +112,7 @@ if __name__ == "__main__":
             # "./experiments/frozen_git/preds.json",
             "./experiments/frozen_vilt2/predict_logs.json",
             "./experiments/resnet/preds.json",
+            "./experiments/skill_aware_clip2/pred.json"
         ]:
         data = json.load(open(path))
         if isinstance(data, list):

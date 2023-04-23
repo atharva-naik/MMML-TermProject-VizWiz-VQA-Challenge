@@ -277,7 +277,7 @@ def predict_unseen_vilt(args):
     data_dir = args.data_dir # default: ./data/VQA
     model_path = args.model_path # model_path: dandelin/vilt-b32-finetuned-vqa
     device = args.device
-    split: str = "val"
+    split: str = "train"
     split_images = os.path.join(data_dir, split)
     split_annot = os.path.join(data_dir, f"{split}.json")
     # declare model.
@@ -593,4 +593,5 @@ if __name__ == "__main__":
     elif args.predict_unseen: predict_unseen_vilt(args)
     # python -m src.skill_classification.vilt -t -de 'cuda:0' -exp vilt_skill_clf
     # python -m src.skill_classification.vilt -p -de 'cuda:0' -exp vilt_skill_clf
+    # python -m src.skill_classification.vilt -pu -de 'cuda:0' -exp vilt_skill_clf
     # python -m src.skill_classification.vilt -t -de 'cuda:0' -exp vilt_skill_clf2

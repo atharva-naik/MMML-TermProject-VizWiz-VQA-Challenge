@@ -1,5 +1,5 @@
 import json
-from sklearn.metrics import f1_score
+from sklearn.metrics import f1_score, precision_score, recall_score
 
 PREDS_PATH: str = "./experiments/vilt_skill_clf/predict_logs.json"
 
@@ -23,5 +23,8 @@ if __name__ == "__main__":
             if skill in rec["true"]:
                 skill_wise_trues[skill].append(1)
             else: skill_wise_trues[skill].append(0)
-        print(f"{skill} f1_score: {100*f1_score(skill_wise_trues[skill], skill_wise_preds[skill]):.2f} ({sum(skill_wise_trues[skill])}/{len(saved_preds['preds'])} cases)")
+        F = f1_score(skill_wise_trues[skill], skill_wise_preds[skill], zero_division=0)
+        P = precision_score(skill_wise_trues[skill], skill_wise_preds[skill], zero_division=0) 
+        R = recall_score(skill_wise_trues[skill], skill_wise_preds[skill], zero_division=0)
+        print(f"{skill} F: {100*F:.2f} P: {100*P:.2f} R: {100*R:.2f} ({sum(skill_wise_trues[skill])}/{len(saved_preds['preds'])} cases)")
     
