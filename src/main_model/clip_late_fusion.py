@@ -4,6 +4,7 @@ import pdb
 import clip
 import json
 import torch
+import random
 import argparse
 import numpy as np
 from PIL import Image
@@ -14,6 +15,11 @@ from torch.utils.data import DataLoader
 from src.datautils import VizWizVQABestAnsDataset
 from src.PythonHelperTools.vqaTools.vqa import VQA
 from src.PythonEvaluationTools.vqaEvaluation.vqaEval import VQAEval
+
+# seed stuff
+random.seed(2023)
+np.random.seed(2023)
+torch.manual_seed(2023)
 
 def read_jsonl(path: str):
     data = []
@@ -87,7 +93,8 @@ class SkillAwareCLIPTVizWizVQABestAnsDataset(VizWizVQABestAnsDataset):
 class SkillAwareCLIPVizWizVQA(nn.Module):
     def __init__(self, model_path: str="ViT-L/14", device: str="cuda:0", 
                  label2id: dict={}, image_emb_size: int=768, 
-                 lang_emb_size: int=768, skill_emb_size: int=200):
+                 lang_emb_size: int=768, skill_emb_size: int=200,
+                 no_skill_mode: bool=False):
         super().__init__()
         self.model_path = model_path
         self.model, self.preprocess = clip.load(args.model_path)
@@ -99,11 +106,16 @@ class SkillAwareCLIPVizWizVQA(nn.Module):
             "CNT": 3,
             "OTH": 4,
         }
-        self.skill_embs = nn.Embedding(
-            len(self.skill_to_ind)+1, 
-            skill_emb_size, padding_idx=5,
-        ) # 5 "skills": TXT, COL, CNT, OBJ, OTH
-        self.emb_size = 3*lang_emb_size+image_emb_size+skill_emb_size
+        self.no_skill_mode = no_skill_mode
+        if no_skill_mode:
+            self.emb_size = 3*lang_emb_size+image_emb_size
+        else:
+            self.skill_embs = nn.Embedding(
+                len(self.skill_to_ind)+1, 
+                skill_emb_size, padding_idx=5,
+            ) # 5 "skills": TXT, COL, CNT, OBJ, OTH
+
+            self.emb_size = 3*lang_emb_size+image_emb_size+skill_emb_size
         self.upscale_size = self.num_classes // 2
         self.classifier = nn.Sequential(
             nn.Linear(
@@ -145,19 +157,23 @@ class SkillAwareCLIPVizWizVQA(nn.Module):
         question_emb = self.model.encode_text(encoding["question"].to(self.device)).float()
         objects_emb = self.model.encode_text(encoding["objects"].to(self.device)).float()
         scene_text_emb = self.model.encode_text(encoding["scene_text"].to(self.device)).float()
-        skill_emb = self.skill_embs(encoding["skills"].to(self.device)).mean(axis=1)
-        # pdb.set_trace()
-        logits = self.classifier(torch.cat([image_emb,question_emb,skill_emb,objects_emb,scene_text_emb], -1))
+        if not self.no_skill_mode:
+            skill_emb = self.skill_embs(encoding["skills"].to(self.device)).mean(axis=1)
+            # pdb.set_trace()
+            logits = self.classifier(torch.cat([image_emb,question_emb,skill_emb,objects_emb,scene_text_emb], -1))
+        else: logits = self.classifier(torch.cat([image_emb,question_emb,objects_emb,scene_text_emb], -1))
         labels = encoding["labels"].to(self.device)
-
         loss = self.loss_fn(logits, labels)
+
         return logits, loss
 
 class FrozenCLIPVizWizVQA(nn.Module):
-    def __init__(self, model_path: str="ViT-L/14",
-                 device: str="cuda:0", label2id: dict={}, image_emb_size: int=768, lang_emb_size: int = 768 ):
+    def __init__(self, model_path: str="ViT-L/14", device: str="cuda:0", 
+                 label2id: dict={}, image_emb_size: int=768, lang_emb_size: int=768,
+                 no_skill_mode: bool=False):
         super().__init__()
         self.model_path = model_path
+        self.no_skill_mode = no_skill_mode
         self.model, self.preprocess = clip.load(args.model_path)
         self.num_classes = len(label2id)
         self.emb_size = lang_emb_size+image_emb_size
@@ -218,8 +234,8 @@ def train_clip(args):
     if args.base_model == "clip":
         model = SkillAwareCLIPVizWizVQA(# FrozenCLIPVizWizVQA
             model_path=args.model_path, 
-            label2id=label2id, 
-            device=args.device,
+            label2id=label2id, device=args.device,
+            no_skill_mode=args.no_skill,
         )
 
     optimizer = torch.optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
@@ -237,7 +253,6 @@ def train_clip(args):
         aux_tokens_data="./data/VQA/val_aux_info_tokens.jsonl",
     )
     val_dataloader = DataLoader(val_dataset, batch_size=args.batch_size, shuffle=True)
-    
 
     best_val_acc = 0
     for epoch in range(args.epochs):
@@ -265,7 +280,6 @@ def train_clip(args):
             train_epoch_losses.append(loss.item())
             train_bar.set_description(f"T: {epoch+1}/{args.epochs}: a: {100*acc:.2f} ba: {(100*bacc):.2f} bl: {loss.item():.3f} l: {np.mean(train_epoch_losses):.3f}")
 
-            
             if (i+1) % args.eval_steps == 0 or (i+1) == len(train_dataloader):
                 val_loss, val_acc = validate_clip( model=model, dataloader=val_dataloader,eval_step=i, epoch=epoch, args=args)
                 # save the best model.
@@ -324,6 +338,7 @@ def predict_clip(args, move_to_cuda: bool=False) -> str:
         model_path=args.model_path, 
         label2id=label2id, 
         device=args.device,
+        no_skill_mode=args.no_skill,
     )
 
     ckpt_dict = torch.load(
@@ -423,13 +438,14 @@ def get_args():
     parser.add_argument("-bs", "--batch_size", type=int, default=32, help="batch size to be used for training")
     parser.add_argument("-lr", "--learning_rate", type=float, default=1e-4, help="learning rate for training")
     parser.add_argument("-pfn", "--pred_file", type=str, help="file to store predictions")
+    parser.add_argument("-nsk", "--no_skill", action="store_true", help="no skill embedding mode")
     args = parser.parse_args()
     return args
 
     
 if __name__ == "__main__":
     args = get_args()
-    if args.train: pass # train_clip(args)
+    if args.train: train_clip(args)
     elif args.predict: predict_clip(args, move_to_cuda=True)
     if args.predict or args.get_eval_scores:
         # compute evaluation metrics.
@@ -437,3 +453,4 @@ if __name__ == "__main__":
             "data/VQA/val.json", 
             f'experiments/{args.exp_name}/pred.json'
         )
+    # python -m src.main_model.clip_late_fusion -t -de "cuda:0" -exp skill_unaware_clip
