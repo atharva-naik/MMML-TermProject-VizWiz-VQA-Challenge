@@ -7,14 +7,17 @@ import torch
 import random
 import argparse
 import numpy as np
+from typing import *
 from PIL import Image
 from tqdm import tqdm
 import torch.nn as nn
 from torchvision import transforms
 from torch.utils.data import DataLoader
+from transformers import CLIPModel, CLIPProcessor
 from src.datautils import VizWizVQABestAnsDataset
 from src.PythonHelperTools.vqaTools.vqa import VQA
 from src.PythonEvaluationTools.vqaEvaluation.vqaEval import VQAEval
+
 
 # seed stuff
 random.seed(2023)
@@ -36,7 +39,65 @@ def read_jsonl(path: str):
 #         if corrected_word is None: return word
 #         else: return corrected_word
 #     return word
-class SkillAwareCLIPTVizWizVQABestAnsDataset(VizWizVQABestAnsDataset):
+
+# huggingface implementation of CLIP and best answer datase
+class SkillAwareHfCLIPVizWizVQADataset(VizWizVQABestAnsDataset):
+    def __init__(self, *args, aux_tokens_data: str="",
+                 model_path: str="openai/clip-vit-large-patch14", 
+                 label2id: dict={}, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.model_path = model_path
+        self.processor = CLIPProcessor.from_pretrained(model_path)
+        self.label2id = label2id
+        assert aux_tokens_data != "", "missing path to skill labels"
+        self.aux_tokens_data = read_jsonl(aux_tokens_data)
+        self.skill_to_ind = {
+            "TXT": 0,
+            "OBJ": 1,
+            "COL": 2,
+            "CNT": 3,
+            "OTH": 4,
+        }
+
+    def __getitem__(self, i: int):
+        item = super().__getitem__(i)
+        # encode using ViLT processor:
+        image = Image.open(item["image"])
+        question = item["question"]
+        aux_tokens = self.aux_tokens_data[i]
+        objects = " ".join(aux_tokens["objects"][0])
+        scene_text = " ".join(aux_tokens["ocr"][0])
+        encoding = {}
+        encoding["question"] = question
+        skills = [self.skill_to_ind[skill] for skill in aux_tokens["skills"]]
+        skills = skills+[5]*(6-len(skills))
+        encoding["image"] = image 
+        encoding["skills"] = skills
+        encoding["objects"] = objects
+        encoding["scene_text"] = scene_text
+        encoding["labels"] = self.label2id.get(item["answer"])
+
+        return encoding
+    
+    def collate_fn(self, batch: List[dict]):
+        batch_enc = {}
+        for k in ["question", "objects", "scene_text"]:
+            batch_enc[k] = self.processor(
+                text=[rec[k] for rec in batch], 
+                truncation=True, padding="longest", 
+                return_tensors="pt",
+            )
+        batch_enc["skills"] = torch.as_tensor([rec["skills"] for rec in batch])
+        batch_enc["pixel_values"] = self.processor(
+            images=[rec["image"] for rec in batch], 
+            return_tensors="pt", padding="longest", 
+        )["pixel_values"]
+        batch_enc["labels"] = torch.as_tensor([rec["labels"] for rec in batch])
+
+        return batch_enc
+
+# skill aware CLIP for VizWiz VQA.
+class SkillAwareCLIPVizWizVQABestAnsDataset(VizWizVQABestAnsDataset):
     def __init__(self, *args, aux_tokens_data: str="",
                  model_path: str="ViT-L/14", label2id: dict={}, 
                  preprocess, **kwargs):
@@ -55,7 +116,7 @@ class SkillAwareCLIPTVizWizVQABestAnsDataset(VizWizVQABestAnsDataset):
         }
 
     # def __getitem__(self, i: int):
-    #     item = super(SkillAwareCLIPTVizWizVQABestAnsDataset, self).__getitem__(i)
+    #     item = super(SkillAwareCLIPVizWizVQABestAnsDataset, self).__getitem__(i)
     #     # encode using ViLT processor:
     #     image = Image.open(item["image"]).convert("RGB")
     #     question = item["question"]
@@ -71,7 +132,7 @@ class SkillAwareCLIPTVizWizVQABestAnsDataset(VizWizVQABestAnsDataset):
     #     return encoding
 
     def __getitem__(self, i: int):
-        item = super(SkillAwareCLIPTVizWizVQABestAnsDataset, self).__getitem__(i)
+        item = super(SkillAwareCLIPVizWizVQABestAnsDataset, self).__getitem__(i)
         # encode using ViLT processor:
         image = Image.open(item["image"]).convert("RGB")
         question = item["question"]
@@ -89,6 +150,96 @@ class SkillAwareCLIPTVizWizVQABestAnsDataset(VizWizVQABestAnsDataset):
         encoding["labels"] = torch.as_tensor(self.label2id.get(item["answer"]))
 
         return encoding
+
+class SkillAwareHfCLIPVizWizVQA(nn.Module):
+    def __init__(self, model_path: str="openai/clip-vit-large-patch14", device: str="cuda:0", 
+                 label2id: dict={}, image_emb_size: int=1024, 
+                 lang_emb_size: int=768, skill_emb_size: int=200,
+                 no_skill_mode: bool=False):
+        super().__init__()
+        self.model_path = model_path
+        self.model = CLIPModel.from_pretrained(model_path)
+        self.num_classes = len(label2id)
+        self.skill_to_ind = {
+            "TXT": 0,
+            "OBJ": 1,
+            "COL": 2,
+            "CNT": 3,
+            "OTH": 4,
+        }
+        self.no_skill_mode = no_skill_mode
+        if no_skill_mode:
+            self.emb_size = 3*lang_emb_size+image_emb_size
+        else:
+            self.skill_embs = nn.Embedding(
+                len(self.skill_to_ind)+1, 
+                skill_emb_size, padding_idx=5,
+            ) # 5 "skills": TXT, COL, CNT, OBJ, OTH
+
+            self.emb_size = 3*lang_emb_size+image_emb_size+skill_emb_size
+        self.upscale_size = self.num_classes // 2
+        self.classifier = nn.Sequential(
+            nn.Linear(
+                in_features=self.emb_size, 
+                out_features=self.upscale_size, 
+                bias=True
+            ),
+            nn.LayerNorm(
+                (self.upscale_size), eps=1e-05, 
+                elementwise_affine=True
+            ),
+            nn.GELU(approximate="none"),
+            nn.Linear(
+                in_features=self.upscale_size, 
+                out_features=len(label2id), 
+                bias=True
+            ),
+        )
+        # freeze CLIP params:
+        for param in self.model.parameters():
+            param.requires_grad = False
+        self.device = device
+        self.loss_fn = nn.CrossEntropyLoss()
+        self.to(device)
+        print(f"moving model to device: {device}")
+        
+    def parameters(self):
+        return self.classifier.parameters()
+
+    def train(self):
+        self.classifier.train()
+
+    def eval(self):
+        self.classifier.eval()
+
+    def forward(self, **encoding):
+        """return outputs and loss"""
+        image_emb = self.model.vision_model(
+            pixel_values=encoding["pixel_values"].to(self.device)
+        ).pooler_output
+        question_emb = self.model.text_model(
+            input_ids=encoding["question"]["input_ids"].to(self.device),
+            attention_mask=encoding["question"]["attention_mask"].to(self.device),
+        ).pooler_output
+        objects_emb = self.model.text_model(
+            input_ids=encoding["objects"]["input_ids"].to(self.device),
+            attention_mask=encoding["objects"]["attention_mask"].to(self.device),
+        ).pooler_output
+        scene_text_emb = self.model.text_model(
+            input_ids=encoding["scene_text"]["input_ids"].to(self.device),
+            attention_mask=encoding["scene_text"]["input_ids"].to(self.device),
+        ).pooler_output
+        # print("image:", image_emb.shape)
+        # print("question:", question_emb.shape)
+        if not self.no_skill_mode:
+            skill_emb = self.skill_embs(encoding["skills"].to(self.device)).mean(axis=1)
+            # pdb.set_trace()
+            logits = self.classifier(torch.cat([image_emb,question_emb,skill_emb,objects_emb,scene_text_emb], -1))
+        else: logits = self.classifier(torch.cat([image_emb,question_emb,objects_emb,scene_text_emb], -1))
+        labels = encoding["labels"].to(self.device)
+        loss = self.loss_fn(logits, labels)
+
+        return logits, loss
 
 class SkillAwareCLIPVizWizVQA(nn.Module):
     def __init__(self, model_path: str="ViT-L/14", device: str="cuda:0", 
@@ -231,29 +382,49 @@ def train_clip(args):
         
     label2id = json.load(open("experiments/vizwiz_class_vocab.json"))
     model = None
-    if args.base_model == "clip":
+    # if args.base_model == "clip":
+    if not(args.use_hf_clip):
         model = SkillAwareCLIPVizWizVQA(# FrozenCLIPVizWizVQA
             model_path=args.model_path, 
             label2id=label2id, device=args.device,
             no_skill_mode=args.no_skill,
         )
-
+        train_dataset = SkillAwareCLIPVizWizVQABestAnsDataset(
+            annot_path="./data/VQA/train.json", images_dir="./data/VQA/train", 
+            label2id=label2id, preprocess=model.preprocess,
+            aux_tokens_data="./data/VQA/train_aux_info_tokens.jsonl",
+        )
+        train_dataloader = DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True)
+        
+        val_dataset = SkillAwareCLIPVizWizVQABestAnsDataset(
+            annot_path="data/VQA/val.json", images_dir="./data/VQA/val", 
+            label2id=label2id, preprocess=model.preprocess,
+            aux_tokens_data="./data/VQA/val_aux_info_tokens.jsonl",
+        )
+        val_dataloader = DataLoader(val_dataset, batch_size=args.batch_size, shuffle=True)
+    else:
+        model = SkillAwareHfCLIPVizWizVQA(# FrozenCLIPVizWizVQA
+            model_path=args.model_path, 
+            label2id=label2id, device=args.device,
+            no_skill_mode=args.no_skill,
+        )
+        train_dataset = SkillAwareHfCLIPVizWizVQADataset(
+            annot_path="./data/VQA/train.json", images_dir="./data/VQA/train", 
+            label2id=label2id, aux_tokens_data="./data/VQA/train_aux_info_tokens.jsonl",
+        )
+        train_dataloader = DataLoader(
+            train_dataset, batch_size=args.batch_size, 
+            shuffle=True, collate_fn=train_dataset.collate_fn,
+        )
+        val_dataset = SkillAwareHfCLIPVizWizVQADataset(
+            annot_path="data/VQA/val.json", images_dir="./data/VQA/val", 
+            label2id=label2id, aux_tokens_data="./data/VQA/val_aux_info_tokens.jsonl",
+        )
+        val_dataloader = DataLoader(
+            val_dataset, batch_size=args.batch_size, 
+            shuffle=True, collate_fn=val_dataset.collate_fn,
+        )
     optimizer = torch.optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
-       
-    train_dataset = SkillAwareCLIPTVizWizVQABestAnsDataset(
-        annot_path="./data/VQA/train.json", images_dir="./data/VQA/train", 
-        label2id=label2id, preprocess=model.preprocess,
-        aux_tokens_data="./data/VQA/train_aux_info_tokens.jsonl",
-    )
-    train_dataloader = DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True)
-    
-    val_dataset = SkillAwareCLIPTVizWizVQABestAnsDataset(
-        annot_path="data/VQA/val.json", images_dir="./data/VQA/val", 
-        label2id=label2id, preprocess=model.preprocess,
-        aux_tokens_data="./data/VQA/val_aux_info_tokens.jsonl",
-    )
-    val_dataloader = DataLoader(val_dataset, batch_size=args.batch_size, shuffle=True)
-
     best_val_acc = 0
     for epoch in range(args.epochs):
         train_bar = tqdm(enumerate(train_dataloader), 
@@ -333,13 +504,21 @@ def predict_clip(args, move_to_cuda: bool=False) -> str:
     model_path = os.path.join("experiments", args.exp_name, "best_model.pt")
     label2id = json.load(open("experiments/vizwiz_class_vocab.json"))
     id2label = {v: k for k,v in label2id.items()}
-
-    model = SkillAwareCLIPVizWizVQA(
-        model_path=args.model_path, 
-        label2id=label2id, 
-        device=args.device,
-        no_skill_mode=args.no_skill,
-    )
+    
+    if not(args.use_hf_clip):
+        model = SkillAwareCLIPVizWizVQA(
+            model_path=args.model_path, 
+            label2id=label2id, 
+            device=args.device,
+            no_skill_mode=args.no_skill,
+        )
+    else:
+        model = SkillAwareHfCLIPVizWizVQA(
+            model_path=args.model_path, 
+            label2id=label2id, 
+            device=args.device,
+            no_skill_mode=args.no_skill,
+        )
 
     ckpt_dict = torch.load(
         model_path, 
@@ -351,13 +530,22 @@ def predict_clip(args, move_to_cuda: bool=False) -> str:
     results = {}
     results["accuracy"] = 0
     results["preds"] = []
-    val_dataset = SkillAwareCLIPTVizWizVQABestAnsDataset(
-        annot_path="data/VQA/val.json", images_dir="./data/VQA/val", 
-        label2id=label2id, preprocess=model.preprocess,
-        aux_tokens_data="./data/VQA/val_aux_info_tokens.jsonl",
-    )
-    val_dataloader = DataLoader(val_dataset, batch_size=args.batch_size, shuffle=False)
-
+    if not(args.use_hf_clip):
+        val_dataset = SkillAwareCLIPVizWizVQABestAnsDataset(
+            annot_path="data/VQA/val.json", images_dir="./data/VQA/val", 
+            label2id=label2id, preprocess=model.preprocess,
+            aux_tokens_data="./data/VQA/val_aux_info_tokens.jsonl",
+        )
+        val_dataloader = DataLoader(val_dataset, batch_size=args.batch_size, shuffle=False)
+    else:
+        val_dataset = SkillAwareHfCLIPVizWizVQADataset(
+            annot_path="data/VQA/val.json", images_dir="./data/VQA/val", 
+            label2id=label2id, aux_tokens_data="./data/VQA/val_aux_info_tokens.jsonl",
+        )
+        val_dataloader = DataLoader(
+            val_dataset, batch_size=args.batch_size, 
+            shuffle=False, collate_fn=val_dataset.collate_fn,
+        )
     val_bar = tqdm(enumerate(val_dataloader), 
                         total=len(val_dataloader), 
                         desc="Hang on, Running predictions...")
@@ -419,12 +607,11 @@ def get_eval_scores(annFile, resFile):
     for k, v in list(vqaEval.caption_metric.items()):
         print("%s: %.2f"%(k,v))
         
- 
- 
 def get_args():
     """get terminal arguments."""
     parser = argparse.ArgumentParser()
     parser.add_argument("-d", "--data_dir", default="./data/VQA", type=str, help="path to the VQA dataset")
+    parser.add_argument("-hf", "--use_hf_clip", action="store_true", help="use huggingface CLIP implementation")
     parser.add_argument("-bm", "--base_model", default="clip", type=str, help="name/path of the CLIP checkpoint")
     parser.add_argument("-mp", "--model_path", default="ViT-L/14", type=str, help="name/path of the CLIP model")
     parser.add_argument("-t", "--train", action="store_true", help="finetune CLIP model")
@@ -440,6 +627,8 @@ def get_args():
     parser.add_argument("-pfn", "--pred_file", type=str, help="file to store predictions")
     parser.add_argument("-nsk", "--no_skill", action="store_true", help="no skill embedding mode")
     args = parser.parse_args()
+    if args.use_hf_clip: args.model_path = "openai/clip-vit-large-patch14"
+
     return args
 
     

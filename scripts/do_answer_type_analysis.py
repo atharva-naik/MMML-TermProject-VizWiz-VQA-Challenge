@@ -114,7 +114,8 @@ if __name__ == "__main__":
             "./experiments/resnet/preds.json",
             "./experiments/skill_aware_clip2/pred.json",
             "./experiments/skill_unaware_clip/pred.json",
-            "./experiments/oracle_ensemble/formatted_pred.json"
+            "./experiments/oracle_ensemble/formatted_pred.json",
+            "./experiments/skill_clip_hf/formatted_pred.json",
         ]:
         data = json.load(open(path))
         if isinstance(data, list):

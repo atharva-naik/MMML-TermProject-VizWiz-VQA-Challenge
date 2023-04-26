@@ -337,7 +337,7 @@
     },
     {
         "image": "VizWiz_val_00000084.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00000085.jpg",
@@ -361,7 +361,7 @@
     },
     {
         "image": "VizWiz_val_00000090.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000091.jpg",
@@ -381,7 +381,7 @@
     },
     {
         "image": "VizWiz_val_00000095.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000096.jpg",
@@ -401,11 +401,11 @@
     },
     {
         "image": "VizWiz_val_00000100.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000101.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000102.jpg",
@@ -521,7 +521,7 @@
     },
     {
         "image": "VizWiz_val_00000130.jpg",
-        "answer": "unanswerable"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00000131.jpg",
@@ -581,7 +581,7 @@
     },
     {
         "image": "VizWiz_val_00000145.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000146.jpg",
@@ -733,11 +733,11 @@
     },
     {
         "image": "VizWiz_val_00000183.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000184.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000185.jpg",
@@ -813,7 +813,7 @@
     },
     {
         "image": "VizWiz_val_00000203.jpg",
-        "answer": "yes"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00000204.jpg",
@@ -833,11 +833,11 @@
     },
     {
         "image": "VizWiz_val_00000208.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00000209.jpg",
-        "answer": "yes"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00000210.jpg",
@@ -865,7 +865,7 @@
     },
     {
         "image": "VizWiz_val_00000216.jpg",
-        "answer": "unanswerable"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00000217.jpg",
@@ -1033,7 +1033,7 @@
     },
     {
         "image": "VizWiz_val_00000258.jpg",
-        "answer": "unanswerable"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00000259.jpg",
@@ -1137,7 +1137,7 @@
     },
     {
         "image": "VizWiz_val_00000284.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000285.jpg",
@@ -1277,7 +1277,7 @@
     },
     {
         "image": "VizWiz_val_00000319.jpg",
-        "answer": "unanswerable"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00000320.jpg",
@@ -1333,7 +1333,7 @@
     },
     {
         "image": "VizWiz_val_00000333.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000334.jpg",
@@ -1353,7 +1353,7 @@
     },
     {
         "image": "VizWiz_val_00000338.jpg",
-        "answer": "yes"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00000339.jpg",
@@ -1437,7 +1437,7 @@
     },
     {
         "image": "VizWiz_val_00000359.jpg",
-        "answer": "unanswerable"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00000360.jpg",
@@ -1729,7 +1729,7 @@
     },
     {
         "image": "VizWiz_val_00000432.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000433.jpg",
@@ -1833,7 +1833,7 @@
     },
     {
         "image": "VizWiz_val_00000458.jpg",
-        "answer": "yes"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00000459.jpg",
@@ -1957,7 +1957,7 @@
     },
     {
         "image": "VizWiz_val_00000489.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00000490.jpg",
@@ -2021,7 +2021,7 @@
     },
     {
         "image": "VizWiz_val_00000505.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000506.jpg",
@@ -2137,11 +2137,11 @@
     },
     {
         "image": "VizWiz_val_00000534.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00000535.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000536.jpg",
@@ -2277,7 +2277,7 @@
     },
     {
         "image": "VizWiz_val_00000569.jpg",
-        "answer": "unanswerable"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00000570.jpg",
@@ -2385,7 +2385,7 @@
     },
     {
         "image": "VizWiz_val_00000596.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000597.jpg",
@@ -2509,7 +2509,7 @@
     },
     {
         "image": "VizWiz_val_00000627.jpg",
-        "answer": "yes"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00000628.jpg",
@@ -2673,7 +2673,7 @@
     },
     {
         "image": "VizWiz_val_00000668.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000669.jpg",
@@ -2753,7 +2753,7 @@
     },
     {
         "image": "VizWiz_val_00000688.jpg",
-        "answer": "yes"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00000689.jpg",
@@ -3041,11 +3041,11 @@
     },
     {
         "image": "VizWiz_val_00000760.jpg",
-        "answer": "unanswerable"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00000761.jpg",
-        "answer": "no"
+        "answer": "dog"
     },
     {
         "image": "VizWiz_val_00000762.jpg",
@@ -3113,7 +3113,7 @@
     },
     {
         "image": "VizWiz_val_00000778.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000779.jpg",
@@ -3209,7 +3209,7 @@
     },
     {
         "image": "VizWiz_val_00000802.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00000803.jpg",
@@ -3605,7 +3605,7 @@
     },
     {
         "image": "VizWiz_val_00000901.jpg",
-        "answer": "unanswerable"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00000902.jpg",
@@ -3677,7 +3677,7 @@
     },
     {
         "image": "VizWiz_val_00000919.jpg",
-        "answer": "unanswerable"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00000920.jpg",
@@ -3729,7 +3729,7 @@
     },
     {
         "image": "VizWiz_val_00000932.jpg",
-        "answer": "no"
+        "answer": "startup repair"
     },
     {
         "image": "VizWiz_val_00000933.jpg",
@@ -3777,7 +3777,7 @@
     },
     {
         "image": "VizWiz_val_00000944.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000945.jpg",
@@ -3793,7 +3793,7 @@
     },
     {
         "image": "VizWiz_val_00000948.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00000949.jpg",
@@ -3893,7 +3893,7 @@
     },
     {
         "image": "VizWiz_val_00000973.jpg",
-        "answer": "unanswerable"
+        "answer": "02610518"
     },
     {
         "image": "VizWiz_val_00000974.jpg",
@@ -4001,7 +4001,7 @@
     },
     {
         "image": "VizWiz_val_00001000.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001001.jpg",
@@ -4081,7 +4081,7 @@
     },
     {
         "image": "VizWiz_val_00001020.jpg",
-        "answer": "yes"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00001021.jpg",
@@ -4193,7 +4193,7 @@
     },
     {
         "image": "VizWiz_val_00001048.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001049.jpg",
@@ -4241,7 +4241,7 @@
     },
     {
         "image": "VizWiz_val_00001060.jpg",
-        "answer": "unanswerable"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00001061.jpg",
@@ -4297,7 +4297,7 @@
     },
     {
         "image": "VizWiz_val_00001074.jpg",
-        "answer": "unanswerable"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00001075.jpg",
@@ -4453,7 +4453,7 @@
     },
     {
         "image": "VizWiz_val_00001113.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001114.jpg",
@@ -4481,7 +4481,7 @@
     },
     {
         "image": "VizWiz_val_00001120.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001121.jpg",
@@ -4589,7 +4589,7 @@
     },
     {
         "image": "VizWiz_val_00001147.jpg",
-        "answer": "yes"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00001148.jpg",
@@ -4797,7 +4797,7 @@
     },
     {
         "image": "VizWiz_val_00001199.jpg",
-        "answer": "79"
+        "answer": "77"
     },
     {
         "image": "VizWiz_val_00001200.jpg",
@@ -5325,7 +5325,7 @@
     },
     {
         "image": "VizWiz_val_00001331.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001332.jpg",
@@ -5453,7 +5453,7 @@
     },
     {
         "image": "VizWiz_val_00001363.jpg",
-        "answer": "yes"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00001364.jpg",
@@ -5473,7 +5473,7 @@
     },
     {
         "image": "VizWiz_val_00001368.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001369.jpg",
@@ -5525,7 +5525,7 @@
     },
     {
         "image": "VizWiz_val_00001381.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001382.jpg",
@@ -5641,7 +5641,7 @@
     },
     {
         "image": "VizWiz_val_00001410.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001411.jpg",
@@ -5661,7 +5661,7 @@
     },
     {
         "image": "VizWiz_val_00001415.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001416.jpg",
@@ -5757,7 +5757,7 @@
     },
     {
         "image": "VizWiz_val_00001439.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001440.jpg",
@@ -5801,7 +5801,7 @@
     },
     {
         "image": "VizWiz_val_00001450.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001451.jpg",
@@ -5813,7 +5813,7 @@
     },
     {
         "image": "VizWiz_val_00001453.jpg",
-        "answer": "yes"
+        "answer": "native visions"
     },
     {
         "image": "VizWiz_val_00001454.jpg",
@@ -6001,11 +6001,11 @@
     },
     {
         "image": "VizWiz_val_00001500.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001501.jpg",
-        "answer": "yes"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00001502.jpg",
@@ -6089,7 +6089,7 @@
     },
     {
         "image": "VizWiz_val_00001522.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001523.jpg",
@@ -6141,7 +6141,7 @@
     },
     {
         "image": "VizWiz_val_00001535.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001536.jpg",
@@ -6217,11 +6217,11 @@
     },
     {
         "image": "VizWiz_val_00001554.jpg",
-        "answer": "yes"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00001555.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001556.jpg",
@@ -6673,7 +6673,7 @@
     },
     {
         "image": "VizWiz_val_00001668.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001669.jpg",
@@ -6697,7 +6697,7 @@
     },
     {
         "image": "VizWiz_val_00001674.jpg",
-        "answer": "unanswerable"
+        "answer": "2000"
     },
     {
         "image": "VizWiz_val_00001675.jpg",
@@ -6733,7 +6733,7 @@
     },
     {
         "image": "VizWiz_val_00001683.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00001684.jpg",
@@ -7629,7 +7629,7 @@
     },
     {
         "image": "VizWiz_val_00001907.jpg",
-        "answer": "yes"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00001908.jpg",
@@ -8717,7 +8717,7 @@
     },
     {
         "image": "VizWiz_val_00002179.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00002180.jpg",
@@ -8865,7 +8865,7 @@
     },
     {
         "image": "VizWiz_val_00002216.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002217.jpg",
@@ -9057,7 +9057,7 @@
     },
     {
         "image": "VizWiz_val_00002264.jpg",
-        "answer": "unanswerable"
+        "answer": "20"
     },
     {
         "image": "VizWiz_val_00002265.jpg",
@@ -9081,7 +9081,7 @@
     },
     {
         "image": "VizWiz_val_00002270.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00002271.jpg",
@@ -9257,7 +9257,7 @@
     },
     {
         "image": "VizWiz_val_00002314.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002315.jpg",
@@ -9589,7 +9589,7 @@
     },
     {
         "image": "VizWiz_val_00002397.jpg",
-        "answer": "8"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002398.jpg",
@@ -9873,7 +9873,7 @@
     },
     {
         "image": "VizWiz_val_00002468.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00002469.jpg",
@@ -9929,7 +9929,7 @@
     },
     {
         "image": "VizWiz_val_00002482.jpg",
-        "answer": "3"
+        "answer": "2"
     },
     {
         "image": "VizWiz_val_00002483.jpg",
@@ -10041,7 +10041,7 @@
     },
     {
         "image": "VizWiz_val_00002510.jpg",
-        "answer": "5"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002511.jpg",
@@ -10173,7 +10173,7 @@
     },
     {
         "image": "VizWiz_val_00002543.jpg",
-        "answer": "yes"
+        "answer": "apple"
     },
     {
         "image": "VizWiz_val_00002544.jpg",
@@ -10265,7 +10265,7 @@
     },
     {
         "image": "VizWiz_val_00002566.jpg",
-        "answer": "yes"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00002567.jpg",
@@ -10373,7 +10373,7 @@
     },
     {
         "image": "VizWiz_val_00002593.jpg",
-        "answer": "450"
+        "answer": "350"
     },
     {
         "image": "VizWiz_val_00002594.jpg",
@@ -10929,7 +10929,7 @@
     },
     {
         "image": "VizWiz_val_00002732.jpg",
-        "answer": "100"
+        "answer": "20"
     },
     {
         "image": "VizWiz_val_00002733.jpg",
@@ -10961,7 +10961,7 @@
     },
     {
         "image": "VizWiz_val_00002740.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002741.jpg",
@@ -11053,7 +11053,7 @@
     },
     {
         "image": "VizWiz_val_00002763.jpg",
-        "answer": "yes"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00002764.jpg",
@@ -11409,7 +11409,7 @@
     },
     {
         "image": "VizWiz_val_00002852.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002853.jpg",
@@ -11433,7 +11433,7 @@
     },
     {
         "image": "VizWiz_val_00002858.jpg",
-        "answer": "5"
+        "answer": "20"
     },
     {
         "image": "VizWiz_val_00002859.jpg",
@@ -11801,7 +11801,7 @@
     },
     {
         "image": "VizWiz_val_00002950.jpg",
-        "answer": "unanswerable"
+        "answer": "40"
     },
     {
         "image": "VizWiz_val_00002951.jpg",
@@ -11933,7 +11933,7 @@
     },
     {
         "image": "VizWiz_val_00002983.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00002984.jpg",
@@ -12097,7 +12097,7 @@
     },
     {
         "image": "VizWiz_val_00003024.jpg",
-        "answer": "unanswerable"
+        "answer": "0"
     },
     {
         "image": "VizWiz_val_00003025.jpg",
@@ -12213,11 +12213,11 @@
     },
     {
         "image": "VizWiz_val_00003053.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00003054.jpg",
-        "answer": "no"
+        "answer": "2"
     },
     {
         "image": "VizWiz_val_00003055.jpg",
@@ -12405,7 +12405,7 @@
     },
     {
         "image": "VizWiz_val_00003101.jpg",
-        "answer": "yes"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00003102.jpg",
@@ -12501,7 +12501,7 @@
     },
     {
         "image": "VizWiz_val_00003125.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00003126.jpg",
@@ -12749,7 +12749,7 @@
     },
     {
         "image": "VizWiz_val_00003187.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00003188.jpg",
@@ -13005,7 +13005,7 @@
     },
     {
         "image": "VizWiz_val_00003251.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00003252.jpg",
@@ -13245,7 +13245,7 @@
     },
     {
         "image": "VizWiz_val_00003311.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00003312.jpg",
@@ -13521,7 +13521,7 @@
     },
     {
         "image": "VizWiz_val_00003380.jpg",
-        "answer": "3"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003381.jpg",
@@ -13653,7 +13653,7 @@
     },
     {
         "image": "VizWiz_val_00003413.jpg",
-        "answer": "unanswerable"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00003414.jpg",
@@ -13749,7 +13749,7 @@
     },
     {
         "image": "VizWiz_val_00003437.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00003438.jpg",
@@ -14029,7 +14029,7 @@
     },
     {
         "image": "VizWiz_val_00003507.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003508.jpg",
@@ -14201,7 +14201,7 @@
     },
     {
         "image": "VizWiz_val_00003550.jpg",
-        "answer": "yes"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00003551.jpg",
@@ -14309,7 +14309,7 @@
     },
     {
         "image": "VizWiz_val_00003577.jpg",
-        "answer": "unanswerable"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00003578.jpg",
@@ -14333,7 +14333,7 @@
     },
     {
         "image": "VizWiz_val_00003583.jpg",
-        "answer": "10"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00003584.jpg",
@@ -14497,7 +14497,7 @@
     },
     {
         "image": "VizWiz_val_00003624.jpg",
-        "answer": "yes"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00003625.jpg",
@@ -14589,7 +14589,7 @@
     },
     {
         "image": "VizWiz_val_00003647.jpg",
-        "answer": "no"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00003648.jpg",
@@ -14653,7 +14653,7 @@
     },
     {
         "image": "VizWiz_val_00003663.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00003664.jpg",
@@ -15061,7 +15061,7 @@
     },
     {
         "image": "VizWiz_val_00003765.jpg",
-        "answer": "yes"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00003766.jpg",
@@ -15209,7 +15209,7 @@
     },
     {
         "image": "VizWiz_val_00003802.jpg",
-        "answer": "yes"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00003803.jpg",
@@ -15513,7 +15513,7 @@
     },
     {
         "image": "VizWiz_val_00003878.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00003879.jpg",
@@ -16213,7 +16213,7 @@
     },
     {
         "image": "VizWiz_val_00004053.jpg",
-        "answer": "3"
+        "answer": "2"
     },
     {
         "image": "VizWiz_val_00004054.jpg",
@@ -16357,7 +16357,7 @@
     },
     {
         "image": "VizWiz_val_00004089.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00004090.jpg",
@@ -16461,7 +16461,7 @@
     },
     {
         "image": "VizWiz_val_00004115.jpg",
-        "answer": "yes"
+        "answer": "no"
     },
     {
         "image": "VizWiz_val_00004116.jpg",
@@ -16485,7 +16485,7 @@
     },
     {
         "image": "VizWiz_val_00004121.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00004122.jpg",
@@ -16729,7 +16729,7 @@
     },
     {
         "image": "VizWiz_val_00004182.jpg",
-        "answer": "yes"
+        "answer": "unanswerable"
     },
     {
         "image": "VizWiz_val_00004183.jpg",
@@ -16793,7 +16793,7 @@
     },
     {
         "image": "VizWiz_val_00004198.jpg",
-        "answer": "no"
+        "answer": "yes"
     },
     {
         "image": "VizWiz_val_00004199.jpg",

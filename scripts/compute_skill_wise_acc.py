@@ -73,6 +73,8 @@ if __name__ == "__main__":
         "./experiments/clip_multimodal/formatted_pred.json",
         "./experiments/skill_aware_clip2/formatted_pred.json",
         "./experiments/skill_unaware_clip/formatted_pred.json",
+        "./experiments/oracle_ensemble/formatted_pred.json",
+        "./experiments/skill_clip_hf/formatted_pred.json",
     ]:
         print("\x1b[34;1m# "+preds_path.split("/")[2].strip()+"\x1b[0m")
         compute_skill_wise_acc(preds_path)
