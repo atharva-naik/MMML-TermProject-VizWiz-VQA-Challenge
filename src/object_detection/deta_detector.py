@@ -74,13 +74,13 @@ def deta_inference(model_ckpt, image_dir, save_dir=None,
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model_ckpt", type=str, default="jozhang97/deta-swin-large")
-    parser.add_argument("--image_dir", type=str, default="data/VQA/val")
-    parser.add_argument("--save_dir", type=str, default="data/VQA/val_obj_detect/coco")
+    parser.add_argument("--model_ckpt", type=str, default="jozhang97/deta-swin-large-o365")
+    parser.add_argument("--image_dir", type=str, default="data/VQA/train")
+    parser.add_argument("--save_dir", type=str, default="data/VQA/train_obj_detect/o365")
     parser.add_argument("--results_dir", type=str, default="data/VQA/")
-    parser.add_argument("--split", type=str, default="val")
+    parser.add_argument("--split", type=str, default="train")
     parser.add_argument("--device", type=str, default="cuda")
-    parser.add_argument("--confidence_thresh", type=float, default=.5)
+    parser.add_argument("--confidence_thresh", type=float, default=.35)
     parser.add_argument("--batch_sz", type=int, default=3)
 
     args = parser.parse_args()
