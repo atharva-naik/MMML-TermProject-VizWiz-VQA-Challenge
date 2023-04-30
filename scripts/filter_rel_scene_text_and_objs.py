@@ -23,10 +23,10 @@ if __name__ == "__main__":
     nlp = spacy.load("en_core_web_lg")
     for split in ["train", "val"]:
         scene_text = read_jsonl(f"./data/VQA/{split}_scene_text_extracted_spell_correction.jsonl")
-        obj_tags = read_jsonl(f"./data/VQA/object_detections_{split}.jsonl")
+        obj_tags = read_jsonl(f"./data/VQA/o365/object_detections_{split}.jsonl")
         data = json.load(open(f"./data/VQA/{split}.json"))
         skill_data = json.load(open(f"./experiments/vilt_skill_clf/{split}_unseen_preds.json"))
-        write_path = f"./data/VQA/{split}_aux_info_tokens.jsonl"
+        write_path = f"./data/VQA/o365/{split}_aux_info_tokens.jsonl"
         open(write_path, "w")
         for ind, (scene_rec, object_rec, rec, skills) in tqdm(enumerate(zip(scene_text, obj_tags, data, skill_data)), total=len(data)):
             skills = skills["pred"]
