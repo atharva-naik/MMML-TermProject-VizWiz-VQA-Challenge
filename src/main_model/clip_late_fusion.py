@@ -151,9 +151,105 @@ class SkillAwareCLIPVizWizVQABestAnsDataset(VizWizVQABestAnsDataset):
 
         return encoding
 
+# skill aware CLIP with attention block to fuse modalities.
+class SkillAwareAttnHfCLIP(nn.Module):
+    def __init__(self, model_path: str="openai/clip-vit-large-patch14", device: str="cuda:0", 
+                 label2id: dict={}, skill_emb_size: int=768, no_skill_mode: bool=False):
+        super().__init__()
+        self.model_path = model_path
+        self.model = CLIPModel.from_pretrained(model_path)
+        self.num_classes = len(label2id)
+        self.skill_to_ind = {
+            "TXT": 0,
+            "OBJ": 1,
+            "COL": 2,
+            "CNT": 3,
+            "OTH": 4,
+        }
+        self.no_skill_mode = no_skill_mode
+        self.skill_embs = nn.Embedding(
+            len(self.skill_to_ind)+1, 
+            skill_emb_size, padding_idx=5,
+        )
+        self.skill_attn_layer = nn.TransformerEncoderLayer(
+            d_model=skill_emb_size, nhead=4, 
+            batch_first=True,
+        )
+        self.upscale_size = self.num_classes // 2
+        self.classifier = nn.Sequential(
+            nn.Linear(
+                in_features=self.emb_size, 
+                out_features=self.upscale_size, 
+                bias=True
+            ),
+            nn.LayerNorm(
+                (self.upscale_size), eps=1e-05, 
+                elementwise_affine=True
+            ),
+            nn.GELU(approximate="none"),
+            nn.Linear(
+                in_features=self.upscale_size, 
+                out_features=len(label2id), 
+                bias=True
+            ),
+        )
+        # freeze CLIP params:
+        for param in self.model.parameters():
+            param.requires_grad = False
+        self.device = device
+        self.loss_fn = nn.CrossEntropyLoss()
+        self.to(device)
+        print(f"moving model to device: {device}")
+        
+    def parameters(self):
+        return list(self.classifier.parameters())+list(self.skill_embs.parameters())+list(self.skill_attn_layer.parameters())+list(self.model.visual_projection.parameters())+list(self.model.text_projection.parameters())
+
+    def train(self):
+        self.classifier.train()
+        self.skill_embs.train()
+        self.skill_attn_layer.train()
+        self.model.visual_projection.train()
+        self.model.text_projection.train()
+
+    def eval(self):
+        self.classifier.eval()
+        self.skill_embs.eval()
+        self.skill_attn_layer.eval()
+        self.model.visual_projection.eval()
+        self.model.text_projection.eval()
+
+    def forward(self, **encoding):
+        """return outputs and loss"""
+        image_emb = self.model.visual_projection(self.model.vision_model(
+            pixel_values=encoding["pixel_values"].to(self.device)
+        ).pooler_output)
+        question_seq = self.model.text_model(
+            input_ids=encoding["question"]["input_ids"].to(self.device),
+            attention_mask=encoding["question"]["attention_mask"].to(self.device),
+        ).last_hidden_states
+        objects_seq = self.model.text_model(
+            input_ids=encoding["objects"]["input_ids"].to(self.device),
+            attention_mask=encoding["objects"]["attention_mask"].to(self.device),
+        ).last_hidden_states
+        scene_seq = self.model.text_model(
+            input_ids=encoding["scene_text"]["input_ids"].to(self.device),
+            attention_mask=encoding["scene_text"]["input_ids"].to(self.device),
+        ).last_hidden_states
+        # print("image:", image_emb.shape)
+        # print("question:", question_emb.shape)
+        if not self.no_skill_mode:
+            skill_seq = self.skill_embs(encoding["skills"].to(self.device))
+            fusion_seq = torch.cat([skill_seq], axis=1)
+            logits = self.classifier(torch.cat([image_emb,question_emb,skill_emb,objects_emb,scene_text_emb], -1))
+        else: logits = self.classifier(torch.cat([image_emb,question_emb,objects_emb,scene_text_emb], -1))
+        labels = encoding["labels"].to(self.device)
+        loss = self.loss_fn(logits, labels)
+
+        return logits, loss
+
 class SkillAwareHfCLIPVizWizVQA(nn.Module):
     def __init__(self, model_path: str="openai/clip-vit-large-patch14", device: str="cuda:0", 
-                 label2id: dict={}, image_emb_size: int=1024, 
+                 label2id: dict={}, image_emb_size: int=768, 
                  lang_emb_size: int=768, skill_emb_size: int=200,
                  no_skill_mode: bool=False):
         super().__init__()
@@ -175,7 +271,6 @@ class SkillAwareHfCLIPVizWizVQA(nn.Module):
                 len(self.skill_to_ind)+1, 
                 skill_emb_size, padding_idx=5,
             ) # 5 "skills": TXT, COL, CNT, OBJ, OTH
-
             self.emb_size = 3*lang_emb_size+image_emb_size+skill_emb_size
         self.upscale_size = self.num_classes // 2
         self.classifier = nn.Sequential(
@@ -214,21 +309,25 @@ class SkillAwareHfCLIPVizWizVQA(nn.Module):
 
     def forward(self, **encoding):
         """return outputs and loss"""
-        image_emb = self.model.vision_model(
+        # vision_model to be used for last hidden states
+        # text_model to be used for last hidden states
+        # visual_projection to be applied for each vector in the sequence
+        # textual_projection to be applied for each vector in the sequence
+        image_emb = self.model.visual_projection(self.model.vision_model(
             pixel_values=encoding["pixel_values"].to(self.device)
-        ).pooler_output
-        question_emb = self.model.text_model(
+        ).pooler_output)
+        question_emb = self.model.text_projection(self.model.text_model(
             input_ids=encoding["question"]["input_ids"].to(self.device),
             attention_mask=encoding["question"]["attention_mask"].to(self.device),
-        ).pooler_output
-        objects_emb = self.model.text_model(
+        ).pooler_output)
+        objects_emb = self.model.text_projection(self.model.text_model(
             input_ids=encoding["objects"]["input_ids"].to(self.device),
             attention_mask=encoding["objects"]["attention_mask"].to(self.device),
-        ).pooler_output
-        scene_text_emb = self.model.text_model(
+        ).pooler_output)
+        scene_text_emb = self.model.text_projection(self.model.text_model(
             input_ids=encoding["scene_text"]["input_ids"].to(self.device),
             attention_mask=encoding["scene_text"]["input_ids"].to(self.device),
-        ).pooler_output
+        ).pooler_output)
         # print("image:", image_emb.shape)
         # print("question:", question_emb.shape)
         if not self.no_skill_mode:
@@ -410,7 +509,7 @@ def train_clip(args):
         )
         train_dataset = SkillAwareHfCLIPVizWizVQADataset(
             annot_path="./data/VQA/train.json", images_dir="./data/VQA/train", 
-            label2id=label2id, aux_tokens_data="./data/VQA/train_aux_info_tokens.jsonl",
+            label2id=label2id, aux_tokens_data="./data/VQA/train_aux_info_tokens_o365.jsonl",
         )
         train_dataloader = DataLoader(
             train_dataset, batch_size=args.batch_size, 
@@ -418,7 +517,7 @@ def train_clip(args):
         )
         val_dataset = SkillAwareHfCLIPVizWizVQADataset(
             annot_path="data/VQA/val.json", images_dir="./data/VQA/val", 
-            label2id=label2id, aux_tokens_data="./data/VQA/val_aux_info_tokens.jsonl",
+            label2id=label2id, aux_tokens_data="./data/VQA/val_aux_info_tokens_o365.jsonl",
         )
         val_dataloader = DataLoader(
             val_dataset, batch_size=args.batch_size, 
