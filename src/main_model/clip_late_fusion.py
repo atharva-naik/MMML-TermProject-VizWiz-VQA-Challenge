@@ -154,7 +154,7 @@ class SkillAwareCLIPVizWizVQABestAnsDataset(VizWizVQABestAnsDataset):
 # skill aware CLIP with attention block to fuse modalities.
 class SkillAwareAttnHfCLIP(nn.Module):
     def __init__(self, model_path: str="openai/clip-vit-large-patch14", device: str="cuda:0", 
-                 label2id: dict={}, skill_emb_size: int=768, no_skill_mode: bool=False):
+                 label2id: dict={}, emb_size: int=768, no_skill_mode: bool=False):
         super().__init__()
         self.model_path = model_path
         self.model = CLIPModel.from_pretrained(model_path)
@@ -169,16 +169,16 @@ class SkillAwareAttnHfCLIP(nn.Module):
         self.no_skill_mode = no_skill_mode
         self.skill_embs = nn.Embedding(
             len(self.skill_to_ind)+1, 
-            skill_emb_size, padding_idx=5,
+            emb_size, padding_idx=5,
         )
         self.skill_attn_layer = nn.TransformerEncoderLayer(
-            d_model=skill_emb_size, nhead=4, 
+            d_model=emb_size, nhead=4, 
             batch_first=True,
         )
         self.upscale_size = self.num_classes // 2
         self.classifier = nn.Sequential(
             nn.Linear(
-                in_features=self.emb_size, 
+                in_features=emb_size, 
                 out_features=self.upscale_size, 
                 bias=True
             ),
@@ -220,28 +220,59 @@ class SkillAwareAttnHfCLIP(nn.Module):
 
     def forward(self, **encoding):
         """return outputs and loss"""
-        image_emb = self.model.visual_projection(self.model.vision_model(
+        image_seq = self.model.visual_projection(self.model.vision_model(
             pixel_values=encoding["pixel_values"].to(self.device)
-        ).pooler_output)
-        question_seq = self.model.text_model(
+        ).last_hidden_state)
+        question_seq = self.model.text_projection(self.model.text_model(
             input_ids=encoding["question"]["input_ids"].to(self.device),
             attention_mask=encoding["question"]["attention_mask"].to(self.device),
-        ).last_hidden_states
-        objects_seq = self.model.text_model(
+        ).last_hidden_state)
+        objects_seq = self.model.text_projection(self.model.text_model(
             input_ids=encoding["objects"]["input_ids"].to(self.device),
             attention_mask=encoding["objects"]["attention_mask"].to(self.device),
-        ).last_hidden_states
-        scene_seq = self.model.text_model(
+        ).last_hidden_state)
+        scene_seq = self.model.text_projection(self.model.text_model(
             input_ids=encoding["scene_text"]["input_ids"].to(self.device),
-            attention_mask=encoding["scene_text"]["input_ids"].to(self.device),
-        ).last_hidden_states
+            attention_mask=encoding["scene_text"]["attention_mask"].to(self.device),
+        ).last_hidden_state)
         # print("image:", image_emb.shape)
         # print("question:", question_emb.shape)
         if not self.no_skill_mode:
             skill_seq = self.skill_embs(encoding["skills"].to(self.device))
-            fusion_seq = torch.cat([skill_seq], axis=1)
-            logits = self.classifier(torch.cat([image_emb,question_emb,skill_emb,objects_emb,scene_text_emb], -1))
-        else: logits = self.classifier(torch.cat([image_emb,question_emb,objects_emb,scene_text_emb], -1))
+            skill_attn_mask = (encoding["skills"] == 5).int()
+            fusion_seq = torch.cat([
+                skill_seq, image_seq, question_seq,
+                objects_seq, scene_seq], axis=1
+            )
+            # print("question:", encoding["question"]["attention_mask"].device)
+            # print("skill mask:", skill_attn_mask.device)
+            # print("objects:", encoding["objects"]["attention_mask"].device)
+            # print("scene text:", encoding["scene_text"]["attention_mask"].device)
+            fusion_mask = torch.cat([
+                skill_attn_mask, torch.ones(image_seq.shape[0], image_seq.shape[1]),
+                encoding["question"]["attention_mask"],
+                encoding["objects"]["attention_mask"],
+                encoding["scene_text"]["attention_mask"],
+            ], axis=1)
+        else:
+            fusion_seq = torch.cat([
+                image_seq, question_seq,
+                objects_seq, scene_seq], axis=1
+            )
+            fusion_mask = torch.cat([
+                torch.ones(image_seq.shape[0], image_seq.shape[1]),
+                encoding["question"]["attention_mask"],
+                encoding["objects"]["attention_mask"],
+                encoding["scene_text"]["attention_mask"],
+            ], axis=1)
+        fusion_mask = ((1-fusion_mask)*(-10000.0)).unsqueeze(dim=-1)
+        fusion_mask = fusion_mask.to(self.device)
+        fusion_seq += fusion_mask
+        fusion_seq = self.skill_attn_layer(fusion_seq)
+        # print(f"fusion seq: {fusion_seq.shape}")
+        # print(f"fusion mask: {fusion_mask.shape}")
+        fusion_seq = fusion_seq.mean(axis=1)
+        logits = self.classifier(fusion_seq)
         labels = encoding["labels"].to(self.device)
         loss = self.loss_fn(logits, labels)
 
@@ -299,13 +330,15 @@ class SkillAwareHfCLIPVizWizVQA(nn.Module):
         print(f"moving model to device: {device}")
         
     def parameters(self):
-        return self.classifier.parameters()
+        return list(self.classifier.parameters())+list(self.skill_embs.parameters())
 
     def train(self):
         self.classifier.train()
+        self.skill_embs.train()
 
     def eval(self):
         self.classifier.eval()
+        self.skill_embs.eval()
 
     def forward(self, **encoding):
         """return outputs and loss"""
@@ -326,7 +359,7 @@ class SkillAwareHfCLIPVizWizVQA(nn.Module):
         ).pooler_output)
         scene_text_emb = self.model.text_projection(self.model.text_model(
             input_ids=encoding["scene_text"]["input_ids"].to(self.device),
-            attention_mask=encoding["scene_text"]["input_ids"].to(self.device),
+            attention_mask=encoding["scene_text"]["attention_mask"].to(self.device),
         ).pooler_output)
         # print("image:", image_emb.shape)
         # print("question:", question_emb.shape)
@@ -471,9 +504,8 @@ class FrozenCLIPVizWizVQA(nn.Module):
         loss = self.loss_fn(logits, labels)
         return logits, loss
     
-    
+# training loop
 def train_clip(args):
-    
     model_save_path = os.path.join("experiments", args.exp_name, "best_model.pt")
     val_log_path = os.path.join("experiments", args.exp_name, "logs.jsonl")
     if not os.path.isdir(os.path.join("experiments", args.exp_name)):
@@ -502,11 +534,18 @@ def train_clip(args):
         )
         val_dataloader = DataLoader(val_dataset, batch_size=args.batch_size, shuffle=True)
     else:
-        model = SkillAwareHfCLIPVizWizVQA(# FrozenCLIPVizWizVQA
-            model_path=args.model_path, 
-            label2id=label2id, device=args.device,
-            no_skill_mode=args.no_skill,
-        )
+        if not args.use_skill_attention:
+            model = SkillAwareHfCLIPVizWizVQA(# FrozenCLIPVizWizVQA
+                model_path=args.model_path, 
+                label2id=label2id, device=args.device,
+                no_skill_mode=args.no_skill,
+            )
+        else:
+            model = SkillAwareAttnHfCLIP(# FrozenCLIPVizWizVQA
+                model_path=args.model_path, emb_size=768,
+                label2id=label2id, device=args.device,
+                no_skill_mode=args.no_skill,
+            )
         train_dataset = SkillAwareHfCLIPVizWizVQADataset(
             annot_path="./data/VQA/train.json", images_dir="./data/VQA/train", 
             label2id=label2id, aux_tokens_data="./data/VQA/train_aux_info_tokens_o365.jsonl",
@@ -572,9 +611,8 @@ def train_clip(args):
                             "best_val_step": best_val_step,
                             "best_val_acc": best_val_acc,
                         })+"\n")
-                
-                        
-        
+                       
+# validation loop
 def validate_clip(model, dataloader, eval_step, epoch, args):
     val_bar = tqdm(enumerate(dataloader), total=len(dataloader), desc="Validating...")
     tot, matches, val_losses = 0, 0, []
@@ -724,6 +762,7 @@ def get_args():
     parser.add_argument("-bs", "--batch_size", type=int, default=32, help="batch size to be used for training")
     parser.add_argument("-lr", "--learning_rate", type=float, default=1e-4, help="learning rate for training")
     parser.add_argument("-pfn", "--pred_file", type=str, help="file to store predictions")
+    parser.add_argument("-ska", "--use_skill_attention", action="store_true", help="use self attention fusion")
     parser.add_argument("-nsk", "--no_skill", action="store_true", help="no skill embedding mode")
     args = parser.parse_args()
     if args.use_hf_clip: args.model_path = "openai/clip-vit-large-patch14"
@@ -742,3 +781,5 @@ if __name__ == "__main__":
             f'experiments/{args.exp_name}/pred.json'
         )
     # python -m src.main_model.clip_late_fusion -t -de "cuda:0" -exp skill_unaware_clip
+    # python -m src.main_model.clip_late_fusion -t -de "cuda:0" -exp skill_clip_hf_vis_proj2 -hf
+    # python -m src.main_model.clip_late_fusion -t -de "cuda:0" -exp skill_clip_hf_vis_proj2 -hf -ska
