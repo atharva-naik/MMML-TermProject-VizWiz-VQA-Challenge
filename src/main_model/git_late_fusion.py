@@ -87,12 +87,12 @@ class SkillAwareGitVizWizVQADataset(VizWizVQABestAnsDataset):
                     print(ans_ix)
                     print(encoding["labels"])
                     print(ans_ix.nelement())
-                    if ans_ix.nelement() == 0 :
-                        encoding["labels"] = -100
+                    if ans_ix.nelement() == 0:
+                        encoding["labels"] = -100 * torch.ones_like(encoding["labels"])
                     else:
                         ans_ix = ans_ix[-1]
                         encoding["labels"][:, :ans_ix] = -100
-                encoding["labels"][encoding["input_ids"] == 0] = -100
+                        encoding["labels"][encoding["input_ids"] == 0] = -100
             else: 
                 encoding["labels"] = encoding["input_ids"].clone()
                 encoding["labels"][encoding["input_ids"] == 0] = -100
