@@ -59,9 +59,9 @@ class SkillAwareGitVizWizVQADataset(VizWizVQABestAnsDataset):
         img_path = item["image"]
         question = item["question"]
         aux_tokens = self.aux_tokens_data[i]
-        if len(aux_tokens["objects"]) > 50: 
+        if len(aux_tokens["objects"]) > 10: 
             aux_tokens["objects"] = aux_tokens["objects"][:50]
-        if len(aux_tokens["ocr"]) > 50:
+        if len(aux_tokens["ocr"]) > 10:
             aux_tokens["ocr"] = aux_tokens["ocr"][:50]
         objects = ", ".join(aux_tokens["objects"][0])
         scene_text = ", ".join(aux_tokens["ocr"][0])
