@@ -60,9 +60,9 @@ class SkillAwareGitVizWizVQADataset(VizWizVQABestAnsDataset):
         question = item["question"]
         aux_tokens = self.aux_tokens_data[i]
         if len(aux_tokens["objects"]) > 10: 
-            aux_tokens["objects"] = aux_tokens["objects"][:50]
+            aux_tokens["objects"] = aux_tokens["objects"][:10]
         if len(aux_tokens["ocr"]) > 10:
-            aux_tokens["ocr"] = aux_tokens["ocr"][:50]
+            aux_tokens["ocr"] = aux_tokens["ocr"][:10]
         objects = ", ".join(aux_tokens["objects"][0])
         scene_text = ", ".join(aux_tokens["ocr"][0])
         skills = [self.skill_to_text[skill] for skill in aux_tokens["skills"]]
@@ -86,7 +86,7 @@ class SkillAwareGitVizWizVQADataset(VizWizVQABestAnsDataset):
                 except TypeError:
                     print(ans_ix)
                     print(encoding["labels"])
-                    if ans_ix.shape == torch.Size([]):
+                    if ans_ix.nelement() == 0 :
                         encoding["labels"] = -100
                     else:
                         ans_ix = ans_ix[-1]
