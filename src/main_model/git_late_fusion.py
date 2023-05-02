@@ -74,7 +74,7 @@ class SkillAwareGitVizWizVQADataset(VizWizVQABestAnsDataset):
         
         if self.train: 
             encoding = self.processor(images=image, text=text, padding="max_length", return_tensors="pt", 
-                                            max_length=200, truncation=True)
+                                            max_length=300, truncation=True)
 
             # remove batch dimension
 
@@ -86,8 +86,11 @@ class SkillAwareGitVizWizVQADataset(VizWizVQABestAnsDataset):
                 except TypeError:
                     print(ans_ix)
                     print(encoding["labels"])
-                    ans_ix = ans_ix[-1]
-                    encoding["labels"][:, :ans_ix] = -100
+                    if ans_ix.shape == torch.Size([]):
+                        encoding["labels"] = -100
+                    else:
+                        ans_ix = ans_ix[-1]
+                        encoding["labels"][:, :ans_ix] = -100
                 encoding["labels"][encoding["input_ids"] == 0] = -100
             else: 
                 encoding["labels"] = encoding["input_ids"].clone()
