@@ -83,7 +83,7 @@ class SkillAwareGitVizWizVQADataset(VizWizVQABestAnsDataset):
                 ans_ix = (encoding["labels"].squeeze() == 3437).nonzero().squeeze()
                 try: 
                     encoding["labels"][:, :ans_ix] = -100
-                except TypeError("only integer tensors of a single element can be converted to an index"):
+                except TypeError:
                     print(ans_ix)
                     ans_ix = ans_ix[-1]
                 encoding["labels"][encoding["input_ids"] == 0] = -100
