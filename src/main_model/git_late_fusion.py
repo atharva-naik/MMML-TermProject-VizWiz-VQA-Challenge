@@ -86,6 +86,7 @@ class SkillAwareGitVizWizVQADataset(VizWizVQABestAnsDataset):
                 except TypeError:
                     print(ans_ix)
                     print(encoding["labels"])
+                    print(ans_ix.nelement())
                     if ans_ix.nelement() == 0 :
                         encoding["labels"] = -100
                     else:
