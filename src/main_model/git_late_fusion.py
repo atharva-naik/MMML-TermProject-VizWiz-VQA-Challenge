@@ -80,8 +80,12 @@ class SkillAwareGitVizWizVQADataset(VizWizVQABestAnsDataset):
 
             if self.partial_loss:
                 encoding["labels"] = encoding["input_ids"].clone()
-                ans_ix = (encoding["labels"].squeeze() == 3437).nonzero().squeeze()[-1]
-                encoding["labels"][:, :ans_ix] = -100
+                ans_ix = (encoding["labels"].squeeze() == 3437).nonzero().squeeze()
+                try: 
+                    encoding["labels"][:, :ans_ix] = -100
+                except TypeError("only integer tensors of a single element can be converted to an index"):
+                    print(ans_ix)
+                    ans_ix = ans_ix[-1]
                 encoding["labels"][encoding["input_ids"] == 0] = -100
             else: 
                 encoding["labels"] = encoding["input_ids"].clone()
