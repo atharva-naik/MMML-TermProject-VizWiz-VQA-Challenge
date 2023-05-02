@@ -61,8 +61,11 @@ class SkillAwareGitVizWizVQADataset(VizWizVQABestAnsDataset):
         aux_tokens = self.aux_tokens_data[i]
         if len(aux_tokens["objects"]) > 10: 
             aux_tokens["objects"] = aux_tokens["objects"][:10]
-        if len(aux_tokens["ocr"]) > 10:
-            aux_tokens["ocr"] = aux_tokens["ocr"][:10]
+        if len(aux_tokens["ocr"]) > 5:
+            aux_tokens["ocr"] = aux_tokens["ocr"][:5]
+        shortened_ocr = [token for token in aux_tokens["ocr"][0] if len(token) > 10]
+        if len(shortened_ocr) == 0:
+            shortened_ocr = aux_tokens["ocr"][0]
         objects = ", ".join(aux_tokens["objects"][0])
         scene_text = ", ".join(aux_tokens["ocr"][0])
         skills = [self.skill_to_text[skill] for skill in aux_tokens["skills"]]
@@ -70,7 +73,7 @@ class SkillAwareGitVizWizVQADataset(VizWizVQABestAnsDataset):
         if not self.questions_last:
             text = f"Objects: {objects}; Scene Text: {scene_text}; Question: {question}; Skills Needed: {skills}; Answer: {item['answer']}"
         else: 
-            text = f"Skills Needed: {skills}; Objects: {objects}; Scene Text: {scene_text};  Question: {question}; Answer : {item['answer']} "
+            text = f"Skills Needed: {skills}; Objects: {objects}; Scene Text: {scene_text};  Question: {question}; Answer: {item['answer']} "
         
         if self.train: 
             encoding = self.processor(images=image, text=text, padding="max_length", return_tensors="pt", 
@@ -172,7 +175,7 @@ def train_git(args):
             train_bar.set_description(f"T: {epoch+1}/{epochs}: L:{logits.shape} bl: {loss.item():.3f} l: {np.mean(train_epoch_losses):.3f}")
             
             if step % 250 == 0:
-                image, text, _ = val_dataset_not_encoded[1]
+                image, text, _ = val_dataset_not_encoded[0]
                 text = text.split("Answer: ")[0] + "Answer: "
                 pixel_values = val_dataset_encoded.processor(images=image, return_tensors="pt").pixel_values.to(device)
                 input_ids = val_dataset_encoded.processor(text=text, return_tensors="pt").input_ids.to(device)
