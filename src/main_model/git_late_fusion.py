@@ -80,7 +80,7 @@ class SkillAwareGitVizWizVQADataset(VizWizVQABestAnsDataset):
 
             if self.partial_loss:
                 encoding["labels"] = encoding["input_ids"].clone()
-                ans_ix = (encoding["labels"].squeeze() == 3437).nonzero().squeeze()
+                ans_ix = (encoding["labels"].squeeze() == 3437).nonzero().squeeze()[-1]
                 encoding["labels"][:, :ans_ix] = -100
                 encoding["labels"][encoding["input_ids"] == 0] = -100
             else: 
@@ -316,7 +316,7 @@ def get_args():
     """get terminal arguments."""
     parser = argparse.ArgumentParser()
     parser.add_argument("-d", "--data_dir", default="./data/VQA", type=str, help="path to the VQA dataset")
-    parser.add_argument("-mp", "--model_path", default="microsoft/git-base-vqav2", type=str, help="name/path of the HF checkpoint")
+    parser.add_argument("-mp", "--model_path", default="microsoft/git-large-vqav2", type=str, help="name/path of the HF checkpoint")
     parser.add_argument("-t", "--train", action="store_true", help="finetune ViLT model")
     parser.add_argument("-p", "--predict", action="store_true", help="generate predictions for data with labels")
     parser.add_argument("-e", "--epochs", type=int, default=20, help="number of training epochs")
