@@ -70,7 +70,7 @@ class SkillAwareGitVizWizVQADataset(VizWizVQABestAnsDataset):
         if not self.questions_last:
             text = f"Objects: {objects}; Scene Text: {scene_text}; Question: {question}; Skills Needed: {skills}; Answer: {item['answer']}"
         else: 
-            text = f"Skills Needed: {skills}; Objects: {objects}; Scene Text: {scene_text};  Question: {question}; Answer: {item['answer']} "
+            text = f"Skills Needed: {skills}; Objects: {objects}; Scene Text: {scene_text};  Question: {question}; Answer : {item['answer']} "
         
         if self.train: 
             encoding = self.processor(images=image, text=text, padding="max_length", return_tensors="pt", 
@@ -85,7 +85,9 @@ class SkillAwareGitVizWizVQADataset(VizWizVQABestAnsDataset):
                     encoding["labels"][:, :ans_ix] = -100
                 except TypeError:
                     print(ans_ix)
+                    print(encoding["labels"])
                     ans_ix = ans_ix[-1]
+                    encoding["labels"][:, :ans_ix] = -100
                 encoding["labels"][encoding["input_ids"] == 0] = -100
             else: 
                 encoding["labels"] = encoding["input_ids"].clone()
