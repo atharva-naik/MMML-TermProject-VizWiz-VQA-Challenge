@@ -59,10 +59,13 @@ class SkillAwareGitVizWizVQADataset(VizWizVQABestAnsDataset):
         img_path = item["image"]
         question = item["question"]
         aux_tokens = self.aux_tokens_data[i]
-        if len(aux_tokens["objects"]) > 50: 
-            aux_tokens["objects"] = aux_tokens["objects"][:50]
-        if len(aux_tokens["ocr"]) > 50:
-            aux_tokens["ocr"] = aux_tokens["ocr"][:50]
+        if len(aux_tokens["objects"]) > 10: 
+            aux_tokens["objects"] = aux_tokens["objects"][:10]
+        if len(aux_tokens["ocr"]) > 5:
+            aux_tokens["ocr"] = aux_tokens["ocr"][:5]
+        shortened_ocr = [token for token in aux_tokens["ocr"][0] if len(token) > 10]
+        if len(shortened_ocr) == 0:
+            shortened_ocr = aux_tokens["ocr"][0]
         objects = ", ".join(aux_tokens["objects"][0])
         scene_text = ", ".join(aux_tokens["ocr"][0])
         skills = [self.skill_to_text[skill] for skill in aux_tokens["skills"]]
@@ -74,15 +77,25 @@ class SkillAwareGitVizWizVQADataset(VizWizVQABestAnsDataset):
         
         if self.train: 
             encoding = self.processor(images=image, text=text, padding="max_length", return_tensors="pt", 
-                                            max_length=200, truncation=True)
+                                            max_length=300, truncation=True)
 
             # remove batch dimension
 
             if self.partial_loss:
                 encoding["labels"] = encoding["input_ids"].clone()
                 ans_ix = (encoding["labels"].squeeze() == 3437).nonzero().squeeze()
-                encoding["labels"][:, :ans_ix] = -100
-                encoding["labels"][encoding["input_ids"] == 0] = -100
+                try: 
+                    encoding["labels"][:, :ans_ix] = -100
+                except TypeError:
+                    print(ans_ix)
+                    print(encoding["labels"])
+                    print(ans_ix.nelement())
+                    if ans_ix.nelement() == 0:
+                        encoding["labels"] = -100 * torch.ones_like(encoding["labels"])
+                    else:
+                        ans_ix = ans_ix[-1]
+                        encoding["labels"][:, :ans_ix] = -100
+                        encoding["labels"][encoding["input_ids"] == 0] = -100
             else: 
                 encoding["labels"] = encoding["input_ids"].clone()
                 encoding["labels"][encoding["input_ids"] == 0] = -100
@@ -162,7 +175,7 @@ def train_git(args):
             train_bar.set_description(f"T: {epoch+1}/{epochs}: L:{logits.shape} bl: {loss.item():.3f} l: {np.mean(train_epoch_losses):.3f}")
             
             if step % 250 == 0:
-                image, text, _ = val_dataset_not_encoded[1]
+                image, text, _ = val_dataset_not_encoded[0]
                 text = text.split("Answer: ")[0] + "Answer: "
                 pixel_values = val_dataset_encoded.processor(images=image, return_tensors="pt").pixel_values.to(device)
                 input_ids = val_dataset_encoded.processor(text=text, return_tensors="pt").input_ids.to(device)
@@ -316,7 +329,7 @@ def get_args():
     """get terminal arguments."""
     parser = argparse.ArgumentParser()
     parser.add_argument("-d", "--data_dir", default="./data/VQA", type=str, help="path to the VQA dataset")
-    parser.add_argument("-mp", "--model_path", default="microsoft/git-base-vqav2", type=str, help="name/path of the HF checkpoint")
+    parser.add_argument("-mp", "--model_path", default="microsoft/git-large-vqav2", type=str, help="name/path of the HF checkpoint")
     parser.add_argument("-t", "--train", action="store_true", help="finetune ViLT model")
     parser.add_argument("-p", "--predict", action="store_true", help="generate predictions for data with labels")
     parser.add_argument("-e", "--epochs", type=int, default=20, help="number of training epochs")
