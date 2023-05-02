@@ -63,7 +63,7 @@ def compute_skill_wise_acc(preds_path: str):
             )
     skill_wise_vqa_acc = dict(skill_wise_vqa_acc)
     for k,v in skill_wise_vqa_acc.items():
-        print(f"{k}: {100*np.mean(v):.2f}")
+        print(f"{k}: {100*np.mean(v):.2f} ({len(v)})")
 
 # main
 if __name__ == "__main__":
@@ -76,6 +76,7 @@ if __name__ == "__main__":
         "./experiments/oracle_ensemble/formatted_pred.json",
         "./experiments/skill_clip_hf/formatted_pred.json",
         "./experiments/skill_clip_hf_vis_proj/formatted_pred.json",
+        "./experiments/skill_clip_hf_vis_proj2/formatted_pred.json",
     ]:
         print("\x1b[34;1m# "+preds_path.split("/")[2].strip()+"\x1b[0m")
         compute_skill_wise_acc(preds_path)

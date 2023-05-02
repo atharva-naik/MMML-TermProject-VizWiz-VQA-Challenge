@@ -1,0 +1,3 @@
+{"val_acc": 0.3209076175040519, "val_loss": 5.841156161272967, "epoch": 0, "step": 99, "best_val_epoch": 0, "best_val_step": 99, "best_val_acc": 0.3209076175040519}
+{"val_acc": 0.3234545033572586, "val_loss": 5.686058634298819, "epoch": 0, "step": 199, "best_val_epoch": 0, "best_val_step": 199, "best_val_acc": 0.3234545033572586}
+{"val_acc": 0.32715906459828664, "val_loss": 5.643762796896476, "epoch": 0, "step": 299, "best_val_epoch": 0, "best_val_step": 299, "best_val_acc": 0.32715906459828664}

@@ -202,21 +202,21 @@ class SkillAwareAttnHfCLIP(nn.Module):
         print(f"moving model to device: {device}")
         
     def parameters(self):
-        return list(self.classifier.parameters())+list(self.skill_embs.parameters())+list(self.skill_attn_layer.parameters())+list(self.model.visual_projection.parameters())+list(self.model.text_projection.parameters())
+        return list(self.classifier.parameters())+list(self.skill_embs.parameters())+list(self.skill_attn_layer.parameters())#+list(self.model.visual_projection.parameters())+list(self.model.text_projection.parameters())
 
     def train(self):
         self.classifier.train()
         self.skill_embs.train()
         self.skill_attn_layer.train()
-        self.model.visual_projection.train()
-        self.model.text_projection.train()
+        # self.model.visual_projection.train()
+        # self.model.text_projection.train()
 
     def eval(self):
         self.classifier.eval()
         self.skill_embs.eval()
         self.skill_attn_layer.eval()
-        self.model.visual_projection.eval()
-        self.model.text_projection.eval()
+        # self.model.visual_projection.eval()
+        # self.model.text_projection.eval()
 
     def forward(self, **encoding):
         """return outputs and loss"""
@@ -426,13 +426,16 @@ class SkillAwareCLIPVizWizVQA(nn.Module):
         print(f"moving model to device: {device}")
         
     def parameters(self):
-        return self.classifier.parameters()
+        # return list(self.classifier.parameters())
+        return list(self.classifier.parameters())+list(self.skill_embs.parameters())
 
     def train(self):
         self.classifier.train()
+        self.skill_embs.train()
 
     def eval(self):
         self.classifier.eval()
+        self.skill_embs.eval()
 
     def forward(self, **encoding):
         """return outputs and loss"""
@@ -564,6 +567,8 @@ def train_clip(args):
         )
     optimizer = torch.optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
     best_val_acc = 0
+    best_val_step = -1
+    best_val_epoch = -1
     for epoch in range(args.epochs):
         train_bar = tqdm(enumerate(train_dataloader), 
                         total=len(train_dataloader), 
@@ -590,9 +595,15 @@ def train_clip(args):
             train_bar.set_description(f"T: {epoch+1}/{args.epochs}: a: {100*acc:.2f} ba: {(100*bacc):.2f} bl: {loss.item():.3f} l: {np.mean(train_epoch_losses):.3f}")
 
             if (i+1) % args.eval_steps == 0 or (i+1) == len(train_dataloader):
+                print("starting validation\n\nvalidate_clip()")
                 val_loss, val_acc = validate_clip( model=model, dataloader=val_dataloader,eval_step=i, epoch=epoch, args=args)
                 # save the best model.
                 print(f"val acc: {val_acc}")
+                print(f"step: {i}")
+                print(f"epoch: {epoch}")
+                print(f"best_val_epoch: {best_val_epoch}")
+                print(f"best_val_step: {best_val_step}")
+                print(f"best_val_acc: {best_val_acc}")
                 if val_acc > best_val_acc:
                     best_val_step = i
                     best_val_acc = val_acc

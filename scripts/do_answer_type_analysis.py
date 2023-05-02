@@ -117,6 +117,7 @@ if __name__ == "__main__":
             # "./experiments/oracle_ensemble/formatted_pred.json",
             "./experiments/skill_clip_hf/pred.json",
             "./experiments/skill_clip_hf_vis_proj/formatted_pred.json",
+            "./experiments/skill_clip_hf_vis_proj2/formatted_pred.json",
         ]:
         data = json.load(open(path))
         if isinstance(data, list):
