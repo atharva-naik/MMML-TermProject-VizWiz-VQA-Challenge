@@ -305,7 +305,7 @@ def predict_git(args):
             print(question)
             print(text)
             print(answer)
-        input_ids = val_dataset.processor(text=text, padding="max_length", return_tensors="pt", 
+        input_ids = val_dataset.processor(text=text, return_tensors="pt", 
                                             max_length=300, truncation=True).input_ids.to(device)
 
         with torch.no_grad():
