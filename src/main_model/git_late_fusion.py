@@ -301,8 +301,9 @@ def predict_git(args):
         pixel_values = val_dataset.processor(images=image, return_tensors="pt").pixel_values.to(device)
         if step == 0:
             print(pixel_values.shape)
-            print(image.shape)
+            print(question)
             print(text)
+            print(answer)
         input_ids = val_dataset.processor(text=text, return_tensors="pt").input_ids.to(device)
 
         with torch.no_grad():
