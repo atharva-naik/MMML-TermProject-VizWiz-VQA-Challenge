@@ -183,7 +183,7 @@ def train_git(args):
                     pixel_values=pixel_values, 
                     input_ids=input_ids, 
                     max_new_tokens=100,
-                    min_new_tokens=1,
+                    min_new_tokens=2,
                     num_beams=2,
                     early_stopping=True,)
 
@@ -266,7 +266,7 @@ def val_git_acc(val_dataset, model, device, num_examples = 100, batch_size=2):
                 pixel_values=pixel_values,
                 input_ids=input_ids,
                 max_new_tokens=100,
-                min_new_tokens=1,
+                min_new_tokens=2,
                 num_beams=2,
                 early_stopping=True,
             )
@@ -282,6 +282,7 @@ def val_git_acc(val_dataset, model, device, num_examples = 100, batch_size=2):
 def predict_git(args):
     device = args.device
     load_path = os.path.join("experiments", args.exp_name, "best_model")
+    print(load_path)
     result_path = os.path.join("experiments", args.exp_name, "results.json")
     verbose_result_path = os.path.join("experiments", args.exp_name, "verbose_results.json")
     model = GitForCausalLM.from_pretrained(load_path).to(args.device)
@@ -298,6 +299,10 @@ def predict_git(args):
         question = text.split("Question: ")[1].split("Answer: ")[0].strip()
         answer = full_text.split("Answer: ")[1].strip()
         pixel_values = val_dataset.processor(images=image, return_tensors="pt").pixel_values.to(device)
+        if step == 0:
+            print(pixel_values.shape)
+            print(image.shape)
+            print(text)
         input_ids = val_dataset.processor(text=text, return_tensors="pt").input_ids.to(device)
 
         with torch.no_grad():
@@ -305,8 +310,8 @@ def predict_git(args):
                 pixel_values=pixel_values,
                 input_ids=input_ids,
                 max_new_tokens=100,
-                min_new_tokens=1,
-                num_beams=2,
+                min_new_tokens=2,
+                num_beams=4,
                 early_stopping=True,
             )
             input_text = val_dataset.processor.batch_decode(input_ids, skip_special_tokens=True)[0]
@@ -316,8 +321,7 @@ def predict_git(args):
             verbose_result = {"image": img_path, "question": question, "pred_answer": ans_text, "gt_answer": answer}
             results.append(result)
             verbose_results.append(verbose_result)
-        if step == 0:
-            break
+
 
     with open(result_path, "w") as f: 
         json.dump(results, f)
