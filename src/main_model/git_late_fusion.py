@@ -259,7 +259,7 @@ def val_git_acc(val_dataset, model, device, num_examples = 100, batch_size=2):
         text = full_text.split("Answer: ")[0] + "Answer: " 
         answer = full_text.split("Answer: ")[1].strip()
         pixel_values = val_dataset.processor(images=image, return_tensors="pt").pixel_values.to(device)
-        input_ids = val_dataset.processor(text=text, padding="max_length", return_tensors="pt", 
+        input_ids = val_dataset.processor(text=text, return_tensors="pt", 
                                             max_length=300, truncation=True).input_ids.to(device)
 
         with torch.no_grad():
