@@ -18,7 +18,7 @@ cd /projects/tir5/users/nvaikunt/MMML-TermProject-VizWiz-VQA-Challenge
 
 
 # Run Pred with LM Loss only on Answers
-python -m src.main_model.git_late_fusion --exp_name git_skill_fusion_partial --predict
+python -m src.main_model.git_late_fusion --exp_name git_skill_fusion_partial --predict --questions_last 
 
 # Run Pred with Full LM Loss
-python -m src.main_model.git_late_fusion --exp_name git_skill_fusion_full  --predict
+python -m src.main_model.git_late_fusion --exp_name git_skill_fusion_full  --predict --questions_last 

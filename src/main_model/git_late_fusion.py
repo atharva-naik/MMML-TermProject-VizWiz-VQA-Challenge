@@ -59,11 +59,11 @@ class SkillAwareGitVizWizVQADataset(VizWizVQABestAnsDataset):
         img_path = item["image"]
         question = item["question"]
         aux_tokens = self.aux_tokens_data[i]
-        if len(aux_tokens["objects"]) > 10: 
-            aux_tokens["objects"] = aux_tokens["objects"][:10]
-        if len(aux_tokens["ocr"]) > 5:
-            aux_tokens["ocr"] = aux_tokens["ocr"][:5]
-        shortened_ocr = [token for token in aux_tokens["ocr"][0] if len(token) > 10]
+        if len(aux_tokens["objects"][0]) > 10: 
+            aux_tokens["objects"][0] = aux_tokens["objects"][0][:10]
+        if len(aux_tokens["ocr"][0]) > 5:
+            aux_tokens["ocr"][0] = aux_tokens["ocr"][0][:5]
+        shortened_ocr = [token for token in aux_tokens["ocr"][0] if len(token) < 10]
         if len(shortened_ocr) == 0:
             shortened_ocr = aux_tokens["ocr"][0]
         objects = ", ".join(aux_tokens["objects"][0])
@@ -259,7 +259,8 @@ def val_git_acc(val_dataset, model, device, num_examples = 100, batch_size=2):
         text = full_text.split("Answer: ")[0] + "Answer: " 
         answer = full_text.split("Answer: ")[1].strip()
         pixel_values = val_dataset.processor(images=image, return_tensors="pt").pixel_values.to(device)
-        input_ids = val_dataset.processor(text=text, return_tensors="pt").input_ids.to(device)
+        input_ids = val_dataset.processor(text=text, padding="max_length", return_tensors="pt", 
+                                            max_length=300, truncation=True).input_ids.to(device)
 
         with torch.no_grad():
             gen_ids = model.generate(
@@ -304,7 +305,8 @@ def predict_git(args):
             print(question)
             print(text)
             print(answer)
-        input_ids = val_dataset.processor(text=text, return_tensors="pt").input_ids.to(device)
+        input_ids = val_dataset.processor(text=text, padding="max_length", return_tensors="pt", 
+                                            max_length=300, truncation=True).input_ids.to(device)
 
         with torch.no_grad():
             gen_ids = model.generate(
