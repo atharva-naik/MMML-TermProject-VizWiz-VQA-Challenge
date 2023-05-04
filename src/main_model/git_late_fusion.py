@@ -183,7 +183,7 @@ def train_git(args):
                     pixel_values=pixel_values, 
                     input_ids=input_ids, 
                     max_new_tokens=100,
-                    min_new_tokens=2,
+                    min_new_tokens=1,
                     num_beams=2,
                     early_stopping=True,)
 
@@ -267,7 +267,7 @@ def val_git_acc(val_dataset, model, device, num_examples = 100, batch_size=2):
                 pixel_values=pixel_values,
                 input_ids=input_ids,
                 max_new_tokens=100,
-                min_new_tokens=2,
+                min_new_tokens=1,
                 num_beams=2,
                 early_stopping=True,
             )
@@ -313,7 +313,7 @@ def predict_git(args):
                 pixel_values=pixel_values,
                 input_ids=input_ids,
                 max_new_tokens=100,
-                min_new_tokens=2,
+                min_new_tokens=1,
                 num_beams=4,
                 early_stopping=True,
             )
