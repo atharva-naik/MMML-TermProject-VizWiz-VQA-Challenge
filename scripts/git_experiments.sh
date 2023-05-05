@@ -14,11 +14,11 @@ conda activate vizwiz
 cd /projects/tir5/users/nvaikunt/MMML-TermProject-VizWiz-VQA-Challenge
 
 # Run Git with Full LM Loss
-python -m src.main_model.git_late_fusion --exp_name git_skill_fusion_full  --predict --questions_last 
+# python -m src.main_model.git_late_fusion --exp_name git_skill_fusion_full  --predict --questions_last 
 
 
 # Run Pred with LM Loss only on Answers
-python -m src.main_model.git_late_fusion --exp_name git_skill_fusion_partial --predict --questions_last --train --partial_loss --epochs 3
+python -m src.main_model.git_late_fusion --exp_name git_skill_fusion_partial --predict --questions_last --train --partial_loss --epochs 1
 
 # Run Pred with Full LM Loss
 # python -m src.main_model.git_late_fusion --exp_name git_skill_fusion_full  --predict --questions_last 
