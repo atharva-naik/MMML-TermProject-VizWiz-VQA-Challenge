@@ -551,7 +551,7 @@ def train_clip(args):
             )
         train_dataset = SkillAwareHfCLIPVizWizVQADataset(
             annot_path="./data/VQA/train.json", images_dir="./data/VQA/train", 
-            label2id=label2id, aux_tokens_data="./data/VQA/train_aux_info_tokens_o365.jsonl",
+            label2id=label2id, aux_tokens_data="./data/VQA/train_aux_info_tokens.jsonl",
         )
         train_dataloader = DataLoader(
             train_dataset, batch_size=args.batch_size, 
@@ -559,7 +559,7 @@ def train_clip(args):
         )
         val_dataset = SkillAwareHfCLIPVizWizVQADataset(
             annot_path="data/VQA/val.json", images_dir="./data/VQA/val", 
-            label2id=label2id, aux_tokens_data="./data/VQA/val_aux_info_tokens_o365.jsonl",
+            label2id=label2id, aux_tokens_data="./data/VQA/val_aux_info_tokens.jsonl",
         )
         val_dataloader = DataLoader(
             val_dataset, batch_size=args.batch_size, 
@@ -647,6 +647,76 @@ def validate_clip(model, dataloader, eval_step, epoch, args):
 
     return np.mean(val_losses), matches/tot
 
+def predict_unseen_clip(args, move_to_cuda: bool=False) -> str:
+    model_path = os.path.join("experiments", args.exp_name, "best_model.pt")
+    label2id = json.load(open("experiments/vizwiz_class_vocab.json"))
+    id2label = {v: k for k,v in label2id.items()}
+    
+    if not(args.use_hf_clip):
+        model = SkillAwareCLIPVizWizVQA(
+            model_path=args.model_path, 
+            label2id=label2id, 
+            device=args.device,
+            no_skill_mode=args.no_skill,
+        )
+    else:
+        model = SkillAwareHfCLIPVizWizVQA(
+            model_path=args.model_path, 
+            label2id=label2id, 
+            device=args.device,
+            no_skill_mode=args.no_skill,
+        )
+
+    ckpt_dict = torch.load(
+        model_path, 
+        map_location=args.device
+    )
+    model.load_state_dict(ckpt_dict["model_state_dict"])
+    model.eval()
+    
+    results = {}
+    results["accuracy"] = 0
+    results["preds"] = []
+    if not(args.use_hf_clip):
+        test_dataset = SkillAwareCLIPVizWizVQABestAnsDataset(
+            annot_path="data/VQA/test.json", images_dir="./data/VQA/test", 
+            label2id=label2id, preprocess=model.preprocess,
+            aux_tokens_data="./data/VQA/val_aux_info_tokens.jsonl",
+        )
+        test_dataloader = DataLoader(val_dataset, batch_size=args.batch_size, shuffle=False)
+    else:
+        val_dataset = SkillAwareHfCLIPVizWizVQADataset(
+            annot_path="data/VQA/val.json", images_dir="./data/VQA/val", 
+            label2id=label2id, aux_tokens_data="./data/VQA/val_aux_info_tokens.jsonl",
+        )
+        val_dataloader = DataLoader(
+            val_dataset, batch_size=args.batch_size, 
+            shuffle=False, collate_fn=val_dataset.collate_fn,
+        )
+    val_bar = tqdm(enumerate(val_dataloader), 
+                        total=len(val_dataloader), 
+                        desc="Hang on, Running predictions...")
+    tot, matches = 0, 0
+    for i, data in val_bar:
+
+        model.zero_grad()
+        with torch.no_grad():
+            outputs, loss = model(**data)
+
+        preds = outputs.argmax(axis=-1).detach().cpu()
+        labels = data["labels"].detach().cpu()
+
+        matches += (preds == labels).sum().item() 
+        tot += len(preds)
+        
+        for pred, label in zip(preds ,labels):
+            results["preds"].append({"pred": id2label[pred.item()], "true": id2label[label.item()]})
+
+    results["accuracy"] = matches/tot
+    if args.pred_file == None:
+        args.pred_file = os.path.join("experiments", args.exp_name, "pred.json")
+    with open(args.pred_file, "w") as fn:
+        fn.write(json.dumps(results, indent=4))
 
 def predict_clip(args, move_to_cuda: bool=False) -> str:
     model_path = os.path.join("experiments", args.exp_name, "best_model.pt")
