@@ -249,6 +249,7 @@ def validate_vilt(model, dataloader: DataLoader, eval_step: int,
 def testing_vilt(model, dataloader: DataLoader, args: argparse.Namespace, test_ids=[]) -> Union[Tuple[float, float], Tuple[List[dict], float, float]]:
     test_bar = tqdm(enumerate(dataloader), total=len(dataloader), desc="testing")
     test_preds = []
+    all_preds = []
     model.eval()
     for step, batch in test_bar:
         model.zero_grad()
@@ -256,8 +257,8 @@ def testing_vilt(model, dataloader: DataLoader, args: argparse.Namespace, test_i
             for key in batch: batch[key] = batch[key].to(args.device)
             outputs = model(**batch)
             preds = outputs.logits.argmax(axis=-1).detach().cpu()
-            for pred in preds.tolist(): test_preds.append(model.id2label[pred])
-    for pred, image_id, in zip(test_preds, test_ids): 
+            for pred in preds.tolist(): all_preds.append(model.id2label[pred])
+    for pred, image_id, in zip(all_preds, test_ids): 
         test_preds.append({
             "image": image_id,
             "answer": pred,
