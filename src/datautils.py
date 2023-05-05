@@ -125,7 +125,9 @@ class VizWizVQABestAnsDataset(Dataset):
                 answer = None
                 class_lab = None
                 answer_confidence = 0
+            no_skill_instance: bool=True
             skill_labels = self.skills_db.get(rec["image"]+q)
+            if skill_labels is not None: no_skill_instance = False
             if filter_out_no_skill_instances:
                 if skill_labels is None: continue
             self.data.append({
@@ -133,7 +135,8 @@ class VizWizVQABestAnsDataset(Dataset):
                 "answer_type": self.a_type_to_ind.get(a_type),
                 "image": img_path, "answer": answer, "total": total, 
                 "class_label": class_lab, "answer_confidence": answer_confidence,
-                "skills": skill_labels["bin_label"] if skill_annot_path is not None else [],
+                "skills": skill_labels["bin_label"] if not(no_skill_instance) else [],
+                "no_skill_instance": no_skill_instance,
             })
         print(len(self.data))
 

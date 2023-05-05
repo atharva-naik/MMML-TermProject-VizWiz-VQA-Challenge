@@ -14778,7 +14778,7 @@
             "true": "mans best friend"
         },
         {
-            "pred": "unanswerable",
+            "pred": "yes",
             "true": "no"
         },
         {
@@ -14998,7 +14998,7 @@
             "true": "chicken noodle soup"
         },
         {
-            "pred": "peanuts",
+            "pred": "ketchup",
             "true": "barbecue sauce"
         },
         {

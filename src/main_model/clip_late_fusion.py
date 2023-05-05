@@ -426,17 +426,14 @@ class SkillAwareCLIPVizWizVQA(nn.Module):
         print(f"moving model to device: {device}")
         
     def parameters(self):
-        # return list(self.classifier.parameters())
-        return list(self.classifier.parameters())+list(self.skill_embs.parameters())
-
+        return list(self.classifier.parameters())
+        # return list(self.classifier.parameters())+list(self.skill_embs.parameters())
     def train(self):
         self.classifier.train()
-        self.skill_embs.train()
-
+        # self.skill_embs.train()
     def eval(self):
         self.classifier.eval()
-        self.skill_embs.eval()
-
+        # self.skill_embs.eval()
     def forward(self, **encoding):
         """return outputs and loss"""
         image_emb = self.model.encode_image(encoding["image_features"].to(self.device)).float()
