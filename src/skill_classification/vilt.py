@@ -357,7 +357,7 @@ def predict_vilt(args):
         eval_step=0, epoch=0, args=args,
         output_preds=True,
     )
-    with open(predict_log_path, "a") as f:
+    with open(predict_log_path, "w") as f:
         json.dump({
             "predict_acc": val_acc, 
             "predict_loss": val_loss,
