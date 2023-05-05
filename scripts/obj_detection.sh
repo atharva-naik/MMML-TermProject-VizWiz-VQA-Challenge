@@ -17,4 +17,4 @@ cd /projects/tir5/users/nvaikunt/MMML-TermProject-VizWiz-VQA-Challenge
 # For val data
 # python -m src.object_detection.deta_detector 
 # For train data
-python -m src.object_detection.deta_detector --split "val" --image_dir "data/VQA/val" --save_dir "data/VQA/val_obj_detect/o365" --results_dir "data/VQA/o365" --batch_sz 4 --model_ckpt "jozhang97/deta-swin-large-o365"
+python -m src.object_detection.deta_detector --split "test" --image_dir "data/VQA/test" --save_dir "data/VQA/test_obj_detect/o365" --results_dir "data/VQA/o365" --batch_sz 4 --model_ckpt "jozhang97/deta-swin-large-o365"
