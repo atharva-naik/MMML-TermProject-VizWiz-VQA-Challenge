@@ -316,8 +316,6 @@ def predict_git(args):
             verbose_result = {"image": img_path, "question": question, "pred_answer": ans_text, "gt_answer": answer}
             results.append(result)
             verbose_results.append(verbose_result)
-        if step == 0:
-            break
 
     with open(result_path, "w") as f: 
         json.dump(results, f)
