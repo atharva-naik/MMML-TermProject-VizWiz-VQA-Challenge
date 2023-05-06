@@ -74,9 +74,9 @@ def deta_inference(model_ckpt, image_dir, save_dir=None,
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model_ckpt", type=str, default="jozhang97/deta-swin-large-o365")
+    parser.add_argument("--model_ckpt", type=str, default="jozhang97/deta-swin-large")
     parser.add_argument("--image_dir", type=str, default="data/VQA/train")
-    parser.add_argument("--save_dir", type=str, default="data/VQA/train_obj_detect/o365")
+    parser.add_argument("--save_dir", type=str, default="data/VQA/train_obj_detect/coco")
     parser.add_argument("--results_dir", type=str, default="data/VQA/")
     parser.add_argument("--split", type=str, default="train")
     parser.add_argument("--device", type=str, default="cuda")
