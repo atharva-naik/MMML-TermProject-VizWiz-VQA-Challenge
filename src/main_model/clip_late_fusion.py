@@ -377,7 +377,8 @@ class SkillAwareCLIPVizWizVQA(nn.Module):
     def __init__(self, model_path: str="ViT-L/14", device: str="cuda:0", 
                  label2id: dict={}, image_emb_size: int=768, 
                  lang_emb_size: int=768, skill_emb_size: int=200,
-                 no_skill_mode: bool=False):
+                 no_skill_mode: bool=False, no_obj_mode: bool=False,
+                 no_scene_text_mode: bool=False):
         super().__init__()
         self.model_path = model_path
         self.model, self.preprocess = clip.load(args.model_path)
@@ -389,16 +390,23 @@ class SkillAwareCLIPVizWizVQA(nn.Module):
             "CNT": 3,
             "OTH": 4,
         }
+        self.no_obj_mode = no_obj_mode
         self.no_skill_mode = no_skill_mode
+        self.no_scene_text_mode = no_scene_text_mode
         if no_skill_mode:
+            print("no skill mode")
             self.emb_size = 3*lang_emb_size+image_emb_size
         else:
             self.skill_embs = nn.Embedding(
                 len(self.skill_to_ind)+1, 
                 skill_emb_size, padding_idx=5,
             ) # 5 "skills": TXT, COL, CNT, OBJ, OTH
-
-            self.emb_size = 3*lang_emb_size+image_emb_size+skill_emb_size
+            if no_scene_text_mode or no_obj_mode:
+                if no_obj_mode: print("no object mode")
+                if no_scene_text_mode: print("no scene text mode")
+                self.emb_size = 2*lang_emb_size+image_emb_size+skill_emb_size
+                print(f"emb_size: {self.emb_size}")
+            else: self.emb_size = 3*lang_emb_size+image_emb_size+skill_emb_size
         self.upscale_size = self.num_classes // 2
         self.classifier = nn.Sequential(
             nn.Linear(
@@ -426,85 +434,34 @@ class SkillAwareCLIPVizWizVQA(nn.Module):
         print(f"moving model to device: {device}")
         
     def parameters(self):
-        # return list(self.classifier.parameters())
-        return list(self.classifier.parameters())+list(self.skill_embs.parameters())
-
+        return list(self.classifier.parameters())
+        # return list(self.classifier.parameters())+list(self.skill_embs.parameters())
     def train(self):
         self.classifier.train()
-        self.skill_embs.train()
-
+        # self.skill_embs.train()
     def eval(self):
         self.classifier.eval()
-        self.skill_embs.eval()
-
+        # self.skill_embs.eval()
     def forward(self, **encoding):
         """return outputs and loss"""
         image_emb = self.model.encode_image(encoding["image_features"].to(self.device)).float()
         question_emb = self.model.encode_text(encoding["question"].to(self.device)).float()
-        objects_emb = self.model.encode_text(encoding["objects"].to(self.device)).float()
-        scene_text_emb = self.model.encode_text(encoding["scene_text"].to(self.device)).float()
+        modalities = [image_emb, question_emb]
         if not self.no_skill_mode:
             skill_emb = self.skill_embs(encoding["skills"].to(self.device)).mean(axis=1)
-            # pdb.set_trace()
-            logits = self.classifier(torch.cat([image_emb,question_emb,skill_emb,objects_emb,scene_text_emb], -1))
-        else: logits = self.classifier(torch.cat([image_emb,question_emb,objects_emb,scene_text_emb], -1))
+            modalities.append(skill_emb)
+        if not self.no_obj_mode:
+            objects_emb = self.model.encode_text(encoding["objects"].to(self.device)).float()
+            modalities.append(objects_emb)
+        if not self.no_scene_text_mode:
+            scene_text_emb = self.model.encode_text(encoding["scene_text"].to(self.device)).float()
+            modalities.append(scene_text_emb)
+        logits = self.classifier(torch.cat(modalities, -1))
+        # logits = self.classifier(torch.cat([image_emb,question_emb,skill_emb,objects_emb,scene_text_emb], -1))
+        # else: logits = self.classifier(torch.cat([image_emb,question_emb,objects_emb,scene_text_emb], -1))
         labels = encoding["labels"].to(self.device)
         loss = self.loss_fn(logits, labels)
 
-        return logits, loss
-
-class FrozenCLIPVizWizVQA(nn.Module):
-    def __init__(self, model_path: str="ViT-L/14", device: str="cuda:0", 
-                 label2id: dict={}, image_emb_size: int=768, lang_emb_size: int=768,
-                 no_skill_mode: bool=False):
-        super().__init__()
-        self.model_path = model_path
-        self.no_skill_mode = no_skill_mode
-        self.model, self.preprocess = clip.load(args.model_path)
-        self.num_classes = len(label2id)
-        self.emb_size = lang_emb_size+image_emb_size
-        self.upscale_size = self.num_classes // 2
-        self.classifier = nn.Sequential(
-            nn.Linear(
-                in_features=self.emb_size, 
-                out_features=self.upscale_size, 
-                bias=True
-            ),
-            nn.LayerNorm(
-                (self.upscale_size), eps=1e-05, 
-                elementwise_affine=True
-            ),
-            nn.GELU(approximate="none"),
-            nn.Linear(
-                in_features=self.upscale_size, 
-                out_features=len(label2id), 
-                bias=True
-            ),
-        )
-        # # freeze CLIP params:
-        # for param in self.model.parameters():
-        #     param.requires_grad = False
-        self.device = device
-        self.loss_fn = nn.CrossEntropyLoss()
-        self.to(device)
-        print(f"moving model to device: {device}")
-    # def parameters(self):
-    #     return self.classifier.parameters()
-
-    # def train(self):
-    #     self.classifier.train()
-
-    # def eval(self):
-    #     self.classifier.eval()
-    def forward(self, **encoding):
-        """return outputs and loss"""
-        image_outputs = self.model.encode_image(encoding["image_features"].to(self.device)).float()
-        text_outputs = self.model.encode_text(encoding["question"].to(self.device)).float()
-        # pdb.set_trace()
-        logits = self.classifier(torch.cat([image_outputs,text_outputs], -1))
-        labels = encoding["labels"].to(self.device)
-
-        loss = self.loss_fn(logits, labels)
         return logits, loss
     
 # training loop
@@ -518,10 +475,12 @@ def train_clip(args):
     model = None
     # if args.base_model == "clip":
     if not(args.use_hf_clip):
-        model = SkillAwareCLIPVizWizVQA(# FrozenCLIPVizWizVQA
+        model = SkillAwareCLIPVizWizVQA(
             model_path=args.model_path, 
             label2id=label2id, device=args.device,
             no_skill_mode=args.no_skill,
+            no_obj_mode=args.no_obj,
+            no_scene_text_mode=args.no_scene_text,
         )
         train_dataset = SkillAwareCLIPVizWizVQABestAnsDataset(
             annot_path="./data/VQA/train.json", images_dir="./data/VQA/train", 
@@ -538,20 +497,20 @@ def train_clip(args):
         val_dataloader = DataLoader(val_dataset, batch_size=args.batch_size, shuffle=True)
     else:
         if not args.use_skill_attention:
-            model = SkillAwareHfCLIPVizWizVQA(# FrozenCLIPVizWizVQA
+            model = SkillAwareHfCLIPVizWizVQA(
                 model_path=args.model_path, 
                 label2id=label2id, device=args.device,
                 no_skill_mode=args.no_skill,
             )
         else:
-            model = SkillAwareAttnHfCLIP(# FrozenCLIPVizWizVQA
+            model = SkillAwareAttnHfCLIP(
                 model_path=args.model_path, emb_size=768,
                 label2id=label2id, device=args.device,
                 no_skill_mode=args.no_skill,
             )
         train_dataset = SkillAwareHfCLIPVizWizVQADataset(
             annot_path="./data/VQA/train.json", images_dir="./data/VQA/train", 
-            label2id=label2id, aux_tokens_data="./data/VQA/train_aux_info_tokens_o365.jsonl",
+            label2id=label2id, aux_tokens_data="./data/VQA/train_aux_info_tokens.jsonl",
         )
         train_dataloader = DataLoader(
             train_dataset, batch_size=args.batch_size, 
@@ -559,7 +518,7 @@ def train_clip(args):
         )
         val_dataset = SkillAwareHfCLIPVizWizVQADataset(
             annot_path="data/VQA/val.json", images_dir="./data/VQA/val", 
-            label2id=label2id, aux_tokens_data="./data/VQA/val_aux_info_tokens_o365.jsonl",
+            label2id=label2id, aux_tokens_data="./data/VQA/val_aux_info_tokens.jsonl",
         )
         val_dataloader = DataLoader(
             val_dataset, batch_size=args.batch_size, 
@@ -567,8 +526,8 @@ def train_clip(args):
         )
     optimizer = torch.optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
     best_val_acc = 0
-    best_val_step = -1
-    best_val_epoch = -1
+    # best_val_step = -1
+    # best_val_epoch = -1
     for epoch in range(args.epochs):
         train_bar = tqdm(enumerate(train_dataloader), 
                         total=len(train_dataloader), 
@@ -596,14 +555,11 @@ def train_clip(args):
 
             if (i+1) % args.eval_steps == 0 or (i+1) == len(train_dataloader):
                 print("starting validation\n\nvalidate_clip()")
-                val_loss, val_acc = validate_clip( model=model, dataloader=val_dataloader,eval_step=i, epoch=epoch, args=args)
+                val_loss, val_acc = validate_clip(model=model, dataloader=val_dataloader,eval_step=i, epoch=epoch, args=args)
                 # save the best model.
-                print(f"val acc: {val_acc}")
                 print(f"step: {i}")
                 print(f"epoch: {epoch}")
-                print(f"best_val_epoch: {best_val_epoch}")
-                print(f"best_val_step: {best_val_step}")
-                print(f"best_val_acc: {best_val_acc}")
+                print(f"val acc: {val_acc}")
                 if val_acc > best_val_acc:
                     best_val_step = i
                     best_val_acc = val_acc
@@ -622,7 +578,10 @@ def train_clip(args):
                             "best_val_step": best_val_step,
                             "best_val_acc": best_val_acc,
                         })+"\n")
-                       
+                print(f"best_val_epoch: {best_val_epoch}")
+                print(f"best_val_step: {best_val_step}")
+                print(f"best_val_acc: {best_val_acc}")
+                    
 # validation loop
 def validate_clip(model, dataloader, eval_step, epoch, args):
     val_bar = tqdm(enumerate(dataloader), total=len(dataloader), desc="Validating...")
@@ -647,6 +606,78 @@ def validate_clip(model, dataloader, eval_step, epoch, args):
 
     return np.mean(val_losses), matches/tot
 
+def predict_unseen_clip(args, move_to_cuda: bool=False) -> str:
+    model_path = os.path.join("experiments", args.exp_name, "best_model.pt")
+    label2id = json.load(open("experiments/vizwiz_class_vocab.json"))
+    id2label = {v: k for k,v in label2id.items()}
+    
+    if not(args.use_hf_clip):
+        model = SkillAwareCLIPVizWizVQA(
+            model_path=args.model_path, 
+            label2id=label2id, 
+            device=args.device,
+            no_skill_mode=args.no_skill,
+            no_obj_mode=args.no_obj,
+            no_scene_text_mode=args.no_scene_text,
+        )
+    else:
+        model = SkillAwareHfCLIPVizWizVQA(
+            model_path=args.model_path, 
+            label2id=label2id, 
+            device=args.device,
+            no_skill_mode=args.no_skill,
+        )
+
+    ckpt_dict = torch.load(
+        model_path, 
+        map_location=args.device
+    )
+    model.load_state_dict(ckpt_dict["model_state_dict"])
+    model.eval()
+    
+    results = {}
+    results["accuracy"] = 0
+    results["preds"] = []
+    if not(args.use_hf_clip):
+        test_dataset = SkillAwareCLIPVizWizVQABestAnsDataset(
+            annot_path="data/VQA/test.json", images_dir="./data/VQA/test", 
+            label2id=label2id, preprocess=model.preprocess,
+            aux_tokens_data="./data/VQA/val_aux_info_tokens.jsonl",
+        )
+        test_dataloader = DataLoader(val_dataset, batch_size=args.batch_size, shuffle=False)
+    else:
+        val_dataset = SkillAwareHfCLIPVizWizVQADataset(
+            annot_path="data/VQA/val.json", images_dir="./data/VQA/val", 
+            label2id=label2id, aux_tokens_data="./data/VQA/val_aux_info_tokens.jsonl",
+        )
+        val_dataloader = DataLoader(
+            val_dataset, batch_size=args.batch_size, 
+            shuffle=False, collate_fn=val_dataset.collate_fn,
+        )
+    val_bar = tqdm(enumerate(val_dataloader), 
+                        total=len(val_dataloader), 
+                        desc="Hang on, Running predictions...")
+    tot, matches = 0, 0
+    for i, data in val_bar:
+
+        model.zero_grad()
+        with torch.no_grad():
+            outputs, loss = model(**data)
+
+        preds = outputs.argmax(axis=-1).detach().cpu()
+        labels = data["labels"].detach().cpu()
+
+        matches += (preds == labels).sum().item() 
+        tot += len(preds)
+        
+        for pred, label in zip(preds ,labels):
+            results["preds"].append({"pred": id2label[pred.item()], "true": id2label[label.item()]})
+
+    results["accuracy"] = matches/tot
+    if args.pred_file == None:
+        args.pred_file = os.path.join("experiments", args.exp_name, "pred.json")
+    with open(args.pred_file, "w") as fn:
+        fn.write(json.dumps(results, indent=4))
 
 def predict_clip(args, move_to_cuda: bool=False) -> str:
     model_path = os.path.join("experiments", args.exp_name, "best_model.pt")
@@ -659,6 +690,8 @@ def predict_clip(args, move_to_cuda: bool=False) -> str:
             label2id=label2id, 
             device=args.device,
             no_skill_mode=args.no_skill,
+            no_obj_mode=args.no_obj,
+            no_scene_text_mode=args.no_scene_text,
         )
     else:
         model = SkillAwareHfCLIPVizWizVQA(
@@ -775,6 +808,8 @@ def get_args():
     parser.add_argument("-pfn", "--pred_file", type=str, help="file to store predictions")
     parser.add_argument("-ska", "--use_skill_attention", action="store_true", help="use self attention fusion")
     parser.add_argument("-nsk", "--no_skill", action="store_true", help="no skill embedding mode")
+    parser.add_argument("-nobj", "--no_obj", action="store_true", help="no object tags")
+    parser.add_argument("-nsctxt", "--no_scene_text", action="store_true", help="no scene text")
     args = parser.parse_args()
     if args.use_hf_clip: args.model_path = "openai/clip-vit-large-patch14"
 
@@ -794,3 +829,5 @@ if __name__ == "__main__":
     # python -m src.main_model.clip_late_fusion -t -de "cuda:0" -exp skill_unaware_clip
     # python -m src.main_model.clip_late_fusion -t -de "cuda:0" -exp skill_clip_hf_vis_proj2 -hf
     # python -m src.main_model.clip_late_fusion -t -de "cuda:0" -exp skill_clip_hf_vis_proj2 -hf -ska
+    # python -m src.main_model.clip_late_fusion -t -de "cuda:0" -exp skill_aware_clip_nobj -nobj
+    # python -m src.main_model.clip_late_fusion -t -de "cuda:0" -exp skill_aware_clip_nsctxt -nsctxt

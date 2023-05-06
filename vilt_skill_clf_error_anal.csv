@@ -1,0 +1,34 @@
+image,question,error_type
+VizWiz_val_00001722.jpg,What flavor are these pringles?,TXT False Positive
+VizWiz_val_00001268.jpg,What is this?,TXT False Positive
+VizWiz_val_00002724.jpg,this is the display of a treadmill could you tell me the distance please.,TXT False Positive
+VizWiz_val_00002545.jpg,How much of the page in this photo cross is visible? Thank you.,TXT False Positive
+VizWiz_val_00002343.jpg,Kind of coffeemate is this?,TXT False Positive
+VizWiz_val_00002343.jpg,Kind of coffeemate is this?,TXT False Negative
+VizWiz_val_00002343.jpg,Kind of coffeemate is this?,TXT False Negative
+VizWiz_val_00002343.jpg,Kind of coffeemate is this?,TXT False Negative
+VizWiz_val_00002343.jpg,Kind of coffeemate is this?,TXT False Negative
+VizWiz_val_00002343.jpg,Kind of coffeemate is this?,TXT False Negative
+VizWiz_val_00003427.jpg,What is the title of this DVD?,OBJ False Positive
+VizWiz_val_00001306.jpg,What color is this?,OBJ False Positive
+VizWiz_val_00001294.jpg,What is this?,OBJ False Positive
+VizWiz_val_00001652.jpg,What is this bottle?,OBJ False Positive
+VizWiz_val_00002408.jpg,What color is this?,OBJ False Positive
+VizWiz_val_00002612.jpg,What do the big gray clouds look like in the sky?,COL False Positive
+VizWiz_val_00003150.jpg,Does this strip have one or two pink lines? One can be lighter than the other one.,COL False Positive
+VizWiz_val_00001187.jpg,"There are two shirts in this picture hopefully, are they the same color?",COL False Positive
+VizWiz_val_00003577.jpg,Does this look dirty? Thank you.,COL False Positive
+VizWiz_val_00002779.jpg,Please describe the picture.,COL False Positive
+VizWiz_val_00002779.jpg,Please describe the picture.,COL False Negative
+VizWiz_val_00002779.jpg,Please describe the picture.,COL False Negative
+VizWiz_val_00002779.jpg,Please describe the picture.,COL False Negative
+VizWiz_val_00002779.jpg,Please describe the picture.,COL False Negative
+VizWiz_val_00002779.jpg,Please describe the picture.,COL False Negative
+VizWiz_val_00002724.jpg,this is the display of a treadmill could you tell me the distance please.,CNT False Positive
+VizWiz_val_00002567.jpg,How many calories in a serving of Cheerios?,CNT False Positive
+VizWiz_val_00002567.jpg,How many calories in a serving of Cheerios?,CNT False Negative
+VizWiz_val_00002567.jpg,How many calories in a serving of Cheerios?,CNT False Negative
+VizWiz_val_00002567.jpg,How many calories in a serving of Cheerios?,CNT False Negative
+VizWiz_val_00002567.jpg,How many calories in a serving of Cheerios?,CNT False Negative
+VizWiz_val_00002567.jpg,How many calories in a serving of Cheerios?,CNT False Negative
+VizWiz_val_00002567.jpg,How many calories in a serving of Cheerios?,OTH False Negative

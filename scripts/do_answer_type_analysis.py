@@ -114,6 +114,7 @@ if __name__ == "__main__":
             "./experiments/resnet/preds.json",
             "./experiments/skill_unaware_clip/pred.json",
             "./experiments/skill_aware_clip2/pred.json",
+            "./experiments/skill_aware_clip3/pred.json",
             # "./experiments/oracle_ensemble/formatted_pred.json",
             "./experiments/skill_clip_hf/pred.json",
             "./experiments/skill_clip_hf_vis_proj/formatted_pred.json",
