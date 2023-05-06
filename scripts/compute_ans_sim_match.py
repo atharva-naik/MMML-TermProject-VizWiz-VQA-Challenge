@@ -30,8 +30,7 @@ def dump_pred_embs_lookup(model, preds: List[str], pred_embs_path: str):
 def compute_inst_bertscore(ans_emb: np.ndarray, ref_embs: List[np.ndarray]):
     scores = util.cos_sim(ans_emb, ref_embs)[0]
     return scores.max()
-    # return scores[np.argpartition(scores, -3)[-3:]].mean()
-
+# return scores[np.argpartition(scores, -3)[-3:]].mean()
 # main
 if __name__ == "__main__":
     model = SentenceTransformer(MODEL_NAME)
