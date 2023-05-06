@@ -76,6 +76,7 @@ class VizWizVQABestAnsDataset(Dataset):
         if skill_annot_path is not None:
             skill_df = pd.read_csv(skill_annot_path).to_dict("records")
             for item in skill_df:
+                skill_vals = [item["TXT"], item["OBJ"], item["COL"], item["CNT"], item["OTH"],]
                 self.skills_db[item["IMG"]+item["QSN"]] = {
                 "bin_label": [
                     int(item["TXT"]>2),
@@ -90,7 +91,9 @@ class VizWizVQABestAnsDataset(Dataset):
                     item["COL"],
                     item["CNT"],
                     item["OTH"],
-                ]
+                ],
+                "main_skill": 
+                    np.argmax(skill_vals)
             }
         self.data = []
         self.a_type_to_ind = {
@@ -109,25 +112,39 @@ class VizWizVQABestAnsDataset(Dataset):
         self.label2id, self.id2label = self.get_class_dicts()
         self.all_ids = []
         for rec in self.annot_db.getAnns():
-            a_type = rec['answer_type']
+            a_type = rec.get('answer_type', None)
             img_path = os.path.join(images_dir, 
                                     rec['image'])
             q = rec['question']
-            is_ansble = rec["answerable"]
-            answer, answer_confidence, total = self._vote_answer(
-                rec['answers'], is_ansble=is_ansble,
-            )
-            class_lab = self.label2id.get(answer)
-            self.all_ids.append(class_lab)
+            is_ansble = rec.get("answerable", None)
+            if a_type is not None:
+                answer, answer_confidence, total = self._vote_answer(
+                    rec['answers'], is_ansble=is_ansble,
+                )
+                class_lab = self.label2id.get(answer)
+                self.all_ids.append(class_lab)
+            else:
+                total = 0
+                answer = None
+                class_lab = None
+                answer_confidence = 0
+            # answer, answer_confidence, total = self._vote_answer(
+            #     rec['answers'], is_ansble=is_ansble,
+            # )
+            # class_lab = self.label2id.get(answer)
+            # self.all_ids.append(class_lab)
             skill_labels = self.skills_db.get(rec["image"]+q)
+            # import pdb
+            # pdb.set_trace()
             if filter_out_no_skill_instances:
                 if skill_labels is None: continue
             self.data.append({
                 "question": q, "is_answerable": is_ansble,
-                "answer_type": self.a_type_to_ind[a_type],
+                "answer_type": self.a_type_to_ind.get(a_type),
                 "image": img_path, "answer": answer, "total": total, 
                 "class_label": class_lab, "answer_confidence": answer_confidence,
-                "skills": skill_labels["bin_label"] if skill_annot_path is not None else [],
+                "skills": skill_labels["bin_label"] if skill_labels is not None else [],
+                "main_skill": skill_labels["main_skill"] if skill_labels is not None else None,
             })
         print(len(self.data))
 
