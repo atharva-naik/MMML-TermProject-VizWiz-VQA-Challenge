@@ -112,11 +112,11 @@ class VizWizVQABestAnsDataset(Dataset):
         self.label2id, self.id2label = self.get_class_dicts()
         self.all_ids = []
         for rec in self.annot_db.getAnns():
-            a_type = rec.get('answer_type')
+            a_type = rec.get('answer_type', None)
             img_path = os.path.join(images_dir, 
                                     rec['image'])
             q = rec['question']
-            is_ansble = rec.get("answerable")
+            is_ansble = rec.get("answerable", None)
             if a_type is not None:
                 answer, answer_confidence, total = self._vote_answer(
                     rec['answers'], is_ansble=is_ansble,
@@ -128,9 +128,14 @@ class VizWizVQABestAnsDataset(Dataset):
                 answer = None
                 class_lab = None
                 answer_confidence = 0
-            no_skill_instance: bool=True
+            # answer, answer_confidence, total = self._vote_answer(
+            #     rec['answers'], is_ansble=is_ansble,
+            # )
+            # class_lab = self.label2id.get(answer)
+            # self.all_ids.append(class_lab)
             skill_labels = self.skills_db.get(rec["image"]+q)
-            if skill_labels is not None: no_skill_instance = False
+            # import pdb
+            # pdb.set_trace()
             if filter_out_no_skill_instances:
                 if skill_labels is None: continue
             self.data.append({
@@ -138,8 +143,8 @@ class VizWizVQABestAnsDataset(Dataset):
                 "answer_type": self.a_type_to_ind.get(a_type),
                 "image": img_path, "answer": answer, "total": total, 
                 "class_label": class_lab, "answer_confidence": answer_confidence,
-                "skills": skill_labels["bin_label"] if not(no_skill_instance) else [],
-                "no_skill_instance": no_skill_instance,
+                "skills": skill_labels["bin_label"] if skill_labels is not None else [],
+                "main_skill": skill_labels["main_skill"] if skill_labels is not None else None,
             })
         print(len(self.data))
 
