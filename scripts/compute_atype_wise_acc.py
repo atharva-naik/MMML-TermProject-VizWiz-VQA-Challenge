@@ -10,21 +10,6 @@ def compute_all_annotators_score_for_inst(ans: str, refs: List[str]):
     for ref_ans in refs: votes[ref_ans] += 1
     
     return min(votes.get(ans,0)/3, 1)
-    
-# PREDS_PATH: str = "./experiments/frozen_vilt2/formatted_pred.json"
-def load_vizwiz_gold_labels(path: str="./data/skill/vizwiz_skill_typ_val.csv"):
-    img_to_skill = {}
-    data = pd.read_csv(path).to_dict("records")
-    for item in data:
-        assert item["IMG"] not in img_to_skill
-        img_to_skill[item["IMG"]] = {
-            "TXT": item["TXT"]>2,
-            "OBJ": item["OBJ"]>2,
-            "COL": item["COL"]>2,
-            "CNT": item["CNT"]>2,
-            # "OTH": item["OTH"]>2,
-        }
-    return img_to_skill
 
 def compute_acc(preds_path: str):
     refs_data = json.load(open("./data/VQA/val.json"))
@@ -42,19 +27,12 @@ def compute_acc(preds_path: str):
 
     return np.mean(scores)
 
-def compute_skill_wise_acc(preds_path: str):
-    # skill_to_ind = {
-    #     "TXT": 0,
-    #     "OBJ": 1,
-    #     "COL": 2,
-    #     "CNT": 3,
-    #     "OTH": 4,
-    # }
-    img_to_skill = load_vizwiz_gold_labels()
+def compute_atype_wise_acc(preds_path: str):
     val_data = json.load(open("./data/VQA/val.json"))
     img_to_refs = {item["image"]: [i["answer"] for i in item["answers"]] for item in val_data}
+    img_to_atype = {item["image"]: item["answer_type"] for item in val_data}
     img_list = [item["image"] for item in val_data]
-    skill_wise_vqa_acc = defaultdict(lambda:[])
+    atype_wise_vqa_acc = defaultdict(lambda:[])
     preds_data = json.load(open(preds_path))
     if "preds" in preds_data:
         preds_data = preds_data["preds"]
@@ -63,18 +41,12 @@ def compute_skill_wise_acc(preds_path: str):
         except KeyError: img = img_list[i]
         try: answer = item["answer"]
         except KeyError: answer = item["pred"]
-        skills = img_to_skill.get(img)
-        if skills is None: continue
-        for skill, value in skills.items():
-            if value == 0: continue
-            refs = img_to_refs[img]
-            skill_wise_vqa_acc[skill].append(
-                compute_all_annotators_score_for_inst(
-                    answer, refs,
-                )
-            )
-    skill_wise_vqa_acc = {k: v for k,v in sorted(skill_wise_vqa_acc.items(), key=lambda x: x[0], reverse=True)}
-    for k,v in skill_wise_vqa_acc.items():
+        refs = img_to_refs[img]
+        atype = img_to_atype[img]
+        inst_score = compute_all_annotators_score_for_inst(answer, refs)
+        atype_wise_vqa_acc[atype].append(inst_score)
+    atype_wise_vqa_acc = {k: v for k,v in sorted(atype_wise_vqa_acc.items(), key=lambda x: x[0], reverse=True)}
+    for k,v in atype_wise_vqa_acc.items():
         print(f"{k}: {100*np.mean(v):.2f} ({len(v)})")
 
 # main
@@ -102,5 +74,5 @@ if __name__ == "__main__":
         try: print("\x1b[34;1m# "+preds_path.split("/")[2].strip()+"\x1b[0m")
         except IndexError:
              print("\x1b[34;1m# "+preds_path.split("/")[1].strip()+"\x1b[0m")
+        compute_atype_wise_acc(preds_path)
         print("TOT:", round(100*compute_acc(preds_path), 2))
-        compute_skill_wise_acc(preds_path)

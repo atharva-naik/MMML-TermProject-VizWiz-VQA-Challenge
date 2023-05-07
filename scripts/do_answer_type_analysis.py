@@ -106,20 +106,40 @@ def compute_ans_type_f_scores(pred_ans_list: List[str]):
 
 if __name__ == "__main__":
     for path in [
-            "./experiments/clip/pred.json",
-            "./experiments/clip_multimodal/pred.json",
-            # "./experiments/frozen_git/formatted_pred.json",
-            # "./experiments/frozen_git/preds.json",
-            "./experiments/frozen_vilt2/predict_logs.json",
-            "./experiments/resnet/preds.json",
-            "./experiments/skill_unaware_clip/pred.json",
-            "./experiments/skill_aware_clip2/pred.json",
-            "./experiments/skill_aware_clip3/pred.json",
-            # "./experiments/oracle_ensemble/formatted_pred.json",
-            "./experiments/skill_clip_hf/pred.json",
-            "./experiments/skill_clip_hf_vis_proj/formatted_pred.json",
-            "./experiments/skill_clip_hf_vis_proj2/formatted_pred.json",
-        ]:
+        # "./result_t5.json", # generative
+        "./result_deberta.json",
+        "./experiments/resnet/pred.json",
+        "./experiments/clip/pred.json",
+        # "./experiments/zero_shot_git_large/formatted_pred.json", # generative
+        "./experiments/clip_multimodal/formatted_pred.json",
+        "./experiments/frozen_vilt2/formatted_pred.json",
+        # "./experiments/frozen_git/formatted_pred.json", # generative
+        "./experiments/skill_unaware_clip/formatted_pred.json",
+        "./experiments/skill_aware_clip_multitask/formatted_pred.json",
+        "./experiments/skill_aware_clip2/formatted_pred.json",
+        # "./experiments/skill_aware_clip3/formatted_pred.json",
+        "./experiments/skill_aware_clip_nsctxt/formatted_pred.json",
+        "./experiments/skill_aware_clip_nobj/formatted_pred.json",
+        # "./experiments/oracle_ensemble/formatted_pred.json",
+        # "./experiments/skill_clip_hf/formatted_pred.json",
+        # "./experiments/skill_clip_hf_vis_proj/formatted_pred.json",
+        # "./experiments/skill_clip_hf_vis_proj2/formatted_pred.json",
+    ]:
+        # [
+        #     "./experiments/clip/pred.json",
+        #     "./experiments/clip_multimodal/pred.json",
+        #     # "./experiments/frozen_git/formatted_pred.json",
+        #     # "./experiments/frozen_git/preds.json",
+        #     "./experiments/frozen_vilt2/predict_logs.json",
+        #     "./experiments/resnet/preds.json",
+        #     "./experiments/skill_unaware_clip/pred.json",
+        #     "./experiments/skill_aware_clip2/pred.json",
+        #     "./experiments/skill_aware_clip3/pred.json",
+        #     # "./experiments/oracle_ensemble/formatted_pred.json",
+        #     "./experiments/skill_clip_hf/pred.json",
+        #     "./experiments/skill_clip_hf_vis_proj/formatted_pred.json",
+        #     "./experiments/skill_clip_hf_vis_proj2/formatted_pred.json",
+        # ]:
         data = json.load(open(path))
         if isinstance(data, list):
             data = [i['answer'] for i in data]

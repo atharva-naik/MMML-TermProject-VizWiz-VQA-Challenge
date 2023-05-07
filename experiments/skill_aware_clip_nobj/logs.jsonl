@@ -32,3 +32,4 @@
 {"val_acc": 0.4382959018291271, "val_loss": 4.6924870385064015, "epoch": 12, "step": 99, "best_val_epoch": 12, "best_val_step": 99, "best_val_acc": 0.4382959018291271}
 {"val_acc": 0.4392220421393841, "val_loss": 4.652211053283127, "epoch": 12, "step": 399, "best_val_epoch": 12, "best_val_step": 399, "best_val_acc": 0.4392220421393841}
 {"val_acc": 0.4403797175272054, "val_loss": 4.721675145184553, "epoch": 12, "step": 599, "best_val_epoch": 12, "best_val_step": 599, "best_val_acc": 0.4403797175272054}
+{"val_acc": 0.4454734892336189, "val_loss": 4.715967994266086, "epoch": 17, "step": 99, "best_val_epoch": 17, "best_val_step": 99, "best_val_acc": 0.4454734892336189}
