@@ -1,4 +1,4 @@
-# Author: Yash Butala
+# Author: Atharva Naik
 import os
 import pdb
 import clip
@@ -404,7 +404,11 @@ class SkillAwareCLIPVizWizVQA(nn.Module):
                 len(self.skill_to_ind)+1, 
                 skill_emb_size, padding_idx=5,
             ) # 5 "skills": TXT, COL, CNT, OBJ, OTH
-            if no_scene_text_mode or no_obj_mode:
+            if no_scene_text_mode and no_obj_mode:
+                print("skill embs only mode")
+                self.emb_size = lang_emb_size+image_emb_size+skill_emb_size
+                print(f"emb_size: {self.emb_size}")
+            elif no_scene_text_mode or no_obj_mode:
                 if no_obj_mode: print("no object mode")
                 if no_scene_text_mode: print("no scene text mode")
                 self.emb_size = 2*lang_emb_size+image_emb_size+skill_emb_size
