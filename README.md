@@ -39,7 +39,7 @@ python -m src.main_model.clip_late_fusion -t -de "cuda:0" -exp skill_aware_clip_
 
 With multi-task training:
 ```
-
+python -m src.main_model.clip_multitasking.py -t -de "cuda:0" -exp skill_aware_clip_multitasking -pred_file pred.json
 ```
 
 ## **Interesting object detections**
