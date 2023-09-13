@@ -1,5 +1,4 @@
 # competitive multimodal baselines.
-# Authors: Atharva Naik
 
 import os
 import json

@@ -1,4 +1,3 @@
-# Author: Nava 
 import os
 import pdb
 import json

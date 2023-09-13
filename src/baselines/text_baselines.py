@@ -1,5 +1,3 @@
-# Author: Navaneethan Vaikunthan
-
 import argparse
 from collections import Counter
 import torch 

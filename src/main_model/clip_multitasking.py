@@ -1,4 +1,3 @@
-# Author: Yash Butala
 import clip
 from PIL import Image
 import numpy as np

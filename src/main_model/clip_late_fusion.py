@@ -1,4 +1,3 @@
-# Author: Atharva Naik
 import os
 import pdb
 import clip

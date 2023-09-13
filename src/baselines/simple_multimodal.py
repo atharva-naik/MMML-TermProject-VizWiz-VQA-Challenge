@@ -1,5 +1,4 @@
 # simple multimodal baselines.
-# Author: Atharva Naik, Yash Butala
 # code to train and predict with simple multimodal baselines.
 
 import os

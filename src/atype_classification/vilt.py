@@ -1,5 +1,4 @@
 # ViLT base answer type classifier.
-# Author: Atharva Naik
 # code to train and predict with simple multimodal baselines.
 
 import os

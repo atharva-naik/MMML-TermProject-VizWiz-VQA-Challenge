@@ -1,4 +1,3 @@
-# Author: Navaneethan Vaikunthan, Atharva Naik
 # common metrics for the task.
 
 import json
