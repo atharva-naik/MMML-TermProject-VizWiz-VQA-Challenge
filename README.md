@@ -19,7 +19,7 @@ bash download_data.sh
 
 With everything:
 ```
-python -m src.main_model.clip_late_fusion -t -de "cuda:0"
+python -m src.main_model.clip_late_fusion -t -de "cuda:0" -exp skill_aware_clip
 ```
 
 Without skill embeddings:
